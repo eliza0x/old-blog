@@ -1,0 +1,27 @@
+h1.title {
+  margin-bottom: 0px; }
+
+a.title {
+  color: #f4f5f6; }
+
+div.header {
+  margin-bottom: 20px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  background-color: #353230;
+  position: static; }
+
+div.footer {
+  background-color: #353230;
+  color: #f4f5f6;
+  text-align: center;
+  position: static;
+  bottom: 0px;
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 15px; }
+
+div.figure img {
+  width: 100%; }
+
+/*# sourceMappingURL=style.css.map */
