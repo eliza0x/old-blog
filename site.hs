@@ -1,69 +1,56 @@
--------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
 import           Data.Monoid (mappend)
-import           Hakyll
+import qualified Hakyll as H
+import           Hakyll ((.||.))
 import qualified Hakyll.Web.Sass as S
 
-
---------------------------------------------------------------------------------
 main :: IO ()
-main = hakyll $ do
-  match "images/*" $ do
-      route   idRoute
-      compile copyFileCompiler
+main = H.hakyll $ do
+  H.match ("images/*" .||.  "CNAME" .||. ".commit_template") $ do
+    H.route   H.idRoute
+    H.compile H.copyFileCompiler
 
-  match "css/*" $ do
-      route   idRoute
-      compile compressCssCompiler
+  H.match "css/*" $ do
+    H.route   H.idRoute
+    H.compile H.compressCssCompiler
 
-  match "CNAME" $ route idRoute
-
---   match ("scss/base/_variables.scss" .||. "scss/base/*" .||. "scss/modules/*" .||. "scss/*") $ do
---       route   idRoute
---       compile S.sassCompiler
---       -- compile compressCssCompiler
-
-
-  match "posts/*" $ do
-      route $ setExtension "html"
-      compile $ pandocCompiler
-          >>= loadAndApplyTemplate "templates/post.html"    postCtx
-          >>= loadAndApplyTemplate "templates/default.html" postCtx
-          >>= relativizeUrls
+  H.match "posts/*" $ do
+    H.route $ H.setExtension "html"
+    H.compile $ H.pandocCompiler
+        >>= H.loadAndApplyTemplate "templates/post.html"    postCtx
+        >>= H.loadAndApplyTemplate "templates/default.html" postCtx
+        >>= H.relativizeUrls
   
-  match "index.html" $ do
-      route idRoute
-      compile $ do
-          posts <- recentFirst =<< loadAll "posts/*"
-          let indexCtx =
-                  listField "posts" postCtx (return posts) `mappend`
-                  constField "title" "Home"                `mappend`
-                  defaultContext
+  H.match "index.html" $ do
+    H.route H.idRoute
+    H.compile $ do
+      posts <- H.recentFirst =<< H.loadAll "posts/*"
+      let indexCtx =
+              H.listField "posts" postCtx (return posts) `mappend`
+              H.constField "title" "Home"                `mappend`
+              H.defaultContext
+      H.getResourceBody
+        >>= H.applyAsTemplate indexCtx
+        >>= H.loadAndApplyTemplate "templates/default.html" indexCtx
+        >>= H.relativizeUrls
   
-          getResourceBody
-              >>= applyAsTemplate indexCtx
-              >>= loadAndApplyTemplate "templates/default.html" indexCtx
-              >>= relativizeUrls
-  
-  match "archive.html" $ do
-      route idRoute
-      compile $ do
-          posts <- recentFirst =<< loadAll "posts/*"
-          let indexCtx =
-                  listField "posts" postCtx (return posts) `mappend`
-                  constField "title" "Archive"               `mappend`
-                  defaultContext
-  
-          getResourceBody
-              >>= applyAsTemplate indexCtx
-              >>= loadAndApplyTemplate "templates/default.html" indexCtx
-              >>= relativizeUrls
+  H.match "archive.html" $ do
+    H.route H.idRoute
+    H.compile $ do
+      posts <- H.recentFirst =<< H.loadAll "posts/*"
+      let indexCtx = 
+              H.listField  "posts" postCtx (return posts) `mappend`
+              H.constField "title" "Archive"                `mappend` 
+              H.defaultContext
+      H.getResourceBody
+        >>= H.applyAsTemplate indexCtx
+        >>= H.loadAndApplyTemplate "templates/default.html" indexCtx
+        >>= H.relativizeUrls
   
   
-  match "templates/*" $ compile templateCompiler
+  H.match "templates/*" $ H.compile H.templateCompiler
 
---------------------------------------------------------------------------------
-postCtx :: Context String
+postCtx :: H.Context String
 postCtx =
-    dateField "date" "%B %e, %Y" `mappend`
-    defaultContext
+  H.dateField "date" "%B %e, %Y" `mappend`
+  H.defaultContext
