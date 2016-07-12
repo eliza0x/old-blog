@@ -16,6 +16,8 @@ main = hakyll $ do
       route   idRoute
       compile compressCssCompiler
 
+  match "CNAME" $ route idRoute
+
 --   match ("scss/base/_variables.scss" .||. "scss/base/*" .||. "scss/modules/*" .||. "scss/*") $ do
 --       route   idRoute
 --       compile S.sassCompiler
