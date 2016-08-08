@@ -50,10 +50,10 @@
       <p>Posted on August  8, 2016</p>
 
 
-<p>以前からArduinoやESP8266を使ってなにやら怪しいこと(おもにコンデンサを爆発させていた)をしていたのですが、<a href="https://twitter.com/mc475_46">もは氏/mc475_46</a>の勧めもあってAVRマイコンに手を出してみることにしました。後悔するのは後になってからでも構わないでしょう。</p>
+<p>以前からArduinoやESP8266を使ってなにやら怪しいこと(おもにコンデンサを爆発させていた)をしていたのですが、<a href="https://twitter.com/mc475_46">もは氏/mc475_46</a>の勧めもあってついにAVRマイコンに手を出してみました。後悔するのは後になってからでも構わないでしょう。</p>
 <h2 id="tldr">TL;DR</h2>
 <script src="https://gist.github.com/eliza0x/31ceb7be16d3199f230ee831d2a5602f.js"></script>
-<p>結線後に<code>./src/main.ino</code>と<code>./platformio.ini</code>にファイルを配置して<code>platformio run -t upload</code>すれば書き込めます。</p>
+<p>結線後に<code>./src/main.ino</code>と<code>./platformio.ini</code>にファイルを配置して<code>platformio run -t upload</code>すればOK。</p>
 <h2 id="長い文章を読める人類向け">長い文章を読める人類向け</h2>
 <p>回路図も作ってがんばって記事を書くつもりでしたが、Fritzing(可愛い回路図をつくれるソフト)のビルドが目の前でSegmentation faultを投げてから心が終わってしまったのでそれほど長い記事にはならない筈です。</p>
 <p>さて、今回目指すのはAVR ーわたしが取り組んだのはAtTiny85ですが、おおよそ同じ手順でAVRのマイコン全般は動作する事でしょうー でBlink(Lチカ)をすることです。</p>
@@ -90,7 +90,8 @@ $ platformio init -b attiny85<br />
 <p>あとは<code>main.ino</code>を自動生成されたsrcディレクトリ下、<code>platformio.ini</code>を置き換えて下さい。</p>
 <p>工夫しているのはPlatformIOの<code>upload_protocol</code>と<code>upload_flags</code>ぐらいで、Avrdude用にすこしオプションを書いてあるだけです。 マイコンをAtTiny85以外を使いたいなら、<code>board</code>の中身を変更してください。</p>
 <p>さあ、あとは結線をするだけです。</p>
-<p><a href="http://www.atmel.com/Images/Atmel-2586-AVR-8-bit-Microcontroller-ATtiny25-ATtiny45-ATtiny85_Datasheet.pdf">Atmelのデータシート</a> <a href="http://qiita.com/erukiti/items/0a51d959082e242e2e2a#%E5%9B%9E%E8%B7%AF">結線はこのリンクを参考にしてください</a></p>
+<p><a href="http://www.atmel.com/Images/Atmel-2586-AVR-8-bit-Microcontroller-ATtiny25-ATtiny45-ATtiny85_Datasheet.pdf">Atmelのデータシート</a></p>
+<p><a href="http://qiita.com/erukiti/items/0a51d959082e242e2e2a#%E5%9B%9E%E8%B7%AF">結線はこのリンクを参考にしてください</a></p>
 <p>さあ、出来ましたか？</p>
 <div class="figure">
 <img src="../images/Ft232rlToAttiny85.jpg" />
