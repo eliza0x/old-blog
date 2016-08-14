@@ -4,13 +4,20 @@ import           Hakyll ((.||.))
 
 main :: IO ()
 main = H.hakyll $ do
-  H.match ("404/*" .||. "slides/*" .||. "images/*" .||.  "CNAME" .||. ".commit_template") $ do
+  H.match ("slides/*" .||. "images/*" .||.  "CNAME" .||. ".commit_template") $ do
     H.route   H.idRoute
     H.compile H.copyFileCompiler
 
   H.match "css/*" $ do
     H.route   H.idRoute
     H.compile H.compressCssCompiler
+
+  H.match ("404/*" .||. "about.html" .||. "products.html") $ do
+    H.route H.idRoute
+    H.compile $ H.pandocCompiler
+        >>= H.loadAndApplyTemplate "templates/default.html" postCtx
+        >>= H.relativizeUrls
+
 
   H.match "posts/*" $ do
     H.route $ H.setExtension "html"
