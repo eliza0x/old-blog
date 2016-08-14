@@ -4,10 +4,10 @@ html {
 
 body {
   color: #606c76;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Ubuntu" sans-serif;
   font-size: 1.7em;
-  font-weight: 300;
-  letter-spacing: 0.01em;
+  font-weight: 400;
+  letter-spacing: .01em;
   line-height: 1.6; }
 
 *,
@@ -30,10 +30,10 @@ pre {
 
 code {
   background: #f4f5f6;
-  border-radius: 0.4rem;
+  border-radius: .4rem;
   font-size: 86%;
-  padding: 0.2rem 0.5rem;
-  margin: 0 0.2rem;
+  padding: .2rem .5rem;
+  margin: 0 .2rem;
   white-space: nowrap; }
 
 pre > code {
@@ -46,8 +46,8 @@ pre > code {
 .container {
   box-sizing: border-box;
   margin: 0 auto;
-  max-width: 70rem;
-  padding: 0 2rem;
+  max-width: 70.0rem;
+  padding: 0 2.0rem;
   position: relative;
   width: 100%; }
 
@@ -139,11 +139,12 @@ pre > code {
 @media (min-width: 40rem) {
   .row {
     flex-direction: row;
-    margin-left: -1rem;
+    margin-left: -1.0rem;
     width: calc(100% + 2.0rem); }
     .row .column {
       margin-bottom: inherit;
-      padding: 0 1rem; } }
+      padding: 0 1.0rem; } }
+
 a {
   color: #fe5000;
   text-decoration: none; }
@@ -162,7 +163,7 @@ ul {
   ul ul,
   ul ol {
     font-size: 90%;
-    margin: 1.5rem 0 1.5rem 3rem; }
+    margin: 1.5rem 0 1.5rem 3.0rem; }
 
 dl {
   list-style: none; }
@@ -176,7 +177,7 @@ ol {
 dt,
 dd,
 li {
-  margin-bottom: 1rem; }
+  margin-bottom: 1.0rem; }
 
 hr {
   border-top: 0.1rem solid #f4f5f6;
@@ -210,7 +211,7 @@ table {
 
 th,
 td {
-  border-bottom: 0.1rem solid #e1e1e1;
+  border-bottom: .1rem solid #e1e1e1;
   padding: 1.2rem 1.5rem;
   text-align: left; }
   th:first-child,
@@ -230,34 +231,34 @@ h4,
 h5,
 h6 {
   font-weight: 300;
-  margin-bottom: 2rem;
+  margin-bottom: 2.0rem;
   margin-top: 0;
-  font-family: "Megrim", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   text-align: center; }
 
 h1 {
-  font-size: 4rem;
-  letter-spacing: -0.1rem;
+  font-size: 4.0rem;
+  letter-spacing: -.1rem;
   line-height: 1.2; }
 
 h2 {
   font-size: 3.6rem;
-  letter-spacing: -0.1rem;
+  letter-spacing: -.1rem;
   line-height: 1.25; }
 
 h3 {
-  font-size: 3rem;
-  letter-spacing: -0.1rem;
+  font-size: 3.0rem;
+  letter-spacing: -.1rem;
   line-height: 1.3; }
 
 h4 {
   font-size: 2.4rem;
-  letter-spacing: -0.08rem;
+  letter-spacing: -.08rem;
   line-height: 1.35; }
 
 h5 {
   font-size: 1.8rem;
-  letter-spacing: -0.05rem;
+  letter-spacing: -.05rem;
   line-height: 1.5; }
 
 h6 {
@@ -267,22 +268,18 @@ h6 {
 
 @media (min-width: 40rem) {
   h1 {
-    font-size: 5rem; }
-
+    font-size: 5.0rem; }
   h2 {
     font-size: 4.2rem; }
-
   h3 {
     font-size: 3.6rem; }
-
   h4 {
-    font-size: 3rem; }
-
+    font-size: 3.0rem; }
   h5 {
     font-size: 2.4rem; }
-
   h6 {
     font-size: 1.5rem; } }
+
 .float-right {
   float: right; }
 
@@ -292,9 +289,7 @@ h6 {
 .clearfix {
   *zoom: 1; }
   .clearfix:after, .clearfix:before {
-    content: "";
+    content: '';
     display: table; }
   .clearfix:after {
     clear: both; }
-
-/*# sourceMappingURL=milligram.css.map */
