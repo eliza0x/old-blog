@@ -6,15 +6,14 @@ div.header {
   margin-bottom: 20px;
   padding-top: 3px;
   padding-bottom: 3px;
-  position: static;
-  border-bottom: 1px solid #d1d1d1; }
+  position: static; }
 
 ul.navigation li {
   list-style: none;
   float: left; }
 
 ul.navigation li a {
-  padding-left: 20px; }
+  padding-left: 10px; }
 
 @media (min-width: 40rem) {
   ul.navigation li a {
@@ -27,7 +26,8 @@ div.clear {
 
 div.border {
   border-bottom: 1px solid #d1d1d1;
-  margin-bottom: 15px; }
+  margin-bottom: 10px;
+  margin-top: 10px; }
 
 div.footer {
   border-top: 1px solid #d1d1d1;
