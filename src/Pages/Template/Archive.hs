@@ -14,5 +14,5 @@ archive = let html = renderHtml template :: String
     
 template :: Html
 template = [shamlet|
-  \$partial("templates/post_list.html")$
+  \$partial("templates/post-list.html")$
 |]

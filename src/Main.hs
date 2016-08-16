@@ -8,7 +8,7 @@ import Pages
 
 main :: IO ()
 main = H.hakyll $ do
-  H.match "templates/post_list.html" $ H.compile H.templateCompiler
+  H.match "templates/post-list.html" $ H.compile H.templateCompiler
   cssR        -- style sheet
   postsR      -- posts/*
   indexR      -- pages/index.haml

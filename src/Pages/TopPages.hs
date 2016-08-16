@@ -29,7 +29,7 @@ indexR =
                 H.constField "title" "Home"                `mappend`
                 H.defaultContext
         indexCompiler
-          >>= H.applyTemplate archive indexCtx
+          >>= H.applyAsTemplate indexCtx
           >>= H.applyTemplate flame indexCtx
           >>= H.relativizeUrls
 
@@ -46,7 +46,7 @@ archiveR =
                 H.constField "title" "Archive"                `mappend` 
                 H.defaultContext
         archiveCompiler
-          >>= H.applyTemplate archive indexCtx
+          >>= H.applyAsTemplate indexCtx
           >>= H.applyTemplate flame indexCtx
           >>= H.relativizeUrls
 
