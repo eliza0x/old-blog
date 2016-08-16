@@ -2,7 +2,7 @@
            , QuasiQuotes
            , TemplateHaskell #-}
 
-module Blog.Css(cssR) where
+module Pages.Css(cssR) where
 
 import qualified Hakyll as H
 

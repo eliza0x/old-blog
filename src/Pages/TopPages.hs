@@ -2,7 +2,7 @@
            , QuasiQuotes
            , TemplateHaskell #-}
 
-module Blog.Pages(
+module Pages.TopPages(
   aboutR
 , archiveR
 , contactR
@@ -13,7 +13,8 @@ import qualified Hakyll as H
 import Text.Hamlet (shamletFile)
 import Text.Blaze.Html.Renderer.String (renderHtml)
 
-import Blog.Util (postCtx)
+import Pages.Util (postCtx)
+import Pages.Template
 
 indexR :: H.Rules ()
 indexR =
@@ -28,8 +29,8 @@ indexR =
                 H.constField "title" "Home"                `mappend`
                 H.defaultContext
         indexCompiler
-          >>= H.applyAsTemplate indexCtx
-          >>= H.loadAndApplyTemplate "templates/flame.html" indexCtx
+          >>= H.applyTemplate archive indexCtx
+          >>= H.applyTemplate flame indexCtx
           >>= H.relativizeUrls
 
 archiveR :: H.Rules ()
@@ -45,8 +46,8 @@ archiveR =
                 H.constField "title" "Archive"                `mappend` 
                 H.defaultContext
         archiveCompiler
-          >>= H.applyAsTemplate indexCtx
-          >>= H.loadAndApplyTemplate "templates/flame.html" indexCtx
+          >>= H.applyTemplate archive indexCtx
+          >>= H.applyTemplate flame indexCtx
           >>= H.relativizeUrls
 
 aboutR :: H.Rules ()
@@ -56,7 +57,7 @@ aboutR =
   in  H.match "pages/about.haml" $ do
       H.route $ H.gsubRoute "pages/" (const "") `H.composeRoutes` H.setExtension "html"
       H.compile $ aboutCompiler
-          >>= H.loadAndApplyTemplate "templates/flame.html" postCtx
+          >>= H.applyTemplate flame postCtx
           >>= H.relativizeUrls
 
 contactR :: H.Rules ()
@@ -66,7 +67,7 @@ contactR =
   in  H.match "pages/contact.haml" $ do
       H.route $ H.gsubRoute "pages/" (const "") `H.composeRoutes` H.setExtension "html"
       H.compile $ contactCompiler
-          >>= H.loadAndApplyTemplate "templates/flame.html" postCtx
+          >>= H.applyTemplate flame postCtx
           >>= H.relativizeUrls
 
 productsR :: H.Rules ()
@@ -76,5 +77,5 @@ productsR =
   in  H.match "pages/products.haml" $ do
       H.route $ H.gsubRoute "pages/" (const "") `H.composeRoutes` H.setExtension "html"
       H.compile $ productsCompiler
-          >>= H.loadAndApplyTemplate "templates/flame.html" postCtx
+          >>= H.applyTemplate flame postCtx
           >>= H.relativizeUrls

@@ -2,16 +2,18 @@
            , QuasiQuotes
            , TemplateHaskell #-}
 
-module Blog.Posts where
+module Pages.Posts where
 
 import qualified Hakyll as H
 
-import Blog.Util (postCtx)
+import Pages.Util (postCtx)
+import Pages.Template
 
 postsR :: H.Rules ()
 postsR =
   H.match "posts/*" $ do
     H.route $ H.setExtension "html"
     H.compile $ H.pandocCompiler
-        >>= H.loadAndApplyTemplate "templates/post.html"    postCtx
+        >>= H.applyTemplate post postCtx
+        >>= H.applyTemplate flame postCtx
         >>= H.relativizeUrls

@@ -2,7 +2,7 @@
            , QuasiQuotes
            , TemplateHaskell #-}
 
-module Blog.Util(postCtx) where
+module Pages.Util(postCtx) where
 
 import qualified Hakyll as H
 

@@ -2,12 +2,10 @@
            , QuasiQuotes
            , TemplateHaskell #-}
 
-module Blog.Etc(etcR) where
+module Pages.Etc(etcR) where
 
 import qualified Hakyll as H
 import           Hakyll ((.||.))
-import Text.Hamlet (shamletFile, Html)
-import Text.Blaze.Html.Renderer.String (renderHtml)
 
 etcR :: H.Rules ()
 etcR =

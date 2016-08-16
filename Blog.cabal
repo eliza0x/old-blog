@@ -12,15 +12,20 @@ category:            Web
 build-type:          Simple
 cabal-version:       >=1.10
 
-executable Blog
+executable blog
   hs-source-dirs:      src
   main-is:             Main.hs
-  other-modules:       Blog.Pages
-                     , Blog.Posts
-                     , Blog.Css
-                     , Blog.Templates
-                     , Blog.Etc
-                     , Blog.Util
+  other-modules:       Pages 
+                     , Pages.TopPages
+                     , Pages.Posts
+                     , Pages.Css
+                     , Pages.Etc
+                     , Pages.Util
+                     , Pages.Template
+                     , Pages.Template.Flame
+                     , Pages.Template.Archive
+                     , Pages.Template.Flame
+                     , Pages.Template.Post
   default-language:    Haskell2010
   build-depends:       base >= 4.7 && < 5
                      , hakyll
