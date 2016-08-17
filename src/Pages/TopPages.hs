@@ -24,13 +24,13 @@ indexR =
       H.route $ H.gsubRoute "pages/" (const "") `H.composeRoutes` H.setExtension "html"
       H.compile $ do
         posts <- H.recentFirst =<< H.loadAll "posts/*"
-        let indexCtx =
+        let postsCtx =
                 H.listField "posts" postCtx (return posts) `mappend`
                 H.constField "title" "Home"                `mappend`
                 H.defaultContext
         indexCompiler
-          >>= H.applyAsTemplate indexCtx
-          >>= H.applyTemplate flame indexCtx
+          >>= H.applyAsTemplate postsCtx
+          >>= H.applyTemplate flame   postsCtx
           >>= H.relativizeUrls
 
 archiveR :: H.Rules ()

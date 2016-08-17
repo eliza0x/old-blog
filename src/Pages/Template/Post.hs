@@ -9,20 +9,19 @@ import Text.Hamlet (shamlet, Html)
 import Text.Blaze.Html.Renderer.String (renderHtml)
 
 post :: H.Template
-post = let html = renderHtml template :: String
+post = let html = renderHtml template
         in  H.readTemplate html
     
 template :: Html
 template = [shamlet|
-  <h2>$title$
-
-  <p>Posted on $date$
-  \$if(author)$
-    <p>by $author$
-  \$endif$
-
-  \$body$
-
+  <aside>
+    <h2>$title$
+    <p>Posted on $date$
+    \$if(author)$
+      <p>by $author$
+    \$endif$
+  <article>
+    \$body$
   <div id="disqus_thread">
   <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
