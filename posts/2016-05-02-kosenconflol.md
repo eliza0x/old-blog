@@ -1,5 +1,7 @@
 ---
 title: 高専カンファレンスlolに行ってきた
+description: 高専カンファレンスに行き、ついでに野宿してきました
+tag: camp, event, kosen14s
 ---
 
 兵庫県は明石で開催された[高専カンファレンスlol](http://kosenconf.me/)に参加してきました。  

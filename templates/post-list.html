@@ -1,5 +1,11 @@
 <ul>
-  $for(posts)$
-  <li><a href="$url$">$title$</a> - $date$</li>
-  $endfor$
+    $for(posts)$
+    <li>
+        <p>
+              <a href="$url$">$title$</a>
+            ‒ $date$<br />
+            $description$
+        </p>
+    </li>
+    $endfor$
 </ul>

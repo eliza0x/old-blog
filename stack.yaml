@@ -1,6 +1,10 @@
 resolver: lts-6.12
+
 packages:
 - '.'
-extra-deps:
+
+extra-deps: []
+
 flags: {}
+
 extra-package-dbs: []

@@ -1,5 +1,7 @@
 ---
-title: 精神分析入門を読んで
+title: 「精神分析入門」を読んで
+description: 「精神分析入門」を読みました
+tags: book, kosen14s
 ---
 
 *この記事は[Kosen14s読書会](https://kosen14s.github.io/bookclub)にあたって書いたものです。*
