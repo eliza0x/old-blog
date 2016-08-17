@@ -1,4 +1,17 @@
-<!DOCTYPE html>
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>eliza.link - Posts tagged memo</title>
+        <link>https://eliza.link</link>
+        <description><![CDATA[技術や読書録を残します]]></description>
+        <atom:link href="https://eliza.link/tags/memo.xml" rel="self"
+                   type="application/rss+xml" />
+        <lastBuildDate>Wed, 17 Aug 2016 00:00:00 UT</lastBuildDate>
+        <item>
+    <title>劣等感を感じる自分について</title>
+    <link>https://eliza.link/posts/2016-08-17-ZenMind.html</link>
+    <description><![CDATA[<!DOCTYPE html>
 <html lang="ja"><head>
 <meta charset="utf-8">
 <title>eliza.link | 劣等感を感じる自分について</title>
@@ -12,19 +25,19 @@ ga('send', 'pageview');</script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sanitize.css/2.0.0/sanitize.min.css" />
-<link rel="stylesheet" href="../style.css" />
+<link rel="stylesheet" href="/style.css" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&subset=latin-ext" />
 </head>
 
-<body class="container"><header><h1 class="header title"><a class="title" href="../">eliza.link</a>
+<body class="container"><header><h1 class="header title"><a class="title" href="/">eliza.link</a>
 </h1>
-<nav class="navigation"><ul class="navigation"><li><a href="../about.html">About</a>
+<nav class="navigation"><ul class="navigation"><li><a href="/about.html">About</a>
 </li>
-<li><a href="../archive.html">Archive</a>
+<li><a href="/archive.html">Archive</a>
 </li>
-<li><a href="../products.html">Products</a>
+<li><a href="/products.html">Products</a>
 </li>
-<li><a href="../contact.html">Contact</a>
+<li><a href="/contact.html">Contact</a>
 </li>
 </ul>
 </nav>
@@ -38,7 +51,7 @@ ga('send', 'pageview');</script>
 
 
 
-  <p>Tags: <a href="../tags/memo.html">memo</a></p>
+  <p>Tags: <a href="/tags/memo.html">memo</a></p>
 
 
 <p>この記事は決意表明だ。</p>
@@ -66,3 +79,11 @@ hosted on
 </footer>
 </body>
 </html>
+]]></description>
+    <pubDate>Wed, 17 Aug 2016 00:00:00 UT</pubDate>
+    <guid>https://eliza.link/posts/2016-08-17-ZenMind.html</guid>
+    <dc:creator>Eliza Calls</dc:creator>
+</item>
+
+    </channel>
+</rss>

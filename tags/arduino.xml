@@ -1,4 +1,17 @@
-<!DOCTYPE html>
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>eliza.link - Posts tagged arduino</title>
+        <link>https://eliza.link</link>
+        <description><![CDATA[技術や読書録を残します]]></description>
+        <atom:link href="https://eliza.link/tags/arduino.xml" rel="self"
+                   type="application/rss+xml" />
+        <lastBuildDate>Mon, 08 Aug 2016 00:00:00 UT</lastBuildDate>
+        <item>
+    <title>Blink on AtTiny85</title>
+    <link>https://eliza.link/posts/2016-08-08-AtTiny85a.html</link>
+    <description><![CDATA[<!DOCTYPE html>
 <html lang="ja"><head>
 <meta charset="utf-8">
 <title>eliza.link | Blink on AtTiny85</title>
@@ -12,19 +25,19 @@ ga('send', 'pageview');</script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sanitize.css/2.0.0/sanitize.min.css" />
-<link rel="stylesheet" href="../style.css" />
+<link rel="stylesheet" href="/style.css" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&subset=latin-ext" />
 </head>
 
-<body class="container"><header><h1 class="header title"><a class="title" href="../">eliza.link</a>
+<body class="container"><header><h1 class="header title"><a class="title" href="/">eliza.link</a>
 </h1>
-<nav class="navigation"><ul class="navigation"><li><a href="../about.html">About</a>
+<nav class="navigation"><ul class="navigation"><li><a href="/about.html">About</a>
 </li>
-<li><a href="../archive.html">Archive</a>
+<li><a href="/archive.html">Archive</a>
 </li>
-<li><a href="../products.html">Products</a>
+<li><a href="/products.html">Products</a>
 </li>
-<li><a href="../contact.html">Contact</a>
+<li><a href="/contact.html">Contact</a>
 </li>
 </ul>
 </nav>
@@ -38,7 +51,7 @@ ga('send', 'pageview');</script>
 
 
 
-  <p>Tags: <a href="../tags/program.html">program</a>, <a href="../tags/microprocessor.html">microprocessor</a>, <a href="../tags/arduino.html">arduino</a></p>
+  <p>Tags: <a href="/tags/program.html">program</a>, <a href="/tags/microprocessor.html">microprocessor</a>, <a href="/tags/arduino.html">arduino</a></p>
 
 
 <p>以前からArduinoやESP8266を使ってなにやら怪しいこと(おもにコンデンサを爆発させていた)をしていたのですが、<a href="https://twitter.com/mc475_46">もは氏/mc475_46</a>の勧めもあってついにAVRマイコンに手を出してみました。後悔するのは後になってからでも構わないでしょう。</p>
@@ -73,7 +86,7 @@ ga('send', 'pageview');</script>
 <p><a href="http://www.atmel.com/Images/Atmel-2586-AVR-8-bit-Microcontroller-ATtiny25-ATtiny45-ATtiny85_Datasheet.pdf">データシート</a></p>
 <p>AVRはAtmel社が作っているRISCのマイコンです。AtTiny85はそのAVRのうちのTinyシリーズに属するもので、Tiny(ちっぽけ)の名にふさわしくピンは8本しかありません、さらにそのうちの2PINは電源に使用するので我々は6PINしか使う事が出来ません。しかしDIP版でもわずか1cm * 1cmのマイコンにはROMが8Kbyte,RAMが512Byteも搭載されています、必要十分ではないでしょうか。</p>
 <div class="figure">
-<img src="../images/AtTiny85.jpg" alt="画像は秋月電子様より" />
+<img src="/images/AtTiny85.jpg" alt="画像は秋月電子様より" />
 <p class="caption">画像は秋月電子様より</p>
 </div>
 <h2 id="platformio">PlatformIO？</h2>
@@ -124,18 +137,18 @@ $ <span class="kw">platformio</span> init -b attiny85  </code></pre></div>
 <p><a href="http://qiita.com/erukiti/items/0a51d959082e242e2e2a#%E5%9B%9E%E8%B7%AF">結線はこのリンクを参考にしてください</a></p>
 <p>さあ、出来ましたか？</p>
 <div class="figure">
-<img src="../images/Ft232rlToAttiny85.jpg" />
+<img src="/images/Ft232rlToAttiny85.jpg" />
 
 </div>
 <p>それでは <code>$ platformio run -t upload</code> して下さい。</p>
 <p>書き込めましたか？それではAtTiny85を差し替えてBlinkしてみましょう、AtTiny85のIOはこの通りになっています。</p>
 <div class="figure">
-<img src="../images/AttinyBlink.png" alt="画像はSparkFun様より" />
+<img src="/images/AttinyBlink.png" alt="画像はSparkFun様より" />
 <p class="caption">画像はSparkFun様より</p>
 </div>
 <p>ArduinoでLEDを光らせていた時の1/10程度の大きさで同じことが実現できてしまいましたね、最高です。</p>
 <div class="figure">
-<img src="../images/Blink.jpg" alt="Blink" />
+<img src="/images/Blink.jpg" alt="Blink" />
 <p class="caption">Blink</p>
 </div>
 <p>なお、うまくいかない人はTwitterの@Eliza_0xか、me [at] eliza [dot] linkまでメールをくだされば、出来る限り手伝います。</p>
@@ -163,3 +176,11 @@ hosted on
 </footer>
 </body>
 </html>
+]]></description>
+    <pubDate>Mon, 08 Aug 2016 00:00:00 UT</pubDate>
+    <guid>https://eliza.link/posts/2016-08-08-AtTiny85a.html</guid>
+    <dc:creator>Eliza Calls</dc:creator>
+</item>
+
+    </channel>
+</rss>
