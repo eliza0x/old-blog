@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja"><head>
 <meta charset="utf-8">
-<title>eliza.link | Blink on AtTiny85</title>
+<title>eliza.link | 2016-08-08-AtTiny85a</title>
 <meta name="author" content="@Eliza_0x">
 
 <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -20,11 +20,9 @@ ga('send', 'pageview');</script>
 <link rel="icon" type="image/png" href="../images/favicon.png" />
 </head>
 
-<body><nav><div class="container"><div class="header"><h1 class="title"><a class="title" href="../">eliza.link</a>
+<body><header class="container"><h1 class="header title"><a class="title" href="../">eliza.link</a>
 </h1>
-</div>
-<div class="border"></div>
-<ul class="navigation"><li><a href="../about.html">About</a>
+<nav class="navigation"><ul class="navigation"><li><a href="../about.html">About</a>
 </li>
 <li><a href="../archive.html">Archive</a>
 </li>
@@ -33,16 +31,37 @@ ga('send', 'pageview');</script>
 <li><a href="../contact.html">Contact</a>
 </li>
 </ul>
-<div class="border clear"></div>
-</div>
 </nav>
+<div class="clear"></div>
+</header>
 
-<div class="container"><h2>Blink on AtTiny85</h2>
+<div class="container"><h2>2016-08-08-AtTiny85a</h2>
 <p>Posted on August  8, 2016</p>
 
+<div class="container">
+<div class="header">
+
+</div>
+<div class="border">
+
+</div>
+<ul>
+<li><a href="../about.html">About</a></li>
+<li><a href="../archive.html">Archive</a></li>
+<li><a href="../products.html">Products</a></li>
+<li><a href="../contact.html">Contact</a></li>
+</ul>
+<div class="border clear">
+
+</div>
+</div>
+<div class="container">
+<h2 id="blink-on-attiny85">Blink on AtTiny85</h2>
+<p>Posted on August 8, 2016</p>
 <p>以前からArduinoやESP8266を使ってなにやら怪しいこと(おもにコンデンサを爆発させていた)をしていたのですが、<a href="https://twitter.com/mc475_46">もは氏/mc475_46</a>の勧めもあってついにAVRマイコンに手を出してみました。後悔するのは後になってからでも構わないでしょう。</p>
 <p>PlatformIOでFT232RLを使ってAtTiny85(AVR)に書き込んでいる記事なネットでみつけられなくて苦労したのでこの記事を書きました。</p>
 <h2 id="tldr">TL;DR</h2>
+<div class="sourceCode">
 <div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">void</span> setup(){
   pinMode(<span class="dv">1</span>, OUTPUT);
 }
@@ -53,7 +72,9 @@ ga('send', 'pageview');</script>
   digitalWrite(<span class="dv">1</span> , LOW); 
   delay(<span class="dv">1000</span>);
 }</code></pre></div>
+</div>
 <p><code>main.ino</code></p>
+<div class="sourceCode">
 <div class="sourceCode"><pre class="sourceCode ini"><code class="sourceCode ini"><span class="kw">[env:attiny85]</span>
 <span class="dt">platform </span><span class="ot">=</span><span class="st"> atmelavr</span>
 <span class="dt">framework </span><span class="ot">=</span><span class="st"> arduino</span>
@@ -62,6 +83,7 @@ ga('send', 'pageview');</script>
 <span class="dt">upload_flags </span><span class="ot">=</span><span class="st"> -v -F -e -p t85 -B9600</span>
 <span class="dt">board_f_cpu </span><span class="ot">=</span><span class="st"> 1000000L</span>
 <span class="co"># upload_port = /dev/ttyUSB0</span></code></pre></div>
+</div>
 <p><code>platformio.ini</code></p>
 <p>結線後に<code>./src/main.ino</code>と<code>./platformio.ini</code>にファイルを配置して<code>platformio run -t upload</code>すればOK。</p>
 <h2 id="長い文章を読める人類向け">長い文章を読める人類向け</h2>
@@ -73,7 +95,7 @@ ga('send', 'pageview');</script>
 <p>AVRはAtmel社が作っているRISCのマイコンです。AtTiny85はそのAVRのうちのTinyシリーズに属するもので、Tiny(ちっぽけ)の名にふさわしくピンは8本しかありません、さらにそのうちの2PINは電源に使用するので我々は6PINしか使う事が出来ません。しかしDIP版でもわずか1cm * 1cmのマイコンにはROMが8Kbyte,RAMが512Byteも搭載されています、必要十分ではないでしょうか。</p>
 <div class="figure">
 <img src="../images/AtTiny85.jpg" alt="画像は秋月電子様より" />
-<p class="caption">画像は秋月電子様より</p>
+<p>画像は秋月電子様より</p>
 </div>
 <h2 id="platformio">PlatformIO？</h2>
 <blockquote>
@@ -91,10 +113,13 @@ platformioがすごいのは、IDEが必要ないということだ。inoは別�
 <p>はじめにFT232Rのドライバをインストールしましょう、お好みのパッケージマネージャや<a href="http://www.ftdichip.com/Drivers/VCP.htm">FTDIのWebサイト</a>からダウンロードしてください。 普通にFT232Rを使用するだけならドライバは必要無いようなのですが、BitBangモードでFT232Rを使用するには専用のドライバが必要になるそうです。</p>
 <p>BitBangモードについては、<a href="http://ore-kb.net/hard/BitBang/">この記事</a>にくわしく書かれていました。</p>
 <p>つぎにPlatformIOをインストールしてください、これもパッケージマネージャや<a href="http://platformio.org/">公式サイト</a>からインストールできます。</p>
+<div class="sourceCode">
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mkdir</span> AtTiny85  
 $ <span class="kw">cd</span> AtTiny85/  
 $ <span class="kw">platformio</span> init -b attiny85  </code></pre></div>
+</div>
 <p>さあ、AtTiny85に書き込む準備は整いました</p>
+<div class="sourceCode">
 <div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">void</span> setup(){
   pinMode(<span class="dv">1</span>, OUTPUT);
 }
@@ -105,7 +130,9 @@ $ <span class="kw">platformio</span> init -b attiny85  </code></pre></div>
   digitalWrite(<span class="dv">1</span> , LOW); 
   delay(<span class="dv">1000</span>);
 }</code></pre></div>
+</div>
 <p><code>main.ino</code></p>
+<div class="sourceCode">
 <div class="sourceCode"><pre class="sourceCode ini"><code class="sourceCode ini"><span class="kw">[env:attiny85]</span>
 <span class="dt">platform </span><span class="ot">=</span><span class="st"> atmelavr</span>
 <span class="dt">framework </span><span class="ot">=</span><span class="st"> arduino</span>
@@ -114,6 +141,7 @@ $ <span class="kw">platformio</span> init -b attiny85  </code></pre></div>
 <span class="dt">upload_flags </span><span class="ot">=</span><span class="st"> -v -F -e -p t85 -B9600</span>
 <span class="dt">board_f_cpu </span><span class="ot">=</span><span class="st"> 1000000L</span>
 <span class="co"># upload_port = /dev/ttyUSB0</span></code></pre></div>
+</div>
 <p><code>platformio.ini</code></p>
 <p>あとは<code>main.ino</code>を自動生成されたsrcディレクトリ下、<code>platformio.ini</code>を置き換えて下さい。</p>
 <p>工夫しているのはPlatformIOの<code>upload_protocol</code>と<code>upload_flags</code>ぐらいで、Avrdude用にすこしオプションを書いてあるだけです。 マイコンをAtTiny85以外を使いたいなら、<code>board</code>の中身を変更してください。</p>
@@ -124,18 +152,17 @@ $ <span class="kw">platformio</span> init -b attiny85  </code></pre></div>
 <p>さあ、出来ましたか？</p>
 <div class="figure">
 <img src="../images/Ft232rlToAttiny85.jpg" />
-
 </div>
 <p>それでは <code>$ platformio run -t upload</code> して下さい。</p>
 <p>書き込めましたか？それではAtTiny85を差し替えてBlinkしてみましょう、AtTiny85のIOはこの通りになっています。</p>
 <div class="figure">
 <img src="../images/AttinyBlink.png" alt="画像はSparkFun様より" />
-<p class="caption">画像はSparkFun様より</p>
+<p>画像はSparkFun様より</p>
 </div>
 <p>ArduinoでLEDを光らせていた時の1/10程度の大きさで同じことが実現できてしまいましたね、最高です。</p>
 <div class="figure">
 <img src="../images/Blink.jpg" alt="Blink" />
-<p class="caption">Blink</p>
+<p>Blink</p>
 </div>
 <p>なお、うまくいかない人はTwitterの@Eliza_0xか、me [at] eliza [dot] linkまでメールをくだされば、出来る限り手伝います。</p>
 <h2 id="thanks">Thanks</h2>
@@ -154,11 +181,20 @@ $ <span class="kw">platformio</span> init -b attiny85  </code></pre></div>
 <li><a href="http://www.wsnak.com/wsnakblog/?p=4110">arduino(AVR)でキャリア波38KHzを発生させる</a></li>
 </ul>
 <p>他多数、関係企業とプログラマ達に感謝</p>
+<div id="disqus_thread">
+
+</div>
+Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</div>
+<div class="container footer">
+Site proudly generated by<a href="http://jaspervdj.be/hakyll">Hakyll<br />
+</a> hosted on <a href="https://github.io">Github</a>
+</div>
 <div id="disqus_thread"></div>
 <script type="text/javascript">/* * * CONFIGURATION VARIABLES * * */
 var disqus_shortname = 'eliza0x';
 var disqus_identifier = "/posts/2016-08-08-AtTiny85a.html";
-var disqus_title = "Blink on AtTiny85";
+var disqus_title = "2016-08-08-AtTiny85a";
 var disqus_url = "https://eliza.link/posts/2016-08-08-AtTiny85a.html";
 /* * * DON'T EDIT BELOW THIS LINE * * */
 (function() {var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
