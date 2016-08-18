@@ -5,6 +5,8 @@ module Main where
 import Control.Monad ((>=>))
 import Data.Monoid ((<>))
 import Hakyll
+import Text.Highlighting.Kate.Format.HTML (styleToCss)
+import Text.Highlighting.Kate.Styles (tango)
 
 import Flame (flame)
 import StyleSheet (styleSheet)
@@ -16,17 +18,17 @@ main =
   in  hakyll $ do
     -- Static files
     match ("images/*.jpg" .||. "images/*.png" .||. "images/*.gif" .||.
-           "favicon.ico"  .||. "files/*" .||. "CNAME" .||. "js/*" ) $ do
+           "favicon.ico"  .||. "files/*" .||. "CNAME") $ do
         route   idRoute
         compile copyFileCompiler
 
-    -- highlight.js style sheet
-    match "css/*.css" $ do
-      route idRoute
-      compile compressCssCompiler
+    -- source code highlighting style sheet
+    create ["css/highlight.css"] $ do
+      route   idRoute
+      compile $ makeItem (compressCss $ styleToCss tango)
 
     -- Style sheet
-    create ["style.css"] $ do
+    create ["css/style.css"] $ do
       route idRoute
       compile styleSheetCompiler
 

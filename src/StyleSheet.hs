@@ -13,6 +13,7 @@ styleSheet = unpack . renderCss $ css render
 
 fontColor           = Color 56  56  56
 firstColor          = Color 255 60  0
+secondColor         = Color 180 180 180 
 backgroundColor     = Color 255 255 255
 subBackgroundColor  = Color 114 114 114
 
@@ -39,7 +40,7 @@ html
   font-size: 62.5%
 
 body
-  font-size: 1.7em /* currently ems cause chrome bug misinterpreting rems on body element */
+  font-size: 1.7em
   line-height: 1.8
   font-weight: 400
   font-family: "Open Sans", sans-serif
@@ -50,43 +51,31 @@ h1, h2, h3, h4, h5, h6
   margin-bottom: 2rem
   font-weight: 300
 h1 
-  font-size: 4.0rem
+  font-size: 5.0rem
   line-height: 1.2
   letter-spacing: -.1rem
 h2 
   font-size: 3.6rem
   line-height: 1.25
   letter-spacing: -.1rem
+  font-size: 4.2rem
+
 h3 
-  font-size: 3.0rem
+  font-size: 3.6rem
   line-height: 1.3
   letter-spacing: -.1rem
 h4
-  font-size: 2.4rem 
+  font-size: 3.0rem
   line-height: 1.35
   letter-spacing: -.08rem
 h5 
-  font-size: 1.8rem
+  font-size: 2.4rem
   line-height: 1.5
   letter-spacing: -.05rem
 h6 
   font-size: 1.5rem
   line-height: 1.6
   letter-spacing: 0
-
-@media (min-width: 550px)
-  h1 
-    font-size: 5.0rem
-  h2 
-    font-size: 4.2rem
-  h3 
-    font-size: 3.6rem
-  h4 
-    font-size: 3.0rem
-  h5 
-    font-size: 2.4rem
-  h6 
-    font-size: 1.5rem
 
 h1.title
   position: static
@@ -153,17 +142,6 @@ hr
   border-width: 0
   border-top: 1px solid #{subBackgroundColor}
 
-pre,
-blockquote,
-dl,
-figure,
-table,
-p,
-ul,
-ol,
-form
-  margin-bottom: 3rem
-
 .figure img
   width: 100%
 
@@ -184,6 +162,16 @@ footer
   padding-top: 15px
   margin-top: 15px
   margin-bottom: 15px
+
+pre.sourceCode
+  border-left: 2px solid #{secondColor}
+  margin-left: 20px
+  padding-left: 20px
+
+blockquote
+  border-left: 2px solid #{secondColor}
+  margin-left: 20px
+  padding-left: 20px
 
 .container:after
   content: ""
