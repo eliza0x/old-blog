@@ -8,6 +8,54 @@
         <name>Eliza Calls</name>
         <email>me@eliza.link</email>
     </author>
-    <updated>Unknown</updated>
-    
+    <updated>2016-08-17T00:00:00Z</updated>
+    <entry>
+    <title>劣等感を感じる自分について</title>
+    <link href="https://eliza.link/posts/2016-08-17-ZenMind.html" />
+    <id>https://eliza.link/posts/2016-08-17-ZenMind.html</id>
+    <published>2016-08-17T00:00:00Z</published>
+    <updated>2016-08-17T00:00:00Z</updated>
+    <summary type="html"><![CDATA[どのようにして劣等感と戦うか、また謙虚に暮らすか。]]></summary>
+</entry>
+<entry>
+    <title>Blink on AtTiny85</title>
+    <link href="https://eliza.link/posts/2016-08-08-AtTiny85a.html" />
+    <id>https://eliza.link/posts/2016-08-08-AtTiny85a.html</id>
+    <published>2016-08-08T00:00:00Z</published>
+    <updated>2016-08-08T00:00:00Z</updated>
+    <summary type="html"><![CDATA[AtTiny85にPlatformIOとFT232Rを使って書き込んだ際の記録]]></summary>
+</entry>
+<entry>
+    <title>「人はなぜ戦争をするのか」を読んだ</title>
+    <link href="https://eliza.link/posts/2016-07-01-why_war_summary.html" />
+    <id>https://eliza.link/posts/2016-07-01-why_war_summary.html</id>
+    <published>2016-07-01T00:00:00Z</published>
+    <updated>2016-07-01T00:00:00Z</updated>
+    <summary type="html"><![CDATA[「人はなぜ戦争をするのか」を読みました]]></summary>
+</entry>
+<entry>
+    <title>「精神分析入門」を読んで</title>
+    <link href="https://eliza.link/posts/2016-06-12-Introductory_Psychoanalysis.html" />
+    <id>https://eliza.link/posts/2016-06-12-Introductory_Psychoanalysis.html</id>
+    <published>2016-06-12T00:00:00Z</published>
+    <updated>2016-06-12T00:00:00Z</updated>
+    <summary type="html"><![CDATA[「精神分析入門」を読みました]]></summary>
+</entry>
+<entry>
+    <title>Kosen14sとは…？</title>
+    <link href="https://eliza.link/posts/2016-05-04-kosen14s.html" />
+    <id>https://eliza.link/posts/2016-05-04-kosen14s.html</id>
+    <published>2016-05-04T00:00:00Z</published>
+    <updated>2016-05-04T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Kosen14sについて]]></summary>
+</entry>
+<entry>
+    <title>高専カンファレンスlolに行ってきた</title>
+    <link href="https://eliza.link/posts/2016-05-02-kosenconflol.html" />
+    <id>https://eliza.link/posts/2016-05-02-kosenconflol.html</id>
+    <published>2016-05-02T00:00:00Z</published>
+    <updated>2016-05-02T00:00:00Z</updated>
+    <summary type="html"><![CDATA[高専カンファレンスに行き、ついでに野宿してきました]]></summary>
+</entry>
+
 </feed>
