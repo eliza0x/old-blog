@@ -1,7 +1,10 @@
-Here you can find all my previous posts:
-$partial("templates/post-list.html")$
+<p>Here you can find all my previous posts:</p>
 
-<div class="pagination">
+<main>
+$partial("templates/post-list.html")$
+</main>
+
+<nav class="pagination">
   $if(firstPageUrl)$
     <a href="$firstPageUrl$">&lt;&lt;&nbsp;First</a>&nbsp;
   $endif$

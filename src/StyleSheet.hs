@@ -88,6 +88,11 @@ h6
   h6 
     font-size: 1.5rem
 
+h1.title
+  position: static
+  text-align: center
+  font-weight: 200
+
 p
   margin-top: 0
 
@@ -115,6 +120,33 @@ ol ul
 li
   margin-bottom: 1rem
 
+ul.navigation
+  border-top: 1px solid #{subBackgroundColor}
+  border-bottom: 1px solid #{subBackgroundColor}
+  list-style-type: none
+  overflow: hidden
+  margin: 0
+  padding: 0
+
+ul.navigation li
+  display: block
+  text-align: left
+  text-decoration: none
+  margin: 0
+  padding-top: 10px
+  padding-bottom: 10px
+
+@media (min-width: 580px)
+  ul.navigation li
+    float: left
+
+  ul.navigation li a
+    text-align: center
+    padding-margin: 10px
+    padding-top: 10px
+    padding-left: 30px
+    padding-right: 30px
+
 hr
   margin-top: 3rem
   margin-bottom: 3.5rem
@@ -132,17 +164,14 @@ ol,
 form
   margin-bottom: 3rem
 
-.container:after
-  content: ""
-  display: table
-  clear: both
+.figure img
+  width: 100%
 
-h1.title
-  position: static
+.pagination
   text-align: center
-
-h1.title a
-  font-weight: 200
+nav.navigation
+  margin-top: 20px
+  margin-bottom: 20px
 
 div.clear
   clear: both
@@ -152,40 +181,12 @@ footer
   text-align: center
   position: static
   bottom: 0px
-  margin-top: 30px
+  padding-top: 15px
+  margin-top: 15px
   margin-bottom: 15px
 
-.figure img
-  width: 100%
-
-nav.navigation
-  margin-top: 20px
-  margin-bottom: 20px
-
-ul.navigation
-  border-top: 1px solid #{subBackgroundColor}
-  border-bottom: 1px solid #{subBackgroundColor}
-  list-style-type: none
-  overflow: hidden
-  margin: 0
-  padding: 0
-
-ul.navigation li
-  display: block
-  text-align: left
-  text-decoration: none
-  margin: 0
-  padding-top: 10px
-  padding-bottom: 10px
-
-@media (min-width: 40.0rem)
-  ul.navigation li
-    float: left
-
-  ul.navigation li a
-    text-align: center
-    padding-margin: 10px
-    padding-top: 10px
-    padding-left: 30px
-    padding-right: 30px
+.container:after
+  content: ""
+  display: table
+  clear: both
 |]

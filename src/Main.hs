@@ -47,8 +47,8 @@ main =
                     defaultContext
 
             makeItem ""
-                >>= applyTemplate flameTemplate archiveCtx
                 >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
+                >>= applyTemplate flameTemplate archiveCtx
                 >>= relativizeUrls
 
     -- Post tags
@@ -73,18 +73,6 @@ main =
           compile $ loadAllSnapshots pattern "content"
               >>= fmap (take 10) . recentFirst
               >>= renderRss (feedConfiguration $ " - " ++ title) feedCtx
-
-    -- Post list
-    create ["posts.html"] $ do
-        route idRoute
-        compile $ do
-            posts <- recentFirst =<< loadAll "posts/*"
-            let ctx = constField "title" "Posts"                       <>
-                      listField  "posts" (postCtx tags) (return posts) <>
-                      defaultContext
-            makeItem ""
-                >>= applyTemplate flameTemplate ctx
-                >>= relativizeUrls
 
     -- Render the top pages
     match ("top_pages/*.md") $ do
