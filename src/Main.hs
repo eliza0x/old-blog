@@ -16,9 +16,14 @@ main =
   in  hakyll $ do
     -- Static files
     match ("images/*.jpg" .||. "images/*.png" .||. "images/*.gif" .||.
-           "favicon.ico"  .||. "files/*" .||. "CNAME") $ do
+           "favicon.ico"  .||. "files/*" .||. "CNAME" .||. "js/*" ) $ do
         route   idRoute
         compile copyFileCompiler
+
+    -- highlight.js style sheet
+    match "css/*.css" $ do
+      route idRoute
+      compile compressCssCompiler
 
     -- Style sheet
     create ["style.css"] $ do
@@ -64,8 +69,8 @@ main =
                 defaultContext
 
         makeItem ""
-            >>= applyTemplate flameTemplate tagCtx
             >>= loadAndApplyTemplate "templates/tag.html" tagCtx
+            >>= applyTemplate flameTemplate tagCtx
             >>= relativizeUrls
 
       version "rss" $ do
