@@ -17,8 +17,7 @@ main =
       styleSheetCompiler = makeItem . compressCss $ styleSheet :: Compiler (Item String)
   in  hakyll $ do
     -- Static files
-    match ("images/*.jpg" .||. "images/*.png" .||. "images/*.gif" .||.
-           "favicon.ico"  .||. "files/*" .||. "CNAME") $ do
+    match ("images/*" .||. "files/*" .||. "CNAME") $ do
         route   idRoute
         compile copyFileCompiler
 

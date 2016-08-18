@@ -109,6 +109,10 @@ ol ul
 li
   margin-bottom: 1rem
 
+nav.navigation
+  margin-top: 20px
+  margin-bottom: 20px
+
 ul.navigation
   border-top: 1px solid #{subBackgroundColor}
   border-bottom: 1px solid #{subBackgroundColor}
@@ -125,16 +129,14 @@ ul.navigation li
   padding-top: 10px
   padding-bottom: 10px
 
-@media (min-width: 580px)
+@media (min-width: 500px)
   ul.navigation li
     float: left
 
   ul.navigation li a
     text-align: center
-    padding-margin: 10px
-    padding-top: 10px
-    padding-left: 30px
-    padding-right: 30px
+    padding-left: 15px
+    padding-right: 15px
 
 hr
   margin-top: 3rem
@@ -147,9 +149,6 @@ hr
 
 .pagination
   text-align: center
-nav.navigation
-  margin-top: 20px
-  margin-bottom: 20px
 
 div.clear
   clear: both
