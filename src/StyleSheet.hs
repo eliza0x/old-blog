@@ -11,11 +11,15 @@ render = undefined
 styleSheet :: String
 styleSheet = unpack . renderCss $ css render
 
-fontColor           = Color 56  56  56
-firstColor          = Color 255 60  0
-secondColor         = Color 180 180 180 
-backgroundColor     = Color 255 255 255
-subBackgroundColor  = Color 114 114 114
+fontColor       = Color 48  48  48
+firstColor      = Color 133 133 133 
+secondColor     = Color 180 180 180 
+backgroundColor = Color 255 255 255
+
+{- Old Style
+fontColor       = Color 56  56  56
+firstColor      = Color 255 60  0
+thirdColor      = Color 114 114 114 -}
 
 css :: a -> Css
 css = [cassius|
@@ -26,6 +30,10 @@ css = [cassius|
   margin: 0 auto
   padding: 0 20px
   box-sizing: border-box
+.container:after
+  content: ""
+  display: table
+  clear: both
 
 @media (min-width: 400px)
   .container
@@ -76,73 +84,55 @@ h6
   font-size: 1.5rem
   line-height: 1.6
   letter-spacing: 0
-
-h1.title
-  position: static
-  text-align: center
-  font-weight: 200
-
+.title
+  font-size: 6.0rem
+  letter-spacing: 2
+  margin-top: 20px
+  margin-bottom: 20px
+  color: #{fontColor}
 p
   margin-top: 0
-
 a
   color: #{firstColor}
   text-decoration: none
 a:hover
-  color: #{subBackgroundColor}
+  color: #{secondColor}
 
 ul
   list-style: circle inside
-
 ol
   list-style: decimal inside
-
 ol, ul
   padding-left: 0
   margin-top: 0
-ul ul,
-ul ol,
-ol ol,
-ol ul
-  margin: 1.5rem 0 1.5rem 3rem
-  font-size: 90%
 li
   margin-bottom: 1rem
 
-nav.navigation
-  margin-top: 20px
-  margin-bottom: 20px
-
-ul.navigation
-  border-top: 1px solid #{subBackgroundColor}
-  border-bottom: 1px solid #{subBackgroundColor}
+.navigation
+  border-top: 1px solid #{firstColor}
+  border-bottom: 1px solid #{firstColor}
   list-style-type: none
   overflow: hidden
-  margin: 0
+  margin: 20px 0px
   padding: 0
-
-ul.navigation li
-  display: block
-  text-align: left
+.navigation li
   text-decoration: none
   margin: 0
-  padding-top: 10px
-  padding-bottom: 10px
+  padding: 0
+.navigation li a
+  display: block
+  padding: 10px 0
+  margin: 0
+.navigation:after
+  clear: both
 
 @media (min-width: 500px)
   ul.navigation li
     float: left
-
+  
   ul.navigation li a
-    text-align: center
-    padding-left: 15px
-    padding-right: 15px
+    padding: 10px 15px
 
-hr
-  margin-top: 3rem
-  margin-bottom: 3.5rem
-  border-width: 0
-  border-top: 1px solid #{subBackgroundColor}
 
 .figure img
   width: 100%
@@ -150,17 +140,13 @@ hr
 .pagination
   text-align: center
 
-div.clear
-  clear: both
-
 footer
-  border-top: 1px solid #{subBackgroundColor}
+  border-top: 1px solid #{firstColor}
   text-align: center
   position: static
   bottom: 0px
   padding-top: 15px
-  margin-top: 15px
-  margin-bottom: 15px
+  margin: 15px 0px
 
 pre.sourceCode
   border-left: 2px solid #{secondColor}
@@ -171,9 +157,4 @@ blockquote
   border-left: 2px solid #{secondColor}
   margin-left: 20px
   padding-left: 20px
-
-.container:after
-  content: ""
-  display: table
-  clear: both
 |]

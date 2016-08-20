@@ -16,6 +16,7 @@ main =
   let flameTemplate = readTemplate flame :: Template
       styleSheetCompiler = makeItem . compressCss $ styleSheet :: Compiler (Item String)
   in  hakyll $ do
+
     -- Static files
     match ("images/*" .||. "files/*" .||. "CNAME") $ do
         route   idRoute
@@ -83,7 +84,9 @@ main =
     -- Render the top pages
     match ("top_pages/*.md") $ do
       route $ gsubRoute "top_pages/" (const "") `composeRoutes` setExtension "html"
-      compile $ pandocCompiler >>= relativizeUrls
+      compile $ pandocCompiler 
+        >>= applyTemplate flameTemplate (postCtx tags)
+        >>= relativizeUrls
 
     -- Render the index page
     match "top_pages/index.html" $ do
