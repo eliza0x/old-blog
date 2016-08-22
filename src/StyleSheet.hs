@@ -133,9 +133,16 @@ li
   ul.navigation li a
     padding: 10px 15px
 
-
 .figure img
   width: 100%
+
+@media (min-width: 600px)
+  .figure
+    width: 75%
+
+@media (min-width: 960px)
+  .figure
+    width: 50%
 
 .pagination
   text-align: center
