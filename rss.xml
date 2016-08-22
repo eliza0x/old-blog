@@ -32,7 +32,7 @@ ga('send', 'pageview');</script>
 
 <body class="container"><header><h1 class="header title"><a class="title" href="/">eliza.link</a>
 </h1>
-<nav class="navigation"><ul class="navigation"><li><a href="/">Home</a>
+<nav><ul class="navigation"><li><a href="/">Home</a>
 </li>
 <li><a href="/about.html">About</a>
 </li>
@@ -44,7 +44,6 @@ ga('send', 'pageview');</script>
 </li>
 </ul>
 </nav>
-<div class="clear"></div>
 </header>
 
 <main><h2>劣等感を感じる自分について</h2>
@@ -135,7 +134,7 @@ ga('send', 'pageview');</script>
 
 <body class="container"><header><h1 class="header title"><a class="title" href="/">eliza.link</a>
 </h1>
-<nav class="navigation"><ul class="navigation"><li><a href="/">Home</a>
+<nav><ul class="navigation"><li><a href="/">Home</a>
 </li>
 <li><a href="/about.html">About</a>
 </li>
@@ -147,7 +146,6 @@ ga('send', 'pageview');</script>
 </li>
 </ul>
 </nav>
-<div class="clear"></div>
 </header>
 
 <main><h2>Blink on AtTiny85</h2>
@@ -335,7 +333,7 @@ ga('send', 'pageview');</script>
 
 <body class="container"><header><h1 class="header title"><a class="title" href="/">eliza.link</a>
 </h1>
-<nav class="navigation"><ul class="navigation"><li><a href="/">Home</a>
+<nav><ul class="navigation"><li><a href="/">Home</a>
 </li>
 <li><a href="/about.html">About</a>
 </li>
@@ -347,7 +345,6 @@ ga('send', 'pageview');</script>
 </li>
 </ul>
 </nav>
-<div class="clear"></div>
 </header>
 
 <main><h2>「人はなぜ戦争をするのか」を読んだ</h2>
@@ -462,7 +459,7 @@ ga('send', 'pageview');</script>
 
 <body class="container"><header><h1 class="header title"><a class="title" href="/">eliza.link</a>
 </h1>
-<nav class="navigation"><ul class="navigation"><li><a href="/">Home</a>
+<nav><ul class="navigation"><li><a href="/">Home</a>
 </li>
 <li><a href="/about.html">About</a>
 </li>
@@ -474,7 +471,6 @@ ga('send', 'pageview');</script>
 </li>
 </ul>
 </nav>
-<div class="clear"></div>
 </header>
 
 <main><h2>「精神分析入門」を読んで</h2>
@@ -710,7 +706,7 @@ ga('send', 'pageview');</script>
 
 <body class="container"><header><h1 class="header title"><a class="title" href="/">eliza.link</a>
 </h1>
-<nav class="navigation"><ul class="navigation"><li><a href="/">Home</a>
+<nav><ul class="navigation"><li><a href="/">Home</a>
 </li>
 <li><a href="/about.html">About</a>
 </li>
@@ -722,7 +718,6 @@ ga('send', 'pageview');</script>
 </li>
 </ul>
 </nav>
-<div class="clear"></div>
 </header>
 
 <main><h2>Kosen14sとは…？</h2>
@@ -815,7 +810,7 @@ ga('send', 'pageview');</script>
 
 <body class="container"><header><h1 class="header title"><a class="title" href="/">eliza.link</a>
 </h1>
-<nav class="navigation"><ul class="navigation"><li><a href="/">Home</a>
+<nav><ul class="navigation"><li><a href="/">Home</a>
 </li>
 <li><a href="/about.html">About</a>
 </li>
@@ -827,7 +822,6 @@ ga('send', 'pageview');</script>
 </li>
 </ul>
 </nav>
-<div class="clear"></div>
 </header>
 
 <main><h2>高専カンファレンスlolに行ってきた</h2>
