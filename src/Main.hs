@@ -3,18 +3,17 @@
 module Main where
 
 import Control.Monad ((>=>))
-import Data.Monoid ((<>))
+import Data.Monoid ((<>), mempty)
 import Hakyll
+import Hakyll.Web.Hamlet
 import Text.Highlighting.Kate.Format.HTML (styleToCss)
 import Text.Highlighting.Kate.Styles (tango)
 
-import Flame (flame)
 import StyleSheet (styleSheet)
 
 main :: IO ()
 main = 
-  let flameTemplate = readTemplate flame :: Template
-      styleSheetCompiler = makeItem . compressCss $ styleSheet :: Compiler (Item String)
+  let styleSheetCompiler = makeItem . compressCss $ styleSheet :: Compiler (Item String)
   in  hakyll $ do
 
     -- Static files
@@ -54,8 +53,8 @@ main =
                     defaultContext
 
             makeItem ""
-                >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
-                >>= applyTemplate flameTemplate archiveCtx
+                >>= loadAndApplyTemplate "templates/archive.hamlet" archiveCtx
+                >>= loadAndApplyTemplate "templates/flame.hamlet" archiveCtx
                 >>= relativizeUrls
 
     -- Post tags
@@ -71,8 +70,8 @@ main =
                 defaultContext
 
         makeItem ""
-            >>= loadAndApplyTemplate "templates/tag.html" tagCtx
-            >>= applyTemplate flameTemplate tagCtx
+            >>= loadAndApplyTemplate "templates/tag.hamlet" tagCtx
+            >>= loadAndApplyTemplate "templates/flame.hamlet" tagCtx
             >>= relativizeUrls
 
       version "rss" $ do
@@ -85,7 +84,7 @@ main =
     match ("top_pages/*.md") $ do
       route $ gsubRoute "top_pages/" (const "") `composeRoutes` setExtension "html"
       compile $ pandocCompiler 
-        >>= applyTemplate flameTemplate (postCtx tags)
+        >>= loadAndApplyTemplate "templates/flame.hamlet" (postCtx tags)
         >>= relativizeUrls
 
     -- Render the index page
@@ -94,24 +93,25 @@ main =
       compile $ do
         posts <- fmap (take 4) . recentFirst =<< loadAll "posts/*"
         let indexedContext =
-                listField "posts" (postCtx tags) (return posts) `mappend`
+                listField "posts" (postCtx tags) (return posts) <>
                 defaultContext
         getResourceBody
           >>= applyAsTemplate indexedContext
-          >>= applyTemplate flameTemplate indexedContext
+          >>= loadAndApplyTemplate "templates/flame.hamlet" (postCtx tags)
           >>= relativizeUrls
 
     -- Render the articles
     match "posts/*" $ do
         route $ setExtension "html"
         compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/article.html" (postCtx tags)
-            >>= applyTemplate flameTemplate (postCtx tags)
+            >>= loadAndApplyTemplate "templates/article.hamlet" (postCtx tags)
+            >>= loadAndApplyTemplate "templates/flame.hamlet" (postCtx tags)
             >>= saveSnapshot "content"
             >>= relativizeUrls
 
     -- Build templates
-    match "templates/*" $ compile templateCompiler
+    -- match "templates/*.hamlet" $ compile templateCompiler
+    match "templates/*.hamlet" $ compile hamlTemplateCompiler
     
     -- Render RSS feed
     create ["rss.xml"] $ do
@@ -120,16 +120,6 @@ main =
         loadAllSnapshots "posts/*" "content"
           >>= fmap (take 10) . recentFirst
           >>= renderRss (feedConfiguration "All posts") feedCtx
-
-    -- Build Atop Feed
-    create ["atom.xml"] $ do
-        route   idRoute
-        compile $ do
-            let feedCtx =
-                    postCtx tags `mappend`
-                    bodyField "description"
-            posts <- fmap (take 10) . recentFirst =<< loadAllSnapshots "posts/*" "content"
-            renderAtom (feedConfiguration "")feedCtx posts
 
 postCtx :: Tags -> Context String
 postCtx tags =

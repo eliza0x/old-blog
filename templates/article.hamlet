@@ -1,18 +1,15 @@
-<h2>$title$</h2>
+<h2>$title$
+<p>Posted on $date$
+\$if(author)$
+  <p>by $author$
+\$endif$
 
-<p>Posted on $date$</p>
-
-$if(author)$
-  <p>by $author$</p>
-$endif$
-
-$if(tags)$
-  <p>Tags: $tags$</p>
-$endif$
+\$if(tags)$
+  <p>Tags: $tags$
+\$endif$
 
 <article>
-  $body$
-</article>
+  \$body$
 
 <div id="disqus_thread">
   <script type="text/javascript">
@@ -28,8 +25,6 @@ $endif$
       dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
-  </script>
   <noscript>
-    Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
-  </noscript>
-</div id="disqus_thread">
+    Please enable JavaScript to view the 
+      <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.

@@ -15,12 +15,11 @@ cabal-version:       >=1.10
 executable site
   hs-source-dirs:      src
   main-is:             Main.hs
-  other-modules:       Flame
-                     , StyleSheet
+  other-modules:       StyleSheet
   default-language:    Haskell2010
   build-depends:       base >= 4.7 && < 5
                      , shakespeare
                      , hakyll
-                     , blaze-html
+                     , hakyll-shakespeare
                      , text
                      , highlighting-kate
