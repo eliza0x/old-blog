@@ -23,3 +23,4 @@ executable site
                      , hakyll-shakespeare
                      , text
                      , highlighting-kate
+                     , clay

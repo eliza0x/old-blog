@@ -47,9 +47,9 @@ main =
         compile $ do
             posts <- recentFirst =<< loadAll pattern
             let archiveCtx =
-                    constField "title" "Archives"                   `mappend`
-                    listField "posts" (postCtx tags) (return posts) `mappend`
-                    paginateContext archive pageNum                 `mappend`
+                    constField "title" "Archives"                   <>
+                    listField "posts" (postCtx tags) (return posts) <>
+                    paginateContext archive pageNum                 <>
                     defaultContext
             makeItem ""
                 >>= loadAndApplyTemplate "templates/archive.hamlet" archiveCtx
@@ -64,8 +64,8 @@ main =
       compile $ do
         posts <- recentFirst =<< loadAll pattern
         let tagCtx =
-                constField "title" title `mappend`
-                listField "posts" (postCtx tags) (return posts) `mappend`
+                constField "title" title                        <>
+                listField "posts" (postCtx tags) (return posts) <>
                 defaultContext
         makeItem ""
             >>= loadAndApplyTemplate "templates/tag.hamlet" tagCtx

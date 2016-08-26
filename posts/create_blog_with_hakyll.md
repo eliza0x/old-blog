@@ -80,7 +80,7 @@ xml, xorg, xslt, xul, yacc, yaml, zsh
 
 ## Shakespearean Templates
 
-いくら記事のHTMLを自動生成してくれるからといって、デザインは自分で行わないといけません。しかし、HTMLやCSSを生で書きたくない。始めはSass(CSSのめっちゃすごいやつ)とJade(Htmlのめっちゃすごいやつ)をつかおうと思っていたのですが、折角ならPure Haskellでブログを作ってみようと思い、Yesod Frameworkで使用されているShakespeareを使ってみようと思いました。
+いくら記事のHTMLを自動生成してくれるからといって、デザインは自分で行わないといけません。しかし、HTMLやCSSを生で書きたくない。始めはSass(CSSのめっちゃすごいやつ)とJade(Htmlのめっちゃすごいやつ)をつかおうと思っていたのですが、折角ならPure Haskellでブログを作ってみようと思い、Yesod Frameworkで使用されているShakespeareを使ってみました。
 
 Shakespearean Templatesはテンプレート言語です、数あるテンプレート言語の中でこの言語が優れている点はHaskellとの連携が容易な点です。シームレスにHaskellの関数が呼び出せたりします。
 
