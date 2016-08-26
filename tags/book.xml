@@ -10,7 +10,7 @@
         <lastBuildDate>Fri, 01 Jul 2016 00:00:00 UT</lastBuildDate>
         <item>
     <title>「人はなぜ戦争をするのか」を読んだ</title>
-    <link>https://eliza.link/posts/2016-07-01-why_war_summary.html</link>
+    <link>https://eliza.link/posts/why_war_summary.html</link>
     <description><![CDATA[<!DOCTYPE html>
 <html lang="ja"><head>
 <meta charset="utf-8">
@@ -92,11 +92,13 @@ ga('send', 'pageview');</script>
 <p>今回は、リビドーとデストルドーの説明を簡単にするために少し文章に無理が出てしまいました。どうか楽しめたことを祈っています。</p>
 <p>私も平和であるほうが良いとは思っているのですが、何故かと聞かれると困ってしまうような気がします。生理的に戦争が無理というのは斬新ですね。</p>
 <p>いずれ、リビドーとデストルドーについても記事を書きたいと思っています。</p></article>
+<p>Tags: <a href="/tags/book.html">book</a>, <a href="/tags/kosen14s.html">kosen14s</a></p>
+
 <div id="disqus_thread"><script type="text/javascript">/* * * CONFIGURATION VARIABLES * * */
 var disqus_shortname = 'eliza0x';
-var disqus_identifier = "/posts/2016-07-01-why_war_summary.html";
+var disqus_identifier = "/posts/why_war_summary.html";
 var disqus_title = "「人はなぜ戦争をするのか」を読んだ";
-var disqus_url = "https://eliza.link/posts/2016-07-01-why_war_summary.html";
+var disqus_url = "https://eliza.link/posts/why_war_summary.html";
 /* * * DON'T EDIT BELOW THIS LINE * * */
 (function() {var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
@@ -116,12 +118,12 @@ The source code of this website is available at
 </html>
 ]]></description>
     <pubDate>Fri, 01 Jul 2016 00:00:00 UT</pubDate>
-    <guid>https://eliza.link/posts/2016-07-01-why_war_summary.html</guid>
+    <guid>https://eliza.link/posts/why_war_summary.html</guid>
     <dc:creator>Eliza Calls</dc:creator>
 </item>
 <item>
     <title>「精神分析入門」を読んで</title>
-    <link>https://eliza.link/posts/2016-06-12-Introductory_Psychoanalysis.html</link>
+    <link>https://eliza.link/posts/Introductory_Psychoanalysis.html</link>
     <description><![CDATA[<!DOCTYPE html>
 <html lang="ja"><head>
 <meta charset="utf-8">
@@ -324,11 +326,13 @@ ga('send', 'pageview');</script>
 <p>わたしの専門科目を担当している某教師は、授業中、しばしば基礎的なある単語をほかの単語と取り違え、少ししてから自分で気づき訂正します。</p>
 <p>なにか葛藤があるんでしょうか、気になるところです、本人に聞いてみましょうか。</p>
 <p>さて、手元にはおもしろそうな本はまだ山のように積まれています。何から手をつけよう。</p></article>
+<p>Tags: <a href="/tags/book.html">book</a>, <a href="/tags/kosen14s.html">kosen14s</a></p>
+
 <div id="disqus_thread"><script type="text/javascript">/* * * CONFIGURATION VARIABLES * * */
 var disqus_shortname = 'eliza0x';
-var disqus_identifier = "/posts/2016-06-12-Introductory_Psychoanalysis.html";
+var disqus_identifier = "/posts/Introductory_Psychoanalysis.html";
 var disqus_title = "「精神分析入門」を読んで";
-var disqus_url = "https://eliza.link/posts/2016-06-12-Introductory_Psychoanalysis.html";
+var disqus_url = "https://eliza.link/posts/Introductory_Psychoanalysis.html";
 /* * * DON'T EDIT BELOW THIS LINE * * */
 (function() {var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
@@ -348,7 +352,7 @@ The source code of this website is available at
 </html>
 ]]></description>
     <pubDate>Sun, 12 Jun 2016 00:00:00 UT</pubDate>
-    <guid>https://eliza.link/posts/2016-06-12-Introductory_Psychoanalysis.html</guid>
+    <guid>https://eliza.link/posts/Introductory_Psychoanalysis.html</guid>
     <dc:creator>Eliza Calls</dc:creator>
 </item>
 
