@@ -99,7 +99,7 @@ xml, xorg, xslt, xul, yacc, yaml, zsh</code></pre>
 <p>とりあえずImokuri氏のブログを読んでなんとなく摑んでから、作者のプログラムでも読めばいいんじゃないかと思います。</p>
 <p>また、Markdownは知ってるよ、という人でも<a href="http://sky-y.github.io/site-pandoc-jp/users-guide/">Pandocのユーザーズガイド</a>は読んでおいたほうが良いと思います。Pandocならではの拡張が非常に便利なので、これを使わない手は無いです。</p>
 <h2 id="shakespearean-templates">Shakespearean Templates</h2>
-<p>いくら記事のHTMLを自動生成してくれるからといって、デザインは自分で行わないといけません。しかし、HTMLやCSSを生で書きたくない。始めはSass(CSSのめっちゃすごいやつ)とJade(Htmlのめっちゃすごいやつ)をつかおうと思っていたのですが、折角ならPure Haskellでブログを作ってみようと思い、Yesod Frameworkで使用されているShakespeareを使ってみようと思いました。</p>
+<p>いくら記事のHTMLを自動生成してくれるからといって、デザインは自分で行わないといけません。しかし、HTMLやCSSを生で書きたくない。始めはSass(CSSのめっちゃすごいやつ)とJade(Htmlのめっちゃすごいやつ)をつかおうと思っていたのですが、折角ならPure Haskellでブログを作ってみようと思い、Yesod Frameworkで使用されているShakespeareを使ってみました。</p>
 <p>Shakespearean Templatesはテンプレート言語です、数あるテンプレート言語の中でこの言語が優れている点はHaskellとの連携が容易な点です。シームレスにHaskellの関数が呼び出せたりします。</p>
 <blockquote>
 <p>Shakespearean Templatesとは、Webコンテンツを構成するテキストをHaskell/Yesodで生成する、下記のテンプレート言語群のことです。</p>
