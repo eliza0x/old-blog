@@ -1,6 +1,7 @@
 ----
 title: 「人はなぜ戦争をするのか」を読んだ
 description: 「人はなぜ戦争をするのか」を読みました
+date: 2016-07-01
 tags: book, kosen14s
 ----
 

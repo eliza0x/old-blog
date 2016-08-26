@@ -1,6 +1,7 @@
 ---
 title: Blink on AtTiny85
 description: AtTiny85にPlatformIOとFT232Rを使って書き込んだ際の記録
+date: 2016-08-08
 tags: program, microprocessor, arduino
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: 高専カンファレンスlolに行ってきた
 description: 高専カンファレンスに行き、ついでに野宿してきました
+date: 2016-05-02
 tag: camp, event, kosen14s
 ---
 

@@ -11,6 +11,11 @@
 <article>
   \$body$
 
+\$if(tags)$
+  <p>Tags: $tags$
+\$endif$
+
+
 <div id="disqus_thread">
   <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */

@@ -1,6 +1,7 @@
 ---
 title: Kosen14sとは…？
 description: Kosen14sについて
+date: 2016-05-04
 tags: kosen14s
 ---
 

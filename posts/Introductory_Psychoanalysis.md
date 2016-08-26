@@ -1,6 +1,7 @@
 ---
 title: 「精神分析入門」を読んで
 description: 「精神分析入門」を読みました
+date: 2016-06-12
 tags: book, kosen14s
 ---
 
