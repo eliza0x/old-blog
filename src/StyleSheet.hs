@@ -164,4 +164,12 @@ blockquote
   border-left: 2px solid #{secondColor}
   margin-left: 20px
   padding-left: 20px
+
+.footnotes
+  margin-top: 20px
+  margin-bottom: 10px
+
+
+.footnotes hr
+  border-top: 1px solid #{firstColor}
 |]
