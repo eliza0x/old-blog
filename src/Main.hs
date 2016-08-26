@@ -51,7 +51,6 @@ main =
                     listField "posts" (postCtx tags) (return posts) `mappend`
                     paginateContext archive pageNum                 `mappend`
                     defaultContext
-
             makeItem ""
                 >>= loadAndApplyTemplate "templates/archive.hamlet" archiveCtx
                 >>= loadAndApplyTemplate "templates/flame.hamlet" archiveCtx
@@ -68,12 +67,10 @@ main =
                 constField "title" title `mappend`
                 listField "posts" (postCtx tags) (return posts) `mappend`
                 defaultContext
-
         makeItem ""
             >>= loadAndApplyTemplate "templates/tag.hamlet" tagCtx
             >>= loadAndApplyTemplate "templates/flame.hamlet" tagCtx
             >>= relativizeUrls
-
       version "rss" $ do
           route   $ setExtension "xml"
           compile $ loadAllSnapshots pattern "content"
@@ -88,14 +85,14 @@ main =
         >>= relativizeUrls
 
     -- Render the index page
-    match "top_pages/index.html" $ do
+    match "top_pages/index.hamlet" $ do
       route $ gsubRoute "top_pages/" (const "") `composeRoutes` setExtension "html"
       compile $ do
         posts <- fmap (take 4) . recentFirst =<< loadAll "posts/*"
         let indexedContext =
                 listField "posts" (postCtx tags) (return posts) <>
                 defaultContext
-        getResourceBody
+        hamlCompiler
           >>= applyAsTemplate indexedContext
           >>= loadAndApplyTemplate "templates/flame.hamlet" (postCtx tags)
           >>= relativizeUrls
@@ -110,9 +107,8 @@ main =
             >>= relativizeUrls
 
     -- Build templates
-    -- match "templates/*.hamlet" $ compile templateCompiler
     match "templates/*.hamlet" $ compile hamlTemplateCompiler
-    
+
     -- Render RSS feed
     create ["rss.xml"] $ do
       route idRoute
