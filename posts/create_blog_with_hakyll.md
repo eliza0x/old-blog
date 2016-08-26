@@ -108,15 +108,21 @@ CSSはCassiusを利用して[Skeleton](http://getskeleton.com/)や[Milligram](ht
 
 Pandocは自動でタグは付けてくれるので、専用のCSSを準備しましょう。[Imokuriさんのこのページ](https://imokuri123.com/blog/2015/12/how-to-create-blog-with-hakyll-part4.html)に詳しく載っています。もしくは[私の書いたソースコード](https://github.com/eliza0x/eliza0x.github.io)でも読むと良いでしょう。
 
+## コメントフォーム
+
+私の記事について質問があった時などに、メールを送ったりするのはハードルが高いかなと思ったので、コメンドフォームをDISQUSで設けました。はじめは自分で作る気でいたのですが、 ~~面倒だった~~ スパムコメントなどが怖かったのでアウトソーシングしました。デザインも可愛く気に入っています。
+
+公式サイトの指示どおりにすると動かなかったので、[tanakh氏のブログ](tanakh.jp)のソースコードを参考にさせて頂きました。
+
 ## 終わりに
 
 HakyllはMonadでうまいこと面倒な部分を隠してくれていて非常に使いやすかったです。ああやって使うんですね、モナド。型クラスの恩恵は計り知れないですね。設定がMonoidのインスタンスになっていて `<>` で簡単に追加できるの、アレ良いですね。
 
 もうすこしCassius(CSS)を書かないとまだまだ粗が目立ちますね。ブログを作るのも結構大変だ…
 
-このページのソースコードは[ここ](https://github.com/eliza0x/eliza0x.github.io)に公開しています。
+このサイトはGihub Pagesにて公開してあります。Github PagesはGitの使い方を知らないと利用するのは難しいかもしれないです。
 
-また、このサイトはGihub Pagesにて公開してあります。Github PagesはGitの使い方を知らないと利用するのは難しいかもしれないです。
+このブログのソースコードは[ここ](https://github.com/eliza0x/eliza0x.github.io)に公開しています。
 
 #### 紹介できなかったサイト
 
