@@ -169,7 +169,7 @@ aboutCss = do
   
   "pre.sourceCode" ? do
     borderLeft solid (px 2) secondColor
-    lineHeight (rem 2.0)
+    lineHeight (rem 2.2)
     marginLeft  (px 10)
     paddingLeft (px 20)
     paddingTop (px 10)
