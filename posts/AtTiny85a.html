@@ -17,7 +17,7 @@ ga('create', 'UA-77388062-1', 'auto');
 ga('send', 'pageview');</script>
 </head>
 
-<body class="container"><header><h1 class="header title"><a class="title" href="../">eliza.link</a>
+<body class="container"><header><h1 class="title"><a class="title" href="../">eliza.link</a>
 </h1>
 <nav><ul class="navigation"><li><a href="../">Home</a>
 </li>
@@ -41,26 +41,7 @@ ga('send', 'pageview');</script>
 <article><p>以前からArduinoやESP8266を使ってなにやら怪しいこと(おもにコンデンサを爆発させていた)をしていたのですが、<a href="https://twitter.com/mc475_46">もは氏/mc475_46</a>の勧めもあってついにAVRマイコンに手を出してみました。後悔するのは後になってからでも構わないでしょう。</p>
 <p>PlatformIOでFT232RLを使ってAtTiny85(AVR)に書き込んでいる記事なネットでみつけられなくて苦労したのでこの記事を書きました。</p>
 <h2 id="tldr">TL;DR</h2>
-<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">void</span> setup(){
-  pinMode(<span class="dv">1</span>, OUTPUT);
-}
-
-<span class="dt">void</span> loop(){
-  digitalWrite(<span class="dv">1</span> , HIGH);
-  delay(<span class="dv">1000</span>);
-  digitalWrite(<span class="dv">1</span> , LOW); 
-  delay(<span class="dv">1000</span>);
-}</code></pre></div>
-<p>./src/main.ino</p>
-<div class="sourceCode"><pre class="sourceCode ini"><code class="sourceCode ini"><span class="kw">[env:attiny85]</span>
-<span class="dt">platform </span><span class="ot">=</span><span class="st"> atmelavr</span>
-<span class="dt">framework </span><span class="ot">=</span><span class="st"> arduino</span>
-<span class="dt">board </span><span class="ot">=</span><span class="st"> attiny85</span>
-<span class="dt">upload_protocol </span><span class="ot">=</span><span class="st"> diecimila</span>
-<span class="dt">upload_flags </span><span class="ot">=</span><span class="st"> -v -F -e -p t85 -B9600</span>
-<span class="dt">board_f_cpu </span><span class="ot">=</span><span class="st"> 1000000L</span>
-<span class="co"># upload_port = /dev/ttyUSB0</span></code></pre></div>
-<p>./platformio.ini</p>
+<p><a href="#プログラムを書き込む">ここ</a>のプログラムを参照して</p>
 <p>結線後に<code>./src/main.ino</code>と<code>./platformio.ini</code>にファイルを配置して<code>platformio run -t upload</code>すればOK。</p>
 <h2 id="長い文章を読める人類向け">長い文章を読める人類向け</h2>
 <p>回路図も作ってがんばって記事を書くつもりでしたが、Fritzing(可愛い回路図をつくれるソフト)のビルドが目の前でSegmentation faultを投げてから心が終わってしまったのでそれほど長い記事にはならない筈です。</p>

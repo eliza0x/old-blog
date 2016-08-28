@@ -30,7 +30,7 @@ ga('create', 'UA-77388062-1', 'auto');
 ga('send', 'pageview');</script>
 </head>
 
-<body class="container"><header><h1 class="header title"><a class="title" href="/">eliza.link</a>
+<body class="container"><header><h1 class="title"><a class="title" href="/">eliza.link</a>
 </h1>
 <nav><ul class="navigation"><li><a href="/">Home</a>
 </li>
@@ -143,7 +143,7 @@ ga('create', 'UA-77388062-1', 'auto');
 ga('send', 'pageview');</script>
 </head>
 
-<body class="container"><header><h1 class="header title"><a class="title" href="/">eliza.link</a>
+<body class="container"><header><h1 class="title"><a class="title" href="/">eliza.link</a>
 </h1>
 <nav><ul class="navigation"><li><a href="/">Home</a>
 </li>
