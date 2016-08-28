@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>eliza.link - Posts tagged hakyll</title>
+        <link>https://eliza.link</link>
+        <description><![CDATA[技術や読書録を残します]]></description>
+        <atom:link href="https://eliza.link/tags/hakyll.xml" rel="self"
+                   type="application/rss+xml" />
+        <lastBuildDate>Sat, 27 Aug 2016 00:00:00 UT</lastBuildDate>
+        <item>
+    <title>Haskellでブログを作った</title>
+    <link>https://eliza.link/posts/create_blog_with_hakyll.html</link>
+    <description><![CDATA[<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<title>eliza.link | Haskellでブログを作った</title>
+<meta name="author" content="@Eliza_0x">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sanitize.css/2.0.0/sanitize.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&subset=latin-ext">
+<link rel="stylesheet" href="/css/highlight.css">
+<link rel="stylesheet" href="/css/style.css">
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-77388062-1', 'auto');
+ga('send', 'pageview');</script>
+</head>
+
+<body class="container"><header><h1 class="title"><a class="title" href="/">eliza.link</a>
+</h1>
+<nav><ul class="navigation"><li><a href="/">Home</a>
+</li>
+<li><a href="/about.html">About</a>
+</li>
+<li><a href="/archive.html">Archive</a>
+</li>
+<li><a href="/products.html">Products</a>
+</li>
+<li><a href="/contact.html">Contact</a>
+</li>
+</ul>
+</nav>
+</header>
+
+<main><h2>Haskellでブログを作った</h2>
+<p>Posted on August 27, 2016</p>
+
+<p>Tags: <a href="/tags/haskell.html">haskell</a>, <a href="/tags/program.html">program</a>, <a href="/tags/hakyll.html">hakyll</a>, <a href="/tags/blog.html">blog</a></p>
+
+<article><blockquote>
+<p>世の中には手段の為ならば目的を選ばないという様な どうしようもない連中も確実に存在するのだ<br />
+つまりは<br />
+とどのつまりは 我々のような</p>
+</blockquote>
+<p>以前からはてなブログなどで記事は書いていたんですが、どうしてもモチベーションも保てず、なんだか嫌になってブログを削除した黒歴史があります。 しかし、やっぱり記事は書くべき時が来ますし、せっかくブログを作るならもっと自由にカスタマイズできる環境であればより楽しいんじゃないかと思ったので、HakyllとShakespeare、そしてClayで私の好きなHaskellを使いブログを作りました。</p>
+<p>このページのソースコードは<a href="https://github.com/eliza0x/eliza0x.github.io">ここ</a>に公開しています。</p>
+<h2 id="hakyllでウェブサイトの生成">Hakyllでウェブサイトの生成</h2>
+<p>HTMLやCSS, JavaScriptなど、手元で完結するようなウェブサイトの事を静的サイトと言うようです(間違っていたらごめんなさい)、そんな静的なサイトをうまいこと生成してくれるプログラムがそれはそれは沢山ある <a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> のですが、その中から私はHaskellでブログを作りたかったのでHakyllを選択しました。</p>
+<p><a href="https://jaspervdj.be/hakyll/">Hakyllの公式サイト</a></p>
+<p>公式ページによると小〜中規模のサイト向けだそうです、使ってみてブログ以外でも割と使えるんじゃないかと思いました。</p>
+<h2 id="とりあえず記事は楽して書きたい">とりあえず記事は楽して書きたい</h2>
+<p><a href="http://pandoc.org/">Pandoc</a>を知っていますか？MarkdownやreStructuredText(reSTの呼称のほうが一般的？)などで書かれたドキュメントをHTMLやTeX, 果てはWord docs形式に変換してくれる便利なソフトウェアです。</p>
+<p>HakyllはPandocを容易に利用することが出来るよう設計されているので、記事をMarkdownやreSTで書く事が出来ます。便利ですね。</p>
+<p>また、Pandocの機能で数式や脚注を埋め込めます。具体的に何が出来るかや、どんなフォーマットに対応しているかは、有志によるPandocのユーザーズガイドを参照すれば良いと思います。</p>
+<p><a href="http://sky-y.github.io/site-pandoc-jp/users-guide/">Pandocのユーザーズガイド(和訳版)</a></p>
+<p>私の手元のPandoc(version 1.17.1)は以下のフォーマットに対応していました。</p>
+<pre><code>Input formats:
+commonmark, docbook, docx, epub, haddock, html, json*, latex,
+markdown, markdown_github, markdown_mmd, markdown_phpextra,
+markdown_strict, mediawiki, native, odt, opml, org, rst, t2t,
+textile, twiki
+[ *only Pandoc&#39;s JSON version of native AST]
+
+Output formats: 
+asciidoc, beamer, commonmark, context, docbook, docbook5, docx,
+dokuwiki, dzslides, epub, epub3, fb2, haddock, html, html5,
+icml, json*, latex, man, markdown, markdown_github,
+markdown_mmd, markdown_phpextra, markdown_strict, mediawiki,
+native, odt, opendocument, opml, org, pdf**, plain, revealjs,
+rst, rtf, s5, slideous, slidy, tei, texinfo, textile
+[**for pdf output, use latex or beamer and -o FILENAME.pdf]</code></pre>
+<p>ちなみにCSSさえ準備してしまえば、version1.17.1の場合以下の言語のシンタックスハイライトにも対応しています。この話は後でもうすこし書きます。</p>
+<pre><code>Syntax highlighting is supported for the following languages:
+abc, actionscript, ada, agda, apache, asn1, asp, awk, bash, bibtex, boo, c,
+changelog, clojure, cmake, coffee, coldfusion, commonlisp, cpp, cs, css,
+curry, d, diff, djangotemplate, dockerfile, dot, doxygen, doxygenlua, dtd,
+eiffel, elixir, email, erlang, fasm, fortran, fsharp, gcc, glsl,
+gnuassembler, go, hamlet, haskell, haxe, html, idris, ini, isocpp, java,
+javadoc, javascript, json, jsp, julia, kotlin, latex, lex, lilypond,
+literatecurry, literatehaskell, llvm, lua, m4, makefile, mandoc, markdown,
+mathematica, matlab, maxima, mediawiki, metafont, mips, modelines, modula2,
+modula3, monobasic, nasm, noweb, objectivec, objectivecpp, ocaml, octave,
+opencl, pascal, perl, php, pike, postscript, prolog, pure, python, r,
+relaxng, relaxngcompact, rest, rhtml, roff, ruby, rust, scala, scheme, sci,
+sed, sgml, sql, sqlmysql, sqlpostgresql, tcl, tcsh, texinfo, verilog, vhdl,
+xml, xorg, xslt, xul, yacc, yaml, zsh</code></pre>
+<p>聞いた事の無いようなものまで混じってしますね。</p>
+<p>HakyllではこんなコードでPandocを呼び出し、ページを生成できます、実際このコードが動くかは知りません。</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">compile <span class="fu">$</span> pandocCompiler 
+  <span class="fu">&gt;&gt;=</span> loadAndApplyTemplate <span class="st">&quot;templates/flame.hamlet&quot;</span> postCtx
+  <span class="fu">&gt;&gt;=</span> relativizeUrls</code></pre></div>
+<h2 id="shakespearean-templates">Shakespearean Templates</h2>
+<p>いくら記事のHTMLを自動生成してくれるからといって、デザインは自分で行わないといけません。しかし、HTMLやCSSを生で書きたくない。始めはSass(CSSのめっちゃすごいやつ)とJade(Htmlのめっちゃすごいやつ)をつかおうと思っていたのですが、折角ならPure Haskellでブログを作ってみようと思い、Yesod Frameworkで使用されているShakespeareを使ってみました。</p>
+<p>Shakespearean Templatesはテンプレート言語です、数あるテンプレート言語の中でこの言語が優れている点はHaskellとの連携が容易な点です。シームレスにHaskellの関数が呼び出せたりごにょごにょ。</p>
+<blockquote>
+<p>Shakespearean Templatesとは、Webコンテンツを構成するテキストをHaskell/Yesodで生成する、下記のテンプレート言語群のことです。</p>
+<ul>
+<li>Hamlet(HTML)</li>
+<li>Julius(JavaScript)</li>
+<li>Cassius(CSS)</li>
+<li>Lucius(CSS)</li>
+</ul>
+<p><a href="https://sites.google.com/site/toriaezuzakki/haskell/yesod/shakespearean-templates" class="uri">https://sites.google.com/site/toriaezuzakki/haskell/yesod/shakespearean-templates</a></p>
+</blockquote>
+<p>詳しく知りたければ<a href="http://www.yesodweb.com/book/shakespearean-templates">このチュートリアル</a>でも読めば良いんじゃないでしょうか。</p>
+<p>HakyllとHamletの連携が面倒だったのでライブラリを書きました、よければ使ってください。<br />
+<a href="https://github.com/eliza0x/hakyll-shakespeare" class="uri">https://github.com/eliza0x/hakyll-shakespeare</a></p>
+<p>こんなふうに使えます。</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">match <span class="st">&quot;templates/*.hamlet&quot;</span> <span class="fu">$</span> compile hamlTemplateCompiler</code></pre></div>
+<h2 id="clay射撃">Clay射撃</h2>
+<p><del>CSSはCassiusを利用して<a href="http://getskeleton.com/">Skeleton</a>や<a href="https://milligram.github.io/">Milligram</a>を参考にしつつもがんばって一から書きました。</del></p>
+<p>ClayというモナドベースのCSSプリプロセッサーがHakyll公式で推されていたので使ってみると予想以上に面白かったので、一度Cassiusで書いたCSSをClayで書き換えました。良いですよ、Clay。</p>
+<p>HTMLもこういったライブラリで生成したいのは山々なんですが、Hakyllの柵 <a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> で面倒くさそうです。</p>
+<p>出来るだけシンプルにしようと心掛けて作ったのですが、<a href="yamasy.info">やましー</a>の言葉を借りるとお葬式みたいな配色になってしまいました。まあまあ気にいっていますが。</p>
+<p>こんなコードです、動くかは知りません。</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">main <span class="fu">=</span> putCss css
+
+<span class="ot">fontColor ::</span> <span class="dt">Color</span>
+fontColor <span class="fu">=</span> <span class="st">&quot;#303030&quot;</span>
+
+<span class="ot">css ::</span> <span class="dt">Css</span>
+css <span class="fu">=</span> <span class="kw">do</span>
+  html <span class="fu">?</span> fontSize (pct <span class="fl">62.5</span>)
+  p <span class="fu">?</span> <span class="kw">do</span>
+    marginTop nil
+    marginBottom (rem <span class="fl">3.0</span>)
+  a <span class="fu">?</span> <span class="kw">do</span>
+    textDecoration none
+  a <span class="fu">#</span> hover <span class="fu">?</span> color secondColor</code></pre></div>
+<p>公式サイトです、チュートリアルやサンプルコードもここにあります。</p>
+<p><a href="http://fvisser.nl/clay/" class="uri">http://fvisser.nl/clay/</a></p>
+<h2 id="コーディング">コーディング</h2>
+<p>私は<a href="https://github.com/jaspervdj/jaspervdj">作者の公開されているソースコード</a>や、<a href="http://tanakh.jp/posts/2011-11-05-haskell-infra.html">tanakhさんのブログ</a>,それと<a href="https://imokuri123.com/blog/2015/12/how-to-create-blog-with-hakyll-part1.html">Imokuri氏のブログ</a>を参考にさせていただきました。もちろん<a href="https://hackage.haskell.org/package/hakyll-4.8.3.2">HakyllのHackage</a>もです、ありがとうございます。</p>
+<p>とりあえずImokuri氏のブログを読んでなんとなく摑んでから、作者のプログラムでも読めばいいんじゃないかと思います。</p>
+<p>またブログを始める際、Markdownは知ってるよ、という人でも<a href="http://sky-y.github.io/site-pandoc-jp/users-guide/">Pandocのユーザーズガイド</a>は読んでおいたほうが良いと思います。Pandocならではの拡張が非常に便利なので、これを使わない手は無いです。</p>
+<h2 id="シンタックスハイライト">シンタックスハイライト</h2>
+<p>ブログのソースコードはハイライトして欲しいです。以前nanoでプログラムのデバッグをしたとき死ぬかと思いました。</p>
+<p>始めはhighlihgt.jsでも使おうかなあなんて思っていたんですが、Pandocはシンタックスハイライトをしてくれるそうなので、染色の為に専用のCSSを準備しましょう。<a href="https://imokuri123.com/blog/2015/12/how-to-create-blog-with-hakyll-part4.html">Imokuriさんのこのページ</a>に詳しく載っています。もしくは<a href="https://github.com/eliza0x/eliza0x.github.io">私の書いたソースコード</a>でも読むと良いでしょう。</p>
+<p>こんなコードです、動くかは知りません。</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">main <span class="fu">=</span> hakyll <span class="fu">$</span> <span class="kw">do</span>
+  create [<span class="st">&quot;css/highlight.css&quot;</span>] <span class="fu">$</span> <span class="kw">do</span>
+    route   idRoute
+    compile <span class="fu">$</span> makeItem (compressCss <span class="fu">$</span> styleToCss tango)</code></pre></div>
+<h2 id="コメントフォーム">コメントフォーム</h2>
+<p>私の記事について質問があった時などに、メールを送ったりするのはハードルが高いかなと思ったので、コメンドフォームをDISQUSで設けました。はじめは自分で作る気でいたのですが、 <del>面倒だった</del> スパムコメントなどが怖かったのでアウトソーシングしました。デザインも可愛く気に入っています。</p>
+<p>公式サイトの指示どおりにすると動かなかったので、<a href="tanakh.jp">tanakh氏のブログ</a>のソースコードを参考にさせて頂きました。</p>
+<p><a href="https://disqus.com/">DISQUS</a></p>
+<h2 id="終わりに">終わりに</h2>
+<p>HakyllはMonadでうまいこと面倒な部分を隠してくれていて非常に使いやすかったです。ああやって使うんですね、モナド。型クラスの恩恵は計り知れないですね。設定がMonoidのインスタンスになっていて <code>&lt;&gt;</code> で簡単に追加できるの、アレ良いですね。</p>
+<p>もうすこしCSSを書かないとまだまだ粗が目立ちますね。ブログを作るのも結構大変だ…</p>
+<p>このサイトはGihub Pagesにて公開してあります。Github PagesはGitの使い方を知らないと利用するのは難しいかもしれないです。</p>
+<p>このブログのソースコードは<a href="https://github.com/eliza0x/eliza0x.github.io">ここ</a>に公開しています。</p>
+<h4 id="紹介できなかったサイト">紹介できなかったサイト</h4>
+<ul>
+<li><a href="http://qiita.com/mikakane/items/87c8f676815da4e5ac04">Github Pagesの使い方</a></li>
+<li><a href="http://qiita.com/tiwu_official/items/d7fb6c493ed5eb9ee4fc">GitHub Pagesで静的なサイトを公開し、独自ドメインを設定する</a></li>
+<li><a href="http://qiita.com/superbrothers/items/95e5723e9bd320094537">カスタムドメインの GitHub Pages で HTTPS を使う</a></li>
+</ul>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p><a href="https://www.staticgen.com/">StaticGen</a> というサイトにまとまっています。静的サイトジェネレータのうちで有名なものといえばPelican(Python), Jekyll(Ruby), GitBook(JavaScript), Hugo(Go)などがあるでしょうか。おもしろそうなものでは、Lispで書かれたColeslawなんてものもあるそうです。<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>テンプレートの呼び出しのあたり<a href="#fnref2">↩</a></p></li>
+</ol>
+</div></article>
+<p>Tags: <a href="/tags/haskell.html">haskell</a>, <a href="/tags/program.html">program</a>, <a href="/tags/hakyll.html">hakyll</a>, <a href="/tags/blog.html">blog</a></p>
+
+<div id="disqus_thread"><script type="text/javascript">/* * * CONFIGURATION VARIABLES * * */
+var disqus_shortname = 'eliza0x';
+var disqus_identifier = "/posts/create_blog_with_hakyll.html";
+var disqus_title = "Haskellでブログを作った";
+var disqus_url = "https://eliza.link/posts/create_blog_with_hakyll.html";
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);})();</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+</div>
+</main>
+
+<footer>Site generated by <a href="http://jaspervdj.be/hakyll">Hakyll<br /></a>
+hosted on 
+<a href="https://github.io">Github Pages<br /></a>
+The source code of this website is available at 
+<a href="https://github.com/eliza0x/eliza0x.github.io">Github</a>
+</footer>
+</body>
+</html>
+]]></description>
+    <pubDate>Sat, 27 Aug 2016 00:00:00 UT</pubDate>
+    <guid>https://eliza.link/posts/create_blog_with_hakyll.html</guid>
+    <dc:creator>Eliza Calls</dc:creator>
+</item>
+
+    </channel>
+</rss>
