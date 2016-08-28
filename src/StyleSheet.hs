@@ -60,7 +60,7 @@ baseCss = do
     color fontColor
   blockquote ? do
     borderLeft solid (px 2) secondColor
-    marginLeft $ px 20
+    marginLeft  $ px 10
     paddingLeft $ px 20
 
 typoGraphyCss :: Css
@@ -81,7 +81,9 @@ typoGraphyCss = do
     h5 ? fontSize (rem 2.4)
     h6 ? fontSize (rem 1.5)
 
-  p ? marginBottom (rem 3.0)
+  p ? do
+    marginTop nil
+    marginBottom (rem 2.0)
   a ? do
     color firstColor
     textDecoration none
@@ -156,7 +158,7 @@ aboutCss = do
   
   ".pagination" ?
     textAlign (alignSide sideCenter)
-  
+
   footer ? do
     borderTop solid (px 1) firstColor
     textAlign $ alignSide sideCenter
@@ -167,8 +169,11 @@ aboutCss = do
   
   "pre.sourceCode" ? do
     borderLeft solid (px 2) secondColor
-    marginLeft  (px 20)
+    lineHeight (rem 2.0)
+    marginLeft  (px 10)
     paddingLeft (px 20)
+    paddingTop (px 10)
+    paddingBottom (px 10)
   
   ".footnotes" ? do
     marginTop $ px 20

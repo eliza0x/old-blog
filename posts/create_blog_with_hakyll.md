@@ -1,28 +1,30 @@
 ----
-title: Hakyllでブログを作った
-description: HakyllとShakespeareでブログを作った際の記録です。
+title: Haskellでブログを作った
+description: HakyllとShakespeare、そしてClayでブログを作った際の記録です。
 date: 2016-08-27
 tags: haskell, program, hakyll, blog
 ----
 
 以前からはてなブログなどで記事は書いていたんですが、どうしてもモチベーションも保てず、なんだか嫌になってブログを削除した黒歴史があります。
-しかし、やっぱり記事は書くべき時が来ますし、せっかくブログを作るならもっと自由にカスタマイズできる環境であればより楽しいんじゃないかと思ったので、私の好きなHaskellでブログを作りました。
+しかし、やっぱり記事は書くべき時が来ますし、せっかくブログを作るならもっと自由にカスタマイズできる環境であればより楽しいんじゃないかと思ったので、HakyllとShakespeare、そしてClayで私の好きなHaskellを使いブログを作りました。
 
 このページのソースコードは[ここ](https://github.com/eliza0x/eliza0x.github.io)に公開しています。
 
-## Hakyll
+## Hakyllでウェブサイトの生成
 
 HTMLやCSS, JavaScriptなど、手元で完結するようなウェブサイトの事を静的サイトと言うようです(間違っていたらごめんなさい)、そんな静的なサイトをうまいこと生成してくれるプログラムがそれはそれは沢山ある [^StaticGen] のですが、その中から私はHaskellでブログを作りたかったのでHakyllを選択しました。
 
 [Hakyllの公式サイト](https://jaspervdj.be/hakyll/)
 
+公式ページによると小〜中規模のサイト向けだそうです、使ってみてブログ以外でも割と使えるんじゃないかと思いました。
+
 [^StaticGen]: [StaticGen](https://www.staticgen.com/) というサイトにまとまっています。静的サイトジェネレータのうちで有名なものといえばPelican(Python), Jekyll(Ruby), GitBook(JavaScript), Hugo(Go)などがあるでしょうか。おもしろそうなものでは、Lispで書かれたColeslawなんてものもあるそうです。
 
-## Pandoc
+## とりあえず記事は楽して書きたい
 
 [Pandoc](http://pandoc.org/)を知っていますか？MarkdownやreStructuredText(reSTの呼称のほうが一般的？)などで書かれたドキュメントをHTMLやTeX, 果てはWord docs形式に変換してくれる便利なソフトウェアです。
 
-PandocはHaskellで書かれているので、Hakyllはそれにファイルの配置などブログ生成に必要な機能を追加したものとなっています。おかげでブログの記事をMarkdownやreSTで書く事が出来ます。便利ですね。
+HakyllはPandocを容易に利用することが出来るよう設計されているので、記事をMarkdownやreSTで書く事が出来ます。便利ですね。
 
 また、Pandocの機能で数式や脚注を埋め込めます。具体的に何が出来るかや、どんなフォーマットに対応しているかは、有志によるPandocのユーザーズガイドを参照すれば良いと思います。
 
@@ -49,6 +51,7 @@ rst, rtf, s5, slideous, slidy, tei, texinfo, textile
 ```
 
 ちなみにCSSさえ準備してしまえば、version1.17.1の場合以下の言語のシンタックスハイライトにも対応しています。この話は後でもうすこし書きます。
+
 ```
 Syntax highlighting is supported for the following languages:
 abc, actionscript, ada, agda, apache, asn1, asp, awk, bash, bibtex, boo, c,
@@ -68,45 +71,96 @@ xml, xorg, xslt, xul, yacc, yaml, zsh
 
 聞いた事の無いようなものまで混じってしますね。
 
-## プログラムを書く
+HakyllではこんなコードでPandocを呼び出し、ページを生成できます、実際このコードが動くかは知りません。
 
-なんとなくMonadがどんなものか知っていれば使える筈です、そんなに難しくありません。
-
-私は[作者の公開されているソースコード](https://github.com/jaspervdj/jaspervdj)や、[tanakhさんのブログ](http://tanakh.jp/posts/2011-11-05-haskell-infra.html),それと[Imokuri氏のブログ](https://imokuri123.com/blog/2015/12/how-to-create-blog-with-hakyll-part1.html)を参考にさせていただきました。もちろん[HakyllのHackage](https://hackage.haskell.org/package/hakyll-4.8.3.2)もです、ありがとうございます。
-
-とりあえずImokuri氏のブログを読んでなんとなく摑んでから、作者のプログラムでも読めばいいんじゃないかと思います。
-
-また、Markdownは知ってるよ、という人でも[Pandocのユーザーズガイド](http://sky-y.github.io/site-pandoc-jp/users-guide/)は読んでおいたほうが良いと思います。Pandocならではの拡張が非常に便利なので、これを使わない手は無いです。
+```haskell
+compile $ pandocCompiler 
+  >>= loadAndApplyTemplate "templates/flame.hamlet" postCtx
+  >>= relativizeUrls
+```
 
 ## Shakespearean Templates
 
 いくら記事のHTMLを自動生成してくれるからといって、デザインは自分で行わないといけません。しかし、HTMLやCSSを生で書きたくない。始めはSass(CSSのめっちゃすごいやつ)とJade(Htmlのめっちゃすごいやつ)をつかおうと思っていたのですが、折角ならPure Haskellでブログを作ってみようと思い、Yesod Frameworkで使用されているShakespeareを使ってみました。
 
-Shakespearean Templatesはテンプレート言語です、数あるテンプレート言語の中でこの言語が優れている点はHaskellとの連携が容易な点です。シームレスにHaskellの関数が呼び出せたりします。
+Shakespearean Templatesはテンプレート言語です、数あるテンプレート言語の中でこの言語が優れている点はHaskellとの連携が容易な点です。シームレスにHaskellの関数が呼び出せたりごにょごにょ。
 
-<blockquote>
-Shakespearean Templatesとは、Webコンテンツを構成するテキストをHaskell/Yesodで生成する、下記のテンプレート言語群のことです。
-
-- Hamlet(HTML)
-- Julius(JavaScript)
-- Cassius(CSS)
-- Lucius(CSS)
-
-<https://sites.google.com/site/toriaezuzakki/haskell/yesod/shakespearean-templates>
-</blockquote>
+> Shakespearean Templatesとは、Webコンテンツを構成するテキストをHaskell/Yesodで生成する、下記のテンプレート言語群のことです。
+>
+> - Hamlet(HTML)
+> - Julius(JavaScript)
+> - Cassius(CSS)
+> - Lucius(CSS)
+>
+> <https://sites.google.com/site/toriaezuzakki/haskell/yesod/shakespearean-templates>
 
 詳しく知りたければ[このチュートリアル](http://www.yesodweb.com/book/shakespearean-templates)でも読めば良いんじゃないでしょうか。
 
 HakyllとHamletの連携が面倒だったのでライブラリを書きました、よければ使ってください。  
 <https://github.com/eliza0x/hakyll-shakespeare>
 
-CSSはCassiusを利用して[Skeleton](http://getskeleton.com/)や[Milligram](https://milligram.github.io/)を参考にしつつもがんばって一から書きました。もういいです。[やましー](yamasy.info)の言葉を借りるとお葬式みたいな配色になってしまいました。
+こんなふうに使えます。
+
+```haskell
+match "templates/*.hamlet" $ compile hamlTemplateCompiler
+```
+
+## Clay射撃
+
+~~CSSはCassiusを利用して[Skeleton](http://getskeleton.com/)や[Milligram](https://milligram.github.io/)を参考にしつつもがんばって一から書きました。~~
+
+ClayというモナドベースのCSSプリプロセッサーがHakyll公式で推されていたので使ってみると予想以上に面白かったので、一度Cassiusで書いたCSSをClayで書き換えました。良いですよ、Clay。
+
+HTMLもこういったライブラリで生成したいのは山々なんですが、Hakyllの柵 ^[テンプレートの呼び出しのあたり] で面倒くさそうです。
+
+出来るだけシンプルにしようと心掛けて作ったのですが、[やましー](yamasy.info)の言葉を借りるとお葬式みたいな配色になってしまいました。まあまあ気にいっていますが。
+
+こんなコードです、動くかは知りません。
+
+```haskell
+main :: String
+main = putCss css
+
+fontColor :: Color
+fontColor = "#303030"
+
+css :: Css
+css = do
+  html ? fontSize (pct 62.5)
+  p ? do
+    marginTop nil
+    marginBottom (rem 3.0)
+  a ? do
+    textDecoration none
+  a # hover ? color secondColor
+```
+
+公式サイトです、チュートリアルやサンプルコードもここにあります。
+
+<http://fvisser.nl/clay/>
+
+## コーディング
+
+私は[作者の公開されているソースコード](https://github.com/jaspervdj/jaspervdj)や、[tanakhさんのブログ](http://tanakh.jp/posts/2011-11-05-haskell-infra.html),それと[Imokuri氏のブログ](https://imokuri123.com/blog/2015/12/how-to-create-blog-with-hakyll-part1.html)を参考にさせていただきました。もちろん[HakyllのHackage](https://hackage.haskell.org/package/hakyll-4.8.3.2)もです、ありがとうございます。
+
+とりあえずImokuri氏のブログを読んでなんとなく摑んでから、作者のプログラムでも読めばいいんじゃないかと思います。
+
+またブログを始める際、Markdownは知ってるよ、という人でも[Pandocのユーザーズガイド](http://sky-y.github.io/site-pandoc-jp/users-guide/)は読んでおいたほうが良いと思います。Pandocならではの拡張が非常に便利なので、これを使わない手は無いです。
 
 ## シンタックスハイライト
 
 ブログのソースコードはハイライトして欲しいです。以前nanoでプログラムのデバッグをしたとき死ぬかと思いました。
 
-Pandocは自動でタグは付けてくれるので、専用のCSSを準備しましょう。[Imokuriさんのこのページ](https://imokuri123.com/blog/2015/12/how-to-create-blog-with-hakyll-part4.html)に詳しく載っています。もしくは[私の書いたソースコード](https://github.com/eliza0x/eliza0x.github.io)でも読むと良いでしょう。
+始めはhighlihgt.jsでも使おうかなあなんて思っていたんですが、Pandocはシンタックスハイライトをしてくれるそうなので、染色の為に専用のCSSを準備しましょう。[Imokuriさんのこのページ](https://imokuri123.com/blog/2015/12/how-to-create-blog-with-hakyll-part4.html)に詳しく載っています。もしくは[私の書いたソースコード](https://github.com/eliza0x/eliza0x.github.io)でも読むと良いでしょう。
+
+こんなコードです、動くかは知りません。
+
+```haskell
+main = hakyll $ do
+  create ["css/highlight.css"] $ do
+    route   idRoute
+    compile $ makeItem (compressCss $ styleToCss tango)
+```
 
 ## コメントフォーム
 
@@ -114,11 +168,13 @@ Pandocは自動でタグは付けてくれるので、専用のCSSを準備し�
 
 公式サイトの指示どおりにすると動かなかったので、[tanakh氏のブログ](tanakh.jp)のソースコードを参考にさせて頂きました。
 
+[DISQUS](https://disqus.com/)
+
 ## 終わりに
 
 HakyllはMonadでうまいこと面倒な部分を隠してくれていて非常に使いやすかったです。ああやって使うんですね、モナド。型クラスの恩恵は計り知れないですね。設定がMonoidのインスタンスになっていて `<>` で簡単に追加できるの、アレ良いですね。
 
-もうすこしCassius(CSS)を書かないとまだまだ粗が目立ちますね。ブログを作るのも結構大変だ…
+もうすこしCSSを書かないとまだまだ粗が目立ちますね。ブログを作るのも結構大変だ…
 
 このサイトはGihub Pagesにて公開してあります。Github PagesはGitの使い方を知らないと利用するのは難しいかもしれないです。
 

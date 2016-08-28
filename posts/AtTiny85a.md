@@ -11,31 +11,7 @@ PlatformIOでFT232RLを使ってAtTiny85(AVR)に書き込んでいる記事な�
 
 ## TL;DR
 
-```c
-void setup(){
-  pinMode(1, OUTPUT);
-}
-
-void loop(){
-  digitalWrite(1 , HIGH);
-  delay(1000);
-  digitalWrite(1 , LOW); 
-  delay(1000);
-}
-```
-./src/main.ino
-
-```ini
-[env:attiny85]
-platform = atmelavr
-framework = arduino
-board = attiny85
-upload_protocol = diecimila
-upload_flags = -v -F -e -p t85 -B9600
-board_f_cpu = 1000000L
-# upload_port = /dev/ttyUSB0
-```
-./platformio.ini
+[ここ](#プログラムを書き込む)のプログラムを参照して
 
 結線後に`./src/main.ino`と`./platformio.ini`にファイルを配置して`platformio run -t upload`すればOK。
 
