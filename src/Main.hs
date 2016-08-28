@@ -26,11 +26,15 @@ main =
       route   idRoute
       compile $ makeItem (compressCss $ styleToCss tango)
 
+    match "css/style.css" $ do
+      route idRoute
+      compile compressCssCompiler
+{-
     -- Style sheet
     create ["css/style.css"] $ do
       route idRoute
       compile styleSheetCompiler
-
+-}
     -- Create tags
     tags <- buildTags "posts/*" (fromCapture "tags/*.html")
 
@@ -51,6 +55,7 @@ main =
                     listField "posts" (postCtx tags) (return posts) <>
                     paginateContext archive pageNum                 <>
                     defaultContext
+
             makeItem ""
                 >>= loadAndApplyTemplate "templates/archive.hamlet" archiveCtx
                 >>= loadAndApplyTemplate "templates/flame.hamlet" archiveCtx

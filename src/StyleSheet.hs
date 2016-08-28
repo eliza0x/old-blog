@@ -1,175 +1,178 @@
-{-# LANGUAGE QuasiQuotes, TemplateHaskell, OverloadedStrings #-}
+{-# LANGUAGE OverloadedStrings #-}
 
 module StyleSheet (styleSheet) where
 
-import Text.Cassius
-import Data.Text.Internal.Lazy (Text)
+import Prelude hiding (rem, (**))
+import Clay hiding (table, minWidth, fontColor)
+import Clay.Display (table)
+import Clay.Media (screen, minWidth)
 import Data.Text.Lazy (unpack)
 
-render = undefined
-
 styleSheet :: String
-styleSheet = unpack . renderCss $ css render
+styleSheet = unpack $ render css
 
-fontColor       = Color 48  48  48
-firstColor      = Color 133 133 133 
-secondColor     = Color 180 180 180 
-backgroundColor = Color 255 255 255
+fontColor :: Color
+fontColor = "#303030"
+firstColor :: Color
+firstColor = "#858585"
+secondColor :: Color
+secondColor = "#B4B4B4"
+backGroundColor :: Color
+backGroundColor = "#FFFFFF"
 
-{- Old Style
-fontColor       = Color 56  56  56
-firstColor      = Color 255 60  0
-thirdColor      = Color 114 114 114 -}
+css :: Css
+css = do
+  containerCss
+  baseCss
+  typoGraphyCss
+  listCss
+  aboutCss
 
-css :: a -> Css
-css = [cassius|
-.container
-  position: relative
-  width: 100%
-  max-width: 960px
-  margin: 0 auto
-  padding: 0 20px
-  box-sizing: border-box
-.container:after
-  content: ""
-  display: table
-  clear: both
+containerCss :: Css
+containerCss = do
+  ".container" ? do
+    position relative
+    width $ pct 100
+    maxWidth $ px 960
+    margin nil auto nil auto
+    padding nil (px 20) nil (px 20)
+    boxSizing borderBox
+  ".container" # after ? do
+    content $ stringContent ""
+    display table
+    clear both
+  query screen [minWidth $ px 400] $
+    ".container" ? do
+      width $ pct 90
+      padding nil nil nil nil
+  query screen [minWidth $ px 650] $
+    ".container" ? width (pct 75)
 
-@media (min-width: 400px)
-  .container
-    width: 90%
-    padding: 0
+baseCss :: Css
+baseCss = do
+  html ? fontSize (pct 62.5)
+  body ? do
+    backgroundColor backGroundColor
+    fontSize $ em 1.7
+    lineHeight $ rem 3.0
+    fontWeight $ weight 400
+    fontFamily ["Open Sans"] [sansSerif]
+    color fontColor
+  blockquote ? do
+    borderLeft solid (px 2) secondColor
+    marginLeft $ px 20
+    paddingLeft $ px 20
 
-@media (min-width: 650px)
-  .container
-    width: 75%
+typoGraphyCss :: Css
+typoGraphyCss = do
+  mapM_ headerCss
+    [ ( h1, rem 4.0, rem $ 4.0 + 1.2,  rem (-0.1) )
+    , ( h2, rem 3.6, rem $ 3.6 + 1.25, rem (-0.1)  )
+    , ( h3, rem 3.0, rem $ 3.0 + 1.3,  rem (-0.1)  )
+    , ( h4, rem 2.4, rem $ 2.4 + 1.35, rem (-0.08) )
+    , ( h5, rem 1.8, rem $ 1.8 + 1.5,  rem (-0.05) )
+    , ( h6, rem 1.5, rem $ 1.5 + 1.6,  nil )]
 
-html
-  font-size: 62.5%
+  query screen [minWidth $ px 550] $ do
+    h1 ? fontSize (rem 5.0)
+    h2 ? fontSize (rem 4.2)
+    h3 ? fontSize (rem 3.6)
+    h4 ? fontSize (rem 3.0)
+    h5 ? fontSize (rem 2.4)
+    h6 ? fontSize (rem 1.5)
 
-body
-  font-size: 1.7em
-  line-height: 1.8
-  font-weight: 400
-  font-family: "Open Sans", sans-serif
-  color: #{fontColor}
+  p ? marginBottom (rem 3.0)
+  a ? do
+    color firstColor
+    textDecoration none
+  a # hover ? color secondColor
+  where
+    headerCss :: (Selector, Size a, Size b, Size c) -> Css
+    headerCss (selector, fsize, lheight, lspacing) = selector ? do
+      marginTop        nil
+      marginBottom   $ rem    2
+      fontWeight     $ weight 300
+      fontSize         fsize
+      lineHeight       lheight
+      letterSpacing    lspacing
 
-h1, h2, h3, h4, h5, h6
-  margin-top: 0
-  margin-bottom: 2rem
-  font-weight: 300
-h1 
-  font-size: 5.0rem
-  line-height: 1.2
-  letter-spacing: -.1rem
-h2 
-  font-size: 3.6rem
-  line-height: 1.25
-  letter-spacing: -.1rem
-  font-size: 4.2rem
+listCss :: Css
+listCss = do
+  ul ? do
+    listStyle circleListStyle inside none
+    paddingLeft $ rem 0
+    marginTop $ rem 0
+  ol ? do
+    listStyle decimal inside none
+    paddingLeft $ rem 0
+    marginTop $ rem 0
+  li ? marginBottom (rem 1.0)
 
-h3 
-  font-size: 3.6rem
-  line-height: 1.3
-  letter-spacing: -.1rem
-h4
-  font-size: 3.0rem
-  line-height: 1.35
-  letter-spacing: -.08rem
-h5 
-  font-size: 2.4rem
-  line-height: 1.5
-  letter-spacing: -.05rem
-h6 
-  font-size: 1.5rem
-  line-height: 1.6
-  letter-spacing: 0
-.title
-  font-size: 6.0rem
-  letter-spacing: 2
-  margin-top: 20px
-  margin-bottom: 20px
-  color: #{fontColor}
-p
-  margin-top: 0
-a
-  color: #{firstColor}
-  text-decoration: none
-a:hover
-  color: #{secondColor}
+aboutCss :: Css
+aboutCss = do
+  ".title" ? do
+    marginTop    $ rem 2
+    marginBottom $ rem 2
+    fontSize     $ rem 6.0
+    color fontColor
 
-ul
-  list-style: circle inside
-ol
-  list-style: decimal inside
-ol, ul
-  padding-left: 0
-  margin-top: 0
-li
-  margin-bottom: 1rem
+  ".navigation" ? do
+    borderTop    solid (px 1) firstColor
+    borderBottom solid (px 1) firstColor
+    listStyleType none
+    overflow hidden
+    margin (px 20) nil (px 20) nil
+    padding nil nil nil nil
 
-.navigation
-  border-top: 1px solid #{firstColor}
-  border-bottom: 1px solid #{firstColor}
-  list-style-type: none
-  overflow: hidden
-  margin: 20px 0px
-  padding: 0
-.navigation li
-  text-decoration: none
-  margin: 0
-  padding: 0
-.navigation li a
-  display: block
-  padding: 10px 0
-  margin: 0
-.navigation:after
-  clear: both
-
-@media (min-width: 500px)
-  ul.navigation li
-    float: left
+  ".navigation" ** li ? do
+    textDecoration none
+    margin  nil nil nil nil
+    padding nil nil nil nil 
   
-  ul.navigation li a
-    padding: 10px 15px
+  ".navigation" ** li ** a ? do
+    display block
+    padding (px 10) nil (px 10) nil
+    margin  nil nil nil nil 
+  
+  ".navigation" # after ?
+    clear both
+  
+  query screen [minWidth $ px 500] $ do
+    ".navigation" ** li ?
+      float floatLeft
+    ".navigation" ** li ** a ?
+      padding (px 10) (px 15) (px 10) (px 15) 
 
-.figure img
-  width: 100%
-
-@media (min-width: 600px)
-  .figure
-    width: 75%
-
-@media (min-width: 960px)
-  .figure
-    width: 50%
-
-.pagination
-  text-align: center
-
-footer
-  border-top: 1px solid #{firstColor}
-  text-align: center
-  position: static
-  bottom: 0px
-  padding-top: 15px
-  margin: 15px 0px
-
-pre.sourceCode
-  border-left: 2px solid #{secondColor}
-  margin-left: 20px
-  padding-left: 20px
-
-blockquote
-  border-left: 2px solid #{secondColor}
-  margin-left: 20px
-  padding-left: 20px
-
-.footnotes
-  margin-top: 20px
-  margin-bottom: 10px
-
-
-.footnotes hr
-  border-top: 1px solid #{firstColor}
-|]
+  ".figure" ** img ?
+    width (pct 100)
+  
+  query screen [minWidth $ px 600] $
+    ".figure" ?
+      width (pct 75)
+  
+  query screen [minWidth $ px 960] $
+    ".figure" ?
+      width (pct 50)
+  
+  ".pagination" ?
+    textAlign (alignSide sideCenter)
+  
+  footer ? do
+    borderTop solid (px 1) firstColor
+    textAlign $ alignSide sideCenter
+    position static
+    paddingBottom $ px 15
+    paddingTop $ px 15
+    margin (px 15) (px 0) (px 15) (px 0) 
+  
+  "pre.sourceCode" ? do
+    borderLeft solid (px 2) secondColor
+    marginLeft  (px 20)
+    paddingLeft (px 20)
+  
+  ".footnotes" ? do
+    marginTop $ px 20
+    marginBottom $ px 10
+  
+  ".footnotes" ** hr ?
+    borderTop solid (px 1) firstColor

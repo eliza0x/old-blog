@@ -23,7 +23,7 @@
   <!-- Primary Page Layout -->
   <body class="container">
     <header>
-      <h1 class="header title">
+      <h1 class="title">
         <a class="title" href="/">eliza.link
       <nav>
         <ul class="navigation">

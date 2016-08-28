@@ -5,8 +5,7 @@ extra-package-dbs: []
 
 packages:
 - '.'
-# - /home/eliza/Program/hakyll-shakespeare
-- location:
-    git: git@github.com:eliza0x/hakyll-shakespeare.git
-    commit: 048660e40c653dee664d935ef9f54f82cc74a3bb
-
+- /home/eliza/Program/hakyll-shakespeare
+# - location:
+#     git: git@github.com:eliza0x/hakyll-shakespeare.git
+#     commit: 048660e40c653dee664d935ef9f54f82cc74a3bb
