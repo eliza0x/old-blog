@@ -3,7 +3,7 @@
 module Main where
 
 import Control.Monad ((>=>))
-import Data.Monoid ((<>), mempty)
+import Data.Monoid ((<>))
 import Hakyll
 import Hakyll.Web.Hamlet
 import Text.Highlighting.Kate.Format.HTML (styleToCss)
@@ -76,7 +76,7 @@ main =
           route   $ setExtension "xml"
           compile $ loadAllSnapshots pattern "content"
               >>= fmap (take 10) . recentFirst
-              >>= renderRss (feedConfiguration $ " - " ++ title) feedCtx
+              >>= renderRss (feedConfiguration $ title ++ " - ") feedCtx
 
     -- Render the top pages
     match ("top_pages/*.md") $ do
@@ -103,8 +103,8 @@ main =
         route $ setExtension "html"
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/article.hamlet" (postCtx tags)
-            >>= loadAndApplyTemplate "templates/flame.hamlet" (postCtx tags)
             >>= saveSnapshot "content"
+            >>= loadAndApplyTemplate "templates/flame.hamlet" (postCtx tags)
             >>= relativizeUrls
 
     -- Build templates
@@ -116,7 +116,7 @@ main =
       compile $ do
         loadAllSnapshots "posts/*" "content"
           >>= fmap (take 10) . recentFirst
-          >>= renderRss (feedConfiguration "All posts") feedCtx
+          >>= renderRss (feedConfiguration "All posts - ") feedCtx
 
 postCtx :: Tags -> Context String
 postCtx tags =
@@ -133,7 +133,7 @@ feedCtx = mconcat
 
 feedConfiguration :: String -> FeedConfiguration
 feedConfiguration title = FeedConfiguration
-    { feedTitle       = "eliza.link" ++ title
+    { feedTitle       = title ++ "eliza.link"
     , feedDescription = "技術や読書録を残します"
     , feedAuthorName  = "Eliza Calls"
     , feedAuthorEmail = "me@eliza.link"

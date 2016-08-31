@@ -1,3 +1,5 @@
-## Products
+---
+title: Products
+---
 
 Comming soon...

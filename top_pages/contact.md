@@ -1,4 +1,6 @@
-## Contact
+---
+title: Contact
+---
 
 <address>
 - [Twitter - \@Eliza_0x](https://twitter.com/Eliza_0x)
