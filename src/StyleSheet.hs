@@ -2,7 +2,7 @@
 
 module StyleSheet (styleSheet) where
 
-import Prelude hiding (rem, (**))
+import Prelude hiding (div, rem, (**))
 import Clay hiding (table, minWidth, fontColor)
 import Clay.Display (table)
 import Clay.Media (screen, minWidth)
@@ -54,7 +54,7 @@ baseCss = do
   body ? do
     backgroundColor backGroundColor
     fontSize $ em 1.7
-    lineHeight $ rem 3.0
+    lineHeight $ rem 2.5
     fontWeight $ weight 400
     fontFamily ["Open Sans"] [sansSerif]
     color fontColor
@@ -108,7 +108,7 @@ listCss = do
     listStyle decimal inside none
     paddingLeft $ rem 0
     marginTop $ rem 0
-  li ? marginBottom (rem 1.0)
+  li ? marginBottom (rem 0.5)
 
 aboutCss :: Css
 aboutCss = do
@@ -168,12 +168,14 @@ aboutCss = do
     margin (px 15) (px 0) (px 15) (px 0) 
   
   "pre.sourceCode" ? do
-    borderLeft solid (px 2) secondColor
-    lineHeight (rem 2.2)
-    marginLeft  (px 10)
-    paddingLeft (px 20)
-    paddingTop (px 10)
-    paddingBottom (px 10)
+    borderLeft solid ( px 2) secondColor
+    lineHeight       $ rem 1.4
+    marginLeft       $ px 10
+    paddingLeft      $ px 20
+    paddingTop       $ px 10
+    paddingBottom    $ px 10
+    marginTop        $ px 10
+    marginBottom     $ px 10
   
   ".footnotes" ? do
     marginTop $ px 20

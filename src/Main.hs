@@ -35,17 +35,17 @@ main =
     tags <- buildTags "posts/*" (fromCapture "tags/*.html")
 
     -- Configure pagenations
-    archive <- buildPaginateWith
-        (sortRecentFirst >=> return . paginateEvery 5)
-        "posts/*"
-        (\n -> if n == 1
+    archive <-
+      let archivePageName n =  if n == 1
                then fromFilePath "archive.html"
-               else fromFilePath $ "archive/" ++ show n ++ ".html")
+               else fromFilePath $ "archive/" ++ show n ++ ".html"
+      in  buildPaginateWith
+        (sortRecentFirst >=> return . paginateEvery 5) "posts/*" archivePageName
 
-    paginateRules archive $ \pageNum pattern -> do
+    paginateRules archive $ \pageNum identifier -> do
         route   idRoute
         compile $ do
-            posts <- recentFirst =<< loadAll pattern
+            posts <- recentFirst =<< loadAll identifier
             let archiveCtx =
                     constField "title" "Archives"                   <>
                     listField "posts" (postCtx tags) (return posts) <>
@@ -58,12 +58,12 @@ main =
                 >>= relativizeUrls
 
     -- Post tags
-    tagsRules tags $ \tag pattern -> do
+    tagsRules tags $ \tag identifier -> do
 
       let title = "Posts tagged " ++ tag
       route   idRoute
       compile $ do
-        posts <- recentFirst =<< loadAll pattern
+        posts <- recentFirst =<< loadAll identifier
         let tagCtx =
                 constField "title" title                        <>
                 listField "posts" (postCtx tags) (return posts) <>
@@ -74,12 +74,12 @@ main =
             >>= relativizeUrls
       version "rss" $ do
           route   $ setExtension "xml"
-          compile $ loadAllSnapshots pattern "content"
+          compile $ loadAllSnapshots identifier "content"
               >>= fmap (take 10) . recentFirst
               >>= renderRss (feedConfiguration $ title ++ " - ") feedCtx
 
     -- Render the top pages
-    match ("top_pages/*.md") $ do
+    match "top_pages/*.md" $ do
       route $ gsubRoute "top_pages/" (const "") `composeRoutes` setExtension "html"
       compile $ pandocCompiler 
         >>= loadAndApplyTemplate "templates/flame.hamlet" (postCtx tags)
@@ -104,6 +104,7 @@ main =
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/article.hamlet" (postCtx tags)
             >>= saveSnapshot "content"
+            >>= loadAndApplyTemplate "templates/social.hamlet" (postCtx tags)
             >>= loadAndApplyTemplate "templates/flame.hamlet" (postCtx tags)
             >>= relativizeUrls
 
@@ -113,7 +114,7 @@ main =
     -- Render RSS feed
     create ["rss.xml"] $ do
       route idRoute
-      compile $ do
+      compile $
         loadAllSnapshots "posts/*" "content"
           >>= fmap (take 10) . recentFirst
           >>= renderRss (feedConfiguration "All posts - ") feedCtx
