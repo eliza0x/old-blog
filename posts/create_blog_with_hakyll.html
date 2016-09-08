@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja"><head>
 <meta charset="utf-8">
-<title>eliza.link | Haskellでブログを作った</title>
+<title>Haskellでブログを作った | eliza.link</title>
 <meta name="author" content="@Eliza_0x">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,7 +41,8 @@ ga('send', 'pageview');</script>
 <article><blockquote>
 <p>世の中には手段の為ならば目的を選ばないという様な どうしようもない連中も確実に存在するのだ<br />
 つまりは<br />
-とどのつまりは 我々のような</p>
+とどのつまりは 我々のような<br />
+- HELLSING より</p>
 </blockquote>
 <p>以前からはてなブログなどで記事は書いていたんですが、どうしてもモチベーションも保てず、なんだか嫌になってブログを削除した黒歴史があります。 しかし、やっぱり記事は書くべき時が来ますし、せっかくブログを作るならもっと自由にカスタマイズできる環境であればより楽しいんじゃないかと思ったので、HakyllとShakespeare、そしてClayで私の好きなHaskellを使いブログを作りました。</p>
 <p>このページのソースコードは<a href="https://github.com/eliza0x/eliza0x.github.io">ここ</a>に公開しています。</p>
@@ -147,11 +148,13 @@ css <span class="fu">=</span> <span class="kw">do</span>
 <p>公式サイトの指示どおりにすると動かなかったので、<a href="tanakh.jp">tanakh氏のブログ</a>のソースコードを参考にさせて頂きました。</p>
 <p><a href="https://disqus.com/">DISQUS</a></p>
 <h2 id="終わりに">終わりに</h2>
-<p>HakyllはMonadでうまいこと面倒な部分を隠してくれていて非常に使いやすかったです。ああやって使うんですね、モナド。型クラスの恩恵は計り知れないですね。設定がMonoidのインスタンスになっていて <code>&lt;&gt;</code> で簡単に追加できるの、アレ良いですね。</p>
-<p>もうすこしCSSを書かないとまだまだ粗が目立ちますね。ブログを作るのも結構大変だ…</p>
-<p>このサイトはGihub Pagesにて公開してあります。Github PagesはGitの使い方を知らないと利用するのは難しいかもしれないです。</p>
+<p>設定がMonoidのインスタンスになっていて <code>&lt;&gt;</code> で追加の設定を追加できるのが凄く便利でした。 Hakyll自体を実際に弄ってみて、型クラスについての知識が深まりました。</p>
+<p>もうすこしCSSを書かないとまだまだ粗が目立ちますね。ブログを作るのも結構大変だ… Clayを使ってみてなかなか良いなぁと思ったので、HTMLもそういったもので書き出すかもしれないです。</p>
+<p>あとClay等プリプロセッサをオンデマンドでコンパイルしてHakyllから便利に扱えるようにするラッパーを書きたいですね。hintとか使えばうまくいくのかな…？</p>
+<p>最後に、このサイトはGihub Pagesにて公開してあります。Github PagesはGitの使い方を知らないと利用するのは難しいかもしれないですが非常に便利です、いかがですか?</p>
 <p>このブログのソースコードは<a href="https://github.com/eliza0x/eliza0x.github.io">ここ</a>に公開しています。</p>
 <h4 id="紹介できなかったサイト">紹介できなかったサイト</h4>
+<p>Github Pagesで独自ドメインを利用するために参考にしたものです。</p>
 <ul>
 <li><a href="http://qiita.com/mikakane/items/87c8f676815da4e5ac04">Github Pagesの使い方</a></li>
 <li><a href="http://qiita.com/tiwu_official/items/d7fb6c493ed5eb9ee4fc">GitHub Pagesで静的なサイトを公開し、独自ドメインを設定する</a></li>
@@ -166,6 +169,13 @@ css <span class="fu">=</span> <span class="kw">do</span>
 </div></article>
 <p>Tags: <a href="../tags/haskell.html">haskell</a>, <a href="../tags/program.html">program</a>, <a href="../tags/hakyll.html">hakyll</a>, <a href="../tags/blog.html">blog</a></p>
 
+<div class="ninja_onebutton"><script type="text/javascript">//<![CDATA[
+(function(d){
+if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_6053ba3df2a55b040931a3c10127a29c)=='undefined'){document.write("<sc"+"ript type='text\/javascript' src='\/\/omt.shinobi.jp\/b\/6053ba3df2a55b040931a3c10127a29c'><\/sc"+"ript>");}else{window.NINJA_CO_JP_ONETAG_BUTTON_6053ba3df2a55b040931a3c10127a29c.ONETAGButton_Load();}})(document);
+//]]></script>
+<span class="ninja_onebutton_hidden" style="display:none;"></span>
+<span class="ninja_onebutton_hidden" style="display:none;"></span>
+</div>
 <div id="disqus_thread"><script type="text/javascript">/* * * CONFIGURATION VARIABLES * * */
 var disqus_shortname = 'eliza0x';
 var disqus_identifier = "/posts/create_blog_with_hakyll.html";
@@ -175,7 +185,8 @@ var disqus_url = "https://eliza.link/posts/create_blog_with_hakyll.html";
 (function() {var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);})();</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+<noscript>Please enable JavaScript to view the 
+<a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
 </noscript>
 </div>
 </main>
