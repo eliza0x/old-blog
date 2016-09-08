@@ -54,7 +54,7 @@ baseCss = do
   body ? do
     backgroundColor backGroundColor
     fontSize $ em 1.7
-    lineHeight $ rem 2.5
+    lineHeight $ rem 2.7
     fontWeight $ weight 400
     fontFamily ["Open Sans"] [sansSerif]
     color fontColor
@@ -169,7 +169,7 @@ aboutCss = do
   
   "pre.sourceCode" ? do
     borderLeft solid ( px 2) secondColor
-    lineHeight       $ rem 1.4
+    lineHeight       $ rem 1.75
     marginLeft       $ px 10
     paddingLeft      $ px 20
     paddingTop       $ px 10
