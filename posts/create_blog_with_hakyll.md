@@ -13,7 +13,7 @@ tags: haskell, program, hakyll, blog
 以前からはてなブログなどで記事は書いていたんですが、どうしてもモチベーションも保てず、なんだか嫌になってブログを削除した黒歴史があります。
 しかし、やっぱり記事は書くべき時が来ますし、せっかくブログを作るならもっと自由にカスタマイズできる環境であればより楽しいんじゃないかと思ったので、HakyllとShakespeare、そしてClayで私の好きなHaskellを使いブログを作りました。
 
-このページのソースコードは[ここ](https://github.com/eliza0x/eliza0x.github.io)に公開しています。
+このページのソースコードは[ここ](https://github.com/eliza0x/eliza0x.github.io/tree/bd964b8f01908b93c555d528bd020cb2060975bd)に公開しています。
 
 ## Hakyllでウェブサイトの生成
 
@@ -155,7 +155,7 @@ css = do
 
 ブログのソースコードはハイライトして欲しいです。以前nanoでプログラムのデバッグをしたとき死ぬかと思いました。
 
-始めはhighlihgt.jsでも使おうかなあなんて思っていたんですが、Pandocはシンタックスハイライトをしてくれるそうなので、染色の為に専用のCSSを準備しましょう。[Imokuriさんのこのページ](https://imokuri123.com/blog/2015/12/how-to-create-blog-with-hakyll-part4.html)に詳しく載っています。もしくは[私の書いたソースコード](https://github.com/eliza0x/eliza0x.github.io)でも読むと良いでしょう。
+始めはhighlight.jsでも使おうかなあなんて思っていたんですが、Pandocはシンタックスハイライトをしてくれるそうなので、染色の為に専用のCSSを準備しましょう。[Imokuriさんのこのページ](https://imokuri123.com/blog/2015/12/how-to-create-blog-with-hakyll-part4.html)に詳しく載っています。もしくは[私の書いたソースコード](https://github.com/eliza0x/eliza0x.github.io)でも読むと良いでしょう。
 
 こんなコードです、動くかは知りません。
 
@@ -186,7 +186,7 @@ Clayを使ってみてなかなか良いなぁと思ったので、HTMLもそう
 
 最後に、このサイトはGihub Pagesにて公開してあります。Github PagesはGitの使い方を知らないと利用するのは難しいかもしれないですが非常に便利です、いかがですか?
 
-このブログのソースコードは[ここ](https://github.com/eliza0x/eliza0x.github.io)に公開しています。
+このブログのソースコードは[ここ](https://github.com/eliza0x/eliza0x.github.io/tree/bd964b8f01908b93c555d528bd020cb2060975bd)に公開しています。
 
 #### 紹介できなかったサイト
 
