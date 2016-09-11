@@ -9,27 +9,19 @@ import Hakyll.Web.Hamlet
 import Text.Highlighting.Kate.Format.HTML (styleToCss)
 import Text.Highlighting.Kate.Styles (tango)
 
-import StyleSheet (styleSheet)
-
 main :: IO ()
-main = 
-  let styleSheetCompiler = makeItem . compressCss $ styleSheet :: Compiler (Item String)
-  in  hakyll $ do
-
+main = hakyll $ do
     -- Static files
     match ("images/*" .||. "files/*" .||. "CNAME") $ do
         route   idRoute
         compile copyFileCompiler
 
-    -- source code highlighting style sheet
-    create ["css/highlight.css"] $ do
-      route   idRoute
-      compile $ makeItem (compressCss $ styleToCss tango)
-
     -- Style sheet
-    create ["css/style.css"] $ do
-      route idRoute
-      compile styleSheetCompiler
+    match "css/*.hs" $ do
+      route $ setExtension "css"
+      compile $ getResourceString 
+            >>= withItemBody (unixFilter "stack" ["runghc", "--package=clay"])
+            -- >>= return . fmap compressCss
     
     -- Create tags
     tags <- buildTags "posts/*" (fromCapture "tags/*.html")

@@ -1,23 +1,18 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module StyleSheet (styleSheet) where
-
 import Prelude hiding (div, rem, (**))
 import Clay hiding (table, minWidth, fontColor)
 import Clay.Display (table)
 import Clay.Media (screen, minWidth)
-import Data.Text.Lazy (unpack)
+import Data.Monoid ((<>))
 
-styleSheet :: String
-styleSheet = unpack $ render css
+main :: IO ()
+main = putCss css
 
-fontColor :: Color
-fontColor = "#303030"
-firstColor :: Color
-firstColor = "#858585"
-secondColor :: Color
-secondColor = "#B4B4B4"
-backGroundColor :: Color
+fontColor, firstColor, secondColor, backGroundColor :: Color
+fontColor       = "#303030"
+firstColor      = "#858585"
+secondColor     = "#B4B4B4"
 backGroundColor = "#FFFFFF"
 
 css :: Css
@@ -100,14 +95,11 @@ typoGraphyCss = do
 
 listCss :: Css
 listCss = do
-  ul ? do
-    listStyle circleListStyle inside none
-    paddingLeft $ rem 0
-    marginTop $ rem 0
-  ol ? do
-    listStyle decimal inside none
-    paddingLeft $ rem 0
-    marginTop $ rem 0
+  ul <> ol ? do
+    paddingLeft none
+    marginTop none
+  ul ? listStyle circleListStyle inside none
+  ol ? listStyle decimal inside none
   li ? marginBottom (rem 0.5)
 
 aboutCss :: Css
@@ -166,20 +158,10 @@ aboutCss = do
     paddingBottom $ px 15
     paddingTop $ px 15
     margin (px 15) (px 0) (px 15) (px 0) 
-  
-  "pre.sourceCode" ? do
-    borderLeft solid ( px 2) secondColor
-    lineHeight       $ rem 1.75
-    marginLeft       $ px 10
-    paddingLeft      $ px 20
-    paddingTop       $ px 10
-    paddingBottom    $ px 10
-    marginTop        $ px 10
-    marginBottom     $ px 10
-  
+ 
   ".footnotes" ? do
     marginTop $ px 20
     marginBottom $ px 10
   
-  ".footnotes" ** hr ?
-    borderTop solid (px 1) firstColor
+  ".footnotes" |> hr ?
+    border solid (px 1) firstColor
