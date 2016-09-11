@@ -23,7 +23,7 @@
 - HELLSING より</p>
 </blockquote>
 <p>以前からはてなブログなどで記事は書いていたんですが、どうしてもモチベーションも保てず、なんだか嫌になってブログを削除した黒歴史があります。 しかし、やっぱり記事は書くべき時が来ますし、せっかくブログを作るならもっと自由にカスタマイズできる環境であればより楽しいんじゃないかと思ったので、HakyllとShakespeare、そしてClayで私の好きなHaskellを使いブログを作りました。</p>
-<p>このページのソースコードは<a href="https://github.com/eliza0x/eliza0x.github.io">ここ</a>に公開しています。</p>
+<p>このページのソースコードは<a href="https://github.com/eliza0x/eliza0x.github.io/tree/bd964b8f01908b93c555d528bd020cb2060975bd">ここ</a>に公開しています。</p>
 <h2 id="hakyllでウェブサイトの生成">Hakyllでウェブサイトの生成</h2>
 <p>HTMLやCSS, JavaScriptなど、手元で完結するようなウェブサイトの事を静的サイトと言うようです(間違っていたらごめんなさい)、そんな静的なサイトをうまいこと生成してくれるプログラムがそれはそれは沢山ある <a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> のですが、その中から私はHaskellでブログを作りたかったのでHakyllを選択しました。</p>
 <p><a href="https://jaspervdj.be/hakyll/">Hakyllの公式サイト</a></p>
@@ -115,7 +115,7 @@ css <span class="fu">=</span> <span class="kw">do</span>
 <p>またブログを始める際、Markdownは知ってるよ、という人でも<a href="http://sky-y.github.io/site-pandoc-jp/users-guide/">Pandocのユーザーズガイド</a>は読んでおいたほうが良いと思います。Pandocならではの拡張が非常に便利なので、これを使わない手は無いです。</p>
 <h2 id="シンタックスハイライト">シンタックスハイライト</h2>
 <p>ブログのソースコードはハイライトして欲しいです。以前nanoでプログラムのデバッグをしたとき死ぬかと思いました。</p>
-<p>始めはhighlihgt.jsでも使おうかなあなんて思っていたんですが、Pandocはシンタックスハイライトをしてくれるそうなので、染色の為に専用のCSSを準備しましょう。<a href="https://imokuri123.com/blog/2015/12/how-to-create-blog-with-hakyll-part4.html">Imokuriさんのこのページ</a>に詳しく載っています。もしくは<a href="https://github.com/eliza0x/eliza0x.github.io">私の書いたソースコード</a>でも読むと良いでしょう。</p>
+<p>始めはhighlight.jsでも使おうかなあなんて思っていたんですが、Pandocはシンタックスハイライトをしてくれるそうなので、染色の為に専用のCSSを準備しましょう。<a href="https://imokuri123.com/blog/2015/12/how-to-create-blog-with-hakyll-part4.html">Imokuriさんのこのページ</a>に詳しく載っています。もしくは<a href="https://github.com/eliza0x/eliza0x.github.io">私の書いたソースコード</a>でも読むと良いでしょう。</p>
 <p>こんなコードです、動くかは知りません。</p>
 <div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">main <span class="fu">=</span> hakyll <span class="fu">$</span> <span class="kw">do</span>
   create [<span class="st">&quot;css/highlight.css&quot;</span>] <span class="fu">$</span> <span class="kw">do</span>
@@ -130,7 +130,7 @@ css <span class="fu">=</span> <span class="kw">do</span>
 <p>もうすこしCSSを書かないとまだまだ粗が目立ちますね。ブログを作るのも結構大変だ… Clayを使ってみてなかなか良いなぁと思ったので、HTMLもそういったもので書き出すかもしれないです。</p>
 <p>あとClay等プリプロセッサをオンデマンドでコンパイルしてHakyllから便利に扱えるようにするラッパーを書きたいですね。hintとか使えばうまくいくのかな…？</p>
 <p>最後に、このサイトはGihub Pagesにて公開してあります。Github PagesはGitの使い方を知らないと利用するのは難しいかもしれないですが非常に便利です、いかがですか?</p>
-<p>このブログのソースコードは<a href="https://github.com/eliza0x/eliza0x.github.io">ここ</a>に公開しています。</p>
+<p>このブログのソースコードは<a href="https://github.com/eliza0x/eliza0x.github.io/tree/bd964b8f01908b93c555d528bd020cb2060975bd">ここ</a>に公開しています。</p>
 <h4 id="紹介できなかったサイト">紹介できなかったサイト</h4>
 <p>Github Pagesで独自ドメインを利用するために参考にしたものです。</p>
 <ul>
