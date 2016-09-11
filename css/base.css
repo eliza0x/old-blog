@@ -32,7 +32,7 @@ body
   line-height      : 2.7rem;
   font-weight      : 400;
   font-family      : "Open Sans", sans-serif;
-  color            : rgb(48,48,48);
+  color            : rgb(43,43,43);
 }
 
 blockquote
@@ -110,7 +110,7 @@ p
 
 a
 {
-  color           : rgb(133,133,133);
+  color           : rgb(88,88,88);
   text-decoration : none;
 }
 
@@ -119,11 +119,72 @@ a:hover
   color : rgb(180,180,180);
 }
 
+.teaser h1
+{
+  font-size : 3.6rem;
+}
+
+.teaser h2
+{
+  font-size : 3rem;
+}
+
+.teaser h3
+{
+  font-size : 2.39999rem;
+}
+
+.teaser h4
+{
+  font-size : 1.8rem;
+}
+
+.teaser h5
+{
+  font-size : 1.5rem;
+}
+
+.teaser h6
+{
+  font-size : 1.5rem;
+}
+
+.more
+{
+  margin     : 10px 20px 10px auto;
+  border     : solid 1px rgb(88,88,88);
+  background : rgba(0,0,0,0.0000);
+  width      : 120px;
+  text-align : center;
+}
+
+.more a
+{
+  padding : 7px 10px 7px 10px;
+  display : block;
+}
+
+.teaser
+{
+  margin-bottom  : 1rem;
+  padding-bottom : 1rem;
+  margin-left    : 15px;
+  margin-right   : 15px;
+  list-style     : none inside none;
+}
+
+.teaser:nth-child(n+2)
+{
+  border-top  : solid 1px rgb(88,88,88);
+  margin-top  : 1rem;
+  padding-top : 1rem;
+}
+
 ul,
 ol
 {
-  padding-left : none;
-  margin-top   : none;
+  padding-left : 0px;
+  margin-top   : 0px;
 }
 
 ul
@@ -146,13 +207,13 @@ li
   margin-top    : 2rem;
   margin-bottom : 2rem;
   font-size     : 6rem;
-  color         : rgb(48,48,48);
+  color         : rgb(43,43,43);
 }
 
 .navigation
 {
-  border-top      : solid 1px rgb(133,133,133);
-  border-bottom   : solid 1px rgb(133,133,133);
+  border-top      : solid 1px rgb(88,88,88);
+  border-bottom   : solid 1px rgb(88,88,88);
   list-style-type : none;
   overflow        : hidden;
   margin          : 20px 0 20px 0;
@@ -178,24 +239,38 @@ li
   clear : both;
 }
 
-.figure img
-{
-  width : 100%;
-}
-
 .pagination
 {
+  padding    : 0 20px 0 20px;
   text-align : center;
+}
+
+.pagination a
+{
+  border  : solid 1px rgb(88,88,88);
+  padding : 5px 10px 5px 10px;
+  margin  : 0px 10px 0px 10px;
 }
 
 footer
 {
-  border-top     : solid 1px rgb(133,133,133);
+  border-top     : solid 1px rgb(88,88,88);
   text-align     : center;
   position       : static;
   padding-bottom : 15px;
   padding-top    : 15px;
   margin         : 15px 0px 15px 0px;
+}
+
+.archives
+{
+  text-align   : right;
+  margin-right : 30px;
+}
+
+.figure img
+{
+  width : 100%;
 }
 
 .footnotes
@@ -206,7 +281,7 @@ footer
 
 .footnotes > hr
 {
-  border : solid 1px rgb(133,133,133);
+  border : solid 1px rgb(88,88,88);
 }
 
 @media screen and (min-width: 400px)

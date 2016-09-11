@@ -11,19 +11,14 @@
         <item>
     <title>Haskellでブログを作った</title>
     <link>https://eliza.link/posts/create_blog_with_hakyll.html</link>
-    <description><![CDATA[<h2>Haskellでブログを作った</h2>
+    <description><![CDATA[<article><h2>Haskellでブログを作った</h2>
 <p>Posted on August 27, 2016</p>
 
 <p>Tags: <a href="/tags/haskell.html">haskell</a>, <a href="/tags/program.html">program</a>, <a href="/tags/hakyll.html">hakyll</a>, <a href="/tags/blog.html">blog</a></p>
 
-<article><blockquote>
-<p>世の中には手段の為ならば目的を選ばないという様な どうしようもない連中も確実に存在するのだ<br />
-つまりは<br />
-とどのつまりは 我々のような<br />
-- HELLSING より</p>
-</blockquote>
 <p>以前からはてなブログなどで記事は書いていたんですが、どうしてもモチベーションも保てず、なんだか嫌になってブログを削除した黒歴史があります。 しかし、やっぱり記事は書くべき時が来ますし、せっかくブログを作るならもっと自由にカスタマイズできる環境であればより楽しいんじゃないかと思ったので、HakyllとShakespeare、そしてClayで私の好きなHaskellを使いブログを作りました。</p>
 <p>このページのソースコードは<a href="https://github.com/eliza0x/eliza0x.github.io/tree/bd964b8f01908b93c555d528bd020cb2060975bd">ここ</a>に公開しています。</p>
+<!--more-->
 <h2 id="hakyllでウェブサイトの生成">Hakyllでウェブサイトの生成</h2>
 <p>HTMLやCSS, JavaScriptなど、手元で完結するようなウェブサイトの事を静的サイトと言うようです(間違っていたらごめんなさい)、そんな静的なサイトをうまいこと生成してくれるプログラムがそれはそれは沢山ある <a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> のですが、その中から私はHaskellでブログを作りたかったのでHakyllを選択しました。</p>
 <p><a href="https://jaspervdj.be/hakyll/">Hakyllの公式サイト</a></p>
@@ -144,8 +139,9 @@ css <span class="fu">=</span> <span class="kw">do</span>
 <li id="fn1"><p><a href="https://www.staticgen.com/">StaticGen</a> というサイトにまとまっています。静的サイトジェネレータのうちで有名なものといえばPelican(Python), Jekyll(Ruby), GitBook(JavaScript), Hugo(Go)などがあるでしょうか。おもしろそうなものでは、Lispで書かれたColeslawなんてものもあるそうです。<a href="#fnref1">↩</a></p></li>
 <li id="fn2"><p>テンプレートの呼び出しのあたり<a href="#fnref2">↩</a></p></li>
 </ol>
-</div></article>
+</div>
 <p>Tags: <a href="/tags/haskell.html">haskell</a>, <a href="/tags/program.html">program</a>, <a href="/tags/hakyll.html">hakyll</a>, <a href="/tags/blog.html">blog</a></p>
+</article>
 ]]></description>
     <pubDate>Sat, 27 Aug 2016 00:00:00 UT</pubDate>
     <guid>https://eliza.link/posts/create_blog_with_hakyll.html</guid>
@@ -154,13 +150,13 @@ css <span class="fu">=</span> <span class="kw">do</span>
 <item>
     <title>Blink on AtTiny85</title>
     <link>https://eliza.link/posts/AtTiny85a.html</link>
-    <description><![CDATA[<h2>Blink on AtTiny85</h2>
+    <description><![CDATA[<article><h2>Blink on AtTiny85</h2>
 <p>Posted on August  8, 2016</p>
 
 <p>Tags: <a href="/tags/program.html">program</a>, <a href="/tags/microprocessor.html">microprocessor</a>, <a href="/tags/arduino.html">arduino</a></p>
 
-<article><p>以前からArduinoやESP8266を使ってなにやら怪しいこと(おもにコンデンサを爆発させていた)をしていたのですが、<a href="https://twitter.com/mc475_46">もは氏/mc475_46</a>の勧めもあってついにAVRマイコンに手を出してみました。後悔するのは後になってからでも構わないでしょう。</p>
-<p>PlatformIOでFT232RLを使ってAtTiny85(AVR)に書き込んでいる記事なネットでみつけられなくて苦労したのでこの記事を書きました。</p>
+<p>以前からArduinoやESP8266を使ってなにやら怪しいこと(おもにコンデンサを爆発させていた)をしていたのですが、<a href="https://twitter.com/mc475_46">もは氏/mc475_46</a>の勧めもあってついにAVRマイコンに手を出してみました。後悔するのは後になってからでも構わないでしょう。</p>
+<p>PlatformIOでFT232RLを使ってAtTiny85(AVR)に書き込んでいる記事なネットでみつけられなくて苦労したのでこの記事を書きました。 <!--more--></p>
 <h2 id="tldr">TL;DR</h2>
 <p><a href="#プログラムを書き込む">ここ</a>のプログラムを参照して</p>
 <p>結線後に<code>./src/main.ino</code>と<code>./platformio.ini</code>にファイルを配置して<code>platformio run -t upload</code>すればOK。</p>
@@ -253,8 +249,9 @@ $ <span class="kw">platformio</span> init -b attiny85  </code></pre></div>
 <li><a href="http://tyk-systems.com/ATmega328/ATmega328.html">Arduinoから取り外したATmega328を外付け水晶振動子(発振子)で動作させる。</a></li>
 <li><a href="http://www.wsnak.com/wsnakblog/?p=4110">arduino(AVR)でキャリア波38KHzを発生させる</a></li>
 </ul>
-<p>他多数、関係企業とプログラマ達に感謝</p></article>
+<p>他多数、関係企業とプログラマ達に感謝</p>
 <p>Tags: <a href="/tags/program.html">program</a>, <a href="/tags/microprocessor.html">microprocessor</a>, <a href="/tags/arduino.html">arduino</a></p>
+</article>
 ]]></description>
     <pubDate>Mon, 08 Aug 2016 00:00:00 UT</pubDate>
     <guid>https://eliza.link/posts/AtTiny85a.html</guid>

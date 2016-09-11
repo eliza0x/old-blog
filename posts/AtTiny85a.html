@@ -34,13 +34,13 @@ ga('send', 'pageview');</script>
 </nav>
 </header>
 
-<main><h2>Blink on AtTiny85</h2>
+<main><article><h2>Blink on AtTiny85</h2>
 <p>Posted on August  8, 2016</p>
 
 <p>Tags: <a href="../tags/program.html">program</a>, <a href="../tags/microprocessor.html">microprocessor</a>, <a href="../tags/arduino.html">arduino</a></p>
 
-<article><p>以前からArduinoやESP8266を使ってなにやら怪しいこと(おもにコンデンサを爆発させていた)をしていたのですが、<a href="https://twitter.com/mc475_46">もは氏/mc475_46</a>の勧めもあってついにAVRマイコンに手を出してみました。後悔するのは後になってからでも構わないでしょう。</p>
-<p>PlatformIOでFT232RLを使ってAtTiny85(AVR)に書き込んでいる記事なネットでみつけられなくて苦労したのでこの記事を書きました。</p>
+<p>以前からArduinoやESP8266を使ってなにやら怪しいこと(おもにコンデンサを爆発させていた)をしていたのですが、<a href="https://twitter.com/mc475_46">もは氏/mc475_46</a>の勧めもあってついにAVRマイコンに手を出してみました。後悔するのは後になってからでも構わないでしょう。</p>
+<p>PlatformIOでFT232RLを使ってAtTiny85(AVR)に書き込んでいる記事なネットでみつけられなくて苦労したのでこの記事を書きました。 <!--more--></p>
 <h2 id="tldr">TL;DR</h2>
 <p><a href="#プログラムを書き込む">ここ</a>のプログラムを参照して</p>
 <p>結線後に<code>./src/main.ino</code>と<code>./platformio.ini</code>にファイルを配置して<code>platformio run -t upload</code>すればOK。</p>
@@ -133,16 +133,10 @@ $ <span class="kw">platformio</span> init -b attiny85  </code></pre></div>
 <li><a href="http://tyk-systems.com/ATmega328/ATmega328.html">Arduinoから取り外したATmega328を外付け水晶振動子(発振子)で動作させる。</a></li>
 <li><a href="http://www.wsnak.com/wsnakblog/?p=4110">arduino(AVR)でキャリア波38KHzを発生させる</a></li>
 </ul>
-<p>他多数、関係企業とプログラマ達に感謝</p></article>
+<p>他多数、関係企業とプログラマ達に感謝</p>
 <p>Tags: <a href="../tags/program.html">program</a>, <a href="../tags/microprocessor.html">microprocessor</a>, <a href="../tags/arduino.html">arduino</a></p>
+</article>
 
-<div class="ninja_onebutton"><script type="text/javascript">//<![CDATA[
-(function(d){
-if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_6053ba3df2a55b040931a3c10127a29c)=='undefined'){document.write("<sc"+"ript type='text\/javascript' src='\/\/omt.shinobi.jp\/b\/6053ba3df2a55b040931a3c10127a29c'><\/sc"+"ript>");}else{window.NINJA_CO_JP_ONETAG_BUTTON_6053ba3df2a55b040931a3c10127a29c.ONETAGButton_Load();}})(document);
-//]]></script>
-<span class="ninja_onebutton_hidden" style="display:none;"></span>
-<span class="ninja_onebutton_hidden" style="display:none;"></span>
-</div>
 <div id="disqus_thread"><script type="text/javascript">/* * * CONFIGURATION VARIABLES * * */
 var disqus_shortname = 'eliza0x';
 var disqus_identifier = "/posts/AtTiny85a.html";

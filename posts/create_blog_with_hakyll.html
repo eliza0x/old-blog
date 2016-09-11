@@ -34,19 +34,14 @@ ga('send', 'pageview');</script>
 </nav>
 </header>
 
-<main><h2>Haskellでブログを作った</h2>
+<main><article><h2>Haskellでブログを作った</h2>
 <p>Posted on August 27, 2016</p>
 
 <p>Tags: <a href="../tags/haskell.html">haskell</a>, <a href="../tags/program.html">program</a>, <a href="../tags/hakyll.html">hakyll</a>, <a href="../tags/blog.html">blog</a></p>
 
-<article><blockquote>
-<p>世の中には手段の為ならば目的を選ばないという様な どうしようもない連中も確実に存在するのだ<br />
-つまりは<br />
-とどのつまりは 我々のような<br />
-- HELLSING より</p>
-</blockquote>
 <p>以前からはてなブログなどで記事は書いていたんですが、どうしてもモチベーションも保てず、なんだか嫌になってブログを削除した黒歴史があります。 しかし、やっぱり記事は書くべき時が来ますし、せっかくブログを作るならもっと自由にカスタマイズできる環境であればより楽しいんじゃないかと思ったので、HakyllとShakespeare、そしてClayで私の好きなHaskellを使いブログを作りました。</p>
 <p>このページのソースコードは<a href="https://github.com/eliza0x/eliza0x.github.io/tree/bd964b8f01908b93c555d528bd020cb2060975bd">ここ</a>に公開しています。</p>
+<!--more-->
 <h2 id="hakyllでウェブサイトの生成">Hakyllでウェブサイトの生成</h2>
 <p>HTMLやCSS, JavaScriptなど、手元で完結するようなウェブサイトの事を静的サイトと言うようです(間違っていたらごめんなさい)、そんな静的なサイトをうまいこと生成してくれるプログラムがそれはそれは沢山ある <a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> のですが、その中から私はHaskellでブログを作りたかったのでHakyllを選択しました。</p>
 <p><a href="https://jaspervdj.be/hakyll/">Hakyllの公式サイト</a></p>
@@ -167,16 +162,10 @@ css <span class="fu">=</span> <span class="kw">do</span>
 <li id="fn1"><p><a href="https://www.staticgen.com/">StaticGen</a> というサイトにまとまっています。静的サイトジェネレータのうちで有名なものといえばPelican(Python), Jekyll(Ruby), GitBook(JavaScript), Hugo(Go)などがあるでしょうか。おもしろそうなものでは、Lispで書かれたColeslawなんてものもあるそうです。<a href="#fnref1">↩</a></p></li>
 <li id="fn2"><p>テンプレートの呼び出しのあたり<a href="#fnref2">↩</a></p></li>
 </ol>
-</div></article>
-<p>Tags: <a href="../tags/haskell.html">haskell</a>, <a href="../tags/program.html">program</a>, <a href="../tags/hakyll.html">hakyll</a>, <a href="../tags/blog.html">blog</a></p>
-
-<div class="ninja_onebutton"><script type="text/javascript">//<![CDATA[
-(function(d){
-if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_6053ba3df2a55b040931a3c10127a29c)=='undefined'){document.write("<sc"+"ript type='text\/javascript' src='\/\/omt.shinobi.jp\/b\/6053ba3df2a55b040931a3c10127a29c'><\/sc"+"ript>");}else{window.NINJA_CO_JP_ONETAG_BUTTON_6053ba3df2a55b040931a3c10127a29c.ONETAGButton_Load();}})(document);
-//]]></script>
-<span class="ninja_onebutton_hidden" style="display:none;"></span>
-<span class="ninja_onebutton_hidden" style="display:none;"></span>
 </div>
+<p>Tags: <a href="../tags/haskell.html">haskell</a>, <a href="../tags/program.html">program</a>, <a href="../tags/hakyll.html">hakyll</a>, <a href="../tags/blog.html">blog</a></p>
+</article>
+
 <div id="disqus_thread"><script type="text/javascript">/* * * CONFIGURATION VARIABLES * * */
 var disqus_shortname = 'eliza0x';
 var disqus_identifier = "/posts/create_blog_with_hakyll.html";
