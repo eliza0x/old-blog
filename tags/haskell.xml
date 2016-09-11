@@ -16,8 +16,8 @@
 
 <p>Tags: <a href="/tags/haskell.html">haskell</a>, <a href="/tags/program.html">program</a>, <a href="/tags/hakyll.html">hakyll</a>, <a href="/tags/blog.html">blog</a></p>
 
-<p>以前からはてなブログなどで記事は書いていたんですが、どうしてもモチベーションも保てず、なんだか嫌になってブログを削除した黒歴史があります。 しかし、やっぱり記事は書くべき時が来ますし、せっかくブログを作るならもっと自由にカスタマイズできる環境であればより楽しいんじゃないかと思ったので、HakyllとShakespeare、そしてClayで私の好きなHaskellを使いブログを作りました。</p>
-<p>このページのソースコードは<a href="https://github.com/eliza0x/eliza0x.github.io/tree/bd964b8f01908b93c555d528bd020cb2060975bd">ここ</a>に公開しています。</p>
+<p>以前からはてなブログなどで記事は書いていたんですが、どうしてもモチベーションも保てず、なんだか嫌になってブログを削除した過去があります。 しかし、やっぱり記事は書くべき時が来ますし、それでせっかくブログを作るならもっと自由にカスタマイズできる環境であればより楽しく続けられると思ったので、HakyllとShakespeare、そしてClayを使い、私の好きなHaskellでブログを作りました。</p>
+<p>記事をかいた当時のこのページのソースコードは<a href="https://github.com/eliza0x/eliza0x.github.io/tree/bd964b8f01908b93c555d528bd020cb2060975bd">ここ</a>に公開しています。 また、最新版は<a href="https://github.com/eliza0x/eliza0x.github.io">ここ</a>に公開しています。</p>
 <!--more-->
 <h2 id="hakyllでウェブサイトの生成">Hakyllでウェブサイトの生成</h2>
 <p>HTMLやCSS, JavaScriptなど、手元で完結するようなウェブサイトの事を静的サイトと言うようです(間違っていたらごめんなさい)、そんな静的なサイトをうまいこと生成してくれるプログラムがそれはそれは沢山ある <a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> のですが、その中から私はHaskellでブログを作りたかったのでHakyllを選択しました。</p>
