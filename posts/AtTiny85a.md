@@ -8,6 +8,7 @@ tags: program, microprocessor, arduino
 以前からArduinoやESP8266を使ってなにやら怪しいこと(おもにコンデンサを爆発させていた)をしていたのですが、[もは氏/mc475_46](https://twitter.com/mc475_46)の勧めもあってついにAVRマイコンに手を出してみました。後悔するのは後になってからでも構わないでしょう。
 
 PlatformIOでFT232RLを使ってAtTiny85(AVR)に書き込んでいる記事なネットでみつけられなくて苦労したのでこの記事を書きました。
+<!--more-->
 
 ## TL;DR
 

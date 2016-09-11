@@ -2,7 +2,7 @@
 
 \$partial("templates/post-list.hamlet")$
 
-<p>…or you can find more in the <a href="/archive.html">archives</a>.
+<p class="archives">…or you can find more in the <a href="/archive.html">archives</a>.
 
 <h2>Slides
 

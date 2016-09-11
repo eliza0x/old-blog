@@ -2,12 +2,10 @@
 
 module Main where
 
-import Control.Monad ((>=>))
-import Data.Monoid ((<>))
-import Hakyll
-import Hakyll.Web.Hamlet
-import Text.Highlighting.Kate.Format.HTML (styleToCss)
-import Text.Highlighting.Kate.Styles (tango)
+import           Control.Monad     ((>=>))
+import           Data.Monoid       ((<>))
+import           Hakyll
+import           Hakyll.Web.Hamlet
 
 main :: IO ()
 main = hakyll $ do
@@ -19,12 +17,29 @@ main = hakyll $ do
     -- Style sheet
     match "css/*.hs" $ do
       route $ setExtension "css"
-      compile $ getResourceString 
-            >>= withItemBody (unixFilter "stack" ["runghc", "--package=clay"])
-            -- >>= return . fmap compressCss
-    
+      compile $ getResourceString >>= withItemBody (unixFilter "stack" ["runghc", "--package=clay"])
+
     -- Create tags
-    tags <- buildTags "posts/*" (fromCapture "tags/*.html")
+    tagsOfPosts <- buildTags "posts/*" (fromCapture "tags/*.html")
+    -- Render tags
+    tagsRules tagsOfPosts $ \tag identifier -> do
+      let title = "Posts tagged " ++ tag
+      route   idRoute
+      compile $ do
+        posts <- recentFirst =<< loadAll identifier
+        let tagCtx =
+                constField "title" title                        <>
+                listField "posts" (postContext tagsOfPosts) (return posts) <>
+                defaultContext
+        makeItem ""
+            >>= loadAndApplyTemplate "templates/tag.hamlet" tagCtx
+            >>= loadAndApplyTemplate "templates/flame.hamlet" tagCtx
+            >>= relativizeUrls
+      version "rss" $ do
+          route   $ setExtension "xml"
+          compile $ loadAllSnapshots identifier "content"
+              >>= fmap (take 10) . recentFirst
+              >>= renderRss (feedConfiguration $ title ++ " - ") feedContext
 
     -- Configure pagenations
     archive <-
@@ -40,41 +55,19 @@ main = hakyll $ do
             posts <- recentFirst =<< loadAll identifier
             let archiveCtx =
                     constField "title" "Archives"                   <>
-                    listField "posts" (postCtx tags) (return posts) <>
+                    listField "posts" (postContext tagsOfPosts) (return posts) <>
                     paginateContext archive pageNum                 <>
                     defaultContext
-
             makeItem ""
                 >>= loadAndApplyTemplate "templates/archive.hamlet" archiveCtx
                 >>= loadAndApplyTemplate "templates/flame.hamlet" archiveCtx
                 >>= relativizeUrls
 
-    -- Post tags
-    tagsRules tags $ \tag identifier -> do
-
-      let title = "Posts tagged " ++ tag
-      route   idRoute
-      compile $ do
-        posts <- recentFirst =<< loadAll identifier
-        let tagCtx =
-                constField "title" title                        <>
-                listField "posts" (postCtx tags) (return posts) <>
-                defaultContext
-        makeItem ""
-            >>= loadAndApplyTemplate "templates/tag.hamlet" tagCtx
-            >>= loadAndApplyTemplate "templates/flame.hamlet" tagCtx
-            >>= relativizeUrls
-      version "rss" $ do
-          route   $ setExtension "xml"
-          compile $ loadAllSnapshots identifier "content"
-              >>= fmap (take 10) . recentFirst
-              >>= renderRss (feedConfiguration $ title ++ " - ") feedCtx
-
     -- Render the top pages
     match "top_pages/*.md" $ do
       route $ gsubRoute "top_pages/" (const "") `composeRoutes` setExtension "html"
-      compile $ pandocCompiler 
-        >>= loadAndApplyTemplate "templates/flame.hamlet" (postCtx tags)
+      compile $ pandocCompiler
+        >>= loadAndApplyTemplate "templates/flame.hamlet" (postContext tagsOfPosts)
         >>= relativizeUrls
 
     -- Render the index page
@@ -83,21 +76,21 @@ main = hakyll $ do
       compile $ do
         posts <- fmap (take 4) . recentFirst =<< loadAll "posts/*"
         let indexedContext =
-                listField "posts" (postCtx tags) (return posts) <>
+                listField "posts" (postContext tagsOfPosts) (return posts) <>
                 defaultContext
         hamlCompiler
           >>= applyAsTemplate indexedContext
-          >>= loadAndApplyTemplate "templates/flame.hamlet" (postCtx tags)
+          >>= loadAndApplyTemplate "templates/flame.hamlet" (postContext tagsOfPosts)
           >>= relativizeUrls
 
     -- Render the articles
     match "posts/*" $ do
         route $ setExtension "html"
         compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/article.hamlet" (postCtx tags)
+            >>= loadAndApplyTemplate "templates/article.hamlet" (postContext tagsOfPosts)
             >>= saveSnapshot "content"
-            >>= loadAndApplyTemplate "templates/social.hamlet" (postCtx tags)
-            >>= loadAndApplyTemplate "templates/flame.hamlet" (postCtx tags)
+            >>= loadAndApplyTemplate "templates/social.hamlet" (postContext tagsOfPosts)
+            >>= loadAndApplyTemplate "templates/flame.hamlet" (postContext tagsOfPosts)
             >>= relativizeUrls
 
     -- Build templates
@@ -109,17 +102,17 @@ main = hakyll $ do
       compile $
         loadAllSnapshots "posts/*" "content"
           >>= fmap (take 10) . recentFirst
-          >>= renderRss (feedConfiguration "All posts - ") feedCtx
+          >>= renderRss (feedConfiguration "All posts - ") feedContext
 
-postCtx :: Tags -> Context String
-postCtx tags =
+postContext :: Tags -> Context String
+postContext tags =
   dateField "date" "%B %e, %Y" `mappend`
   teaserField "teaser" "content" `mappend`
   tagsField "tags" tags          `mappend`
   defaultContext
 
-feedCtx :: Context String
-feedCtx = mconcat
+feedContext :: Context String
+feedContext = mconcat
     [ bodyField "description"
     , defaultContext
     ]

@@ -19,6 +19,4 @@ executable site
   build-depends:       base >= 4.7 && < 5
                      , hakyll
                      , hakyll-shakespeare
-                     , text
-                     , highlighting-kate
                      , clay

@@ -1,16 +1,13 @@
-<h2>$title$
-<p>Posted on $date$
-\$if(author)$
-  <p>by $author$
-\$endif$
-
-\$if(tags)$
-  <p>Tags: $tags$
-\$endif$
-
 <article>
+  <h2>$title$
+  <p>Posted on $date$
+  \$if(author)$
+    <p>by $author$
+  \$endif$
+  \$if(tags)$
+    <p>Tags: $tags$
+  \$endif$
   \$body$
-
-\$if(tags)$
-  <p>Tags: $tags$
-\$endif$
+  \$if(tags)$
+    <p>Tags: $tags$
+  \$endif$

@@ -1,8 +1,7 @@
-resolver: lts-6.13
-extra-deps: []
+resolver: lts-6.16
 flags: {}
 extra-package-dbs: []
-
+extra-deps: []
 packages:
 - '.'
 - /home/eliza/Program/hakyll-shakespeare
