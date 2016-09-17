@@ -29,7 +29,11 @@ HTMLやCSS, JavaScriptなど、手元で完結するようなウェブサイト�
 
 HakyllはPandocを容易に利用することが出来るよう設計されているので、記事をMarkdownやreSTで書く事が出来ます。便利ですね。
 
-また、Pandocの機能で数式や脚注を埋め込めます。具体的に何が出来るかや、どんなフォーマットに対応しているかは、有志によるPandocのユーザーズガイドを参照すれば良いと思います。
+また、Pandocの機能で数式や脚注を埋め込めます。
+
+$$\ln x = \int_{-\infty}^x \frac 1 y \, dy .$$
+
+具体的に何が出来るかや、どんなフォーマットに対応しているかは、有志によるPandocのユーザーズガイドを参照すれば良いと思います。
 
 [Pandocのユーザーズガイド(和訳版)](http://sky-y.github.io/site-pandoc-jp/users-guide/)
 
