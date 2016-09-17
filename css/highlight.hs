@@ -30,14 +30,10 @@ codeLayout :: Css
 codeLayout = do
   pre # ".sourceCode" ? do
     borderLeft solid ( px 2) gray
-    marginLeft       $ px 10
-    paddingLeft      $ px 10
-    paddingTop       $ px 10
-    paddingBottom    $ px 20
-    marginTop        $ px 10
-    marginBottom     $ px 10
-  div # ".sourceCode" ?
-    overflowX auto
+    padding (px 10) (px 10) (px 10) (px 10)
+    margin (px 10) (px 10) (px 10) (px 10)
+  div # ".sourceCode" ? overflowX auto
+  table # ".sourceCode" ? backgroundColor white
   table # ".sourceCode" <>
     tr  # ".sourceCode"  <>
     td  # ".lineNumbers" <>
@@ -46,10 +42,6 @@ codeLayout = do
     padding none none none none
     verticalAlign baseline
     border none none none
-  table # ".sourceCode" ? do
-    width $ pct 100
-    lineHeight $ pct 100
-    backgroundColor white
   td # ".lineNumbers" ? do
     textAlign $ alignSide sideRight
     paddingRight $ px 4
@@ -61,8 +53,7 @@ codeLayout = do
   pre # ".sourceCode" <> code ? do
     fontFamily ["Inconsolata"] [monospace]
     fontSize $ rem 1.6
-    lineHeight $ rem 1.8
-
+    lineHeight $ rem 1.6
 
 codeColor :: Css
 codeColor = do

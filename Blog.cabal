@@ -20,3 +20,5 @@ executable site
                      , hakyll
                      , hakyll-shakespeare
                      , clay
+                     , containers
+                     , pandoc

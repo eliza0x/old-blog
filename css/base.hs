@@ -52,7 +52,7 @@ baseCss = do
   body ? do
     backgroundColor backGroundColor
     fontSize $ em 1.7
-    lineHeight $ rem 2.7
+    lineHeight $ rem 1.9
     fontWeight $ weight 400
     fontFamily ["Open Sans"] [sansSerif]
     color fontColor
@@ -63,6 +63,21 @@ baseCss = do
 
 typoGraphyCss :: Css
 typoGraphyCss = do
+  p ? do
+    marginTop nil
+    marginBottom (rem 1.8)
+  a ? do
+    color firstColor
+    textDecoration none
+  a |> (h1 <> h2 <> h3 <> h4 <> h5 <> h6) ?
+      color fontColor
+  a # hover <>
+    a |> (h1 <> h2 <> h3 <> h4 <> h5 <> h6) # hover ?
+      color secondColor
+  h1 <> h2 <> h3 <> h4 <> h5 <> h6 ? do
+      marginTop        nil
+      marginBottom   $ rem 1.5
+      fontWeight     $ weight 300
   mapM_ headCss
     [ ( h1, rem 4.0, rem $ 4.0 + 1.2,  rem (-0.1) )
     , ( h2, rem 3.6, rem $ 3.6 + 1.25, rem (-0.1)  )
@@ -70,7 +85,6 @@ typoGraphyCss = do
     , ( h4, rem 2.4, rem $ 2.4 + 1.35, rem (-0.08) )
     , ( h5, rem 1.8, rem $ 1.8 + 1.5,  rem (-0.05) )
     , ( h6, rem 1.5, rem $ 1.5 + 1.6,  nil )]
-
   query screen [minWidth $ px 550] $ do
     h1 ? fontSize (rem 5.0)
     h2 ? fontSize (rem 4.2)
@@ -78,20 +92,9 @@ typoGraphyCss = do
     h4 ? fontSize (rem 3.0)
     h5 ? fontSize (rem 2.4)
     h6 ? fontSize (rem 1.5)
-
-  p ? do
-    marginTop nil
-    marginBottom (rem 2.0)
-  a ? do
-    color firstColor
-    textDecoration none
-  a # hover ? color secondColor
   where
     headCss :: (Selector, Size a, Size b, Size c) -> Css
     headCss (selector, fsize, lheight, lspacing) = selector ? do
-      marginTop        nil
-      marginBottom   $ rem    2
-      fontWeight     $ weight 300
       fontSize         fsize
       lineHeight       lheight
       letterSpacing    lspacing
@@ -103,7 +106,9 @@ listCss = do
     marginTop   $ px 0
   ul ? listStyle circleListStyle inside none
   ol ? listStyle decimal inside none
-  li ? marginBottom (rem 0.5)
+  dl <> li ? do
+    marginTop $ rem 1
+    marginBottom $ px 0
 
 teaserCss :: Css
 teaserCss = do
@@ -136,10 +141,9 @@ teaserCss = do
 headerCss :: Css
 headerCss = do
   ".title" ? do
-    marginTop    $ rem 2
-    marginBottom $ rem 2
+    marginTop    $ rem 1
+    marginBottom $ rem 1
     fontSize     $ rem 6.0
-    color fontColor
   ".navigation" ? do
     borderTop    solid (px 1) firstColor
     borderBottom solid (px 1) firstColor

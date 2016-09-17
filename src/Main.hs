@@ -3,9 +3,11 @@
 module Main where
 
 import           Control.Monad     ((>=>))
+import           Data.Map          (member)
 import           Data.Monoid       ((<>))
 import           Hakyll
 import           Hakyll.Web.Hamlet
+import           Text.Pandoc
 
 main :: IO ()
 main = hakyll $ do
@@ -86,7 +88,7 @@ main = hakyll $ do
     -- Render the articles
     match "posts/*" $ do
         route $ setExtension "html"
-        compile $ pandocCompiler
+        compile $ pandocCompilerWith defaultHakyllReaderOptions pandocOptions
             >>= loadAndApplyTemplate "templates/article.hamlet" (postContext tagsOfPosts)
             >>= saveSnapshot "content"
             >>= loadAndApplyTemplate "templates/social.hamlet" (postContext tagsOfPosts)
@@ -103,6 +105,11 @@ main = hakyll $ do
         loadAllSnapshots "posts/*" "content"
           >>= fmap (take 10) . recentFirst
           >>= renderRss (feedConfiguration "All posts - ") feedContext
+
+pandocOptions :: WriterOptions
+pandocOptions = defaultHakyllWriterOptions {
+    writerHTMLMathMethod = MathJax ""
+  }
 
 postContext :: Tags -> Context String
 postContext tags =
