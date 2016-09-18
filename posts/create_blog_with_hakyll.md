@@ -2,7 +2,7 @@
 title: Haskellでブログを作った
 description: HakyllとShakespeare、そしてClayでブログを作った際の記録です。
 date: 2016-08-27
-tags: haskell, program, hakyll
+tags: haskell, programming, hakyll
 ----
 
 以前からはてなブログなどで記事は書いていたんですが、どうしてもモチベーションも保てず、なんだか嫌になってブログを削除した過去があります。

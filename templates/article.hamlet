@@ -1,14 +1,16 @@
 <article>
   <a href=$url$>
     <h2>$title$
-  <p>Posted on $date$
-  \$if(author)$
-    <p>by $author$
-  \$endif$
-  \$if(tags)$
-    <p>Tags: $tags$
-  \$endif$
+  <ul class="article_data">
+    <li>  Posted on $date$
+    \$if(author)$
+      <li> by $author$
+    \$endif$
+    \$if(tags)$
+      <li> Tags: $tags$
+    \$endif$
   \$body$
-  \$if(tags)$
-    <p>Tags: $tags$
-  \$endif$
+  <ul class="article_data">
+    \$if(tags)$
+      <li> Tags: $tags$
+    \$endif$

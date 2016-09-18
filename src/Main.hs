@@ -3,7 +3,6 @@
 module Main where
 
 import           Control.Monad     ((>=>))
-import           Data.Map          (member)
 import           Data.Monoid       ((<>))
 import           Hakyll
 import           Hakyll.Web.Hamlet
@@ -79,6 +78,7 @@ main = hakyll $ do
         posts <- fmap (take 4) . recentFirst =<< loadAll "posts/*"
         let indexedContext =
                 listField "posts" (postContext tagsOfPosts) (return posts) <>
+                field "tags" (\_ -> renderTagList tagsOfPosts) <>
                 defaultContext
         hamlCompiler
           >>= applyAsTemplate indexedContext

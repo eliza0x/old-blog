@@ -1,10 +1,10 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-import Prelude hiding (div, rem, (**))
-import Clay hiding (table, minWidth, fontColor)
-import Clay.Display (table)
-import Clay.Media (screen, minWidth)
-import Data.Monoid ((<>))
+import           Clay         hiding (fontColor, minWidth, table)
+import           Clay.Display (table)
+import           Clay.Media   (minWidth, screen)
+import           Data.Monoid  ((<>))
+import           Prelude      hiding (div, rem, (**))
 
 main :: IO ()
 main = putCss css
@@ -24,6 +24,7 @@ css = do
   listCss
   headerCss
   pagenateCss
+  articleDataCss
   aboutCss
 
 containerCss :: Css
@@ -39,12 +40,10 @@ containerCss = do
     content $ stringContent ""
     display table
     clear both
-  query screen [minWidth $ px 400] $
+  query screen [minWidth $ px 650] $
     ".container" ? do
       width $ pct 90
       padding nil nil nil nil
-  query screen [minWidth $ px 650] $
-    ".container" ? width (pct 75)
 
 baseCss :: Css
 baseCss = do
@@ -52,7 +51,7 @@ baseCss = do
   body ? do
     backgroundColor backGroundColor
     fontSize $ em 1.7
-    lineHeight $ rem 1.9
+    lineHeight $ rem 2.3
     fontWeight $ weight 400
     fontFamily ["Open Sans"] [sansSerif]
     color fontColor
@@ -65,7 +64,7 @@ typoGraphyCss :: Css
 typoGraphyCss = do
   p ? do
     marginTop nil
-    marginBottom (rem 1.8)
+    marginBottom (rem 2)
   a ? do
     color firstColor
     textDecoration none
@@ -76,7 +75,7 @@ typoGraphyCss = do
       color secondColor
   h1 <> h2 <> h3 <> h4 <> h5 <> h6 ? do
       marginTop        nil
-      marginBottom   $ rem 1.5
+      marginBottom   $ rem 2.0
       fontWeight     $ weight 300
   mapM_ headCss
     [ ( h1, rem 4.0, rem $ 4.0 + 1.2,  rem (-0.1) )
@@ -105,9 +104,12 @@ listCss = do
     paddingLeft $ px 0
     marginTop   $ px 0
   ul ? listStyle circleListStyle inside none
+  ul ** ul ? do
+    listStyle none inside none
+    marginLeft $ px 20
   ol ? listStyle decimal inside none
   dl <> li ? do
-    marginTop $ rem 1
+    marginTop $ rem 0.5
     marginBottom $ px 0
 
 teaserCss :: Css
@@ -154,18 +156,18 @@ headerCss = do
   ".navigation" ** li ? do
     textDecoration none
     margin  nil nil nil nil
-    padding nil nil nil nil 
+    padding nil nil nil nil
   ".navigation" ** li ** a ? do
     display block
     padding (px 10) nil (px 10) nil
-    margin  nil nil nil nil 
+    margin  nil nil nil nil
   ".navigation" # after ?
     clear both
   query screen [minWidth $ px 500] $ do
     ".navigation" ** li ?
       float floatLeft
     ".navigation" ** li ** a ?
-      padding (px 10) (px 15) (px 10) (px 15) 
+      padding (px 10) (px 15) (px 10) (px 15)
 
 pagenateCss :: Css
 pagenateCss = do
@@ -174,9 +176,17 @@ pagenateCss = do
     textAlign $ alignSide sideCenter
   ".pagination" ** a ? do
     border solid (px 1) firstColor
-    padding (px 5) (px 10) (px 5) (px 10) 
-    margin (px 0) (px 10) (px 0) (px 10) 
-    
+    padding (px 5) (px 10) (px 5) (px 10)
+    margin (px 0) (px 10) (px 0) (px 10)
+
+articleDataCss :: Css
+articleDataCss = do
+  ".article_data" |> li ? do
+    listStyle none inside none
+    marginTop (rem 0)
+  ".article_data" |> li # lastChild ?
+    marginBottom (rem 2)
+
 aboutCss :: Css
 aboutCss = do
   footer ? do
@@ -185,7 +195,7 @@ aboutCss = do
     position static
     paddingBottom $ px 15
     paddingTop $ px 15
-    margin (px 15) (px 0) (px 15) (px 0) 
+    margin (px 15) (px 0) (px 15) (px 0)
   ".archives" ? do
     textAlign $ alignSide sideRight
     marginRight $ px 30

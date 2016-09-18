@@ -3,6 +3,7 @@
 \$partial("templates/post-list.hamlet")$
 
 <p class="archives">…or you can find more in the <a href="/archive.html">archives</a>.
+<p>$tags$
 
 <h2>Slides
 
