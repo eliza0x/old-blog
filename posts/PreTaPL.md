@@ -28,8 +28,23 @@ TaPLの読書記録は[このページ](/posts/TaPL.html)に載っています�
 
 - ~~反射的推移的閉包ってなんだよ~~
 - TaPLの冒頭に集合がなんだかんだと書かれていたので勉強が必要だと思い、[東京女子大学の代数学IA(集合と論理)のテキスト](http://www.math.twcu.ac.jp/~yamauchi/text/2012/alg2012/set_logic.pdf)を読んでみました。
-    + 私の環境では途中で組版がすこし崩れていた。
-    + これを読むのは論理学のテキストを読んだ後のほうが良い。
+    + 私の環境では途中で組版がすこし崩れています。
+    + これを読むのは論理学のテキストを読んだ後が良いです。
+- 理解が浅い気がしたので[広島大学の集合論の基礎のテキスト](http://home.hiroshima-u.ac.jp/fujita/Class/Kisoron/set.pdf)も読みました。
+
+- 関係って単語に意味はあるのか？
+    + プログラマがわかるように言うと、trueがfalseで分類できる二項演算子の事。
+- 反射性、推移性、対称性ってそもそもどういう意味？
+    + 推移関係
+        - $\forall a,b,c \in X,\; aRb \land bRc \Rightarrow aRc$
+        - 関数合成をイメージした
+    + 対象関係
+        - $\forall a,b \in X,\; aRb \Rightarrow bRa$
+        - 左右を入れ替えても問題がない関係と理解した。
+        - $A=B$なら$B=A$
+    + 反射関係
+        - $\forall a \in X,\; aRa \forall a \in X,\; aRa.$
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr"><a href="https://twitter.com/Eliza_0x">@Eliza_0x</a> あれは，一言で言うと「同じものは同じ」って言いたいの</p>&mdash; しんぷっと(読み方：唯一無二の光) (@a0symptote) <a href="https://twitter.com/a0symptote/status/777573971227095040">2016年9月18日</a></blockquote>
 
 ## 離散数学
 
@@ -43,8 +58,8 @@ TaPLの読書記録は[このページ](/posts/TaPL.html)に載っています�
 
 ## 高階関数型プログラミング言語
 
-- まあまあHaskellが書けるので問題はなさそうと慢心。TaPLのサンプルコードはOCaml(MLの方言)で書かれている。
-- サンプルコードの実装にパーサを書かなければいけないみたいなので、ekmett氏の[trifecta](http://hackage.haskell.org/package/trifecta)でも使ってみようと思う。
+- まあまあHaskellが書けるので問題はなさそうと慢心。TaPLのサンプルコードはOCaml(MLの方言)で書かれていました。
+- サンプルコードの実装にパーサを書かなければいけないみたいなので、ekmett氏の[trifecta](http://hackage.haskell.org/package/trifecta)でも使ってみようと思います。
 
 ## コンパイラの基礎的な概念
 
