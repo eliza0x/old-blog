@@ -43,7 +43,7 @@ TaPLの読書記録は[このページ](/posts/TaPL.html)に載っています�
         - 左右を入れ替えても問題がない関係と理解した。
         - $A=B$なら$B=A$
     + 反射関係
-        - $\forall a \in X,\; aRa \forall a \in X,\; aRa.$
+        - $\forall a \in X,\; aRa.$
 <blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr"><a href="https://twitter.com/Eliza_0x">@Eliza_0x</a> あれは，一言で言うと「同じものは同じ」って言いたいの</p>&mdash; しんぷっと(読み方：唯一無二の光) (@a0symptote) <a href="https://twitter.com/a0symptote/status/777573971227095040">2016年9月18日</a></blockquote>
 
 ## 離散数学
