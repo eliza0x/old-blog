@@ -199,13 +199,13 @@ aboutCss = do
   ".archives" ? do
     textAlign $ alignSide sideRight
     marginRight $ px 30
-  ".figure" ** img ? width (pct 100)
-  query screen [minWidth $ px 600] $
-    ".figure" ?
-      width (pct 75)
-  query screen [minWidth $ px 960] $
-    ".figure" ?
-      width (pct 50)
+--  ".figure" ** img ? width (pct 100)
+--  query screen [minWidth $ px 600] $
+--    ".figure" ?
+--      width (pct 75)
+--  query screen [minWidth $ px 960] $
+--    ".figure" ?
+--      width (pct 50)
   ".footnotes" ? do
     marginTop $ px 20
     marginBottom $ px 10
