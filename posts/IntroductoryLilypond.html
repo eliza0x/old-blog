@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<title>Lilypondで楽譜を書いた | eliza.link</title>
+<meta name="author" content="@Eliza_0x">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sanitize.css/2.0.0/sanitize.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&subset=latin-ext">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/highlight.css">
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<meta name="twitter:widgets:link-color" content="#666666">
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-77388062-1', 'auto');
+ga('send', 'pageview');</script></script>
+</head>
+
+<body class="container"><header><h1 class="title"><a class="title" href="../">eliza.link</a>
+</h1>
+<nav><ul class="navigation"><li><a href="../">Home</a>
+</li>
+<li><a href="../about.html">About</a>
+</li>
+<li><a href="../archive.html">Archive</a>
+</li>
+<li><a href="../products.html">Products</a>
+</li>
+<li><a href="../contact.html">Contact</a>
+</li>
+</ul>
+</nav>
+</header>
+
+<main><article><a href="../posts/IntroductoryLilypond.html"><h2>Lilypondで楽譜を書いた</h2>
+</a>
+<ul class="article_data"><li>  Posted on September 19, 2016</li>
+
+<li> Tags: <a href="../tags/music.html">music</a></li>
+</ul>
+<p>吹奏楽部でソロをもらったのですが、本来はピアノがソロを担当する曲なのでサックスの譜面がなく、しかたなく書くことになりました。 はじめはMusicTeXを使おうと思ったのですが少し難しかった。なので次の候補だったLilypondを試してみると、使いやすかったので記録をのこしておきます。</p>
+<blockquote>
+<p>LilyPond は、可能な限り高品位な楽譜を生み出すことを目的とする、オープン ソースの楽譜作成プログラムです。このフリー ソフトウェアは、伝統的な彫版の楽譜の美しさをコンピュータ プリントアウトで実現します。LilyPond はフリーソフトウェアであり、GNU プロジェクト の一部です。 - <a href="http://lilypond.org/index.ja.html" class="uri">http://lilypond.org/index.ja.html</a></p>
+</blockquote>
+<!--more-->
+<p>GNUらしく公式サイトでは自由が強調されています。GNUのサイトはデザインこそカッコイイとはいい難いものの、どれも目にやさしく見やすいので私は好きです。</p>
+<p>「高品位な」と言っているだけあって、無調整でもなかなか美しい楽譜を作ることが出来ました。 LilypondはTeX同様、テキストからpdfを出力します、なのでバージョン管理もできますし、好きなエディターで編集することもできます、そしてTeXと比べ非常に高速で簡単に扱う事ができます。</p>
+<p>弱点といいますか、WYSIWYGではないのでちょっと間違いを見つけたときに書き直す箇所をみつけるのが大変でした、今回それ以外はまったく問題ありませんでした。</p>
+<h2 id="環境を整える">環境を整える</h2>
+<p>わたしはVimで楽譜を書きたかったので、Vimに<a href="https://github.com/matze/vim-lilypond">matze/vim-lilypond</a>を追加しました。 PlugやNeoBundle、今ならdein等のVimのプラグインマネージャを使えば簡単に導入できるでしょう。 話はそれますが、わたしは<a href="https://github.com/itchyny/miv">miv</a>というHaskellで書かれたプラグインマネージャを使用しています。オススメです。</p>
+<h2 id="楽譜を書く">楽譜を書く</h2>
+<p>Lilypondは用意に使用できるにかかわらず非常に強力です、以下に<a href="http://lilypond.org/examples.ja.html" class="uri">http://lilypond.org/examples.ja.html</a>からの例を載せておきます。</p>
+<div class="figure">
+<img src="../images/LilypondExam2.png" />
+
+</div>
+<p><a href="http://lilypond.org/doc/v2.18/Documentation/learning/index.ja.html">公式サイトのリファレンス</a>がわかりやすく充実しているので、それを読めば楽譜はひととおり書けるでしょう。</p>
+<p><a href="http://lilypond.org/doc/v2.18/Documentation/notation/cheat-sheet">チートシート</a>も用意されています。</p>
+<p>この説明だけでは味気ないのですこしだけサンプルコードを載せておきます。</p>
+<div class="sourceCode"><pre class="sourceCode lilypond"><code class="sourceCode lilypond"><span class="kw">\version</span> &quot;<span class="st">2.18.2&quot;</span>
+<span class="kw">{</span>
+  c' e' g' e'
+<span class="kw">}</span></code></pre></div>
+<p>以上のコードで</p>
+<div class="figure">
+<img src="../images/LilypondExam3.png" />
+
+</div>
+<p>のような譜面ができます。ひとつずつ解説しましょう。</p>
+<ul>
+<li>楽譜の目には見えない部分の設定は、<code>\hoge</code>でおこないます。<code>\version</code>はLilypondのバージョンを指定しています。</li>
+<li>楽譜本体は<code>{</code>と<code>}</code>で囲みます。</li>
+<li>音の指定はコードで指定します。<code>a</code>から<code>g</code>までで<code>h</code>は存在しません。小文字です。</li>
+<li>コードの後の<code>'</code>は1オクターブ上の音、という意味です。</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode lilypond"><code class="sourceCode lilypond"><span class="kw">\version</span> &quot;<span class="st">2.18.2&quot;</span>
+
+<span class="fu">\relative c'</span> <span class="kw">{</span>
+  c' c' c' c' <span class="dv">|</span> c' c' c' c' <span class="dv">|</span> c, c, c, c, <span class="dv">|</span> c, c, c, c,
+<span class="kw">}</span></code></pre></div>
+<div class="figure">
+<img src="../images/LilypondExam5.png" />
+
+</div>
+<ul>
+<li><code>\relative</code>で相対的に記述を行うことができます。</li>
+<li><code>|</code>で小節を明示的に区切ることができます。自動でも区切られますが、あえて示す事によって一小節に音が足りない場合を検知してくれるのでミスが減ります。</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode lilypond"><code class="sourceCode lilypond"><span class="kw">\version</span> &quot;<span class="st">2.18.2&quot;</span>
+
+<span class="fu">\relative c'</span> <span class="kw">{</span>
+  <span class="fu">\key f</span> <span class="fu">\major</span>
+  c' r<span class="dt">2</span> d,<span class="dt">4</span> <span class="dv">|</span> r<span class="dt">4.</span> d<span class="dt">8</span> c<span class="dt">4</span> a
+<span class="kw">}</span></code></pre></div>
+<div class="figure">
+<img src="../images/LilypondExam4.png" />
+
+</div>
+<ul>
+<li>音の後の数字で長さを指定します。</li>
+<li><code>\key</code>で調を指定しています。</li>
+<li><code>r</code>で休符です。</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode lilypond"><code class="sourceCode lilypond"><span class="kw">\version</span> &quot;<span class="st">2.18.2&quot;</span>
+
+<span class="fu">\relative c''</span> <span class="kw">{</span>
+  a b c d <span class="dv">|</span> <span class="dt">&lt;</span>a b&gt; <span class="dt">&lt;</span>a b&gt; <span class="dt">&lt;</span>a b&gt; <span class="dt">&lt;</span>a b&gt;<span class="ch">(</span> <span class="dv">|</span> <span class="dt">&lt;</span>a b c d e&gt;<span class="dt">1</span><span class="ch">)~</span> <span class="dv">|</span> <span class="dt">&lt;</span>a b c d e&gt;<span class="dt">1</span>
+<span class="kw">}</span></code></pre></div>
+<div class="figure">
+<img src="../images/LilypondExam6.png" />
+
+</div>
+<ul>
+<li><code>&lt;</code>と<code>&gt;</code>で囲んだ範囲が和音になります。</li>
+<li><code>(</code>と<code>)</code>で囲んだ範囲がスラーになります。</li>
+<li><code>~</code>を付けると後の音とのタイになります。</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode lilypond"><code class="sourceCode lilypond"><span class="kw">\version</span> &quot;<span class="st">2.18.2&quot;</span>
+
+<span class="fu">\relative c''</span> <span class="kw">{</span>
+    c<span class="dt">4</span>-<span class="st">^\p</span> c-<span class="st">+\pp</span> c-<span class="st">-\f</span> c-!<span class="st">\ff</span> <span class="dv">|</span> c<span class="dt">4</span>-<span class="st">&gt;</span> c-<span class="st">.</span> c<span class="dt">2</span>-<span class="st">_</span>
+  <span class="dv">|</span> a<span class="st">\&lt;</span> b<span class="st">\!</span> c d<span class="st">\&gt;</span> <span class="dv">|</span> e<span class="dt">1</span>
+<span class="kw">}</span></code></pre></div>
+<div class="figure">
+<img src="../images/LilypondExam7.png" />
+
+</div>
+<ul>
+<li>各アーテュキレーションも付ける事ができます。</li>
+<li><code>\!</code>でクレセンド、デクレセンドの終端になります。</li>
+</ul>
+<p>最後に、わたしの実際に書いたコードの断片を紹介します。</p>
+<div class="sourceCode"><pre class="sourceCode lilypond"><code class="sourceCode lilypond"><span class="kw">\version</span> &quot;<span class="st">2.18.2&quot;</span> 
+
+\header<span class="kw"> {</span> 
+ title = <span class="bn">\markup</span> <span class="bn">\center-align</span> <span class="kw">{</span> &quot;<span class="st">Autumn Leaves&quot;</span> <span class="kw">}</span> 
+ subtitle = <span class="bn">\markup</span> <span class="bn">\center-align</span> <span class="kw">{</span> &quot;<span class="st">Solo Score&quot;</span> <span class="kw">}</span> 
+<span class="kw">}</span> 
+\paper<span class="kw"> {</span> 
+	#<span class="fl">( set-paper-size &quot;</span><span class="st">a4&quot;</span><span class="fl"> )</span> 
+<span class="kw">}</span> 
+<span class="fu">\transpose c' bes'</span> <span class="kw">{</span>
+  <span class="fu">\relative c'</span> <span class="kw">{</span>
+    <span class="fu">\key f</span> <span class="fu">\major</span>
+    <span class="fu">\time 4/4</span>
+      r<span class="dt">2</span> d<span class="dt">8</span>^&quot;<span class="st">Solo&quot;</span> c bes a<span class="ch">(</span> <span class="dv">|</span> a<span class="dt">4.</span><span class="ch">)</span> d<span class="dt">8</span> c bes a c <span class="dv">|</span> bes a r g r f r a<span class="ch">(</span> <span class="dv">|</span> a<span class="ch">)</span> bes c a<span class="ch">(</span> a<span class="dt">4.</span><span class="ch">)</span> f<span class="dt">8</span> 
+    <span class="dv">|</span> <span class="dt">&lt;</span>f a&gt; <span class="dt">&lt;</span>f a&gt; r<span class="dt">4</span> r<span class="dt">2</span> <span class="dv">|</span> r<span class="dt">8</span> e g<span class="dt">[</span> bes<span class="dt">]</span> d<span class="dt">[</span> c bes a<span class="dt">]</span> <span class="dv">|</span> bes cis,<span class="dt">4.</span> r<span class="dt">8</span> cis e<span class="dt">[</span> d<span class="dt">]</span><span class="ch">(</span> <span class="dv">|</span> d<span class="dt">4</span><span class="ch">)</span> r d<span class="dt">8</span> f a e'
+  <span class="kw">}</span>
+<span class="kw">}</span></code></pre></div>
+<div class="figure">
+<img src="../images/LilypondExam8.png" />
+
+</div>
+<ul>
+<li><code>\time 4/4</code>で四分の四拍子であることを明示。<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></li>
+<li><code>-es</code>、<code>-is</code>でシャープ、フラット</li>
+<li>Cの調の楽譜をBes調の楽譜に起こしたかったので、Cそのままで一度書いたあとに、<code>\relative c bes</code>でBesに変換した。</li>
+</ul>
+<p>さあ、LilyPondをインストールして音楽家になりましょう。</p>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>この例の場合はしなくても良い<a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
+<ul class="article_data"><li> Tags: <a href="../tags/music.html">music</a></li>
+</ul>
+</article>
+
+<div id="disqus_thread"><script type="text/javascript">/* * * CONFIGURATION VARIABLES * * */
+var disqus_shortname = 'eliza0x';
+var disqus_identifier = "/posts/IntroductoryLilypond.html";
+var disqus_title = "Lilypondで楽譜を書いた";
+var disqus_url = "https://eliza.link/posts/IntroductoryLilypond.html";
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);})();</script>
+<noscript>Please enable JavaScript to view the 
+<a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+</div>
+</main>
+
+<footer>Site generated by <a href="http://jaspervdj.be/hakyll">Hakyll<br /></a>
+hosted on 
+<a href="https://github.io">Github Pages<br /></a>
+The source code is available at 
+<a href="https://github.com/eliza0x/eliza0x.github.io">Github</a>
+</footer>
+</body>
+</html>

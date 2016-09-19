@@ -11,11 +11,12 @@
         <item>
     <title>Haskellでブログを作った</title>
     <link>https://eliza.link/posts/create_blog_with_hakyll.html</link>
-    <description><![CDATA[<article><h2>Haskellでブログを作った</h2>
-<p>Posted on August 27, 2016</p>
+    <description><![CDATA[<article><a href="/posts/create_blog_with_hakyll.html"><h2>Haskellでブログを作った</h2>
+</a>
+<ul class="article_data"><li>  Posted on August 27, 2016</li>
 
-<p>Tags: <a href="/tags/haskell.html">haskell</a>, <a href="/tags/program.html">program</a>, <a href="/tags/hakyll.html">hakyll</a>, <a href="/tags/blog.html">blog</a></p>
-
+<li> Tags: <a href="/tags/haskell.html">haskell</a>, <a href="/tags/programming.html">programming</a>, <a href="/tags/hakyll.html">hakyll</a></li>
+</ul>
 <p>以前からはてなブログなどで記事は書いていたんですが、どうしてもモチベーションも保てず、なんだか嫌になってブログを削除した過去があります。 しかし、やっぱり記事は書くべき時が来ますし、それでせっかくブログを作るならもっと自由にカスタマイズできる環境であればより楽しく続けられると思ったので、HakyllとShakespeare、そしてClayを使い、私の好きなHaskellでブログを作りました。</p>
 <p>記事をかいた当時のこのページのソースコードは<a href="https://github.com/eliza0x/eliza0x.github.io/tree/bd964b8f01908b93c555d528bd020cb2060975bd">ここ</a>に公開しています。 また、最新版は<a href="https://github.com/eliza0x/eliza0x.github.io">ここ</a>に公開しています。</p>
 <!--more-->
@@ -26,7 +27,9 @@
 <h2 id="とりあえず記事は楽して書きたい">とりあえず記事は楽して書きたい</h2>
 <p><a href="http://pandoc.org/">Pandoc</a>を知っていますか？MarkdownやreStructuredText(reSTの呼称のほうが一般的？)などで書かれたドキュメントをHTMLやTeX, 果てはWord docs形式に変換してくれる便利なソフトウェアです。</p>
 <p>HakyllはPandocを容易に利用することが出来るよう設計されているので、記事をMarkdownやreSTで書く事が出来ます。便利ですね。</p>
-<p>また、Pandocの機能で数式や脚注を埋め込めます。具体的に何が出来るかや、どんなフォーマットに対応しているかは、有志によるPandocのユーザーズガイドを参照すれば良いと思います。</p>
+<p>また、Pandocの機能で数式や脚注を埋め込めます。</p>
+<p><span class="math display">\[\ln x = \int_{-\infty}^x \frac 1 y \, dy .\]</span></p>
+<p>具体的に何が出来るかや、どんなフォーマットに対応しているかは、有志によるPandocのユーザーズガイドを参照すれば良いと思います。</p>
 <p><a href="http://sky-y.github.io/site-pandoc-jp/users-guide/">Pandocのユーザーズガイド(和訳版)</a></p>
 <p>私の手元のPandoc(version 1.17.1)は以下のフォーマットに対応していました。</p>
 <pre><code>Input formats:
@@ -140,7 +143,8 @@ css <span class="fu">=</span> <span class="kw">do</span>
 <li id="fn2"><p>テンプレートの呼び出しのあたり<a href="#fnref2">↩</a></p></li>
 </ol>
 </div>
-<p>Tags: <a href="/tags/haskell.html">haskell</a>, <a href="/tags/program.html">program</a>, <a href="/tags/hakyll.html">hakyll</a>, <a href="/tags/blog.html">blog</a></p>
+<ul class="article_data"><li> Tags: <a href="/tags/haskell.html">haskell</a>, <a href="/tags/programming.html">programming</a>, <a href="/tags/hakyll.html">hakyll</a></li>
+</ul>
 </article>
 ]]></description>
     <pubDate>Sat, 27 Aug 2016 00:00:00 UT</pubDate>

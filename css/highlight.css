@@ -1,18 +1,19 @@
 
 pre.sourceCode
 {
-  border-left    : solid 2px rgb(170,170,170);
-  margin-left    : 10px;
-  padding-left   : 10px;
-  padding-top    : 10px;
-  padding-bottom : 20px;
-  margin-top     : 10px;
-  margin-bottom  : 10px;
+  border-left : solid 2px rgb(170,170,170);
+  padding     : 10px 10px 10px 10px;
+  margin      : 10px 10px 10px 10px;
 }
 
 div.sourceCode
 {
   overflow-x : auto;
+}
+
+table.sourceCode
+{
+  background-color : rgb(248,248,248);
 }
 
 table.sourceCode,
@@ -24,13 +25,6 @@ td.sourceCode
   padding        : none none none none;
   vertical-align : baseline;
   border         : none none none;
-}
-
-table.sourceCode
-{
-  width            : 100%;
-  line-height      : 100%;
-  background-color : rgb(248,248,248);
 }
 
 td.lineNumbers
@@ -58,7 +52,7 @@ code
 {
   font-family : "Inconsolata", monospace;
   font-size   : 1.6rem;
-  line-height : 1.8rem;
+  line-height : 1.6rem;
 }
 
 code > span.al

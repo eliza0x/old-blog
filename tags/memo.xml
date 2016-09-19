@@ -7,15 +7,262 @@
         <description><![CDATA[技術や読書録を残します]]></description>
         <atom:link href="https://eliza.link/tags/memo.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Wed, 17 Aug 2016 00:00:00 UT</lastBuildDate>
+        <lastBuildDate>Thu, 15 Sep 2016 00:00:00 UT</lastBuildDate>
         <item>
+    <title>型システム入門(TaPL)読書メモ</title>
+    <link>https://eliza.link/posts/TaPL.html</link>
+    <description><![CDATA[<article><a href="/posts/TaPL.html"><h2>型システム入門(TaPL)読書メモ</h2>
+</a>
+<ul class="article_data"><li>  Posted on September 15, 2016</li>
+
+<li> Tags: <a href="/tags/haskell.html">haskell</a>, <a href="/tags/book.html">book</a>, <a href="/tags/memo.html">memo</a>, <a href="/tags/programming.html">programming</a>, <a href="/tags/math.html">math</a></li>
+</ul>
+<p>TaPLでの読書メモが書いてあります。内容の真偽の保証はできません。必要に応じて追記していきます。 間違いを発見した場合はコメントを下さるか、me [at] eliza [dot] linkまでメールを下さると喜びます。</p>
+<ol start="17" style="list-style-type: upper-alpha">
+<li>どうして読むのか</li>
+<li>Haskellが好きで背後で使われている技術を知りたくなったから</li>
+</ol>
+<p><a href="http://tapl.proofcafe.org/home">日本語のサポートページ</a>が準備されています。 また、<a href="https://estore.ohmsha.co.jp/titles/978427406911P">出版元のページ</a>から第一章が無料で読めます。</p>
+<!--more-->
+<h2 id="予備知識について">予備知識について</h2>
+<p><a href="/posts/PreTaPL.html">このページに書いてあります</a></p>
+<h2 id="tapl">TaPL</h2>
+<blockquote>
+<p>型システムとは、プログラミング言語の安全性や効率を高めるうえで重要な理論・手法です。本書は、その型システムについて基礎的な話題を網羅し、実装例を交えて丁寧に解説したThe MIT Press発行の解説書“Types And Programming Languages”（TAPL）を翻訳したものです。言語設計者や学生だけでなく、静的型付言語を深く理解して活用したいプログラマーにとっても貴重な情報となっています。 <a href="http://shop.ohmsha.co.jp/shop/shopdetail.html?brandcode=000000001948" class="uri">http://shop.ohmsha.co.jp/shop/shopdetail.html?brandcode=000000001948</a></p>
+</blockquote>
+<blockquote class="twitter-tweet" data-lang="ja">
+<p lang="ja" dir="ltr">
+サポートサイトができたらジュンク堂トークのPDFも載ると思いますが、これだけは先に：型システム入門(TAPL)はとりあえず1,3,8,5,9,11章（＆2章の必要な部分）と、あとは好きな章を読めば「読んだ」ことにしても良いと思います！（60%本気）
+</p>
+— Eijiro Sumii (<span class="citation">@esumii</span>) <a href="https://twitter.com/esumii/status/315135694462939137">2013年3月22日</a>
+</blockquote>
+<h4 id="第1章-はじめに">第1章 はじめに</h4>
+<p>型を導入する意義や、型についての面白い話が書かれています。</p>
+<h4 id="第2章-数学的準備">第2章 数学的準備</h4>
+<p>数学の公式や前提として必要な知識が列挙されています、ここで馴染の無い物があれば読むのを中断し、いちどその分野の知識を補うべきだとしていますが私は強行を決めました。</p>
+<h2 id="第1部-型無しの計算体系">第1部 型無しの計算体系</h2>
+<h4 id="第3章-型無し算術式">第3章 型無し算術式</h4>
+<p>簡単な言語の構文を定義して意味論や項を操作したりしている。</p>
+<!-- - 操作的意味論: 抽象機械を定義してプログラミング言語の振舞いを規定、機械の振舞いを遷移関数を使用して定義する。 -->
+<!-- - 表示的意味論: 項を数値や関数として捉えてモデル化。 -->
+<!-- - 公理的意味論: 言語の定義そのものが法則となる、項の意味は項の照明そのもの。 -->
+<ul>
+<li>正規形
+<ul>
+<li>もう項が評価できない、という意味である。 <code>if t1 then t2 else t3</code> は評価できるが、 <code>true</code> はもう評価できない。</li>
+<li><del>正規形であるならば値である。</del></li>
+<li>項が正規形であるにかかわらず値ではない場合を『行き詰まり状態』と言う。</li>
+<li>すべての項に対して、ある正規形が存在する</li>
+</ul></li>
+<li>多ステップ評価
+<ul>
+<li>1ステップ評価を合成したやつだと理解しておいた。</li>
+</ul></li>
+</ul>
+<h4 id="第4章-算術式のml実装">第4章 算術式のML実装</h4>
+<ul>
+<li>さほど難しくなかったので実装せず。</li>
+<li>流し読みすると思考の整理に役立つと思う</li>
+</ul>
+<h4 id="第5章-型無しラムダ計算">第5章 型無しラムダ計算</h4>
+<ul>
+<li><span class="math inline">\(\lambda\)</span>(Lambda)計算
+<ul>
+<li>全ての計算が関数定義と関数適用で表される(trueやfalse、数も関数!)</li>
+<li>複雑なプログラミング言語のエッセンスは小さな核となる計算の集まりとして定式化できる、という事で生まれた。</li>
+</ul></li>
+<li><span class="math inline">\(\lambda\)</span>計算はプログラミング言語であると共に証明可能な数学的対象。</li>
+<li><span class="math inline">\(\lambda\)</span>計算に似たようなものに<span class="math inline">\(\pi\)</span>計算やオブジェクト計算がある(本書では扱わないらしいが)</li>
+<li>自由変数の無い項を「閉じている」もしくは「コンビネータ」という。
+<ul>
+<li><span class="math inline">\(\lambda x.\; x\)</span> 例えばこの恒等関数はコンビネータである。</li>
+<li><span class="math inline">\(\lambda x.\; y\)</span> この項はコンビネータではない。</li>
+</ul></li>
+<li><span class="math inline">\((\lambda x.\; x) y\)</span> は <span class="math inline">\(y\)</span> と評価される。</li>
+<li>項 <span class="math inline">\((\lambda x.\; x\; (\lambda x.\; x))\; (u\; r)\)</span> は <span class="math inline">\(u\; r\; (\lambda x.\; x)\)</span> と評価される。
+<ul>
+<li>この操作をベータ簡約といい、簡約可能な項を簡約基と言う。</li>
+</ul></li>
+<li>ラムダ計算の評価戦略は数種類あり、プログラミング言語によっても違う。
+<ul>
+<li>Haskellは名前呼び戦略の変種である必要呼び戦略</li>
+<li>大多数の言語では値呼び戦略</li>
+</ul></li>
+<li>以下は名前呼び簡約の例です。</li>
+</ul>
+<p><span class="math inline">\(\quad \underline{ id\;(id\;(\lambda z.\; id\; z)) }\\ \rightarrow\; \underline{ id\;(\lambda z.\; id\; z) }\\ \rightarrow\; \lambda z.\; id\; z\\ \nrightarrow\)</span></p>
+<ul>
+<li>以下は値呼び簡約の例です。</li>
+</ul>
+<p><span class="math inline">\(\quad\; id\;(\underline{ id\;(\lambda z.\; id\; z)})\\ \rightarrow\; \underline{id\;(\lambda z.\; id\; z) }\\ \rightarrow\; \lambda z.\; id\; z\\ \nrightarrow\)</span></p>
+<ul>
+<li>値呼び評価は「正格」名前呼び戦略は「非正格」もしくは「遅延評価」と呼ばれる。</li>
+<li>純粋なラムダ計算でもブール値や数の表現、またその評価は出来る
+<ul>
+<li>純粋なラムダ計算ではTrueとFalseを以下のように表現する。</li>
+<li><span class="math inline">\(true\; =\; \lambda t.\; \lambda f.\; t;\\false\; =\; \lambda t.\; \lambda f.\; f;\)</span></li>
+<li>面倒、なので必要に応じて拡張して使ったりする。</li>
+<li>関数定義と関数適用で数をどのように表すかというとチャーチ数というものがある。</li>
+</ul></li>
+<li>正規形に評価できない項が存在する。
+<ul>
+<li><span class="math inline">\(omega\; =\; (\lambda x. x\; x)\; (\lambda x. x\; x);\)</span></li>
+<li>簡約基を一つだけ持っているが、簡約すると<span class="math inline">\(omega\)</span>そのものになるためである。</li>
+<li>これを発散という。</li>
+</ul></li>
+<li><span class="math inline">\(omega\)</span>コンビネータには不動点コンビネータと呼ばれる一般化がある。
+<ul>
+<li>Haskellが分かるならtanakh氏の<a href="http://d.hatena.ne.jp/tanakh/20040813">不動点演算子</a>の記事が面白いかも。</li>
+</ul></li>
+</ul>
+<!--
+#### 第6章	項の名無し表現
+#### 第7章	ラムダ計算のML実装
+
+## 第2部	単純型
+#### 第8章	型付き算術式
+#### 第9章	単純型付きラムダ計算
+#### 第10章	単純型のML実装
+#### 第11章	単純な拡張
+#### 第12章	正規化
+#### 第13章	参照
+#### 第14章	例外
+
+## 第3部	部分型付け
+#### 第15章	部分型付け
+#### 第16章	部分型付けのメタ理論
+#### 第17章	部分型付けのML実装
+#### 第18章	事例：命令的オブジェクト
+#### 第19章	事例：Featherweight Java
+
+## 第4部	再帰型
+#### 第20章	再帰型
+#### 第21章	再帰型のメタ理論
+
+## 第5部	多相性
+#### 第22章	型再構築
+#### 第23章	全称型
+#### 第24章	存在型
+#### 第25章	System F のML実装
+#### 第26章	有界量化
+#### 第27章	事例：命令的オブジェクト再考
+#### 第28章	有界量化のメタ理論
+
+## 第6部	高階の型システム
+#### 第29章	型演算子とカインド
+#### 第30章	高階多相
+#### 第31章	高階部分型付け
+#### 第32章	事例：純粋関数的オブジェクト
+
+## 付録A	演習の解答
+## 付録B	記法
+-->
+<ul class="article_data"><li> Tags: <a href="/tags/haskell.html">haskell</a>, <a href="/tags/book.html">book</a>, <a href="/tags/memo.html">memo</a>, <a href="/tags/programming.html">programming</a>, <a href="/tags/math.html">math</a></li>
+</ul>
+</article>
+]]></description>
+    <pubDate>Thu, 15 Sep 2016 00:00:00 UT</pubDate>
+    <guid>https://eliza.link/posts/TaPL.html</guid>
+    <dc:creator>Eliza Calls</dc:creator>
+</item>
+<item>
+    <title>TaPLに必要な知識の学習記録</title>
+    <link>https://eliza.link/posts/PreTaPL.html</link>
+    <description><![CDATA[<article><a href="/posts/PreTaPL.html"><h2>TaPLに必要な知識の学習記録</h2>
+</a>
+<ul class="article_data"><li>  Posted on September 15, 2016</li>
+
+<li> Tags: <a href="/tags/haskell.html">haskell</a>, <a href="/tags/book.html">book</a>, <a href="/tags/memo.html">memo</a>, <a href="/tags/programming.html">programming</a>, <a href="/tags/math.html">math</a></li>
+</ul>
+<p>TaPLを読むのために少し勉強したのでメモを残しておきます。 内容の真偽の保証はできません。必要に応じて追記していきます。</p>
+<p><a href="http://zoetrope.hatenablog.jp/entry/2013/07/24/204613">数学初心者のための「型システム入門」入門</a>によると前提として以下の知識が必要になるようです。</p>
+<blockquote>
+<ul>
+<li>数学(離散数学、アルゴリズム、論理学)</li>
+<li>高階関数型プログラミング言語(Scheme、ML、Haskellなど)</li>
+<li>コンパイラの基礎的な概念(抽象構文、BNF文法、評価、抽象機械など)</li>
+</ul>
+</blockquote>
+<p>TaPLの読書記録は<a href="/posts/TaPL.html">このページ</a>に載っています。</p>
+<!--more-->
+<h2 id="論理学">論理学</h2>
+<ul>
+<li><a href="http://abelard.flet.keio.ac.jp/person/mitsu/pdf/nyumon_logic.pdf">「論理学入門」講義ノート</a>が論理学で検索してヒットしたものの中で一番容易に読み進めることができそうだったので読み流した(証明は追いかけるの面倒だったので飛ばした)。</li>
+<li>記号がダメな人はアレルギーをおこしそうな分野でした、印刷したテキストをうっかり直視した友人は帰らぬ人となりました。(まあプログラマは大丈夫だと思う)</li>
+</ul>
+<h2 id="集合論">集合論</h2>
+<ul>
+<li><del>反射的推移的閉包ってなんだよ</del></li>
+<li>TaPLの冒頭に集合がなんだかんだと書かれていたので勉強が必要だと思い、<a href="http://www.math.twcu.ac.jp/~yamauchi/text/2012/alg2012/set_logic.pdf">東京女子大学の代数学IA(集合と論理)のテキスト</a>を読んでみました。
+<ul>
+<li>私の環境では途中で組版がすこし崩れています。</li>
+<li>これを読むのは論理学のテキストを読んだ後が良いです。</li>
+</ul></li>
+<li>理解が浅い気がしたので<a href="http://home.hiroshima-u.ac.jp/fujita/Class/Kisoron/set.pdf">広島大学の集合論の基礎のテキスト</a>も読みました。</li>
+<li>関係？
+<ul>
+<li>プログラマがわかるように言うと、trueがfalseで分類できる二項演算子<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>の事。</li>
+</ul></li>
+<li>反射性、推移性、対称性ってそもそもどういう意味？
+<ul>
+<li>推移関係
+<ul>
+<li><span class="math inline">\(\forall a,b,c \in X,\; aRb \land bRc \Rightarrow aRc\)</span></li>
+<li>関数合成をイメージした</li>
+</ul></li>
+<li>対象関係
+<ul>
+<li><span class="math inline">\(\forall a,b \in X,\; aRb \Rightarrow bRa\)</span></li>
+<li>左右を入れ替えても問題がない関係と理解した。</li>
+<li>たとえば、<span class="math inline">\(A=B\)</span>なら<span class="math inline">\(B=A\)</span></li>
+</ul></li>
+<li>反射関係
+<ul>
+<li><span class="math inline">\(\forall a \in X,\; aRa.\)</span></li>
+<li><blockquote class="twitter-tweet" data-conversation="none" data-lang="ja">
+<p lang="ja" dir="ltr">
+<a href="https://twitter.com/Eliza_0x"><span class="citation">@Eliza_0x</span></a> あれは，一言で言うと「同じものは同じ」って言いたいの
+</p>
+— しんぷっと(読み方：唯一無二の光) (<span class="citation">@a0symptote</span>) <a href="https://twitter.com/a0symptote/status/777573971227095040">2016年9月18日</a>
+</blockquote></li>
+</ul></li>
+</ul></li>
+<li>以上三つを満たした関係を同値といいます。</li>
+</ul>
+<h2 id="離散数学">離散数学</h2>
+<h2 id="ラムダ計算">ラムダ計算</h2>
+<ul>
+<li><a href="http://language-and-engineering.hatenablog.jp/entry/20130313/LambdaCalculusBasicNoteLinks">「ラムダ計算」を独学で学習するための，講義ノートやPDFのリンク集 （復習用の問題付き）</a>に詳しくまとまっています。</li>
+</ul>
+<h2 id="アルゴリズム">アルゴリズム</h2>
+<h2 id="高階関数型プログラミング言語">高階関数型プログラミング言語</h2>
+<ul>
+<li>まあまあHaskellが書けるので問題はなさそうと慢心。TaPLのサンプルコードはOCaml(MLの方言)で書かれていました。</li>
+<li>サンプルコードの実装にパーサを書かなければいけないみたいなので、ekmett氏の<a href="http://hackage.haskell.org/package/trifecta">trifecta</a>でも使ってみようと思います。</li>
+</ul>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>本当はn項らしい<a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
+<ul class="article_data"><li> Tags: <a href="/tags/haskell.html">haskell</a>, <a href="/tags/book.html">book</a>, <a href="/tags/memo.html">memo</a>, <a href="/tags/programming.html">programming</a>, <a href="/tags/math.html">math</a></li>
+</ul>
+</article>
+]]></description>
+    <pubDate>Thu, 15 Sep 2016 00:00:00 UT</pubDate>
+    <guid>https://eliza.link/posts/PreTaPL.html</guid>
+    <dc:creator>Eliza Calls</dc:creator>
+</item>
+<item>
     <title>劣等感を感じる自分について</title>
     <link>https://eliza.link/posts/ZenMind.html</link>
-    <description><![CDATA[<article><h2>劣等感を感じる自分について</h2>
-<p>Posted on August 17, 2016</p>
+    <description><![CDATA[<article><a href="/posts/ZenMind.html"><h2>劣等感を感じる自分について</h2>
+</a>
+<ul class="article_data"><li>  Posted on August 17, 2016</li>
 
-<p>Tags: <a href="/tags/memo.html">memo</a></p>
-
+<li> Tags: <a href="/tags/memo.html">memo</a></li>
+</ul>
 <p><a href="http://kosen14s.github.io/">Kosen14s</a>の人達は知っていると思うけれど、私は驚くほど英語が出来ない。中学時代にまったく勉強をしなかったので、それ以前から学んでいた数学や国語はまあまあ出来るけど、中学から習い始めた英語は壊滅的だ。</p>
 <!--more-->
 <p>そのおかげで、こう言っては同学の人達に失礼だけれど賢くない高校に入学せざるをえなかった。しかも工業高校だ。 おかげで私の脳味噌はすっからかんだ。授業の半分が先生の中身の無い雑談でなくなるような授業を三年うけていたからね。</p>
@@ -36,7 +283,8 @@
 <li id="fn1"><p>そもそも禅とは何かを良くしらない<a href="#fnref1">↩</a></p></li>
 </ol>
 </div>
-<p>Tags: <a href="/tags/memo.html">memo</a></p>
+<ul class="article_data"><li> Tags: <a href="/tags/memo.html">memo</a></li>
+</ul>
 </article>
 ]]></description>
     <pubDate>Wed, 17 Aug 2016 00:00:00 UT</pubDate>

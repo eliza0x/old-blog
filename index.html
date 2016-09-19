@@ -12,10 +12,13 @@
 <link rel="stylesheet" href="./css/base.css">
 <link rel="stylesheet" href="./css/highlight.css">
 
-<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<meta name="twitter:widgets:link-color" content="#666666">
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 ga('create', 'UA-77388062-1', 'auto');
-ga('send', 'pageview');</script>
+ga('send', 'pageview');</script></script>
 </head>
 
 <body class="container"><header><h1 class="title"><a class="title" href="./">eliza.link</a>
@@ -35,55 +38,73 @@ ga('send', 'pageview');</script>
 </header>
 
 <main><h2>Recent posts</h2>
-<section><ul><li class="teaser"><article><h2>Haskellでブログを作った</h2>
-<p>Posted on August 27, 2016</p>
+<section><ul><li class="teaser"><article><a href="./posts/IntroductoryLilypond.html"><h2>Lilypondで楽譜を書いた</h2>
+</a>
+<ul class="article_data"><li>  Posted on September 19, 2016</li>
 
-<p>Tags: <a href="./tags/haskell.html">haskell</a>, <a href="./tags/program.html">program</a>, <a href="./tags/hakyll.html">hakyll</a>, <a href="./tags/blog.html">blog</a></p>
+<li> Tags: <a href="./tags/music.html">music</a></li>
+</ul>
+<p>吹奏楽部でソロをもらったのですが、本来はピアノがソロを担当する曲なのでサックスの譜面がなく、しかたなく書くことになりました。 はじめはMusicTeXを使おうと思ったのですが少し難しかった。なので次の候補だったLilypondを試してみると、使いやすかったので記録をのこしておきます。</p>
+<blockquote>
+<p>LilyPond は、可能な限り高品位な楽譜を生み出すことを目的とする、オープン ソースの楽譜作成プログラムです。このフリー ソフトウェアは、伝統的な彫版の楽譜の美しさをコンピュータ プリントアウトで実現します。LilyPond はフリーソフトウェアであり、GNU プロジェクト の一部です。 - <a href="http://lilypond.org/index.ja.html" class="uri">http://lilypond.org/index.ja.html</a></p>
+</blockquote>
 
+<p class="more"><a href="./posts/IntroductoryLilypond.html">More +</a>
+</p>
+</li>
+<li class="teaser"><article><a href="./posts/TaPL.html"><h2>型システム入門(TaPL)読書メモ</h2>
+</a>
+<ul class="article_data"><li>  Posted on September 15, 2016</li>
+
+<li> Tags: <a href="./tags/haskell.html">haskell</a>, <a href="./tags/book.html">book</a>, <a href="./tags/memo.html">memo</a>, <a href="./tags/programming.html">programming</a>, <a href="./tags/math.html">math</a></li>
+</ul>
+<p>TaPLでの読書メモが書いてあります。内容の真偽の保証はできません。必要に応じて追記していきます。 間違いを発見した場合はコメントを下さるか、me [at] eliza [dot] linkまでメールを下さると喜びます。</p>
+<ol start="17" style="list-style-type: upper-alpha">
+<li>どうして読むのか</li>
+<li>Haskellが好きで背後で使われている技術を知りたくなったから</li>
+</ol>
+<p><a href="http://tapl.proofcafe.org/home">日本語のサポートページ</a>が準備されています。 また、<a href="https://estore.ohmsha.co.jp/titles/978427406911P">出版元のページ</a>から第一章が無料で読めます。</p>
+
+<p class="more"><a href="./posts/TaPL.html">More +</a>
+</p>
+</li>
+<li class="teaser"><article><a href="./posts/PreTaPL.html"><h2>TaPLに必要な知識の学習記録</h2>
+</a>
+<ul class="article_data"><li>  Posted on September 15, 2016</li>
+
+<li> Tags: <a href="./tags/haskell.html">haskell</a>, <a href="./tags/book.html">book</a>, <a href="./tags/memo.html">memo</a>, <a href="./tags/programming.html">programming</a>, <a href="./tags/math.html">math</a></li>
+</ul>
+<p>TaPLを読むのために少し勉強したのでメモを残しておきます。 内容の真偽の保証はできません。必要に応じて追記していきます。</p>
+<p><a href="http://zoetrope.hatenablog.jp/entry/2013/07/24/204613">数学初心者のための「型システム入門」入門</a>によると前提として以下の知識が必要になるようです。</p>
+<blockquote>
+<ul>
+<li>数学(離散数学、アルゴリズム、論理学)</li>
+<li>高階関数型プログラミング言語(Scheme、ML、Haskellなど)</li>
+<li>コンパイラの基礎的な概念(抽象構文、BNF文法、評価、抽象機械など)</li>
+</ul>
+</blockquote>
+<p>TaPLの読書記録は<a href="./posts/TaPL.html">このページ</a>に載っています。</p>
+
+<p class="more"><a href="./posts/PreTaPL.html">More +</a>
+</p>
+</li>
+<li class="teaser"><article><a href="./posts/create_blog_with_hakyll.html"><h2>Haskellでブログを作った</h2>
+</a>
+<ul class="article_data"><li>  Posted on August 27, 2016</li>
+
+<li> Tags: <a href="./tags/haskell.html">haskell</a>, <a href="./tags/programming.html">programming</a>, <a href="./tags/hakyll.html">hakyll</a></li>
+</ul>
 <p>以前からはてなブログなどで記事は書いていたんですが、どうしてもモチベーションも保てず、なんだか嫌になってブログを削除した過去があります。 しかし、やっぱり記事は書くべき時が来ますし、それでせっかくブログを作るならもっと自由にカスタマイズできる環境であればより楽しく続けられると思ったので、HakyllとShakespeare、そしてClayを使い、私の好きなHaskellでブログを作りました。</p>
 <p>記事をかいた当時のこのページのソースコードは<a href="https://github.com/eliza0x/eliza0x.github.io/tree/bd964b8f01908b93c555d528bd020cb2060975bd">ここ</a>に公開しています。 また、最新版は<a href="https://github.com/eliza0x/eliza0x.github.io">ここ</a>に公開しています。</p>
 
 <p class="more"><a href="./posts/create_blog_with_hakyll.html">More +</a>
 </p>
 </li>
-<li class="teaser"><article><h2>劣等感を感じる自分について</h2>
-<p>Posted on August 17, 2016</p>
-
-<p>Tags: <a href="./tags/memo.html">memo</a></p>
-
-<p><a href="http://kosen14s.github.io/">Kosen14s</a>の人達は知っていると思うけれど、私は驚くほど英語が出来ない。中学時代にまったく勉強をしなかったので、それ以前から学んでいた数学や国語はまあまあ出来るけど、中学から習い始めた英語は壊滅的だ。</p>
-
-<p class="more"><a href="./posts/ZenMind.html">More +</a>
-</p>
-</li>
-<li class="teaser"><article><h2>Blink on AtTiny85</h2>
-<p>Posted on August  8, 2016</p>
-
-<p>Tags: <a href="./tags/program.html">program</a>, <a href="./tags/microprocessor.html">microprocessor</a>, <a href="./tags/arduino.html">arduino</a></p>
-
-<p><a href="https://twitter.com/mc475_46">もは氏/mc475_46</a>の勧めもあってついにAVRマイコンに手を出してみました。後悔するのは後になってからでも構わないでしょう。 自分の書いたプログラムがPCの外で動いているというのは新鮮ですし、マイコンはプログラミングと日常をつないでくれるような気がしてなんだかとても楽しいです。</p>
-<p>PlatformIOでFT232RLを使ってAtTiny85(AVR)に書き込んでいる記事なネットでみつけられなくて苦労したのでこの記事を書きました。</p>
-
-<p class="more"><a href="./posts/AtTiny85a.html">More +</a>
-</p>
-</li>
-<li class="teaser"><article><h2>「人はなぜ戦争をするのか」を読んだ</h2>
-<p>Posted on July  1, 2016</p>
-
-<p>Tags: <a href="./tags/book.html">book</a>, <a href="./tags/kosen14s.html">kosen14s</a></p>
-
-<p><em>この記事はkosen14’s読書会12日目の記事です。</em></p>
-<p><a href="http://yamasy1549.hateblo.jp/entry/2016/06/29/102252">やましーの書いた記事</a>が著者の目に留まり、作者が喜んでいたりだとか、<a href="http://furutsuki.hatenablog.com/entry/2016/06/24/074640">ふるつきの書いた記事</a>がはてなブログ界隈で話題になったりだとかしていますね。</p>
-<p>なるほど、やましーの記事は内容こそ所々分からないものの非常に興味をひきたてられて、ぜひ読んでみたいと思わせる記事でしたし、ふるつきの記事も気持ちよく読める文体で記されていて、話題になるのもわかるなあ…と私もプレッシャーに感じています。</p>
-<p>今回私はフロイト著の「人はなぜ戦争をするのか」を読んで記事を書きました、光文社の古典新訳文庫、本当に読みやすくてありがたいです。</p>
-
-<p class="more"><a href="./posts/why_war_summary.html">More +</a>
-</p>
-</li>
 </ul>
 </section>
 
 <p class="archives">…or you can find more in the <a href="./archive.html">archives</a>.</p>
+<p><a href="./tags/arduino.html">arduino (1)</a>, <a href="./tags/book.html">book (4)</a>, <a href="./tags/hakyll.html">hakyll (1)</a>, <a href="./tags/haskell.html">haskell (3)</a>, <a href="./tags/kosen14s.html">kosen14s (3)</a>, <a href="./tags/math.html">math (2)</a>, <a href="./tags/memo.html">memo (3)</a>, <a href="./tags/microprocessor.html">microprocessor (1)</a>, <a href="./tags/music.html">music (1)</a>, <a href="./tags/programming.html">programming (4)</a></p>
 <h2>Slides</h2>
 <ul><li><a href="./files/IntroArduino.pdf">高校生のためのArduino入門</a>
 </li>
@@ -101,7 +122,7 @@ ga('send', 'pageview');</script>
 <footer>Site generated by <a href="http://jaspervdj.be/hakyll">Hakyll<br /></a>
 hosted on 
 <a href="https://github.io">Github Pages<br /></a>
-The source code of this website is available at 
+The source code is available at 
 <a href="https://github.com/eliza0x/eliza0x.github.io">Github</a>
 </footer>
 </body>

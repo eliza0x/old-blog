@@ -11,11 +11,12 @@
         <item>
     <title>Blink on AtTiny85</title>
     <link>https://eliza.link/posts/AtTiny85a.html</link>
-    <description><![CDATA[<article><h2>Blink on AtTiny85</h2>
-<p>Posted on August  8, 2016</p>
+    <description><![CDATA[<article><a href="/posts/AtTiny85a.html"><h2>Blink on AtTiny85</h2>
+</a>
+<ul class="article_data"><li>  Posted on August  8, 2016</li>
 
-<p>Tags: <a href="/tags/program.html">program</a>, <a href="/tags/microprocessor.html">microprocessor</a>, <a href="/tags/arduino.html">arduino</a></p>
-
+<li> Tags: <a href="/tags/programming.html">programming</a>, <a href="/tags/microprocessor.html">microprocessor</a>, <a href="/tags/arduino.html">arduino</a></li>
+</ul>
 <p><a href="https://twitter.com/mc475_46">もは氏/mc475_46</a>の勧めもあってついにAVRマイコンに手を出してみました。後悔するのは後になってからでも構わないでしょう。 自分の書いたプログラムがPCの外で動いているというのは新鮮ですし、マイコンはプログラミングと日常をつないでくれるような気がしてなんだかとても楽しいです。</p>
 <p>PlatformIOでFT232RLを使ってAtTiny85(AVR)に書き込んでいる記事なネットでみつけられなくて苦労したのでこの記事を書きました。</p>
 <!--more-->
@@ -112,7 +113,8 @@ $ <span class="kw">platformio</span> init -b attiny85  </code></pre></div>
 <li><a href="http://www.wsnak.com/wsnakblog/?p=4110">arduino(AVR)でキャリア波38KHzを発生させる</a></li>
 </ul>
 <p>他多数、関係企業とプログラマ達に感謝</p>
-<p>Tags: <a href="/tags/program.html">program</a>, <a href="/tags/microprocessor.html">microprocessor</a>, <a href="/tags/arduino.html">arduino</a></p>
+<ul class="article_data"><li> Tags: <a href="/tags/programming.html">programming</a>, <a href="/tags/microprocessor.html">microprocessor</a>, <a href="/tags/arduino.html">arduino</a></li>
+</ul>
 </article>
 ]]></description>
     <pubDate>Mon, 08 Aug 2016 00:00:00 UT</pubDate>
