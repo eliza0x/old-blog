@@ -199,6 +199,7 @@ aboutCss = do
   ".archives" ? do
     textAlign $ alignSide sideRight
     marginRight $ px 30
+  ".figure" ? margin (px 10) (px 10) (px 10) (px 10) 
 --  ".figure" ** img ? width (pct 100)
 --  query screen [minWidth $ px 600] $
 --    ".figure" ?
