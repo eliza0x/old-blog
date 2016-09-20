@@ -114,7 +114,7 @@ $$
     + 本著では「de Bruijinインデックス」[^deBruin]を使用しています。
 - de Bruijinインデックス
     + 変数を名前から解放したい。
-    + 束縛している$\lambda$からどれだけ遠い(深い)かを自然数で表します。(変数がいらなくなる)
+    + 束縛している$\lambda$からどれだけ遠い(深い)かを自然数で表します。
     + 例
         * $\lambda x.\; x \Rightarrow \lambda .\; 0$
         * $\lambda x.\lambda y.\; y\; x \Rightarrow \lambda.\lambda. \; 0\; 1$
