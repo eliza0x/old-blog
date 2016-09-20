@@ -285,7 +285,7 @@
 <li><span class="math inline">\(\lambda x.\; x \Rightarrow \lambda .\; 0\)</span></li>
 <li><span class="math inline">\(\lambda x.\lambda y.\; y\; x \Rightarrow \lambda.\lambda. \; 0\; 1\)</span></li>
 <li><span class="math inline">\(foo = (\lambda x. (\lambda x. x)) (\lambda x. x); \Rightarrow foo = (\lambda .\lambda . 0) (\lambda . 0);\)</span></li>
-<li><span class="math inline">\(\lambda\)</span> の数より多い数値の場合、自由変数を指す。例えば <span class="math inline">\(\lambda x.y\; x\)</span> の <span class="math inline">\(y\)</span> は自由変数</li>
+<li><span class="math inline">\(\lambda\)</span> の数より多い数値の場合、自由変数を指す。例えば <span class="math inline">\(\lambda .1\; 0\)</span> の <span class="math inline">\(1\)</span> は自由変数</li>
 </ul></li>
 <li>名無し項より自由変数を含むかどうか判別が簡単。</li>
 <li>実装が間違えていた場合壊滅的に失敗する、これはバグを発見しやすいというメリットになります。なので本書ではde Bruijinインデックスを採用しています。</li>
@@ -316,8 +316,8 @@ bar = \lambda . (\lambda . \lambda . 3)\; 0
 <p><span class="math display">\[
 bar = \lambda . \lambda . 2
 \]</span></p>
-<h4 id="第7章-ラムダ計算のml実装">第7章 ラムダ計算のML実装</h4>
 <!--
+#### 第7章	ラムダ計算のML実装
 ## 第2部	単純型
 #### 第8章	型付き算術式
 #### 第9章	単純型付きラムダ計算
