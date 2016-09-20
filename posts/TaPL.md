@@ -119,7 +119,7 @@ $$
         * $\lambda x.\; x \Rightarrow \lambda .\; 0$
         * $\lambda x.\lambda y.\; y\; x \Rightarrow \lambda.\lambda. \; 0\; 1$
         * $foo = (\lambda x. (\lambda x. x)) (\lambda x. x); \Rightarrow foo = (\lambda .\lambda . 0) (\lambda . 0);$
-        * $\lambda$ の数より多い数値の場合、自由変数を指す。例えば $\lambda x.y\; x$ の $y$ は自由変数
+        * $\lambda$ の数より多い数値の場合、自由変数を指す。例えば $\lambda .1\; 0$ の $1$ は自由変数
     + 名無し項より自由変数を含むかどうか判別が簡単。
     + 実装が間違えていた場合壊滅的に失敗する、これはバグを発見しやすいというメリットになります。なので本書ではde Bruijinインデックスを採用しています。
 - シフト
@@ -159,9 +159,8 @@ $$
 
 [^deBruin]: 「de Brujin項」とも呼ばれるそうです。日本語ではド ブラウンと読むのが一番近いそうです。
 
-#### 第7章	ラムダ計算のML実装
-
 <!--
+#### 第7章	ラムダ計算のML実装
 ## 第2部	単純型
 #### 第8章	型付き算術式
 #### 第9章	単純型付きラムダ計算
