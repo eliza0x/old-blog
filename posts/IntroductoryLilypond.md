@@ -32,11 +32,11 @@ Lilypondは用意に使用できるにかかわらず非常に強力です、以
 
 ![](../images/LilypondExam2.png)
 
-[公式サイトのリファレンス](http://lilypond.org/doc/v2.18/Documentation/learning/index.ja.html)がわかりやすく充実しているので、それを読めば楽譜はひととおり書けるでしょう。
+[公式サイトのリファレンス](http://lilypond.org/doc/v2.18/Documentation/learning/index.ja.html)が充実しているので、それを読めば楽譜はひととおり書けるでしょう。
 
 [チートシート](http://lilypond.org/doc/v2.18/Documentation/notation/cheat-sheet)も用意されています。
 
-この説明だけでは味気ないのですこしだけサンプルコードを載せておきます。
+この説明だけでは味気ないので、すこしだけサンプルコードを載せておきます。
 
 ```lilypond
 \version "2.18.2"
