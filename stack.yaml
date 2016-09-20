@@ -1,10 +1,10 @@
-resolver: lts-6.16
-flags: {}
+flags:
+  hakyll:
+    previewserver: false
 extra-package-dbs: []
-extra-deps: []
 packages:
 - '.'
-- /home/eliza/Program/hakyll-shakespeare
-# - location:
-#     git: git@github.com:eliza0x/hakyll-shakespeare.git
-#     commit: 048660e40c653dee664d935ef9f54f82cc74a3bb
+extra-deps:
+- hakyll-4.8.3.2
+- hakyll-shakespeare-0.1.0.0.2
+resolver: lts-7.0

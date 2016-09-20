@@ -18,9 +18,10 @@ main = hakyll $ do
     -- Style sheet
     match "css/*.hs" $ do
       route $ setExtension "css"
-      compile $ (itemBody <$> getResourceString)
-            >>= unixFilter "stack" ["runghc", "--package=clay"]
-            >>= makeItem . compressCss
+      compile $ getResourceString
+            >>= withItemBody (unixFilter "stack" ["runghc", "--package", "clay", "--stack-yaml", "stack.yaml"])
+            >>= relativizeUrls
+
 
     -- Create tags
     tagsOfPosts <- buildTags "posts/*" (fromCapture "tags/*.html")
@@ -108,7 +109,6 @@ main = hakyll $ do
           >>= fmap (take 10) . recentFirst
           >>= renderRss (feedConfiguration "All posts - ") feedContext
 
--- MathJax
 pandocOptions :: WriterOptions
 pandocOptions = defaultHakyllWriterOptions {
     writerHTMLMathMethod = MathJax ""

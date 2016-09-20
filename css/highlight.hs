@@ -40,7 +40,7 @@ codeLayout = do
     td  # ".sourceCode"  ? do
     margin none none none none
     padding none none none none
-    verticalAlign baseline
+    -- verticalAlign baseline
     border none none none
   td # ".lineNumbers" ? do
     textAlign $ alignSide sideRight
@@ -83,8 +83,8 @@ codeColor = do
    code |> span # ".an"  <>
     code |> span # ".cv" <>
     code |> span # ".in" ? color ocher
-  -- code |> span # ".im" ?
-  -- code |> span # ".ex" ?
+  code |> span # ".im" ? mempty
+  code |> span # ".ex" ? mempty
 
 {-
 - kw: Keyword
