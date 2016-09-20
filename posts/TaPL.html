@@ -15,6 +15,8 @@
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <meta name="twitter:widgets:link-color" content="#666666">
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({displayAlign: "left",
+displayIndent: "2em"});</script></script>
 <script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 ga('create', 'UA-77388062-1', 'auto');
@@ -49,6 +51,7 @@ ga('send', 'pageview');</script></script>
 <li>Haskellが好きで背後で使われている技術を知りたくなったから</li>
 </ol>
 <p><a href="http://tapl.proofcafe.org/home">日本語のサポートページ</a>が準備されています。 また、<a href="https://estore.ohmsha.co.jp/titles/978427406911P">出版元のページ</a>から第一章が無料で読めます。</p>
+<p>通読したのちにまた記事を書こうと思っています。</p>
 <!--more-->
 <h2 id="予備知識について">予備知識について</h2>
 <p><a href="../posts/PreTaPL.html">このページに書いてあります</a></p>
@@ -116,11 +119,21 @@ ga('send', 'pageview');</script></script>
 </ul></li>
 <li>以下は名前呼び簡約の例です。</li>
 </ul>
-<p><span class="math inline">\(\quad \underline{ id\;(id\;(\lambda z.\; id\; z)) }\\ \rightarrow\; \underline{ id\;(\lambda z.\; id\; z) }\\ \rightarrow\; \lambda z.\; id\; z\\ \nrightarrow\)</span></p>
+<p><span class="math display">\[
+\quad         \underline{ id\;(id\;(\lambda z.\; id\; z)) }\\ 
+\rightarrow\; \underline{ id\;(\lambda z.\; id\; z) }\\
+\rightarrow\; \lambda z.\; id\; z\\
+\nrightarrow
+\]</span></p>
 <ul>
 <li>以下は値呼び簡約の例です。</li>
 </ul>
-<p><span class="math inline">\(\quad\; id\;(\underline{ id\;(\lambda z.\; id\; z)})\\ \rightarrow\; \underline{id\;(\lambda z.\; id\; z) }\\ \rightarrow\; \lambda z.\; id\; z\\ \nrightarrow\)</span></p>
+<p><span class="math display">\[
+\quad\;       id\;(\underline{ id\;(\lambda z.\; id\; z)})\\
+\rightarrow\; \underline{id\;(\lambda z.\; id\; z) }\\
+\rightarrow\; \lambda z.\; id\; z\\
+\nrightarrow
+\]</span></p>
 <ul>
 <li>値呼び評価は「正格」名前呼び戦略は「非正格」もしくは「遅延評価」と呼ばれる。</li>
 <li>純粋なラムダ計算でもブール値や数の表現、またその評価は出来る
@@ -141,10 +154,56 @@ ga('send', 'pageview');</script></script>
 <li>Haskellが分かるならtanakh氏の<a href="http://d.hatena.ne.jp/tanakh/20040813">不動点演算子</a>の記事が面白いかも。</li>
 </ul></li>
 </ul>
+<h4 id="第6章-項の名無し表現">第6章 項の名無し表現</h4>
+<ul>
+<li><a href="http://ryna4c2e.hatenablog.com/entry/20141023/1414077068">de Bruijn indexについての備忘録</a>が参考になると思います。</li>
+<li>代入等を可能にするため、変数に適宜新しい名前を与えたい。</li>
+<li>そのためには様々な方法があります。
+<ul>
+<li>本著では「de Bruijinインデックス」<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>を使用しています。</li>
+</ul></li>
+<li>de Bruijinインデックス
+<ul>
+<li>変数を名前から解放したい。</li>
+<li>束縛している<span class="math inline">\(\lambda\)</span>からどれだけ遠い(深い)かを自然数で表します。(変数がいらなくなる)</li>
+<li>例
+<ul>
+<li><span class="math inline">\(\lambda x.\; x \Rightarrow \lambda .\; 0\)</span></li>
+<li><span class="math inline">\(\lambda x.\lambda y.\; y\; x \Rightarrow \lambda.\lambda. \; 0\; 1\)</span></li>
+<li><span class="math inline">\(foo = (\lambda x. (\lambda x. x)) (\lambda x. x); \Rightarrow foo = (\lambda .\lambda . 0) (\lambda . 0);\)</span></li>
+<li><span class="math inline">\(\lambda\)</span> の数より多い数値の場合、自由変数を指す。例えば <span class="math inline">\(\lambda x.y\; x\)</span> の <span class="math inline">\(y\)</span> は自由変数</li>
+</ul></li>
+<li>名無し項より自由変数を含むかどうか判別が簡単。</li>
+<li>実装が間違えていた場合壊滅的に失敗する、これはバグを発見しやすいというメリットになります。なので本書ではde Bruijinインデックスを採用しています。</li>
+</ul></li>
+<li>シフト
+<ul>
+<li>de Bruijinインデックスを導入すると、代入の際自由変数のみインデックスを変更する必要が出てくる。</li>
+</ul></li>
+</ul>
+<p>自由変数にインデックスを割り当てます。 <span class="math display">\[
+\gamma =    foo \mapsto 2 \\
+\qquad      bar \mapsto 1 \\
+\qquad\quad z   \mapsto 0
+\]</span></p>
+<p><span class="math inline">\(\lambda\)</span>式です。 <span class="math display">\[
+foo = \lambda x. \lambda y. z \\
+bar = \lambda x. foo\; x
+\]</span></p>
+<p>変数をde Bruijinインデックスで表現します。 <span class="math display">\[
+foo = \lambda . \lambda . 2 \\
+bar = \lambda . 3\; 0
+\]</span></p>
+<p><code>foo</code>をインライン化します。 <code>bar</code>の<span class="math inline">\(\lambda\)</span>の二つ内側に入る訳ですから、2個シフトする必要があります。<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p>
+<p><span class="math display">\[
+bar = \lambda . (\lambda . \lambda . 3)\; 0
+\]</span></p>
+<p><span class="math inline">\(\beta\)</span>簡約をしましょう。<span class="math inline">\(\lambda\)</span>が一つ減るたびに、インデックスを一小さくする必要があります。</p>
+<p><span class="math display">\[
+bar = \lambda . \lambda . 2
+\]</span></p>
+<h4 id="第7章-ラムダ計算のml実装">第7章 ラムダ計算のML実装</h4>
 <!--
-#### 第6章	項の名無し表現
-#### 第7章	ラムダ計算のML実装
-
 ## 第2部	単純型
 #### 第8章	型付き算術式
 #### 第9章	単純型付きラムダ計算
@@ -183,6 +242,13 @@ ga('send', 'pageview');</script></script>
 ## 付録A	演習の解答
 ## 付録B	記法
 -->
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>「de Brujin項」とも呼ばれるそうです。日本語ではド ブラウンと読むのが一番近いそうです。<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>数式に起こすと <span class="math inline">\(\uparrow ^2 (\lambda . \lambda . 2)\)</span><a href="#fnref2">↩</a></p></li>
+</ol>
+</div>
 <ul class="article_data"><li> Tags: <a href="../tags/haskell.html">haskell</a>, <a href="../tags/book.html">book</a>, <a href="../tags/memo.html">memo</a>, <a href="../tags/programming.html">programming</a>, <a href="../tags/math.html">math</a></li>
 </ul>
 </article>

@@ -309,7 +309,7 @@ footer
 
 .footnotes > hr
 {
-  border : solid 1px #585858;
+  border-color : #585858;
 }
 
 @media screen and (min-width: 650px)
