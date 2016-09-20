@@ -211,4 +211,5 @@ aboutCss = do
     marginTop $ px 20
     marginBottom $ px 10
   ".footnotes" |> hr ?
-    border solid (px 1) firstColor
+    borderColor firstColor
+    -- border solid (px 1) firstColor
