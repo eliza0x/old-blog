@@ -279,7 +279,7 @@
 <li>de Bruijinインデックス
 <ul>
 <li>変数を名前から解放したい。</li>
-<li>束縛している<span class="math inline">\(\lambda\)</span>からどれだけ遠い(深い)かを自然数で表します。(変数がいらなくなる)</li>
+<li>束縛している<span class="math inline">\(\lambda\)</span>からどれだけ遠い(深い)かを自然数で表します。</li>
 <li>例
 <ul>
 <li><span class="math inline">\(\lambda x.\; x \Rightarrow \lambda .\; 0\)</span></li>
