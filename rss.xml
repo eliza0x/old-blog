@@ -108,40 +108,36 @@
 <li>各アーテュキレーションも付ける事ができます。</li>
 <li><code>\!</code>でクレセンド、デクレセンドの終端になります。</li>
 </ul>
-<p>最後に、わたしの実際に書いたコードの断片を紹介します。</p>
-<div class="sourceCode"><pre class="sourceCode lilypond"><code class="sourceCode lilypond"><span class="kw">\version</span> &quot;<span class="st">2.18.2&quot;</span> 
+<!-- 誤りを発見
+最後に、わたしの実際に書いたコードの断片を紹介します。
 
-\header<span class="kw"> {</span> 
- title = <span class="bn">\markup</span> <span class="bn">\center-align</span> <span class="kw">{</span> &quot;<span class="st">Autumn Leaves&quot;</span> <span class="kw">}</span> 
- subtitle = <span class="bn">\markup</span> <span class="bn">\center-align</span> <span class="kw">{</span> &quot;<span class="st">Solo Score&quot;</span> <span class="kw">}</span> 
-<span class="kw">}</span> 
-\paper<span class="kw"> {</span> 
-	#<span class="fl">( set-paper-size &quot;</span><span class="st">a4&quot;</span><span class="fl"> )</span> 
-<span class="kw">}</span> 
-<span class="fu">\transpose c&#39; bes&#39;</span> <span class="kw">{</span>
-  <span class="fu">\relative c&#39;</span> <span class="kw">{</span>
-    <span class="fu">\key f</span> <span class="fu">\major</span>
-    <span class="fu">\time 4/4</span>
-      r<span class="dt">2</span> d<span class="dt">8</span>^&quot;<span class="st">Solo&quot;</span> c bes a<span class="ch">(</span> <span class="dv">|</span> a<span class="dt">4.</span><span class="ch">)</span> d<span class="dt">8</span> c bes a c <span class="dv">|</span> bes a r g r f r a<span class="ch">(</span> <span class="dv">|</span> a<span class="ch">)</span> bes c a<span class="ch">(</span> a<span class="dt">4.</span><span class="ch">)</span> f<span class="dt">8</span> 
-    <span class="dv">|</span> <span class="dt">&lt;</span>f a&gt; <span class="dt">&lt;</span>f a&gt; r<span class="dt">4</span> r<span class="dt">2</span> <span class="dv">|</span> r<span class="dt">8</span> e g<span class="dt">[</span> bes<span class="dt">]</span> d<span class="dt">[</span> c bes a<span class="dt">]</span> <span class="dv">|</span> bes cis,<span class="dt">4.</span> r<span class="dt">8</span> cis e<span class="dt">[</span> d<span class="dt">]</span><span class="ch">(</span> <span class="dv">|</span> d<span class="dt">4</span><span class="ch">)</span> r d<span class="dt">8</span> f a e&#39;
-  <span class="kw">}</span>
-<span class="kw">}</span></code></pre></div>
-<div class="figure">
-<img src="../images/LilypondExam8.png" />
+```lilypond
+\version "2.18.2" 
 
-</div>
-<ul>
-<li><code>\time 4/4</code>で四分の四拍子であることを明示。<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></li>
-<li><code>-es</code>、<code>-is</code>でシャープ、フラット</li>
-<li>Cの調の楽譜をBes調の楽譜に起こしたかったので、Cそのままで一度書いたあとに、<code>\relative c bes</code>でBesに変換した。</li>
-</ul>
-<p>さあ、LilyPondをインストールして音楽家になりましょう。</p>
-<div class="footnotes">
-<hr />
-<ol>
-<li id="fn1"><p>この例の場合はしなくても良い<a href="#fnref1">↩</a></p></li>
-</ol>
-</div>
+\header { 
+ title = \markup \center-align { "Autumn Leaves" } 
+ subtitle = \markup \center-align { "Solo Score" } 
+} 
+\paper { 
+	#( set-paper-size "a4" ) 
+} 
+\transpose c' bes' {
+  \relative c' {
+    \key f \major
+    \time 4/4
+      r2 d8^"Solo" c bes a( | a4.) d8 c bes a c | bes a r g r f r a( | a) bes c a( a4.) f8 
+    | <f a> <f a> r4 r2 | r8 e g[ bes] d[ c bes a] | bes cis,4. r8 cis e[ d]( | d4) r d8 f a e'
+  }
+}
+```
+
+![](../images/LilypondExam8.png)
+
+- `\time 4/4`で四分の四拍子であることを明示。^[この例の場合はしなくても良い]
+- `-es`、`-is`でシャープ、フラット
+- Cの調の楽譜をBes調の楽譜に起こしたかったので、Cそのままで一度書いたあとに、`\relative c bes`でBesに変換した。
+-->
+<p>以上です、簡単だったでしょう？さあ、LilyPondをインストールして音楽家になりましょう。</p>
 <ul class="article_data"><li> Tags: <a href="/tags/music.html">music</a></li>
 </ul>
 </article>
@@ -308,7 +304,7 @@ bar = \lambda x. foo\; x
 foo = \lambda . \lambda . 2 \\
 bar = \lambda . 3\; 0
 \]</span></p>
-<p><code>foo</code>をインライン化します。 <code>bar</code>の<span class="math inline">\(\lambda\)</span>の二つ内側に入る訳ですから、2個シフトする必要があります。<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p>
+<p><code>foo</code>をインライン化します。 <code>bar</code>の<span class="math inline">\(\lambda\)</span>の一つ内側に入る訳ですから、1個シフトする必要があります。<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p>
 <p><span class="math display">\[
 bar = \lambda . (\lambda . \lambda . 3)\; 0
 \]</span></p>

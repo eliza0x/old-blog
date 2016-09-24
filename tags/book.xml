@@ -166,7 +166,7 @@ bar = \lambda x. foo\; x
 foo = \lambda . \lambda . 2 \\
 bar = \lambda . 3\; 0
 \]</span></p>
-<p><code>foo</code>をインライン化します。 <code>bar</code>の<span class="math inline">\(\lambda\)</span>の二つ内側に入る訳ですから、2個シフトする必要があります。<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p>
+<p><code>foo</code>をインライン化します。 <code>bar</code>の<span class="math inline">\(\lambda\)</span>の一つ内側に入る訳ですから、1個シフトする必要があります。<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p>
 <p><span class="math display">\[
 bar = \lambda . (\lambda . \lambda . 3)\; 0
 \]</span></p>
