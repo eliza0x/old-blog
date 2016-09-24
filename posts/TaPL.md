@@ -145,7 +145,7 @@ bar = \lambda . 3\; 0
 $$
 
 `foo`をインライン化します。
-`bar`の$\lambda$の二つ内側に入る訳ですから、2個シフトする必要があります。^[数式に起こすと $\uparrow ^2 (\lambda . \lambda . 2)$]
+`bar`の$\lambda$の一つ内側に入る訳ですから、1個シフトする必要があります。^[数式に起こすと $\uparrow ^2 (\lambda . \lambda . 2)$]
 
 $$
 bar = \lambda . (\lambda . \lambda . 3)\; 0
