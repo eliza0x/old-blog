@@ -146,7 +146,7 @@ headerCss = do
     marginTop    $ rem 1
     marginBottom $ rem 1
     fontSize     $ rem 6.0
-  ".navigation" ? do
+  ".navigation" ** ul ? do
     borderTop    solid (px 1) firstColor
     borderBottom solid (px 1) firstColor
     listStyleType none
@@ -164,6 +164,8 @@ headerCss = do
   ".navigation" # after ?
     clear both
   query screen [minWidth $ px 500] $ do
+    ".navigation" ** ".rss" ?
+      float floatRight
     ".navigation" ** li ?
       float floatLeft
     ".navigation" ** li ** a ?
@@ -200,16 +202,13 @@ aboutCss = do
     textAlign $ alignSide sideRight
     marginRight $ px 30
   ".figure" ? margin (px 10) (px 10) (px 10) (px 10) 
---  ".figure" ** img ? width (pct 100)
---  query screen [minWidth $ px 600] $
---    ".figure" ?
---      width (pct 75)
---  query screen [minWidth $ px 960] $
---    ".figure" ?
---      width (pct 50)
   ".footnotes" ? do
-    marginTop $ px 20
-    marginBottom $ px 10
-  ".footnotes" |> hr ?
-    borderColor firstColor
-    -- border solid (px 1) firstColor
+    marginTop $ rem 4
+    marginBottom $ rem 2
+    paddingTop $ rem 1
+    borderTop solid (px 1) firstColor
+  ".footnotes"    |> hr <>
+    ".navigation" |> hr <>
+    ".title"      |> hr <>
+    footer        |> hr ?
+      display displayNone
