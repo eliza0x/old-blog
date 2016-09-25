@@ -227,7 +227,7 @@ li
   font-size     : 6rem;
 }
 
-.navigation
+.navigation ul
 {
   border-top      : solid 1px #585858;
   border-bottom   : solid 1px #585858;
@@ -303,13 +303,18 @@ footer
 
 .footnotes
 {
-  margin-top    : 20px;
-  margin-bottom : 10px;
+  margin-top    : 4rem;
+  margin-bottom : 2rem;
+  padding-top   : 1rem;
+  border-top    : solid 1px #585858;
 }
 
-.footnotes > hr
+.footnotes > hr,
+.navigation > hr,
+.title > hr,
+footer > hr
 {
-  border-color : #585858;
+  display : none;
 }
 
 @media screen and (min-width: 650px)
@@ -358,6 +363,11 @@ h6
 }
 @media screen and (min-width: 500px)
 {
+
+.navigation .rss
+{
+  float : right;
+}
 
 .navigation li
 {

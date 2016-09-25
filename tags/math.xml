@@ -17,7 +17,7 @@
 
 <li> Tags: <a href="/tags/haskell.html">haskell</a>, <a href="/tags/book.html">book</a>, <a href="/tags/memo.html">memo</a>, <a href="/tags/programming.html">programming</a>, <a href="/tags/math.html">math</a></li>
 </ul>
-<p>TaPLでの読書メモが書いてあります。内容の真偽の保証はできません。必要に応じて追記していきます。 間違いを発見した場合はコメントを下さるか、me [at] eliza [dot] linkまでメールを下さると喜びます。</p>
+<p>TaPLでの読書メモが書いてあります。真偽の保証はできません。必要に応じて追記していきます。 間違いを発見した場合はコメントか、me [at] eliza [dot] linkまでメールを下さると喜びます。</p>
 <ol start="17" style="list-style-type: upper-alpha">
 <li>どうして読むのか</li>
 <li>Haskellが好きで背後で使われている技術を知りたくなったから</li>
@@ -60,11 +60,7 @@
 <li>1ステップ評価を合成したやつだと理解しておいた。</li>
 </ul></li>
 </ul>
-<h4 id="第4章-算術式のml実装">第4章 算術式のML実装</h4>
-<ul>
-<li>さほど難しくなかったので実装せず。</li>
-<li>流し読みすると思考の整理に役立つと思う</li>
-</ul>
+<!--#### 第4章	算術式のML実装-->
 <h4 id="第5章-型無しラムダ計算">第5章 型無しラムダ計算</h4>
 <ul>
 <li><span class="math inline">\(\lambda\)</span>(Lambda)計算
@@ -174,12 +170,59 @@ bar = \lambda . (\lambda . \lambda . 3)\; 0
 <p><span class="math display">\[
 bar = \lambda . \lambda . 2
 \]</span></p>
+<!--#### 第7章	ラムダ計算のML実装-->
+<h2 id="第2部-単純型">第2部 単純型</h2>
+<h4 id="第8章-型付き算術式">第8章 型付き算術式</h4>
+<ul>
+<li>進行定理
+<ul>
+<li>正しく型付けされた項は行き詰まり状態に陥らない。</li>
+</ul></li>
+<li>保存定理
+<ul>
+<li>正しく型付けされた項が評価できるならば、評価後の項も正しく型付けされている。</li>
+</ul></li>
+<li>以上二つの定理を満たしたものを型安全<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>である、と言われる。</li>
+</ul>
+<h4 id="第9章-単純型付きラムダ計算">第9章 単純型付きラムダ計算</h4>
+<ul>
+<li><span class="math inline">\(\lambda\)</span>抽象を型として扱う<span class="math inline">\(\rightarrow\)</span>型
+<ul>
+<li>これだと<span class="math inline">\((\lambda x. 0) true\)</span>のような時に型がつけられない</li>
+<li>これでは書きたいプログラム に型が割り当てられないことが多々ある</li>
+</ul></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">foo <span class="fu">=</span> <span class="kw">if</span> <span class="fu">&lt;</span>長く複雑な式<span class="fu">&gt;</span>
+	<span class="kw">then</span> true
+	<span class="kw">else</span> print <span class="st">&quot;ERROR&quot;</span></code></pre></div>
+<p>このHaskellのプログラムでは型エラーでコンパイルが通らない。</p>
+<blockquote>
+<p>ラムダ計算はチューリング完全なので正格な型解析は不可能である P. 75 9.1章</p>
+</blockquote>
+<ul>
+<li>無限を扱えないため？</li>
+<li><p>発散する場合があるため？</p></li>
+<li>型付きラムダ計算は<span class="math inline">\(\lambda _\rightarrow\)</span>と表記される</li>
+<li>導入規則
+<ul>
+<li>その型の要素がどのように作られるか</li>
+</ul></li>
+<li>除去規則
+<ul>
+<li>その型の要素がどのように使われるか</li>
+</ul></li>
+<li>論理学と型理論のふしぎな関連はCurry-Howard対応<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>として知られている
+<ul>
+<li><a href="https://ja.wikibooks.org/wiki/Haskell/%E3%82%AB%E3%83%AA%E3%83%BC%3D%E3%83%8F%E3%83%AF%E3%83%BC%E3%83%89%E5%90%8C%E5%9E%8B">Haskell/カリー=ハワード同型</a>が面白い</li>
+</ul></li>
+<li>型注釈は評価においてはなんの役割も果たさない</li>
+<li>たいていのプログラムは実行時に型無しの項にもどされる
+<ul>
+<li><a href="https://kagamilove0707.github.io/programming/2014/02/20/about-phantom-type/">型安全なリストを作るのです(｀・ω・´) ～ その1、Phantom Type（幽霊型）入門ですー＞ω＜</a>が面白い</li>
+</ul></li>
+</ul>
+<!--#### 第10章	単純型のML実装-->
 <!--
-#### 第7章	ラムダ計算のML実装
-## 第2部	単純型
-#### 第8章	型付き算術式
-#### 第9章	単純型付きラムダ計算
-#### 第10章	単純型のML実装
 #### 第11章	単純な拡張
 #### 第12章	正規化
 #### 第13章	参照
@@ -219,6 +262,8 @@ bar = \lambda . \lambda . 2
 <ol>
 <li id="fn1"><p>「de Brujin項」とも呼ばれるそうです。日本語ではド ブラウンと読むのが一番近いそうです。<a href="#fnref1">↩</a></p></li>
 <li id="fn2"><p>数式に起こすと <span class="math inline">\(\uparrow ^2 (\lambda . \lambda . 2)\)</span><a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>健全性とも言われる<a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p>Curry-Howard同系ともよばれる<a href="#fnref4">↩</a></p></li>
 </ol>
 </div>
 <ul class="article_data"><li> Tags: <a href="/tags/haskell.html">haskell</a>, <a href="/tags/book.html">book</a>, <a href="/tags/memo.html">memo</a>, <a href="/tags/programming.html">programming</a>, <a href="/tags/math.html">math</a></li>
