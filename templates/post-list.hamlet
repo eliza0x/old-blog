@@ -1,8 +1,9 @@
-<section>
-  <ul>
-    \$for(posts)$
-      <li class="teaser">
+<h2>Recent posts
+<ul>
+  \$for(posts)$
+    <li class="teaser">
+      <section>
         \$teaser$
         <p class="more">
           <a href="$url$">More +
-    \$endfor$
+  \$endfor$

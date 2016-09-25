@@ -1,4 +1,4 @@
-\$body$
+<article>$body$
 
 <div id="disqus_thread">
   <script type="text/javascript">
