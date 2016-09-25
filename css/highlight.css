@@ -21,8 +21,8 @@ tr.sourceCode,
 td.lineNumbers,
 td.sourceCode
 {
-  margin  : none none none none;
-  padding : none none none none;
+  margin  : 0px 0px 0px 0px;
+  padding : 0px 0px 0px 0px;
   border  : none none none;
 }
 

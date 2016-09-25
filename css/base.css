@@ -311,7 +311,6 @@ footer
 
 .footnotes > hr,
 .navigation > hr,
-.title > hr,
 footer > hr
 {
   display : none;
