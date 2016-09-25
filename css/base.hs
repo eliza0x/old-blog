@@ -209,6 +209,5 @@ aboutCss = do
     borderTop solid (px 1) firstColor
   ".footnotes"    |> hr <>
     ".navigation" |> hr <>
-    ".title"      |> hr <>
     footer        |> hr ?
       display displayNone

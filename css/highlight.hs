@@ -38,8 +38,8 @@ codeLayout = do
     tr  # ".sourceCode"  <>
     td  # ".lineNumbers" <>
     td  # ".sourceCode"  ? do
-    margin none none none none
-    padding none none none none
+    margin (px 0) (px 0) (px 0) (px 0)
+    padding (px 0) (px 0) (px 0) (px 0)
     -- verticalAlign baseline
     border none none none
   td # ".lineNumbers" ? do
