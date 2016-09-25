@@ -11,7 +11,7 @@
         <item>
     <title>型システム入門(TaPL)読書メモ</title>
     <link>https://eliza.link/posts/TaPL.html</link>
-    <description><![CDATA[<article><a href="/posts/TaPL.html"><h2>型システム入門(TaPL)読書メモ</h2>
+    <description><![CDATA[<a href="/posts/TaPL.html"><h2>型システム入門(TaPL)読書メモ</h2>
 </a>
 <ul class="article_data"><li>  Posted on September 15, 2016</li>
 
@@ -268,7 +268,6 @@ bar = \lambda . \lambda . 2
 </div>
 <ul class="article_data"><li> Tags: <a href="/tags/haskell.html">haskell</a>, <a href="/tags/book.html">book</a>, <a href="/tags/memo.html">memo</a>, <a href="/tags/programming.html">programming</a>, <a href="/tags/math.html">math</a></li>
 </ul>
-</article>
 ]]></description>
     <pubDate>Thu, 15 Sep 2016 00:00:00 UT</pubDate>
     <guid>https://eliza.link/posts/TaPL.html</guid>
@@ -277,7 +276,7 @@ bar = \lambda . \lambda . 2
 <item>
     <title>TaPLに必要な知識の学習記録</title>
     <link>https://eliza.link/posts/PreTaPL.html</link>
-    <description><![CDATA[<article><a href="/posts/PreTaPL.html"><h2>TaPLに必要な知識の学習記録</h2>
+    <description><![CDATA[<a href="/posts/PreTaPL.html"><h2>TaPLに必要な知識の学習記録</h2>
 </a>
 <ul class="article_data"><li>  Posted on September 15, 2016</li>
 
@@ -357,7 +356,6 @@ bar = \lambda . \lambda . 2
 </div>
 <ul class="article_data"><li> Tags: <a href="/tags/haskell.html">haskell</a>, <a href="/tags/book.html">book</a>, <a href="/tags/memo.html">memo</a>, <a href="/tags/programming.html">programming</a>, <a href="/tags/math.html">math</a></li>
 </ul>
-</article>
 ]]></description>
     <pubDate>Thu, 15 Sep 2016 00:00:00 UT</pubDate>
     <guid>https://eliza.link/posts/PreTaPL.html</guid>
@@ -366,7 +364,7 @@ bar = \lambda . \lambda . 2
 <item>
     <title>Haskellでブログを作った</title>
     <link>https://eliza.link/posts/create_blog_with_hakyll.html</link>
-    <description><![CDATA[<article><a href="/posts/create_blog_with_hakyll.html"><h2>Haskellでブログを作った</h2>
+    <description><![CDATA[<a href="/posts/create_blog_with_hakyll.html"><h2>Haskellでブログを作った</h2>
 </a>
 <ul class="article_data"><li>  Posted on August 27, 2016</li>
 
@@ -500,7 +498,6 @@ css <span class="fu">=</span> <span class="kw">do</span>
 </div>
 <ul class="article_data"><li> Tags: <a href="/tags/haskell.html">haskell</a>, <a href="/tags/programming.html">programming</a>, <a href="/tags/hakyll.html">hakyll</a></li>
 </ul>
-</article>
 ]]></description>
     <pubDate>Sat, 27 Aug 2016 00:00:00 UT</pubDate>
     <guid>https://eliza.link/posts/create_blog_with_hakyll.html</guid>
@@ -509,7 +506,7 @@ css <span class="fu">=</span> <span class="kw">do</span>
 <item>
     <title>Blink on AtTiny85</title>
     <link>https://eliza.link/posts/AtTiny85a.html</link>
-    <description><![CDATA[<article><a href="/posts/AtTiny85a.html"><h2>Blink on AtTiny85</h2>
+    <description><![CDATA[<a href="/posts/AtTiny85a.html"><h2>Blink on AtTiny85</h2>
 </a>
 <ul class="article_data"><li>  Posted on August  8, 2016</li>
 
@@ -613,7 +610,6 @@ $ <span class="kw">platformio</span> init -b attiny85  </code></pre></div>
 <p>他多数、関係企業とプログラマ達に感謝</p>
 <ul class="article_data"><li> Tags: <a href="/tags/programming.html">programming</a>, <a href="/tags/microprocessor.html">microprocessor</a>, <a href="/tags/arduino.html">arduino</a></li>
 </ul>
-</article>
 ]]></description>
     <pubDate>Mon, 08 Aug 2016 00:00:00 UT</pubDate>
     <guid>https://eliza.link/posts/AtTiny85a.html</guid>

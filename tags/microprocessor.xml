@@ -11,7 +11,7 @@
         <item>
     <title>Blink on AtTiny85</title>
     <link>https://eliza.link/posts/AtTiny85a.html</link>
-    <description><![CDATA[<article><a href="/posts/AtTiny85a.html"><h2>Blink on AtTiny85</h2>
+    <description><![CDATA[<a href="/posts/AtTiny85a.html"><h2>Blink on AtTiny85</h2>
 </a>
 <ul class="article_data"><li>  Posted on August  8, 2016</li>
 
@@ -115,7 +115,6 @@ $ <span class="kw">platformio</span> init -b attiny85  </code></pre></div>
 <p>他多数、関係企業とプログラマ達に感謝</p>
 <ul class="article_data"><li> Tags: <a href="/tags/programming.html">programming</a>, <a href="/tags/microprocessor.html">microprocessor</a>, <a href="/tags/arduino.html">arduino</a></li>
 </ul>
-</article>
 ]]></description>
     <pubDate>Mon, 08 Aug 2016 00:00:00 UT</pubDate>
     <guid>https://eliza.link/posts/AtTiny85a.html</guid>

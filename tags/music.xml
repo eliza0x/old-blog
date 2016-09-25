@@ -11,7 +11,7 @@
         <item>
     <title>Lilypondで楽譜を書いた</title>
     <link>https://eliza.link/posts/IntroductoryLilypond.html</link>
-    <description><![CDATA[<article><a href="/posts/IntroductoryLilypond.html"><h2>Lilypondで楽譜を書いた</h2>
+    <description><![CDATA[<a href="/posts/IntroductoryLilypond.html"><h2>Lilypondで楽譜を書いた</h2>
 </a>
 <ul class="article_data"><li>  Posted on September 19, 2016</li>
 
@@ -140,7 +140,6 @@
 <p>以上です、簡単だったでしょう？さあ、LilyPondをインストールして音楽家になりましょう。</p>
 <ul class="article_data"><li> Tags: <a href="/tags/music.html">music</a></li>
 </ul>
-</article>
 ]]></description>
     <pubDate>Mon, 19 Sep 2016 00:00:00 UT</pubDate>
     <guid>https://eliza.link/posts/IntroductoryLilypond.html</guid>

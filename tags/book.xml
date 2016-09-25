@@ -11,7 +11,7 @@
         <item>
     <title>型システム入門(TaPL)読書メモ</title>
     <link>https://eliza.link/posts/TaPL.html</link>
-    <description><![CDATA[<article><a href="/posts/TaPL.html"><h2>型システム入門(TaPL)読書メモ</h2>
+    <description><![CDATA[<a href="/posts/TaPL.html"><h2>型システム入門(TaPL)読書メモ</h2>
 </a>
 <ul class="article_data"><li>  Posted on September 15, 2016</li>
 
@@ -268,7 +268,6 @@ bar = \lambda . \lambda . 2
 </div>
 <ul class="article_data"><li> Tags: <a href="/tags/haskell.html">haskell</a>, <a href="/tags/book.html">book</a>, <a href="/tags/memo.html">memo</a>, <a href="/tags/programming.html">programming</a>, <a href="/tags/math.html">math</a></li>
 </ul>
-</article>
 ]]></description>
     <pubDate>Thu, 15 Sep 2016 00:00:00 UT</pubDate>
     <guid>https://eliza.link/posts/TaPL.html</guid>
@@ -277,7 +276,7 @@ bar = \lambda . \lambda . 2
 <item>
     <title>TaPLに必要な知識の学習記録</title>
     <link>https://eliza.link/posts/PreTaPL.html</link>
-    <description><![CDATA[<article><a href="/posts/PreTaPL.html"><h2>TaPLに必要な知識の学習記録</h2>
+    <description><![CDATA[<a href="/posts/PreTaPL.html"><h2>TaPLに必要な知識の学習記録</h2>
 </a>
 <ul class="article_data"><li>  Posted on September 15, 2016</li>
 
@@ -357,7 +356,6 @@ bar = \lambda . \lambda . 2
 </div>
 <ul class="article_data"><li> Tags: <a href="/tags/haskell.html">haskell</a>, <a href="/tags/book.html">book</a>, <a href="/tags/memo.html">memo</a>, <a href="/tags/programming.html">programming</a>, <a href="/tags/math.html">math</a></li>
 </ul>
-</article>
 ]]></description>
     <pubDate>Thu, 15 Sep 2016 00:00:00 UT</pubDate>
     <guid>https://eliza.link/posts/PreTaPL.html</guid>
@@ -366,7 +364,7 @@ bar = \lambda . \lambda . 2
 <item>
     <title>「人はなぜ戦争をするのか」を読んだ</title>
     <link>https://eliza.link/posts/why_war_summary.html</link>
-    <description><![CDATA[<article><a href="/posts/why_war_summary.html"><h2>「人はなぜ戦争をするのか」を読んだ</h2>
+    <description><![CDATA[<a href="/posts/why_war_summary.html"><h2>「人はなぜ戦争をするのか」を読んだ</h2>
 </a>
 <ul class="article_data"><li>  Posted on July  1, 2016</li>
 
@@ -414,7 +412,6 @@ bar = \lambda . \lambda . 2
 <p>いずれ、リビドーとデストルドーについても記事を書きたいと思っています。</p>
 <ul class="article_data"><li> Tags: <a href="/tags/book.html">book</a>, <a href="/tags/kosen14s.html">kosen14s</a></li>
 </ul>
-</article>
 ]]></description>
     <pubDate>Fri, 01 Jul 2016 00:00:00 UT</pubDate>
     <guid>https://eliza.link/posts/why_war_summary.html</guid>
@@ -423,7 +420,7 @@ bar = \lambda . \lambda . 2
 <item>
     <title>「精神分析入門」を読んで</title>
     <link>https://eliza.link/posts/Introductory_Psychoanalysis.html</link>
-    <description><![CDATA[<article><a href="/posts/Introductory_Psychoanalysis.html"><h2>「精神分析入門」を読んで</h2>
+    <description><![CDATA[<a href="/posts/Introductory_Psychoanalysis.html"><h2>「精神分析入門」を読んで</h2>
 </a>
 <ul class="article_data"><li>  Posted on June 12, 2016</li>
 
@@ -591,7 +588,6 @@ bar = \lambda . \lambda . 2
 <p>さて、手元にはおもしろそうな本はまだ山のように積まれています。何から手をつけよう。</p>
 <ul class="article_data"><li> Tags: <a href="/tags/book.html">book</a>, <a href="/tags/kosen14s.html">kosen14s</a></li>
 </ul>
-</article>
 ]]></description>
     <pubDate>Sun, 12 Jun 2016 00:00:00 UT</pubDate>
     <guid>https://eliza.link/posts/Introductory_Psychoanalysis.html</guid>
