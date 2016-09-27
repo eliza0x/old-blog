@@ -718,9 +718,9 @@ platformioがすごいのは、IDEが必要ないということだ。inoは別�
 <p>はじめにFT232Rのドライバをインストールしましょう、お好みのパッケージマネージャや<a href="http://www.ftdichip.com/Drivers/VCP.htm">FTDIのWebサイト</a>からダウンロードしてください。 普通にFT232Rを使用するだけならドライバは必要無いようなのですが、BitBangモードでFT232Rを使用するには専用のドライバが必要になるそうです。</p>
 <p>BitBangモードについては、<a href="http://ore-kb.net/hard/BitBang/">この記事</a>にくわしく書かれていました。</p>
 <p>つぎにPlatformIOをインストールしてください、これもパッケージマネージャや<a href="http://platformio.org/">公式サイト</a>からインストールできます。</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mkdir</span> AtTiny85  
-$ <span class="kw">cd</span> AtTiny85/  
-$ <span class="kw">platformio</span> init -b attiny85  </code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">mkdir</span> AtTiny85  
+$ <span class="bu">cd</span> AtTiny85/  
+$ <span class="ex">platformio</span> init -b attiny85  </code></pre></div>
 <p>さあ、AtTiny85に書き込む準備は整いました</p>
 <div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">void</span> setup(){
   pinMode(<span class="dv">1</span>, OUTPUT);
