@@ -9,5 +9,5 @@ Eliza / いらいざ
 プログラミング言語の中ではHaskellが好きで、このブログは100％ pure Haskellで構成されています。
 吹奏楽部所属でTenor Saxを担当していて、以前は部長でした。
 
-- ![Amazon wish list - 欲望](http://www.amazon.co.jp/registry/wishlist/25MO8CPCQ2FAP/ref=cm_sw_r_tw_ws_x_tHO6xbZ0QY7QQ)
-- ![Amazon wish list - Stack of books](http://www.amazon.co.jp/registry/wishlist/159P6KS6Z9TOT/ref=cm_sw_r_tw_ws_x_gMO6xb1N3CPKC)
+- [Amazon wish list - 欲望](http://www.amazon.co.jp/registry/wishlist/25MO8CPCQ2FAP/ref=cm_sw_r_tw_ws_x_tHO6xbZ0QY7QQ)
+- [Amazon wish list - Stack of books](http://www.amazon.co.jp/registry/wishlist/159P6KS6Z9TOT/ref=cm_sw_r_tw_ws_x_gMO6xb1N3CPKC)
