@@ -340,14 +340,8 @@ bar = \lambda . \lambda . 2
 <li>無限を扱えないため？</li>
 <li><p>発散する場合があるため？</p></li>
 <li>型付きラムダ計算は<span class="math inline">\(\lambda _\rightarrow\)</span>と表記される</li>
-<li>導入規則
-<ul>
-<li>その型の要素がどのように作られるか</li>
-</ul></li>
-<li>除去規則
-<ul>
-<li>その型の要素がどのように使われるか</li>
-</ul></li>
+<li>導入規則: その型の要素がどのように作られるか</li>
+<li>除去規則: その型の要素がどのように使われるか</li>
 <li>論理学と型理論のふしぎな関連はCurry-Howard対応<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>として知られている
 <ul>
 <li><a href="https://ja.wikibooks.org/wiki/Haskell/%E3%82%AB%E3%83%AA%E3%83%BC%3D%E3%83%8F%E3%83%AF%E3%83%BC%E3%83%89%E5%90%8C%E5%9E%8B">Haskell/カリー=ハワード同型</a>が面白い</li>
