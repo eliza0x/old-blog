@@ -1,3 +1,13 @@
+<!-- MathJax -->
+<script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+
+
 <article>$body$
 
 <div id="disqus_thread">

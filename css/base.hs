@@ -105,8 +105,10 @@ listCss = do
     marginTop   $ px 0
   ul ? listStyle circleListStyle inside none
   ul ** ul ? do
-    listStyle none inside none
-    marginLeft $ px 20
+    listStyle disc inside none
+    marginLeft $ pct 2
+  ul ** ul ** ul ? listStyle circleListStyle inside none
+  ul ** ul ** ul ** ul ? listStyle disc inside none
   ol ? listStyle decimal inside none
   dl <> li ? do
     marginTop $ rem 0.5
