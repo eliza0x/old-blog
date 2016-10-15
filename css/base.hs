@@ -74,9 +74,9 @@ typoGraphyCss = do
     a |> (h1 <> h2 <> h3 <> h4 <> h5 <> h6) # hover ?
       color secondColor
   h1 <> h2 <> h3 <> h4 <> h5 <> h6 ? do
-      marginTop        nil
-      marginBottom   $ rem 2.0
-      fontWeight     $ weight 300
+      marginTop    $ rem 1.0
+      marginBottom $ rem 2.5
+      fontWeight   $ weight 300
   mapM_ headCss
     [ ( h1, rem 4.0, rem $ 4.0 + 1.2,  rem (-0.1) )
     , ( h2, rem 3.6, rem $ 3.6 + 1.25, rem (-0.1)  )
