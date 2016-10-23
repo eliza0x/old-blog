@@ -82,8 +82,8 @@ h4,
 h5,
 h6
 {
-  margin-top    : 0;
-  margin-bottom : 2rem;
+  margin-top    : 1rem;
+  margin-bottom : 2.5rem;
   font-weight   : 300;
 }
 
@@ -204,8 +204,18 @@ ul
 
 ul ul
 {
-  list-style  : none inside none;
-  margin-left : 20px;
+  list-style  : disc inside none;
+  margin-left : 2%;
+}
+
+ul ul ul
+{
+  list-style : circle inside none;
+}
+
+ul ul ul ul
+{
+  list-style : disc inside none;
 }
 
 ol

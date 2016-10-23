@@ -14,9 +14,6 @@
 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <meta name="twitter:widgets:link-color" content="#666666">
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script type="text/x-mathjax-config">MathJax.Hub.Config({displayAlign: "left",
-displayIndent: "2em"});</script>
 <script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 ga('create', 'UA-77388062-1', 'auto');
@@ -42,7 +39,11 @@ ga('send', 'pageview');</script>
 </nav>
 </header>
 
-<main><article><a href="../posts/PreTaPL.html"><h2>TaPLに必要な知識の学習記録</h2>
+<main>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({displayAlign: "left",
+displayIndent: "2em"});</script>
+<article><a href="../posts/PreTaPL.html"><h2>TaPLに必要な知識の学習記録</h2>
 </a>
 <ul class="article_data"><li>  Posted on September 15, 2016</li>
 
@@ -63,63 +64,32 @@ ga('send', 'pageview');</script>
 <ul>
 <li><a href="http://abelard.flet.keio.ac.jp/person/mitsu/pdf/nyumon_logic.pdf">「論理学入門」講義ノート</a>が論理学で検索してヒットしたものの中で一番容易に読み進めることができそうだったので読み流した(証明は追いかけるの面倒だったので飛ばした)。</li>
 <li>記号がダメな人はアレルギーをおこしそうな分野でした、印刷したテキストをうっかり直視した友人は帰らぬ人となりました。(まあプログラマは大丈夫だと思う)</li>
+<li>後日みつけた資料ですが、こちらのほうが易しく書かれています。 <a href="http://abelard.flet.keio.ac.jp/person/takemura/class/2013/3-print-nk.pdf" class="uri">http://abelard.flet.keio.ac.jp/person/takemura/class/2013/3-print-nk.pdf</a></li>
 </ul>
 <h2 id="集合論">集合論</h2>
+<p>論理学とあわせて、何かを表現する際の述語を勉強している気分です。</p>
 <ul>
-<li><del>反射的推移的閉包ってなんだよ</del></li>
 <li>TaPLの冒頭に集合がなんだかんだと書かれていたので勉強が必要だと思い、<a href="http://www.math.twcu.ac.jp/~yamauchi/text/2012/alg2012/set_logic.pdf">東京女子大学の代数学IA(集合と論理)のテキスト</a>を読んでみました。
 <ul>
 <li>私の環境では途中で組版がすこし崩れています。</li>
 <li>これを読むのは論理学のテキストを読んだ後が良いです。</li>
 </ul></li>
-<li>理解が浅い気がしたので<a href="http://home.hiroshima-u.ac.jp/fujita/Class/Kisoron/set.pdf">広島大学の集合論の基礎のテキスト</a>も読みました。</li>
-<li>関係？
-<ul>
-<li>プログラマがわかるように言うと、trueがfalseで分類できる二項演算子<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>の事。</li>
-</ul></li>
-<li>反射性、推移性、対称性ってそもそもどういう意味？
-<ul>
-<li>推移関係
-<ul>
-<li><span class="math inline">\(\forall a,b,c \in X,\; aRb \land bRc \Rightarrow aRc\)</span></li>
-<li>関数合成をイメージした</li>
-</ul></li>
-<li>対象関係
-<ul>
-<li><span class="math inline">\(\forall a,b \in X,\; aRb \Rightarrow bRa\)</span></li>
-<li>左右を入れ替えても問題がない関係と理解した。</li>
-<li>たとえば、<span class="math inline">\(A=B\)</span>なら<span class="math inline">\(B=A\)</span></li>
-</ul></li>
-<li>反射関係
-<ul>
-<li><span class="math inline">\(\forall a \in X,\; aRa.\)</span></li>
-<li><blockquote class="twitter-tweet" data-conversation="none" data-lang="ja">
-<p lang="ja" dir="ltr">
-<a href="https://twitter.com/Eliza_0x"><span class="citation">@Eliza_0x</span></a> あれは，一言で言うと「同じものは同じ」って言いたいの
-</p>
-— しんぷっと(読み方：唯一無二の光) (<span class="citation">@a0symptote</span>) <a href="https://twitter.com/a0symptote/status/777573971227095040">2016年9月18日</a>
-</blockquote></li>
-</ul></li>
-</ul></li>
-<li>以上三つを満たした関係を同値といいます。</li>
+<li>「集合・位相入門」を今読んでいます。 <a href="https://www.iwanami.co.jp/.BOOKS/00/4/0054240.html" class="uri">https://www.iwanami.co.jp/.BOOKS/00/4/0054240.html</a></li>
 </ul>
 <h2 id="離散数学">離散数学</h2>
+<p>いつかやりたいなぁ…</p>
 <h2 id="ラムダ計算">ラムダ計算</h2>
 <ul>
 <li><a href="http://language-and-engineering.hatenablog.jp/entry/20130313/LambdaCalculusBasicNoteLinks">「ラムダ計算」を独学で学習するための，講義ノートやPDFのリンク集 （復習用の問題付き）</a>に詳しくまとまっています。</li>
 </ul>
 <h2 id="アルゴリズム">アルゴリズム</h2>
+<p>ダメです。</p>
 <h2 id="高階関数型プログラミング言語">高階関数型プログラミング言語</h2>
 <ul>
 <li>まあまあHaskellが書けるので問題はなさそうと慢心。TaPLのサンプルコードはOCaml(MLの方言)で書かれていました。</li>
-<li>サンプルコードの実装にパーサを書かなければいけないみたいなので、ekmett氏の<a href="http://hackage.haskell.org/package/trifecta">trifecta</a>でも使ってみようと思います。</li>
+<li>Haskellで書かれたサンプルコードは <a href="https://github.com/zerokarmaleft/tapl-haskell" class="uri">https://github.com/zerokarmaleft/tapl-haskell</a> ここにありました。さまざまな言語に有志が翻訳しています。</li>
+<li>サンプルコードの実装にパーサを書かなければいけないみたいなので、ekmett氏の<a href="http://hackage.haskell.org/package/trifecta">trifecta</a>を使っています。</li>
 </ul>
-<div class="footnotes">
-<hr />
-<ol>
-<li id="fn1"><p>本当はn項らしい<a href="#fnref1">↩</a></p></li>
-</ol>
-</div>
 <ul class="article_data"><li> Tags: <a href="../tags/haskell.html">haskell</a>, <a href="../tags/book.html">book</a>, <a href="../tags/memo.html">memo</a>, <a href="../tags/programming.html">programming</a>, <a href="../tags/math.html">math</a></li>
 </ul>
 </article>
