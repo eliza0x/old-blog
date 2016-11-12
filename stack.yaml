@@ -1,7 +1,10 @@
-resolver: lts-7.2
+resolver: lts-7.7
 flags:
   hakyll:
-    previewserver: false
+    checkexternal: false
+
 extra-deps:
-- hakyll-4.8.3.2
+- hakyll-4.9.1.0
 - hakyll-shakespeare-0.1.0.0.2
+
+
