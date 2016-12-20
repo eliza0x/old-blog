@@ -7,8 +7,38 @@
         <description><![CDATA[技術や読書録を残します]]></description>
         <atom:link href="https://eliza.link/rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Mon, 07 Nov 2016 00:00:00 UT</lastBuildDate>
+        <lastBuildDate>Sun, 18 Dec 2016 00:00:00 UT</lastBuildDate>
         <item>
+    <title>『罪と罰』を読んで</title>
+    <link>https://eliza.link/posts/Crime_and_Punishment.html</link>
+    <description><![CDATA[<a href="/posts/Crime_and_Punishment.html"><h2>『罪と罰』を読んで</h2>
+</a>
+<ul class="article_data"><li>  Posted on December 18, 2016</li>
+
+<li> Tags: <a href="/tags/book.html">book</a>, <a href="/tags/kosen14s.html">kosen14s</a></li>
+</ul>
+<p><em>この記事は <a href="http://kosen14s.github.io/bookclub2nd/">kosen14’s読書会2nd</a>の記事です。</em></p>
+<!--more-->
+<p>かなり気に入っているうちの一冊を紹介しようと思う。『罪と罰』だ。</p>
+<p>タネ明かしになってしまうけどこれぐらいなら書いてもかまわないだろう。主人公は殺人をおかす、そこまでの過程とそれから、その間の彼の心理描写、まわりの人達があたえる彼への影響について。</p>
+<p>この作品はやさしくいろいろなことを語りかけてくる。そのときどきの私の具合によっても受け取るものは変わってくる。やさしい人々。細やかな心理描写。</p>
+<p>この作品には何が書いてあるんだろうか。一言でまとめられるものではないが、私は『理想と現実の乖離』について書いてあるように思った。きっと読み手によってそれは変わってくると思う。</p>
+<p>とても短くなってしまったが、おわりに一章から私の好きな部分を引用してみようと思う。</p>
+<blockquote>
+<p>彼は酒を注ごうと思ったが、もう一滴もなかった。小瓶は空になっていた。</p>
+</blockquote>
+<blockquote>
+<p>いろんな想念のちぎれやかけらが頭の中にうようよしていた。しかし彼はどんなに躍起となっても、その一つもとらえることができなかった、どの一つにも考えをとどめることができなかった……</p>
+</blockquote>
+<p>あまりに町並みを子細に描写してあるので、この作品があればロシアのペテルブルグの町並みを再現できるとまでいわれている。わたしは読んでいて美しいと感動さえするけど、この小説に写されている情景はなんてことはない町の風景だ。きっとなにもかもが気の持ちようで変わるということだろう。新鮮な心をもって生きていきたい。</p>
+<ul class="article_data"><li> Tags: <a href="/tags/book.html">book</a>, <a href="/tags/kosen14s.html">kosen14s</a></li>
+</ul>
+]]></description>
+    <pubDate>Sun, 18 Dec 2016 00:00:00 UT</pubDate>
+    <guid>https://eliza.link/posts/Crime_and_Punishment.html</guid>
+    <dc:creator>Eliza Calls</dc:creator>
+</item>
+<item>
     <title>音楽の文法</title>
     <link>https://eliza.link/posts/GrammarOfMusic.html</link>
     <description><![CDATA[<a href="/posts/GrammarOfMusic.html"><h2>音楽の文法</h2>
@@ -229,10 +259,10 @@
 <h4 id="第1章-はじめに">第1章 はじめに</h4>
 <p>型を導入する意義や、型についての面白い話が書かれています。</p>
 <h4 id="第2章-数学的準備">第2章 数学的準備</h4>
-<p>数学の公式や前提として必要な知識が列挙されています、ここで馴染の無い物があれば読むのを中断し、いちどその分野の知識を補うべきだとしていますが私は強行を決めました。</p>
+<p><del>数学の公式や前提として必要な知識が列挙されています、ここで馴染の無い物があれば読むのを中断し、いちどその分野の知識を補うべきだとしていますが私は強行を決めました。</del></p>
+<p>集合論の初歩を頭に入れておくと良い</p>
 <h2 id="第1部-型無しの計算体系">第1部 型無しの計算体系</h2>
 <h4 id="第3章-型無し算術式">第3章 型無し算術式</h4>
-<p>簡単な言語の構文を定義して意味論や項を操作したりしている。</p>
 <!-- - 操作的意味論: 抽象機械を定義してプログラミング言語の振舞いを規定、機械の振舞いを遷移関数を使用して定義する。 -->
 <!-- - 表示的意味論: 項を数値や関数として捉えてモデル化。 -->
 <!-- - 公理的意味論: 言語の定義そのものが法則となる、項の意味は項の照明そのもの。 -->
@@ -1054,42 +1084,6 @@ $ <span class="ex">platformio</span> init -b attiny85  </code></pre></div>
 ]]></description>
     <pubDate>Sun, 12 Jun 2016 00:00:00 UT</pubDate>
     <guid>https://eliza.link/posts/Introductory_Psychoanalysis.html</guid>
-    <dc:creator>Eliza Calls</dc:creator>
-</item>
-<item>
-    <title>Kosen14sとは…？</title>
-    <link>https://eliza.link/posts/kosen14s.html</link>
-    <description><![CDATA[<a href="/posts/kosen14s.html"><h2>Kosen14sとは…？</h2>
-</a>
-<ul class="article_data"><li>  Posted on May  4, 2016</li>
-
-<li> Tags: <a href="/tags/kosen14s.html">kosen14s</a></li>
-</ul>
-<p><a href="./2016-05-02-kosenconflol.html">以前高専カンファレンスに行って来た</a>のですが、そこで<a href="https://twitter.com/kwnktks0515">かわなか氏/kwnktks0515</a>によりkosen14sに招待していただきました。</p>
-<p>Kosen14sとは何か、私には分かりません、共通点は2014年に高専に入学したという事ぐらいです。</p>
-<p>筋トレ集団のようにも見えますし、エンジニア集団にも見えます、<a href="https://twitter.com/Macshaker">マックシェイカー</a>も居れば、<a href="https://twitter.com/nyousono_sakebi">吹奏楽関係者</a>も居ます。</p>
-<p>年齢の近い、高専生やその近辺の集まりなので、皆と結構フレンドリーに話せます。</p>
-<!--more-->
-<h2 id="筋トレ">筋トレ？</h2>
-<p>筋トレです、kosenconf lolでの発表(おそらく<a href="https://twitter.com/e10dokup">神大クソメガネ先輩</a>)の「大切なことは筋肉」発言が原因です。</p>
-<div class="figure">
-<img src="../images/kosen14s-muscle.png" />
-
-</div>
-<p>みんな喜んで筋トレしています、私も一ヶ月続けたので腕が少し太くなりました。</p>
-<p>ちなみに、我らがkosen14sのGithubリポジトリには、<a href="https://github.com/kosen14s/muscle_training_bot">muscle_training_bot</a>なるものがあります、完全に変態です。</p>
-<h2 id="読書会を行います">読書会を行います</h2>
-<blockquote>
-いらいざ ‏<span class="citation">@Eliza_0x</span> 6月12日 #kosen14s では6/20より一週間に渡って読書会を開催します！ 各kosen14sメンバーが担当日にブログやスライドなどで読んだ本(ジャンルは問わない)についての発表を行ってくれるので楽しみに待っていて下さい！ -<a href="https://twitter.com/Eliza_0x/status/741970838707011584">twitter</a>
-</blockquote>
-<p>行いました、私も二本記事を書きました。: <a href="http://kosen14s.github.io/bookclub/">Kosen14s読書会</a></p>
-<h2 id="興味がある">興味がある</h2>
-<p><a href="https://twitter.com/kwnktks0515">かわなか氏/kwnktks0515</a>に連絡を取って下さい</p>
-<ul class="article_data"><li> Tags: <a href="/tags/kosen14s.html">kosen14s</a></li>
-</ul>
-]]></description>
-    <pubDate>Wed, 04 May 2016 00:00:00 UT</pubDate>
-    <guid>https://eliza.link/posts/kosen14s.html</guid>
     <dc:creator>Eliza Calls</dc:creator>
 </item>
 
