@@ -58,7 +58,7 @@ baseCss = do
   ".footnotes"  |> hr ? display displayNone
   ".article_data" ? do
     listStyle none inside none
-    margin (rem 5) (rem 4) (rem 5) (rem 4) 
+    margin (rem 3) (rem 4) (rem 3) (rem 4) 
 
 containerCss :: Css
 containerCss = do
@@ -99,7 +99,7 @@ typoGraphyCss = do
       color secondColor
   h1 <> h2 <> h3 <> h4 <> h5 <> h6 ? do
       marginTop    $ rem 7
-      marginBottom $ rem 1.5
+      marginBottom $ rem 1.8
       fontWeight   $ weight 300
   mapM_ headCss
     [ ( h1, rem 4.0, rem $ 4.0 + 1.2,  rem (-0.1) )
@@ -196,33 +196,3 @@ codeColorize = do
   code |> span # ".im" ? mempty
   code |> span # ".ex" ? mempty
 
-{-
-- kw: Keyword
-- dt: DataType
-- dv: DecVal
-- bn: BaseN
-- fl: Float
-- ch: Char
-- st: String
-- co: Comment
-- ot: Other
-- al: Alert
-- fu: Function
-- er: Error
-- wa: Warning
-- cn: Constant
-- sc: SpecialChar
-- vs: VerbatimString
-- ss: SpecialString
-- im: Import
-- va: Variable
-- cf: ControlFlow
-- op: Operator
-- pp: Preprocessor
-- ex: Extension
-- at: Attribute
-- do: Documentation
-- an: Annotation
-- cv: CommentVar
-- in: Information
--}
