@@ -1,5 +1,5 @@
 <a href=$url$>
-  <h2>$title$
+  <h1 class="article_title">$title$
 <ul class="article_data">
   <li>  Posted on $date$
   \$if(author)$
@@ -8,8 +8,5 @@
   \$if(tags)$
     <li> Tags: $tags$
   \$endif$
-\$body$
-<ul class="article_data">
-  \$if(tags)$
-    <li> Tags: $tags$
-  \$endif$
+<section class="article_text">
+  \$body$

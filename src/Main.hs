@@ -16,12 +16,11 @@ main = hakyll $ do
         compile copyFileCompiler
 
     -- Style sheet
-    match "css/*.hs" $ do
+    match "static/**.hs" $ do
       route $ setExtension "css"
       compile $ getResourceString
-            >>= withItemBody (unixFilter "stack" ["runghc", "--package", "clay", "--stack-yaml", "stack.yaml"])
-            >>= relativizeUrls
-
+        >>= withItemBody (unixFilter "stack" ["runghc", "--package", "clay", "--stack-yaml", "stack.yaml"])
+        >>= relativizeUrls
 
     -- Create tags
     tagsOfPosts <- buildTags "posts/*" (fromCapture "tags/*.html")
@@ -80,9 +79,9 @@ main = hakyll $ do
       compile $ do
         posts <- fmap (take 4) . recentFirst =<< loadAll "posts/*"
         let indexedContext =
-                listField "posts" (postContext tagsOfPosts) (return posts) <>
-                field "tags" (\_ -> renderTagList tagsOfPosts) <>
-                defaultContext
+              listField "posts" (postContext tagsOfPosts) (return posts) <>
+              field "tags" (\_ -> renderTagList tagsOfPosts) <>
+              defaultContext
         hamlCompiler
           >>= applyAsTemplate indexedContext
           >>= loadAndApplyTemplate "templates/flame.hamlet" (postContext tagsOfPosts)
@@ -112,6 +111,9 @@ main = hakyll $ do
 pandocOptions :: WriterOptions
 pandocOptions = defaultHakyllWriterOptions {
     writerHTMLMathMethod = MathJax ""
+  , writerTableOfContents = True
+  , writerTemplate = "$body$"
+  , writerStandalone = True
   }
 
 postContext :: Tags -> Context String

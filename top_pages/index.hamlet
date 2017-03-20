@@ -1,7 +1,7 @@
 <section>
   <h2>Recent posts
   \$partial("templates/post-list.hamlet")$
-  <p class="archives">…or you can find more in the <a href="/archive.html">archives</a>.
+  <p>…or you can find more in the <a href="/archive.html">archives</a>.
   <p>$tags$
 
 <section>
