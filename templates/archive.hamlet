@@ -1,17 +1,31 @@
 \$partial("templates/post-list.hamlet")$
 
-<nav class="pagination">
-  \$if(firstPageUrl)$
-    <a href="$firstPageUrl$">First
-  \$endif$
-  \$if(previousPageUrl)$
-    <a href="$previousPageUrl$">Previous
-  \$endif$
-  \$currentPageNum$ of $numPages$
-  \$if(nextPageUrl)$
-    <a href="$nextPageUrl$">Next
-  \$endif$
-  \$if(lastPageUrl)$
-    <a href="$lastPageUrl$">Last
-  \$endif$
+<nav>
+  <ul class="container container--row container__center navigation">
+    <li>
+      \$if(firstPageUrl)$
+        <a href="$firstPageUrl$" class="pagination--button">First
+      \$else$
+        <a class="pagination--button__dummy">First
+      \$endif$
+    <li>
+      \$if(previousPageUrl)$
+        <a href="$previousPageUrl$" class="pagination--button">Previous
+      \$else$
+        <a class="pagination--button__dummy">Previous
+      \$endif$
+    <li>
+      \$currentPageNum$ of $numPages$
+    <li>
+      \$if(nextPageUrl)$
+        <a href="$nextPageUrl$" class="pagination--button">Next
+      \$else$
+        <a class="pagination--button__dummy">Next
+      \$endif$
+    <li>
+      \$if(lastPageUrl)$
+        <a href="$lastPageUrl$" class="pagination--button">Last
+      \$else$
+        <a class="pagination--button__dummy">Last
+      \$endif$
 

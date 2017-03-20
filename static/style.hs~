@@ -79,10 +79,12 @@ headerCss :: Css
 headerCss = do
   ".blogtitle" ? do
     marginLeft   $ rem (-0.5)
-    fontSize     $ rem 10
+    fontSize     $ rem 8
     letterSpacing $ rem (-0.5)
     fontWeight   $ weight 900
     textAlign $ alignSide sideCenter
+  query screen [minWidth $ px 550] $
+    fontSize     $ rem 10
   ".navigation" ? do
     fontWeight $ weight 300
     fontSize     $ rem 2.6
