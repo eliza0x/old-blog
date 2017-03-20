@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
     xmlns:dc="http://purl.org/dc/elements/1.1/">
     <channel>
-        <title>Posts tagged music - eliza.link</title>
+        <title>Posts tagged music -  | ELIZA.link</title>
         <link>https://eliza.link</link>
-        <description><![CDATA[技術や読書録を残します]]></description>
+        <description><![CDATA[技術録や日記を残します]]></description>
         <atom:link href="https://eliza.link/tags/music.xml" rel="self"
                    type="application/rss+xml" />
         <lastBuildDate>Mon, 19 Sep 2016 00:00:00 UT</lastBuildDate>
         <item>
     <title>Lilypondで楽譜を書いた</title>
     <link>https://eliza.link/posts/IntroductoryLilypond.html</link>
-    <description><![CDATA[<a href="/posts/IntroductoryLilypond.html"><h2>Lilypondで楽譜を書いた</h2>
+    <description><![CDATA[<a href="/posts/IntroductoryLilypond.html"><h1>Lilypondで楽譜を書いた</h1>
 </a>
 <ul class="article_data"><li>  Posted on September 19, 2016</li>
 
 <li> Tags: <a href="/tags/music.html">music</a></li>
 </ul>
-<p>吹奏楽部でソロをもらったのですが、本来はピアノがソロを担当する曲なのでサックスの譜面がなく、しかたなく書くことになりました。</p>
+<section class="article_text"><p>吹奏楽部でソロをもらったのですが、本来はピアノがソロを担当する曲なのでサックスの譜面がなく、しかたなく書くことになりました。</p>
 <blockquote>
 <p>LilyPond は、可能な限り高品位な楽譜を生み出すことを目的とする、オープン ソースの楽譜作成プログラムです。このフリー ソフトウェアは、伝統的な彫版の楽譜の美しさをコンピュータ プリントアウトで実現します。LilyPond はフリーソフトウェアであり、GNU プロジェクト の一部です。 - <a href="http://lilypond.org/index.ja.html" class="uri">http://lilypond.org/index.ja.html</a></p>
 </blockquote>
@@ -137,13 +137,11 @@
 - `-es`、`-is`でシャープ、フラット
 - Cの調の楽譜をBes調の楽譜に起こしたかったので、Cそのままで一度書いたあとに、`\relative c bes`でBesに変換した。
 -->
-<p>以上です、簡単だったでしょう？さあ、LilyPondをインストールして音楽家になりましょう。</p>
-<ul class="article_data"><li> Tags: <a href="/tags/music.html">music</a></li>
-</ul>
+<p>以上です、簡単だったでしょう？さあ、LilyPondをインストールして音楽家になりましょう。</p></section>
 ]]></description>
     <pubDate>Mon, 19 Sep 2016 00:00:00 UT</pubDate>
     <guid>https://eliza.link/posts/IntroductoryLilypond.html</guid>
-    <dc:creator>Eliza Calls</dc:creator>
+    <dc:creator>eliza0x</dc:creator>
 </item>
 
     </channel>

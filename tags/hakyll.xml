@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
     xmlns:dc="http://purl.org/dc/elements/1.1/">
     <channel>
-        <title>Posts tagged hakyll - eliza.link</title>
+        <title>Posts tagged hakyll -  | ELIZA.link</title>
         <link>https://eliza.link</link>
-        <description><![CDATA[技術や読書録を残します]]></description>
+        <description><![CDATA[技術録や日記を残します]]></description>
         <atom:link href="https://eliza.link/tags/hakyll.xml" rel="self"
                    type="application/rss+xml" />
         <lastBuildDate>Sat, 27 Aug 2016 00:00:00 UT</lastBuildDate>
         <item>
     <title>Haskellでブログを作った</title>
     <link>https://eliza.link/posts/create_blog_with_hakyll.html</link>
-    <description><![CDATA[<a href="/posts/create_blog_with_hakyll.html"><h2>Haskellでブログを作った</h2>
+    <description><![CDATA[<a href="/posts/create_blog_with_hakyll.html"><h1>Haskellでブログを作った</h1>
 </a>
 <ul class="article_data"><li>  Posted on August 27, 2016</li>
 
 <li> Tags: <a href="/tags/haskell.html">haskell</a>, <a href="/tags/programming.html">programming</a>, <a href="/tags/hakyll.html">hakyll</a></li>
 </ul>
-<p>以前からはてなブログなどで記事は書いていたんですが、どうしてもモチベーションも保てず、なんだか嫌になってブログを削除した過去があります。 しかし、やっぱり記事は書くべき時が来ますし、それでせっかくブログを作るならもっと自由にカスタマイズできる環境であればより楽しく続けられると思ったので、HakyllとShakespeare、そしてClayを使い、私の好きなHaskellでブログを作りました。</p>
+<section class="article_text"><p>以前からはてなブログなどで記事は書いていたんですが、どうしてもモチベーションも保てず、なんだか嫌になってブログを削除したことがあります。 しかし、やっぱり記事は書くべき時が来ますし、それでせっかくブログを作るならもっと自由にカスタマイズできる環境であればより楽しく続けられると思ったので、HakyllとShakespeare、そしてClayを使い、私の好きなHaskellでブログを作りました。</p>
 <p>記事をかいた当時のこのページのソースコードは<a href="https://github.com/eliza0x/eliza0x.github.io/tree/bd964b8f01908b93c555d528bd020cb2060975bd">ここ</a>に公開しています。 また、最新版は<a href="https://github.com/eliza0x/eliza0x.github.io">ここ</a>に公開しています。</p>
 <!--more-->
 <h2 id="hakyllでウェブサイトの生成">Hakyllでウェブサイトの生成</h2>
@@ -142,13 +142,11 @@ css <span class="fu">=</span> <span class="kw">do</span>
 <li id="fn1"><p><a href="https://www.staticgen.com/">StaticGen</a> というサイトにまとまっています。静的サイトジェネレータのうちで有名なものといえばPelican(Python), Jekyll(Ruby), GitBook(JavaScript), Hugo(Go)などがあるでしょうか。おもしろそうなものでは、Lispで書かれたColeslawなんてものもあるそうです。<a href="#fnref1">↩</a></p></li>
 <li id="fn2"><p>テンプレートの呼び出しのあたり<a href="#fnref2">↩</a></p></li>
 </ol>
-</div>
-<ul class="article_data"><li> Tags: <a href="/tags/haskell.html">haskell</a>, <a href="/tags/programming.html">programming</a>, <a href="/tags/hakyll.html">hakyll</a></li>
-</ul>
+</div></section>
 ]]></description>
     <pubDate>Sat, 27 Aug 2016 00:00:00 UT</pubDate>
     <guid>https://eliza.link/posts/create_blog_with_hakyll.html</guid>
-    <dc:creator>Eliza Calls</dc:creator>
+    <dc:creator>eliza0x</dc:creator>
 </item>
 
     </channel>

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
     xmlns:dc="http://purl.org/dc/elements/1.1/">
     <channel>
-        <title>Posts tagged math - eliza.link</title>
+        <title>Posts tagged math -  | ELIZA.link</title>
         <link>https://eliza.link</link>
-        <description><![CDATA[技術や読書録を残します]]></description>
+        <description><![CDATA[技術録や日記を残します]]></description>
         <atom:link href="https://eliza.link/tags/math.xml" rel="self"
                    type="application/rss+xml" />
         <lastBuildDate>Thu, 15 Sep 2016 00:00:00 UT</lastBuildDate>
         <item>
     <title>型システム入門(TaPL)読書メモ</title>
     <link>https://eliza.link/posts/TaPL.html</link>
-    <description><![CDATA[<a href="/posts/TaPL.html"><h2>型システム入門(TaPL)読書メモ</h2>
+    <description><![CDATA[<a href="/posts/TaPL.html"><h1>型システム入門(TaPL)読書メモ</h1>
 </a>
 <ul class="article_data"><li>  Posted on September 15, 2016</li>
 
 <li> Tags: <a href="/tags/haskell.html">haskell</a>, <a href="/tags/book.html">book</a>, <a href="/tags/memo.html">memo</a>, <a href="/tags/programming.html">programming</a>, <a href="/tags/math.html">math</a></li>
 </ul>
-<p>TaPLでの読書メモが書いてあります随時追記していきます。 間違いを発見した場合はコメントか、me [at] eliza [dot] linkまでメールを下さると喜びます。</p>
+<section class="article_text"><p>TaPLでの読書メモが書いてあります随時追記していきます。 間違いを発見した場合はコメントか、me [at] eliza [dot] linkまでメールを下さると喜びます。</p>
 <ol start="17" style="list-style-type: upper-alpha">
 <li>どうして読むのか</li>
 <li>Haskellが好きで背後で使われている技術を知りたくなったから</li>
@@ -40,10 +40,10 @@
 <h4 id="第1章-はじめに">第1章 はじめに</h4>
 <p>型を導入する意義や、型についての面白い話が書かれています。</p>
 <h4 id="第2章-数学的準備">第2章 数学的準備</h4>
-<p><del>数学の公式や前提として必要な知識が列挙されています、ここで馴染の無い物があれば読むのを中断し、いちどその分野の知識を補うべきだとしていますが私は強行を決めました。</del></p>
-<p>集合論の初歩を頭に入れておくと良い</p>
+<p>数学の公式や前提として必要な知識が列挙されています、ここで馴染の無い物があれば読むのを中断し、いちどその分野の知識を補うべきだとしていますが私は強行を決めました。</p>
 <h2 id="第1部-型無しの計算体系">第1部 型無しの計算体系</h2>
 <h4 id="第3章-型無し算術式">第3章 型無し算術式</h4>
+<p>簡単な言語の構文を定義して意味論や項を操作したりしている。</p>
 <!-- - 操作的意味論: 抽象機械を定義してプログラミング言語の振舞いを規定、機械の振舞いを遷移関数を使用して定義する。 -->
 <!-- - 表示的意味論: 項を数値や関数として捉えてモデル化。 -->
 <!-- - 公理的意味論: 言語の定義そのものが法則となる、項の意味は項の照明そのもの。 -->
@@ -60,9 +60,7 @@
 <li>1ステップ評価を合成したやつだと理解しておいた。</li>
 </ul></li>
 </ul>
-<h4 id="第4章-算術式のml実装">第4章 算術式のML実装</h4>
-<p>なんとなく実装してみたのでGithubにアップロードしました。</p>
-<p><a href="https://github.com/eliza0x/Hatter">eliza0x/Hatter</a></p>
+<!-- #### 第4章	算術式のML実装 -->
 <h4 id="第5章-型無しラムダ計算">第5章 型無しラムダ計算</h4>
 <ul>
 <li>なんとなく分かったら、<a href="http://tarao.hatenablog.com/entry/20100208/1265605429">ラムダ計算基礎文法最速マスター</a>にあっさりと書かれているので読むといいかも。</li>
@@ -280,24 +278,22 @@ bar = \lambda . \lambda . 2
 <li id="fn3"><p>健全性とも言われる<a href="#fnref3">↩</a></p></li>
 <li id="fn4"><p>Curry-Howard同型ともよばれる<a href="#fnref4">↩</a></p></li>
 </ol>
-</div>
-<ul class="article_data"><li> Tags: <a href="/tags/haskell.html">haskell</a>, <a href="/tags/book.html">book</a>, <a href="/tags/memo.html">memo</a>, <a href="/tags/programming.html">programming</a>, <a href="/tags/math.html">math</a></li>
-</ul>
+</div></section>
 ]]></description>
     <pubDate>Thu, 15 Sep 2016 00:00:00 UT</pubDate>
     <guid>https://eliza.link/posts/TaPL.html</guid>
-    <dc:creator>Eliza Calls</dc:creator>
+    <dc:creator>eliza0x</dc:creator>
 </item>
 <item>
     <title>TaPLに必要な知識の学習記録</title>
     <link>https://eliza.link/posts/PreTaPL.html</link>
-    <description><![CDATA[<a href="/posts/PreTaPL.html"><h2>TaPLに必要な知識の学習記録</h2>
+    <description><![CDATA[<a href="/posts/PreTaPL.html"><h1>TaPLに必要な知識の学習記録</h1>
 </a>
 <ul class="article_data"><li>  Posted on September 15, 2016</li>
 
 <li> Tags: <a href="/tags/haskell.html">haskell</a>, <a href="/tags/book.html">book</a>, <a href="/tags/memo.html">memo</a>, <a href="/tags/programming.html">programming</a>, <a href="/tags/math.html">math</a></li>
 </ul>
-<p>TaPLを読むのために少し勉強したのでメモを残しておきます。 内容の真偽の保証はできません。必要に応じて追記していきます。</p>
+<section class="article_text"><p>TaPLを読むのために少し勉強したのでメモを残しておきます。 内容の真偽の保証はできません。必要に応じて追記していきます。</p>
 <p><a href="http://zoetrope.hatenablog.jp/entry/2013/07/24/204613">数学初心者のための「型システム入門」入門</a>によると前提として以下の知識が必要になるようです。</p>
 <blockquote>
 <ul>
@@ -337,13 +333,11 @@ bar = \lambda . \lambda . 2
 <li>まあまあHaskellが書けるので問題はなさそうと慢心。TaPLのサンプルコードはOCaml(MLの方言)で書かれていました。</li>
 <li>Haskellで書かれたサンプルコードは <a href="https://github.com/zerokarmaleft/tapl-haskell" class="uri">https://github.com/zerokarmaleft/tapl-haskell</a> ここにありました。さまざまな言語に有志が翻訳しています。</li>
 <li>サンプルコードの実装にパーサを書かなければいけないみたいなので、ekmett氏の<a href="http://hackage.haskell.org/package/trifecta">trifecta</a>を使っています。</li>
-</ul>
-<ul class="article_data"><li> Tags: <a href="/tags/haskell.html">haskell</a>, <a href="/tags/book.html">book</a>, <a href="/tags/memo.html">memo</a>, <a href="/tags/programming.html">programming</a>, <a href="/tags/math.html">math</a></li>
-</ul>
+</ul></section>
 ]]></description>
     <pubDate>Thu, 15 Sep 2016 00:00:00 UT</pubDate>
     <guid>https://eliza.link/posts/PreTaPL.html</guid>
-    <dc:creator>Eliza Calls</dc:creator>
+    <dc:creator>eliza0x</dc:creator>
 </item>
 
     </channel>

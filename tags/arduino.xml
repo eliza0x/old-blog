@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
     xmlns:dc="http://purl.org/dc/elements/1.1/">
     <channel>
-        <title>Posts tagged arduino - eliza.link</title>
+        <title>Posts tagged arduino -  | ELIZA.link</title>
         <link>https://eliza.link</link>
-        <description><![CDATA[技術や読書録を残します]]></description>
+        <description><![CDATA[技術録や日記を残します]]></description>
         <atom:link href="https://eliza.link/tags/arduino.xml" rel="self"
                    type="application/rss+xml" />
         <lastBuildDate>Mon, 08 Aug 2016 00:00:00 UT</lastBuildDate>
         <item>
     <title>Blink on AtTiny85</title>
     <link>https://eliza.link/posts/AtTiny85a.html</link>
-    <description><![CDATA[<a href="/posts/AtTiny85a.html"><h2>Blink on AtTiny85</h2>
+    <description><![CDATA[<a href="/posts/AtTiny85a.html"><h1>Blink on AtTiny85</h1>
 </a>
 <ul class="article_data"><li>  Posted on August  8, 2016</li>
 
 <li> Tags: <a href="/tags/programming.html">programming</a>, <a href="/tags/microprocessor.html">microprocessor</a>, <a href="/tags/arduino.html">arduino</a></li>
 </ul>
-<p><a href="https://twitter.com/mc475_46">もは氏/mc475_46</a>の勧めもあってついにAVRマイコンに手を出してみました。後悔するのは後になってからでも構わないでしょう。 自分の書いたプログラムがPCの外で動いているというのは新鮮ですし、マイコンはプログラミングと日常をつないでくれるような気がしてなんだかとても楽しいです。</p>
+<section class="article_text"><p><a href="https://twitter.com/mc475_46">もは氏/mc475_46</a>の勧めもあってついにAVRマイコンに手を出してみました。後悔するのは後になってからでも構わないでしょう。 自分の書いたプログラムがPCの外で動いているというのは新鮮ですし、マイコンはプログラミングと日常をつないでくれるような気がしてなんだかとても楽しいです。</p>
 <p>PlatformIOでFT232RLを使ってAtTiny85(AVR)に書き込んでいる記事なネットでみつけられなくて苦労したのでこの記事を書きました。</p>
 <!--more-->
 <h2 id="tldr">TL;DR</h2>
@@ -112,13 +112,11 @@ $ <span class="ex">platformio</span> init -b attiny85  </code></pre></div>
 <li><a href="http://tyk-systems.com/ATmega328/ATmega328.html">Arduinoから取り外したATmega328を外付け水晶振動子(発振子)で動作させる。</a></li>
 <li><a href="http://www.wsnak.com/wsnakblog/?p=4110">arduino(AVR)でキャリア波38KHzを発生させる</a></li>
 </ul>
-<p>他多数、関係企業とプログラマ達に感謝</p>
-<ul class="article_data"><li> Tags: <a href="/tags/programming.html">programming</a>, <a href="/tags/microprocessor.html">microprocessor</a>, <a href="/tags/arduino.html">arduino</a></li>
-</ul>
+<p>他多数、関係企業とプログラマ達に感謝</p></section>
 ]]></description>
     <pubDate>Mon, 08 Aug 2016 00:00:00 UT</pubDate>
     <guid>https://eliza.link/posts/AtTiny85a.html</guid>
-    <dc:creator>Eliza Calls</dc:creator>
+    <dc:creator>eliza0x</dc:creator>
 </item>
 
     </channel>
