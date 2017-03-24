@@ -364,7 +364,9 @@ footer
 
 pre
 {
-  width : auto;
+  padding : 3rem 5vw 3rem 5vw;
+  margin  : 3rem -5vw 3rem -5vw;
+  width   : auto;
 }
 
 @media screen and (min-width: 550px)
