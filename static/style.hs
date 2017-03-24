@@ -55,7 +55,7 @@ baseCss = do
     color fontColor
     margin auto (pct 5) auto (pct 5)
     query screen [minWidth $ px 550] $
-      margin auto (pct 30) auto (pct 30) 
+      margin auto (vw 30) auto (vw 30) 
   blockquote ?
     margin (px 15) (px 15) (px 15) (px 15)
   ".figure" ? margin (px 10) (px 10) (px 10) (px 10) 
@@ -182,8 +182,8 @@ codeLayout :: Css
 codeLayout = do
   -- pre # ".sourceCode" ? do
   pre ? do
-    padding (rem 3) (rem 100000) (rem 3) (rem 100000)
-    margin (rem 3) (rem (-100000)) (rem 3) (rem (-100000))
+    padding (rem 3) (vw 50) (rem 3) (vw 50)
+    margin (rem 3) (vw (-50)) (rem 3) (vw (-50))
     width auto
   table # ".sourceCode" ? backgroundColor white
   table # ".sourceCode" <>
