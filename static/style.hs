@@ -45,7 +45,7 @@ baseCss = do
   html ? fontSize (pct 62.5)
   body ? do
     backgroundColor backGroundColor
-    fontSize $ em 2
+    fontSize $ em 1.9
     lineHeight auto
     fontWeight $ weight 300
     fontFamily [ "Mplus 1P"
@@ -54,8 +54,11 @@ baseCss = do
                ] [sansSerif]
     color fontColor
     margin auto (pct 5) auto (pct 5)
-    query screen [minWidth $ px 550] $
-      margin auto (vw 30) auto (vw 30) 
+    let margins m = margin auto (vw m) auto (vw m) 
+    query screen [minWidth $ px 550]  $ margins 15
+    query screen [minWidth $ px 1000] $ margins 18
+    query screen [minWidth $ px 1300] $ margins 22
+    query screen [minWidth $ px 1500] $ margins 25
   blockquote ?
     margin (px 15) (px 15) (px 15) (px 15)
   ".figure" ? margin (px 10) (px 10) (px 10) (px 10) 
@@ -79,17 +82,24 @@ headerCss :: Css
 headerCss = do
   ".blogtitle" ? do
     marginLeft   $ rem (-0.5)
-    fontSize     $ rem 10
     letterSpacing $ rem (-0.5)
     fontWeight   $ weight 900
     textAlign $ alignSide sideCenter
+    fontSize $ rem 6
+    query screen [minWidth $ px 800] $ fontSize $ rem 8
+    query screen [minWidth $ px 1500] $ fontSize $ rem 10
   ".navigation" ? do
     fontWeight $ weight 300
-    fontSize     $ rem 2.6
     listStyleType none
-    marginBottom $ rem 3
-  ".navigation" |> li ?
-    padding (rem 1) (rem 1) (rem 1) (rem 1) 
+    fontSize     $ rem 1.8
+    query screen [minWidth $ px 800] $ fontSize $ rem 2.0
+    query screen [minWidth $ px 1500] $ fontSize $ rem 2.3
+  ".navigation" |> li ? do
+    let paddings p = padding (rem p) (rem p) (rem p) (rem p) 
+    paddings 0.4
+    query screen [minWidth $ px 800] $ paddings 0.7
+    query screen [minWidth $ px 1500] $ paddings 1
+    margin none none none none
 
 typoGraphyCss :: Css
 typoGraphyCss = do
@@ -163,8 +173,8 @@ listCss = do
 footerCss :: Css
 footerCss = footer ? do
   textAlign (alignSide sideCenter)
-  marginTop    $ rem 6
-  marginBottom $ rem 8
+  marginTop    $ rem 5
+  marginBottom $ rem 7
 
 paginationCss :: Css
 paginationCss = do
@@ -182,8 +192,13 @@ codeLayout :: Css
 codeLayout = do
   -- pre # ".sourceCode" ? do
   pre ? do
-    padding (rem 3) (vw 50) (rem 3) (vw 50)
-    margin (rem 3) (vw (-50)) (rem 3) (vw (-50))
+    let space s = do
+        padding (rem 3) (vw s) (rem 3) (vw s)
+        margin (rem 3) (vw (-s)) (rem 3) (vw (-s))
+    query screen [minWidth $ px 550]  $ space 15
+    query screen [minWidth $ px 1000] $ space 18
+    query screen [minWidth $ px 1300] $ space 22
+    query screen [minWidth $ px 1500] $ space 25
     width auto
   table # ".sourceCode" ? backgroundColor white
   table # ".sourceCode" <>

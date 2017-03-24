@@ -15,7 +15,7 @@
         <a class="pagination--button__dummy">Previous
       \$endif$
     <li>
-      \$currentPageNum$ of $numPages$
+      <p>$currentPageNum$ / $numPages$
     <li>
       \$if(nextPageUrl)$
         <a href="$nextPageUrl$" class="pagination--button">Next
