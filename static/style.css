@@ -32,7 +32,7 @@ body
   font-weight      : 300;
   font-family      : "Mplus 1P","メイリオ","Hiragino Sans", sans-serif;
   color            : #222222;
-  margin           : auto 5% auto 5%;
+  margin           : auto 5vw auto 5vw;
 }
 
 @media screen and (min-width: 550px)
