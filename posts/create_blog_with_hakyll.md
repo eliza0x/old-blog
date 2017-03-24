@@ -2,11 +2,12 @@
 title: Haskellでブログを作った
 description: HakyllとShakespeare、そしてClayでブログを作った際の記録です。
 date: 2016-08-27
+date: 2017-03-24
 tags: haskell, programming, hakyll
 ----
 
-以前からはてなブログなどで記事は書いていたんですが、どうしてもモチベーションも保てず、なんだか嫌になってブログを削除したことがあります。
-しかし、やっぱり記事は書くべき時が来ますし、それでせっかくブログを作るならもっと自由にカスタマイズできる環境であればより楽しく続けられると思ったので、HakyllとShakespeare、そしてClayを使い、私の好きなHaskellでブログを作りました。
+以前ははてなブログなどで記事は書いていたんですが、どうしてもモチベーションも保てず、なんだか嫌になってブログを削除してしまいました。
+しかし、やっぱり参加したイベント等の記事は書きたい。それでせっかくブログを作るならもっと自由にカスタマイズできる環境であればより楽しく続けられると思ったので、HakyllとShakespeare、そしてClayを使い、私の好きなHaskellでブログを作りました。
 
 記事をかいた当時のこのページのソースコードは[ここ](https://github.com/eliza0x/eliza0x.github.io/tree/bd964b8f01908b93c555d528bd020cb2060975bd)に公開しています。
 また、最新版は[ここ](https://github.com/eliza0x/eliza0x.github.io)に公開しています。
@@ -37,60 +38,43 @@ $$\ln x = \int_{-\infty}^x \frac 1 y \, dy .$$
 
 [Pandocのユーザーズガイド(和訳版)](http://sky-y.github.io/site-pandoc-jp/users-guide/)
 
-私の手元のPandoc(version 1.17.1)は以下のフォーマットに対応していました。
+私の手元のPandoc(version 1.19.2.1)は以下のフォーマットに対応していました。
+
+
 
 ```
 Input formats:
-commonmark, docbook, docx, epub, haddock, html, json*, latex,
-markdown, markdown_github, markdown_mmd, markdown_phpextra,
-markdown_strict, mediawiki, native, odt, opml, org, rst, t2t,
-textile, twiki
-[ *only Pandoc's JSON version of native AST]
 
-Output formats: 
-asciidoc, beamer, commonmark, context, docbook, docbook5, docx,
-dokuwiki, dzslides, epub, epub3, fb2, haddock, html, html5,
-icml, json*, latex, man, markdown, markdown_github,
-markdown_mmd, markdown_phpextra, markdown_strict, mediawiki,
-native, odt, opendocument, opml, org, pdf**, plain, revealjs,
-rst, rtf, s5, slideous, slidy, tei, texinfo, textile
-[**for pdf output, use latex or beamer and -o FILENAME.pdf]
+commonmark, docbook, docx, epub, haddock, html, json, latex, markdown, markdown_github, markdown_mmd, markdown_phpextra, markdown_strict, mediawiki, native, odt, opml, org, rst, t2t, textile, twiki
+
+Output formats:
+
+asciidoc, beamer, commonmark, context, docbook, docbook5, docx, dokuwiki, dzslides, epub, epub3, fb2, haddock, html, html5, icml, json, latex, man, markdown, markdown_github, markdown_mmd, markdown_phpextra, markdown_strict, mediawiki, native, odt, opendocument, opml, org, plain, revealjs, rst, rtf, s5, slideous, slidy, tei, texinfo, textile, zimwiki
 ```
 
 ちなみにCSSさえ準備してしまえば、version1.17.1の場合以下の言語のシンタックスハイライトにも対応しています。この話は後でもうすこし書きます。
 
 ```
 Syntax highlighting is supported for the following languages:
-abc, actionscript, ada, agda, apache, asn1, asp, awk, bash, bibtex, boo, c,
-changelog, clojure, cmake, coffee, coldfusion, commonlisp, cpp, cs, css,
-curry, d, diff, djangotemplate, dockerfile, dot, doxygen, doxygenlua, dtd,
-eiffel, elixir, email, erlang, fasm, fortran, fsharp, gcc, glsl,
-gnuassembler, go, hamlet, haskell, haxe, html, idris, ini, isocpp, java,
-javadoc, javascript, json, jsp, julia, kotlin, latex, lex, lilypond,
-literatecurry, literatehaskell, llvm, lua, m4, makefile, mandoc, markdown,
-mathematica, matlab, maxima, mediawiki, metafont, mips, modelines, modula2,
-modula3, monobasic, nasm, noweb, objectivec, objectivecpp, ocaml, octave,
-opencl, pascal, perl, php, pike, postscript, prolog, pure, python, r,
-relaxng, relaxngcompact, rest, rhtml, roff, ruby, rust, scala, scheme, sci,
-sed, sgml, sql, sqlmysql, sqlpostgresql, tcl, tcsh, texinfo, verilog, vhdl,
-xml, xorg, xslt, xul, yacc, yaml, zsh
+
+abc, asn1, asp, ats, awk, actionscript, ada, agda, alertindent, apache, bash, bibtex, boo, c, cs, cpp, cmake, css, changelog, clojure, coffee, coldfusion, commonlisp, curry, d, dtd, diff, djangotemplate, dockerfile, doxygen, doxygenlua, eiffel, elixir, email, erlang, fsharp, fortran, gcc, glsl, gnuassembler, m4, go, html, hamlet, haskell, haxe, ini, isocpp, idris, fasm, nasm, json, jsp, java, javascript, javadoc, julia, kotlin, llvm, latex, lex, lilypond, literatecurry, literatehaskell, lua, mips, makefile, markdown, mathematica, matlab, maxima, mediawiki, metafont, modelines, modula2, modula3, monobasic, ocaml, objectivec, objectivecpp, octave, opencl, php, pascal, perl, pike, postscript, prolog, pure, purebasic, python, r, relaxng, relaxngcompact, roff, ruby, rhtml, rust, sgml, sql, sqlmysql, sqlpostgresql, scala, scheme, tcl, tcsh, texinfo, mandoc, vhdl, verilog, xml, xul, yaml, yacc, zsh, dot, noweb, rest, sci, sed, xorg, xslt
 ```
 
 聞いた事の無いようなものまで混じってしますね。
 
-HakyllではこんなコードでPandocを呼び出し、ページを生成できます、実際このコードが動くかは知りません。
+HakyllではこんなコードでPandocを呼び出し、ページを生成できます。
 
 ```haskell
 compile $ pandocCompiler 
-  >>= loadAndApplyTemplate "templates/flame.hamlet" postCtx
+  >>= loadAndApplyTemplate "templates/template.hamlet" postCtx
   >>= relativizeUrls
 ```
 
 ## Shakespearean Templates
 
-いくら記事のHTMLを自動生成してくれるからといって、デザインは自分で行わないといけません。しかし、HTMLやCSSを生で書きたくない。始めはSass(CSSのめっちゃすごいやつ)とJade(Htmlのめっちゃすごいやつ)をつかおうと思っていたのですが、折角ならPure Haskellでブログを作ってみようと思い、Yesod Frameworkで使用されているShakespeareを使ってみました。
+いくら記事のHTMLを自動生成してくれるからといって、デザインは自分で行わないといけません。しかし、HTMLやCSSを生で書きたくない。始めはSass(CSSを楽して書くためのもの)とJade(Htmlを楽して書くためのもの)をつかおうと思っていたのですが、折角ならPure Haskellでブログを作ってみようと思い、Yesod Frameworkで使用されているShakespeareを使ってみました。
 
-Shakespearean Templatesはテンプレート言語です、数あるテンプレート言語の中でこの言語が優れている点はHaskellとの連携が容易な点です。シームレスにHaskellの関数が呼び出せたりごにょごにょ。
+Shakespearean Templatesはテンプレート言語です、数あるテンプレート言語の中でこの言語が優れている点はHaskellとの連携が容易な点です。シームレスにHaskellの関数が呼び出すことが出来ます。
 
 > Shakespearean Templatesとは、Webコンテンツを構成するテキストをHaskell/Yesodで生成する、下記のテンプレート言語群のことです。
 >
@@ -103,7 +87,7 @@ Shakespearean Templatesはテンプレート言語です、数あるテンプレ
 
 詳しく知りたければ[このチュートリアル](http://www.yesodweb.com/book/shakespearean-templates)でも読めば良いんじゃないでしょうか。
 
-HakyllとHamletの連携が面倒だったのでライブラリを書きました、よければ使ってください。  
+HakyllとHamletの連携が面倒だったので、薄いラッパーを書きました、よければ使ってください。  
 <https://github.com/eliza0x/hakyll-shakespeare>
 
 こんなふうに使えます。
@@ -120,9 +104,13 @@ ClayというモナドベースのCSSプリプロセッサーがHakyll公式で�
 
 HTMLもこういったライブラリで生成したいのは山々なんですが、Hakyllの柵 ^[テンプレートの呼び出しのあたり] で面倒くさそうです。
 
-出来るだけシンプルにしようと心掛けて作ったのですが、[やましー](yamasy.info)の言葉を借りるとお葬式みたいな配色になってしまいました。まあまあ気にいっていますが。
+~~出来るだけシンプルにしようと心掛けて作ったのですが、[やましー](yamasy.info)の言葉を借りるとお葬式みたいな配色になってしまいました。まあまあ気にいっていますが。~~
 
-こんなコードです、動くかは知りません。
+追記: 2017/3/24 
+
+無駄な線一本入れないでやろうと、もういちどデザインをしなおしてみました。いいものになったと思いますが、やっぱりデザインは難しいですね。
+
+こんなコードでCSSを生成しています。
 
 ```haskell
 main = putCss css
@@ -155,7 +143,7 @@ css = do
 
 ## シンタックスハイライト
 
-ブログのソースコードはハイライトして欲しいです。以前nanoでプログラムのデバッグをしたとき死ぬかと思いました。
+ブログのソースコードにもシンタックスハイライトが必要です。以前nanoでプログラムのデバッグをしたとき大変でした。
 
 始めはhighlight.jsでも使おうかなあなんて思っていたんですが、Pandocはシンタックスハイライトをしてくれるそうなので、染色の為に専用のCSSを準備しましょう。[Imokuriさんのこのページ](https://imokuri123.com/blog/2015/12/how-to-create-blog-with-hakyll-part4.html)に詳しく載っています。もしくは[私の書いたソースコード](https://github.com/eliza0x/eliza0x.github.io)でも読むと良いでしょう。
 
@@ -167,6 +155,12 @@ main = hakyll $ do
     route   idRoute
     compile $ makeItem (compressCss $ styleToCss tango)
 ```
+
+追記: 2017/3/24 
+
+現在は上記のプログラムで生成したものではなく、自分で好きなカラースキームをベースにしたものをPandoc用に移植して使用しています。
+
+[morhetz/grubvox - https://github.com/morhetz/gruvbox](https://github.com/morhetz/gruvbox)
 
 ## コメントフォーム
 
@@ -190,7 +184,11 @@ Clayを使ってみてなかなか良いなぁと思ったので、HTMLもそう
 
 このブログのソースコードは[ここ](https://github.com/eliza0x/eliza0x.github.io/tree/bd964b8f01908b93c555d528bd020cb2060975bd)に公開しています。
 
-#### 紹介できなかったサイト
+追記: 2017/3/24 
+
+[最新版](https://github.com/eliza0x/eliza0x.github.io/tree/7377ae11adbbaabb2dcd4713e96cfa0183663627)はこちらです。
+
+#### Github pagesについて
 
 Github Pagesで独自ドメインを利用するために参考にしたものです。
 
