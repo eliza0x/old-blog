@@ -1,8 +1,6 @@
-<ul>
+<ul class="post-list">
   \$for(posts)$
     <li class="teaser">
       <section>
         \$teaser$
-        <p class="more">
-          <a href="$url$">More +
   \$endfor$

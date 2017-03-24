@@ -2,6 +2,8 @@
 title: Contact
 ---
 
+Twitterアカウントにリプライを投げると一番早く返信できると思います。
+
 <address>
 - [Twitter - \@Eliza_0x](https://twitter.com/Eliza_0x)
 - [Gnusocial - eliza@gnusocial.net](https://gnusocial.net/eliza)

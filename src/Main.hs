@@ -131,9 +131,9 @@ feedContext = mconcat
 
 feedConfiguration :: String -> FeedConfiguration
 feedConfiguration title = FeedConfiguration
-    { feedTitle       = title ++ "eliza.link"
-    , feedDescription = "技術や読書録を残します"
-    , feedAuthorName  = "Eliza Calls"
+    { feedTitle       = title ++ " | ELIZA.link"
+    , feedDescription = "技術録や日記を残します"
+    , feedAuthorName  = "eliza0x"
     , feedAuthorEmail = "me@eliza.link"
     , feedRoot        = "https://eliza.link"
     }

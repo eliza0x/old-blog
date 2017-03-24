@@ -1,5 +1,5 @@
 <a href=$url$>
-  <h1 class="article_title">$title$
+  <h1>$title$
 <ul class="article_data">
   <li>  Posted on $date$
   \$if(author)$

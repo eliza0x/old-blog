@@ -6,7 +6,7 @@
       <h1 class="blogtitle">
         <a class="blogtitle" href="/">ELIZA.link
       <nav>
-        <ul class="container container--row container--center navigation">
+        <ul class="container container--row container__center navigation">
           <li>
             <a href="/archive.html">Archive
           <li>
