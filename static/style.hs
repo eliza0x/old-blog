@@ -45,7 +45,7 @@ baseCss = do
   html ? fontSize (pct 62.5)
   body ? do
     backgroundColor backGroundColor
-    fontSize $ em 1.9
+    fontSize $ em 1.8
     lineHeight auto
     fontWeight $ weight 300
     fontFamily [ "Mplus 1P"
@@ -53,9 +53,9 @@ baseCss = do
                , "Hiragino Sans"
                ] [sansSerif]
     color fontColor
-    margin auto (pct 5) auto (pct 5)
     let margins m = margin auto (vw m) auto (vw m) 
-    query screen [minWidth $ px 550]  $ margins 15
+    margins 7.5
+    query screen [minWidth $ px 600]  $ margins 15
     query screen [minWidth $ px 1000] $ margins 18
     query screen [minWidth $ px 1300] $ margins 22
     query screen [minWidth $ px 1500] $ margins 25
@@ -195,7 +195,8 @@ codeLayout = do
     let space s = do
         padding (rem 3) (vw s) (rem 3) (vw s)
         margin (rem 3) (vw (-s)) (rem 3) (vw (-s))
-    query screen [minWidth $ px 550]  $ space 15
+    space 7.5
+    query screen [minWidth $ px 600]  $ space 15
     query screen [minWidth $ px 1000] $ space 18
     query screen [minWidth $ px 1300] $ space 22
     query screen [minWidth $ px 1500] $ space 25

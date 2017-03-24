@@ -16,10 +16,11 @@ main = hakyll $ do
         compile copyFileCompiler
 
     -- Style sheet
-    match "static/**.hs" $ do
+    match "static/style.hs" $ do
       route $ setExtension "css"
       compile $ getResourceString
-        >>= withItemBody (unixFilter "stack" ["runghc", "--package", "clay", "--stack-yaml", "stack.yaml"])
+        >>= withItemBody(unixFilter "stack" ["runghc", "--package", "clay", "--stack-yaml", "stack.yaml"])
+        >>= return . fmap compressCss
         >>= relativizeUrls
 
     -- Create tags
