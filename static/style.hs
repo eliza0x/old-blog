@@ -65,7 +65,9 @@ baseCss = do
   ".footnotes"  |> hr ? display displayNone
   ".article_data" ? do
     listStyle none inside none
-    margin (rem 3) (rem 4) (rem 3) (rem 4) 
+    margin (rem 3) (rem 2) (rem 3) (rem 2) 
+    query screen [minWidth $ px 1000] $
+      margin (rem 3) (rem 4) (rem 3) (rem 4) 
   ".post-list" ? margin (rem 5) auto (rem 5) auto
   ".archives-link" ? do
     textAlign $ alignSide sideRight
