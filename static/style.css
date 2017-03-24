@@ -27,7 +27,7 @@ html
 body
 {
   background-color : #ffffff;
-  font-size        : 2em;
+  font-size        : 1.89999em;
   line-height      : auto;
   font-weight      : 300;
   font-family      : "Mplus 1P","メイリオ","Hiragino Sans", sans-serif;
@@ -39,7 +39,31 @@ body
 {
 body
 {
-  margin : auto 30% auto 30%;
+  margin : auto 15vw auto 15vw;
+}
+
+}
+@media screen and (min-width: 1000px)
+{
+body
+{
+  margin : auto 18vw auto 18vw;
+}
+
+}
+@media screen and (min-width: 1300px)
+{
+body
+{
+  margin : auto 22vw auto 22vw;
+}
+
+}
+@media screen and (min-width: 1500px)
+{
+body
+{
+  margin : auto 25vw auto 25vw;
 }
 
 }
@@ -247,25 +271,73 @@ li
 .blogtitle
 {
   margin-left    : -0.5rem;
-  font-size      : 10rem;
   letter-spacing : -0.5rem;
   font-weight    : 900;
   text-align     : center;
+  font-size      : 6rem;
 }
 
+@media screen and (min-width: 800px)
+{
+.blogtitle
+{
+  font-size : 8rem;
+}
+
+}
+@media screen and (min-width: 1500px)
+{
+.blogtitle
+{
+  font-size : 10rem;
+}
+
+}
 .navigation
 {
   font-weight     : 300;
-  font-size       : 2.6rem;
   list-style-type : none;
-  margin-bottom   : 3rem;
+  font-size       : 1.8rem;
 }
 
+@media screen and (min-width: 800px)
+{
+.navigation
+{
+  font-size : 2rem;
+}
+
+}
+@media screen and (min-width: 1500px)
+{
+.navigation
+{
+  font-size : 2.29999rem;
+}
+
+}
+.navigation > li
+{
+  padding : 0.4rem 0.4rem 0.4rem 0.4rem;
+  margin  : none none none none;
+}
+
+@media screen and (min-width: 800px)
+{
+.navigation > li
+{
+  padding : 0.69999rem 0.69999rem 0.69999rem 0.69999rem;
+}
+
+}
+@media screen and (min-width: 1500px)
+{
 .navigation > li
 {
   padding : 1rem 1rem 1rem 1rem;
 }
 
+}
 .pagination
 {
   list-style-type : none;
@@ -286,17 +358,51 @@ li
 footer
 {
   text-align    : center;
-  margin-top    : 6rem;
-  margin-bottom : 8rem;
+  margin-top    : 5rem;
+  margin-bottom : 7rem;
 }
 
 pre
 {
-  padding : 3rem 100000rem 3rem 100000rem;
-  margin  : 3rem -100000rem 3rem -100000rem;
-  width   : auto;
+  width : auto;
 }
 
+@media screen and (min-width: 550px)
+{
+pre
+{
+  padding : 3rem 15vw 3rem 15vw;
+  margin  : 3rem -15vw 3rem -15vw;
+}
+
+}
+@media screen and (min-width: 1000px)
+{
+pre
+{
+  padding : 3rem 18vw 3rem 18vw;
+  margin  : 3rem -18vw 3rem -18vw;
+}
+
+}
+@media screen and (min-width: 1300px)
+{
+pre
+{
+  padding : 3rem 22vw 3rem 22vw;
+  margin  : 3rem -22vw 3rem -22vw;
+}
+
+}
+@media screen and (min-width: 1500px)
+{
+pre
+{
+  padding : 3rem 25vw 3rem 25vw;
+  margin  : 3rem -25vw 3rem -25vw;
+}
+
+}
 table.sourceCode
 {
   background-color : #f8f8f8;
