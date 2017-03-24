@@ -6,7 +6,7 @@
   <p> このウェブサイトはHaskellで生成され、Github Pagesによって運用されています。
   <h2>Recent posts
   \$partial("templates/post-list.hamlet")$
-  <p class="archives-link">...or you can find more in the
+  <p class="archives-link">...or you can find more in the 
     <a href="/archive.html">archives
     .
   <p>$tags$
