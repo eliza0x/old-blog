@@ -5,7 +5,7 @@
     <header>
       <h1 class="blogtitle">
         <a class="blogtitle" href="/">ELIZA.link
-      <nav>
+      <nav class="topnav">
         <ul class="container container--row container__center navigation">
           <li>
             <a href="/archive.html">Archive

@@ -45,7 +45,7 @@ baseCss = do
   html ? fontSize (pct 62.5)
   body ? do
     backgroundColor backGroundColor
-    fontSize $ em 1.8
+    fontSize $ em 1.6
     lineHeight auto
     fontWeight $ weight 300
     fontFamily [ "Mplus 1P"
@@ -93,21 +93,22 @@ headerCss = do
   ".navigation" ? do
     fontWeight $ weight 300
     listStyleType none
-    fontSize     $ rem 1.8
-    query screen [minWidth $ px 800] $ fontSize $ rem 2.0
-    query screen [minWidth $ px 1500] $ fontSize $ rem 2.3
   ".navigation" |> li ? do
     let paddings p = padding (rem p) (rem p) (rem p) (rem p) 
     paddings 0.4
     query screen [minWidth $ px 800] $ paddings 0.7
     query screen [minWidth $ px 1500] $ paddings 1
     margin none none none none
+  ".topnav" ? do
+    fontSize (rem 1.8)
+    query screen [minWidth $ px 800] $ fontSize $ rem 2.0
+    query screen [minWidth $ px 1500] $ fontSize $ rem 2.3
 
 typoGraphyCss :: Css
 typoGraphyCss = do
   p ? do
     marginTop nil
-    marginBottom (rem 1.8)
+    marginBottom (rem 1.6)
     textRendering optimizeSpeed
   a ? do
     color firstColor
@@ -128,13 +129,6 @@ typoGraphyCss = do
     , ( h4, rem 2.4, rem $ 2.4 + 1.35, rem (-0.08) )
     , ( h5, rem 1.8, rem $ 1.8 + 1.5,  rem (-0.05) )
     , ( h6, rem 1.5, rem $ 1.5 + 1.6,  nil )]
-  query screen [minWidth $ px 550] $ do
-    h1 ? fontSize (rem 5.0)
-    h2 ? fontSize (rem 4.2)
-    h3 ? fontSize (rem 3.6)
-    h4 ? fontSize (rem 3.0)
-    h5 ? fontSize (rem 2.4)
-    h6 ? fontSize (rem 1.5)
   where
     headCss :: (Selector, Size a, Size b, Size c) -> Css
     headCss (selector, fsize, lheight, lspacing) = selector ? do
@@ -144,18 +138,12 @@ typoGraphyCss = do
 
 teaserCss :: Css
 teaserCss = do
-  ".teaser" ** h1 ? fontSize (rem 3.0)
-  ".teaser" ** h2 ? fontSize (rem 2.4)
-  ".teaser" ** h3 ? fontSize (rem 1.8)
-  ".teaser" ** p  ? fontSize (rem 1.8)
   ".teaser" ? listStyle none inside none
   ".teaser" # nthChild "n+2" ? do
     marginTop $ rem 1
     paddingTop $ rem 1
   ".teaser" ** ".article_data" ? display displayNone
-  ".teaser" ** blockquote ? 
-    padding (px 5) (px 5) (px 5) (px 5)
-   
+  
 listCss :: Css
 listCss = do
   ul <> ol ? do
