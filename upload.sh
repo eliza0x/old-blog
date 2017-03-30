@@ -5,7 +5,7 @@ stack build
 stack exec site clean
 stack exec site build
 tmpdir=$(mktemp -d)
-cp -r _site/* $tmpdir
+rsync -vr _site/* $tmpdir
 git checkout master
 rsync -vr $tmpdir/* .
 echo ""
