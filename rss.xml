@@ -7,33 +7,8 @@
         <description><![CDATA[技術録や日記を残します]]></description>
         <atom:link href="https://eliza.link/rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Tue, 28 Mar 2017 00:00:00 UT</lastBuildDate>
+        <lastBuildDate>Fri, 24 Mar 2017 00:00:00 UT</lastBuildDate>
         <item>
-    <title>論理学に入門した</title>
-    <link>https://eliza.link/posts/IntroductoryLogic.html</link>
-    <description><![CDATA[<a href="/posts/IntroductoryLogic.html"><h1>論理学に入門した</h1>
-</a>
-<ul class="article_data"><li>  Posted on March 28, 2017</li>
-
-<li> Tags: <a href="/tags/math.html">math</a></li>
-</ul>
-<section class="article_text"><p>前提: 大酒飲みの禅僧が存在する<br />
-F: 禅僧である<br />
-G: 大酒飲みである</p>
-<p><span class="math display">\[
-1.~ \exists xAx \\
-2.~  F \alpha \land G \alpha \quad            [2( \alpha )] \\
-3.~ F \alpha                 \quad ~~~~~~~~~~ [2( \alpha )] \\
-4.~ \exists xFx              \quad ~~~~~~     [2( \alpha )] \\
-5.~ ( F \alpha \land G \alpha ) \to \exists xFx \\
-6.~ \exists xFx
-\]</span> <!--more--></p></section>
-]]></description>
-    <pubDate>Tue, 28 Mar 2017 00:00:00 UT</pubDate>
-    <guid>https://eliza.link/posts/IntroductoryLogic.html</guid>
-    <dc:creator>eliza0x</dc:creator>
-</item>
-<item>
     <title>Haskellでブログを作った</title>
     <link>https://eliza.link/posts/create_blog_with_hakyll.html</link>
     <description><![CDATA[<a href="/posts/create_blog_with_hakyll.html"><h1>Haskellでブログを作った</h1>
@@ -675,6 +650,40 @@ bar = \lambda . \lambda . 2
 ]]></description>
     <pubDate>Thu, 15 Sep 2016 00:00:00 UT</pubDate>
     <guid>https://eliza.link/posts/PreTaPL.html</guid>
+    <dc:creator>eliza0x</dc:creator>
+</item>
+<item>
+    <title>劣等感を感じる自分について</title>
+    <link>https://eliza.link/posts/ZenMind.html</link>
+    <description><![CDATA[<a href="/posts/ZenMind.html"><h1>劣等感を感じる自分について</h1>
+</a>
+<ul class="article_data"><li>  Posted on August 17, 2016</li>
+
+<li> Tags: <a href="/tags/memo.html">memo</a></li>
+</ul>
+<section class="article_text"><p><a href="http://kosen14s.github.io/">Kosen14s</a>の人達は知っていると思うけれど、私は驚くほど英語が出来ない。中学時代にまったく勉強をしなかったので、それ以前から学んでいた数学や国語はまあまあ出来るけど、中学から習い始めた英語は壊滅的だ。</p>
+<!--more-->
+<p>そのおかげで、こう言っては同学の人達に失礼だけれど賢くない高校に入学せざるをえなかった。しかも工業高校だ。 おかげで私の脳味噌はすっからかんだ。授業の半分が先生の中身の無い雑談でなくなるような授業を三年うけていたからね。</p>
+<p>白状しよう、私は勉強ができない事に非常に劣等感をもっている。</p>
+<p>私はプログラミングが好きだ。楽しいから？怪しい。</p>
+<p>プログラミングを始めた原因はなんとなくカッコよかったからだ。プログラミングをはじめた頃は作業の大半の時間をWikipediaで潰していた気がする、ようするに好きじゃなかったんだ。 プログラミングを始めた理由なんて今となっては分からないけれど、カッコよくみえたのは、頭がよさそうにだったからかも知れない。天才ハッカーってね。</p>
+<p>それでもダラダラとプログラミングは続けた。ただただ「同級生は出来ないけれど私にはプログラミングが出来る」という根拠の無い自信で劣等感におしつぶされそうな自分の心の平衡を保っていた。</p>
+<p>今でこそ楽しんでプログラミングをしているけど、純粋に楽しんでいるかは分からない。 楽しいかどうかなんて心の問題だと思うので大した問題じゃないだろう、とも思う。</p>
+<p>結局他人と比べるから劣等感を持ったり悩んだりするんだ。</p>
+<p>そして劣等感に悩む自分が出した解決策が“Zen”だ。 たいしてネーミングに意味は無い、なんとなく禅っぽいものだからZenだ。<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
+<p>「謙虚になれ」「こんな下らないことに心を動かされるとは情けない」「何かに依存するな」</p>
+<p>何でも自分と比較して物事を見るのを辞めた。素直になった。 ごめん、嘘言った。素直になろうと思う。</p>
+<p>しまりの無い記事になってしまった。</p>
+<p>さあ、Zen Mindを手に入れた次は努力して勉強だ。根本から悩む原因を解決するのだ。</p>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>そもそも禅とは何かを良くしらない<a href="#fnref1">↩</a></p></li>
+</ol>
+</div></section>
+]]></description>
+    <pubDate>Wed, 17 Aug 2016 00:00:00 UT</pubDate>
+    <guid>https://eliza.link/posts/ZenMind.html</guid>
     <dc:creator>eliza0x</dc:creator>
 </item>
 <item>
