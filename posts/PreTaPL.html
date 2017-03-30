@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<title>TaPLに必要な知識の学習記録 | eliza.link</title>
+<meta name="author" content="@Eliza_0x">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sanitize.css/2.0.0/sanitize.min.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+<link href="https://fonts.googleapis.com/earlyaccess/mplus1p.css" rel="stylesheet">
+<link rel="stylesheet" href="../static/style.css">
+
+
+<meta name="twitter:widgets:link-color" content="#666">
+</head>
+
+<body class="container container--column"><header><h1 class="blogtitle"><a class="blogtitle" href="../">ELIZA.link</a>
+</h1>
+<nav class="topnav"><ul class="container container--row container__center navigation"><li><a href="../archive.html">Archive</a>
+</li>
+<li><a href="../products.html">Products</a>
+</li>
+<li><a href="../contact.html">Contact</a>
+</li>
+<li><a href="../rss.xml">RSS</a>
+</li>
+</ul>
+</nav>
+</header>
+<main>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({displayAlign: "left",
+displayIndent: "2em"});</script>
+<article><a href="../posts/PreTaPL.html"><h1>TaPLに必要な知識の学習記録</h1>
+</a>
+<ul class="article_data"><li>  Posted on September 15, 2016</li>
+
+<li> Tags: <a href="../tags/haskell.html">haskell</a>, <a href="../tags/book.html">book</a>, <a href="../tags/memo.html">memo</a>, <a href="../tags/programming.html">programming</a>, <a href="../tags/math.html">math</a></li>
+</ul>
+<section class="article_text"><p>TaPLを読むのために少し勉強したのでメモを残しておきます。 内容の真偽の保証はできません。必要に応じて追記していきます。</p>
+<p><a href="http://zoetrope.hatenablog.jp/entry/2013/07/24/204613">数学初心者のための「型システム入門」入門</a>によると前提として以下の知識が必要になるようです。</p>
+<blockquote>
+<ul>
+<li>数学(離散数学、アルゴリズム、論理学)</li>
+<li>高階関数型プログラミング言語(Scheme、ML、Haskellなど)</li>
+<li>コンパイラの基礎的な概念(抽象構文、BNF文法、評価、抽象機械など)</li>
+</ul>
+</blockquote>
+<p>TaPLの読書記録は<a href="../posts/TaPL.html">このページ</a>に載っています。</p>
+<!--more-->
+<h2 id="論理学">論理学</h2>
+<ul>
+<li><a href="http://abelard.flet.keio.ac.jp/person/mitsu/pdf/nyumon_logic.pdf">「論理学入門」講義ノート</a>が論理学で検索してヒットしたものの中で一番容易に読み進めることができそうだったので読み流した(証明は追いかけるの面倒だったので飛ばした)。</li>
+<li>記号がダメな人はアレルギーをおこしそうな分野でした、印刷したテキストをうっかり直視した友人は帰らぬ人となりました。(まあプログラマは大丈夫だと思う)</li>
+<li>後日みつけた資料ですが、こちらのほうが易しく書かれています。 <a href="http://abelard.flet.keio.ac.jp/person/takemura/class/2013/3-print-nk.pdf" class="uri">http://abelard.flet.keio.ac.jp/person/takemura/class/2013/3-print-nk.pdf</a></li>
+</ul>
+<h2 id="集合論">集合論</h2>
+<p>論理学とあわせて、何かを表現する際の述語を勉強している気分です。</p>
+<ul>
+<li>TaPLの冒頭に集合がなんだかんだと書かれていたので勉強が必要だと思い、<a href="http://www.math.twcu.ac.jp/~yamauchi/text/2012/alg2012/set_logic.pdf">東京女子大学の代数学IA(集合と論理)のテキスト</a>を読んでみました。
+<ul>
+<li>私の環境では途中で組版がすこし崩れています。</li>
+<li>これを読むのは論理学のテキストを読んだ後が良いです。</li>
+</ul></li>
+<li>「集合・位相入門」を今読んでいます。 <a href="https://www.iwanami.co.jp/.BOOKS/00/4/0054240.html" class="uri">https://www.iwanami.co.jp/.BOOKS/00/4/0054240.html</a></li>
+</ul>
+<h2 id="離散数学">離散数学</h2>
+<p>いつかやりたいなぁ…</p>
+<h2 id="ラムダ計算">ラムダ計算</h2>
+<ul>
+<li><a href="http://language-and-engineering.hatenablog.jp/entry/20130313/LambdaCalculusBasicNoteLinks">「ラムダ計算」を独学で学習するための，講義ノートやPDFのリンク集 （復習用の問題付き）</a>に詳しくまとまっています。</li>
+</ul>
+<h2 id="アルゴリズム">アルゴリズム</h2>
+<p>ダメです。</p>
+<h2 id="高階関数型プログラミング言語">高階関数型プログラミング言語</h2>
+<ul>
+<li>まあまあHaskellが書けるので問題はなさそうと慢心。TaPLのサンプルコードはOCaml(MLの方言)で書かれていました。</li>
+<li>Haskellで書かれたサンプルコードは <a href="https://github.com/zerokarmaleft/tapl-haskell" class="uri">https://github.com/zerokarmaleft/tapl-haskell</a> ここにありました。さまざまな言語に有志が翻訳しています。</li>
+<li>サンプルコードの実装にパーサを書かなければいけないみたいなので、ekmett氏の<a href="http://hackage.haskell.org/package/trifecta">trifecta</a>を使っています。</li>
+</ul></section>
+</article>
+</main>
+<footer>This page published under the MIT Licence.</footer>
+</body>
+</html>
