@@ -11,6 +11,8 @@ rsync -vr $tmpdir/* .
 echo ""
 echo "START UPLOADING..."
 echo ""
+git add .
+git commit -m "Update"
 git push origin master
 git checkout source
 echo ""
