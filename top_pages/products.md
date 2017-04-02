@@ -9,5 +9,7 @@ title: Products
 
 [関連記事のリスト](/tags/hakyll.html)
 
-#### Suno, Lumo
-ソーラーカーを作成しました。近々記事を公開します。
+#### [ソーラーカーについて](/sc/)
+ソーラーカーを作ったさいの知見を初心者向けにまとめた資料です。
+
+Github: [source code](https://github.com/eliza0x/sc)
