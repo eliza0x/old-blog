@@ -1,28 +1,48 @@
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
-    xmlns:dc="http://purl.org/dc/elements/1.1/">
-    <channel>
-        <title>Posts tagged math -  | ELIZA.link</title>
-        <link>https://eliza.link</link>
-        <description><![CDATA[技術録や日記を残します]]></description>
-        <atom:link href="https://eliza.link/tags/math.xml" rel="self"
-                   type="application/rss+xml" />
-        <lastBuildDate>Thu, 15 Sep 2016 00:00:00 UT</lastBuildDate>
-        <item>
-    <title>型システム入門(TaPL)読書メモ</title>
-    <link>https://eliza.link/posts/TaPL.html</link>
-    <description><![CDATA[<a href="/posts/TaPL.html"><h1>型システム入門(TaPL)読書メモ</h1>
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<title>型システム入門(TaPL)読書メモ | eliza.link</title>
+<meta name="author" content="@Eliza_0x">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sanitize.css/2.0.0/sanitize.min.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+<link href="https://fonts.googleapis.com/earlyaccess/mplus1p.css" rel="stylesheet">
+<link rel="stylesheet" href="../static/style.css">
+
+
+<meta name="twitter:widgets:link-color" content="#666">
+</head>
+
+<body class="container container--column"><header><h1 class="blogtitle"><a class="blogtitle" href="../">ELIZA.link</a>
+</h1>
+<nav class="topnav"><ul class="container container--row container__center navigation"><li><a href="../archive.html">Archive</a>
+</li>
+<li><a href="../products.html">Products</a>
+</li>
+<li><a href="../contact.html">Contact</a>
+</li>
+<li><a href="../rss.xml">RSS</a>
+</li>
+</ul>
+</nav>
+</header>
+<main>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({displayAlign: "left",
+displayIndent: "2em"});</script>
+<article><a href="../posts/TaPL.html"><h1>型システム入門(TaPL)読書メモ</h1>
 </a>
 <ul class="article_data"><li>  Posted on September 15, 2016</li>
 
-<li> Tags: <a href="/tags/haskell.html">haskell</a>, <a href="/tags/book.html">book</a>, <a href="/tags/memo.html">memo</a>, <a href="/tags/programming.html">programming</a>, <a href="/tags/math.html">math</a></li>
+<li> Tags: <a href="../tags/haskell.html">haskell</a>, <a href="../tags/book.html">book</a>, <a href="../tags/memo.html">memo</a>, <a href="../tags/programming.html">programming</a>, <a href="../tags/math.html">math</a></li>
 </ul>
 <section class="article_text"><p>TaPLでの読書メモが書いてあります随時追記していきます。 間違いを発見した場合はコメントか、me [at] eliza [dot] linkまでメールを下さると喜びます。</p>
 <p><a href="http://tapl.proofcafe.org/home">日本語のサポートページ</a>が準備されています。 また、<a href="https://estore.ohmsha.co.jp/titles/978427406911P">出版元のページ</a>から第一章が無料で読めます。</p>
 <p>通読したのちにまた記事を書こうと思っています。</p>
 <!--more-->
 <h2 id="予備知識について">予備知識について</h2>
-<p><a href="/posts/PreTaPL.html">このページに書いてあります</a></p>
+<p><a href="../posts/PreTaPL.html">このページに書いてあります</a></p>
 <h2 id="tapl">TaPL</h2>
 <blockquote>
 <p>型システムとは、プログラミング言語の安全性や効率を高めるうえで重要な理論・手法です。本書は、その型システムについて基礎的な話題を網羅し、実装例を交えて丁寧に解説したThe MIT Press発行の解説書“Types And Programming Languages”（TAPL）を翻訳したものです。言語設計者や学生だけでなく、静的型付言語を深く理解して活用したいプログラマーにとっても貴重な情報となっています。 <a href="http://shop.ohmsha.co.jp/shop/shopdetail.html?brandcode=000000001948" class="uri">http://shop.ohmsha.co.jp/shop/shopdetail.html?brandcode=000000001948</a></p>
@@ -235,69 +255,8 @@ bar = \lambda . \lambda . 2
 <li id="fn3"><p>健全性とも言われる<a href="#fnref3">↩</a></p></li>
 </ol>
 </div></section>
-]]></description>
-    <pubDate>Thu, 15 Sep 2016 00:00:00 UT</pubDate>
-    <guid>https://eliza.link/posts/TaPL.html</guid>
-    <dc:creator>eliza0x</dc:creator>
-</item>
-<item>
-    <title>TaPLに必要な知識の学習記録</title>
-    <link>https://eliza.link/posts/PreTaPL.html</link>
-    <description><![CDATA[<a href="/posts/PreTaPL.html"><h1>TaPLに必要な知識の学習記録</h1>
-</a>
-<ul class="article_data"><li>  Posted on September 15, 2016</li>
-
-<li> Tags: <a href="/tags/haskell.html">haskell</a>, <a href="/tags/book.html">book</a>, <a href="/tags/memo.html">memo</a>, <a href="/tags/programming.html">programming</a>, <a href="/tags/math.html">math</a></li>
-</ul>
-<section class="article_text"><p>TaPLを読むのために少し勉強したのでメモを残しておきます。 必要に応じて追記していきます。</p>
-<p><a href="http://zoetrope.hatenablog.jp/entry/2013/07/24/204613">数学初心者のための「型システム入門」入門</a>によると前提として以下の知識が必要になるようです。</p>
-<blockquote>
-<ul>
-<li>数学(離散数学、アルゴリズム、論理学)</li>
-<li>高階関数型プログラミング言語(Scheme、ML、Haskellなど)</li>
-<li>コンパイラの基礎的な概念(抽象構文、BNF文法、評価、抽象機械など)</li>
-</ul>
-</blockquote>
-<p>TaPLの読書記録は<a href="/posts/TaPL.html">このページ</a>に載っています。</p>
-<p>2017/05/07 数学をきちんとやって行くことを決めて半年以上立ちます。</p>
-<!--more-->
-<h2 id="論理学">論理学</h2>
-<ul>
-<li><a href="http://abelard.flet.keio.ac.jp/person/mitsu/pdf/nyumon_logic.pdf">「論理学入門」講義ノート</a>が論理学で検索してヒットしたものの中で一番容易に読み進めることができそうだったので読み流した(証明は追いかけるの面倒だったので飛ばした)。</li>
-<li>記号がダメな人はアレルギーをおこしそうな分野でした、印刷したテキストをうっかり直視した友人は帰らぬ人となりました。(まあプログラマは大丈夫だと思う)</li>
-<li>後日みつけた資料ですが、こちらのほうが易しく書かれています。 <a href="http://abelard.flet.keio.ac.jp/person/takemura/class/2013/3-print-nk.pdf" class="uri">http://abelard.flet.keio.ac.jp/person/takemura/class/2013/3-print-nk.pdf</a></li>
-<li>2017/05/07 数学に興味をもったため、野矢茂樹氏の書いた<a href="http://www.utp.or.jp/bd/978-4-13-012053-1.html">論理学</a>を読みました。</li>
-</ul>
-<h2 id="集合論">集合論</h2>
-<ul>
-<li>TaPLの冒頭に集合がなんだかんだと書かれていたので勉強が必要だと思い、<a href="http://www.math.twcu.ac.jp/~yamauchi/text/2012/alg2012/set_logic.pdf">東京女子大学の代数学IA(集合と論理)のテキスト</a>を読んでみました。
-<ul>
-<li>私の環境では途中で組版がすこし崩れています。
-<ul>
-<li>ChromenのPDFビューアのせいだったようです。</li>
-</ul></li>
-</ul></li>
-<li>2017/05/07「集合・位相入門」の集合の項だけ読みました。 <a href="https://www.iwanami.co.jp/.BOOKS/00/4/0054240.html" class="uri">https://www.iwanami.co.jp/.BOOKS/00/4/0054240.html</a></li>
-<li>2017/05/07 <a href="http://www.asakura.co.jp/books/isbn/978-4-254-11478-2/">集合への30講</a>を読みました。</li>
-</ul>
-<h2 id="離散数学">離散数学</h2>
-<ul>
-<li>これもきちんとやります。</li>
-</ul>
-<h2 id="ラムダ計算">ラムダ計算</h2>
-<ul>
-<li><a href="http://language-and-engineering.hatenablog.jp/entry/20130313/LambdaCalculusBasicNoteLinks">「ラムダ計算」を独学で学習するための，講義ノートやPDFのリンク集 （復習用の問題付き）</a>に詳しくまとまっています。</li>
-<li>これもきちんとやります。</li>
-</ul>
-<h2 id="アルゴリズム">アルゴリズム</h2>
-<ul>
-<li>ダメです。</li>
-</ul></section>
-]]></description>
-    <pubDate>Thu, 15 Sep 2016 00:00:00 UT</pubDate>
-    <guid>https://eliza.link/posts/PreTaPL.html</guid>
-    <dc:creator>eliza0x</dc:creator>
-</item>
-
-    </channel>
-</rss>
+</article>
+</main>
+<footer>This page published under the MIT Licence.</footer>
+</body>
+</html>

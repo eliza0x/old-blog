@@ -68,10 +68,6 @@
 <li> Tags: <a href="/tags/haskell.html">haskell</a>, <a href="/tags/book.html">book</a>, <a href="/tags/memo.html">memo</a>, <a href="/tags/programming.html">programming</a>, <a href="/tags/math.html">math</a></li>
 </ul>
 <section class="article_text"><p>TaPLでの読書メモが書いてあります随時追記していきます。 間違いを発見した場合はコメントか、me [at] eliza [dot] linkまでメールを下さると喜びます。</p>
-<ol start="17" style="list-style-type: upper-alpha">
-<li>どうして読むのか</li>
-<li>Haskellが好きで背後で使われている技術を知りたくなったから</li>
-</ol>
 <p><a href="http://tapl.proofcafe.org/home">日本語のサポートページ</a>が準備されています。 また、<a href="https://estore.ohmsha.co.jp/titles/978427406911P">出版元のページ</a>から第一章が無料で読めます。</p>
 <p>通読したのちにまた記事を書こうと思っています。</p>
 <!--more-->
@@ -87,21 +83,17 @@
 </p>
 — Eijiro Sumii (<span class="citation">@esumii</span>) <a href="https://twitter.com/esumii/status/315135694462939137">2013年3月22日</a>
 </blockquote>
+<p>以降読書メモです</p>
 <h4 id="第1章-はじめに">第1章 はじめに</h4>
-<p>型を導入する意義や、型についての面白い話が書かれています。</p>
+<p>型を導入する意義や、型システムの実用例が書かれています。</p>
 <h4 id="第2章-数学的準備">第2章 数学的準備</h4>
-<p>数学の公式や前提として必要な知識が列挙されています、ここで馴染の無い物があれば読むのを中断し、いちどその分野の知識を補うべきだとしていますが私は強行を決めました。</p>
+<p>_- 数学の公式や前提として必要な知識が列挙されています、ここで馴染の無い物があれば読むのを中断し、いちどその分野の知識を補うべきだとしていますが私は強行を決めました。 - 2017/05/07 勉強しました</p>
 <h2 id="第1部-型無しの計算体系">第1部 型無しの計算体系</h2>
 <h4 id="第3章-型無し算術式">第3章 型無し算術式</h4>
-<p>簡単な言語の構文を定義して意味論や項を操作したりしている。</p>
-<!-- - 操作的意味論: 抽象機械を定義してプログラミング言語の振舞いを規定、機械の振舞いを遷移関数を使用して定義する。 -->
-<!-- - 表示的意味論: 項を数値や関数として捉えてモデル化。 -->
-<!-- - 公理的意味論: 言語の定義そのものが法則となる、項の意味は項の照明そのもの。 -->
 <ul>
 <li>正規形
 <ul>
 <li>もう項が評価できない、という意味である。 <code>if t1 then t2 else t3</code> は評価できるが、 <code>true</code> はもう評価できない。</li>
-<li><del>正規形であるならば値である。</del></li>
 <li>項が正規形であるにかかわらず値ではない場合を『行き詰まり状態』と言う。</li>
 <li>すべての項に対して、ある正規形が存在する</li>
 </ul></li>
@@ -110,7 +102,11 @@
 <li>1ステップ評価を合成したやつだと理解しておいた。</li>
 </ul></li>
 </ul>
-<!-- #### 第4章	算術式のML実装 -->
+<h4 id="第4章-算術式のml実装">第4章 算術式のML実装</h4>
+<ul>
+<li>Arithで満たしている機能と色々が含まれている言語を作りました。</li>
+<li>Mikan - <a href="https://github.com/eliza0x/Mikan/tree/e62f16b277af3118dacdd8c7c3ea0655c2766713" class="uri">https://github.com/eliza0x/Mikan/tree/e62f16b277af3118dacdd8c7c3ea0655c2766713</a></li>
+</ul>
 <h4 id="第5章-型無しラムダ計算">第5章 型無しラムダ計算</h4>
 <ul>
 <li>なんとなく分かったら、<a href="http://tarao.hatenablog.com/entry/20100208/1265605429">ラムダ計算基礎文法最速マスター</a>にあっさりと書かれているので読むといいかも。</li>
@@ -122,11 +118,8 @@
 <li>Lambda計算はプログラミング言語であると共に証明可能な数学的対象。</li>
 <li>Lambda計算に似たようなものに<span class="math inline">\(\pi\)</span>計算やオブジェクト計算がある(本書では扱わないらしいが)
 <ul>
-<li><dl>
-<dt><a href="http://web.yl.is.s.u-tokyo.ac.jp/kobalab/kadai99/picalc.html">π-calculus 超入門</a></dt>
-<dd>もしかしてアクターモデルの原点？
-</dd>
-</dl></li>
+<li><a href="http://web.yl.is.s.u-tokyo.ac.jp/kobalab/kadai99/picalc.html">π-calculus 超入門</a></li>
+<li>もしかしてアクターモデルの原点？</li>
 </ul></li>
 <li>自由変数の無い項を「閉じている」もしくは「コンビネータ」という。
 <ul>
@@ -134,40 +127,17 @@
 <li><span class="math inline">\(\lambda x.\; y\)</span> この項はコンビネータではない。</li>
 </ul></li>
 <li><span class="math inline">\((\lambda x.\; x) y\)</span> は <span class="math inline">\(y\)</span> と評価される。</li>
-<li>項 <span class="math inline">\((\lambda x.\; x\; (\lambda x.\; x))\; (u\; r)\)</span> は <span class="math inline">\(u\; r\; (\lambda x.\; x)\)</span> と評価される。
-<ul>
-<li>この操作をベータ簡約といい、簡約可能な項を簡約基と言う。</li>
-</ul></li>
 <li>ラムダ計算の評価戦略は数種類あり、プログラミング言語によっても違う。
 <ul>
 <li>Haskellは名前呼び戦略の変種である必要呼び戦略</li>
 <li>大多数の言語では値呼び戦略</li>
 </ul></li>
-<li>以下は名前呼び簡約の例です。</li>
-</ul>
-<p><span class="math display">\[
-\quad         \underline{ id\;(id\;(\lambda z.\; id\; z)) }\\ 
-\rightarrow\; \underline{ id\;(\lambda z.\; id\; z) }\\
-\rightarrow\; \lambda z.\; id\; z\\
-\nrightarrow
-\]</span></p>
-<ul>
-<li>以下は値呼び簡約の例です。</li>
-</ul>
-<p><span class="math display">\[
-\quad\;       id\;(\underline{ id\;(\lambda z.\; id\; z)})\\
-\rightarrow\; \underline{id\;(\lambda z.\; id\; z) }\\
-\rightarrow\; \lambda z.\; id\; z\\
-\nrightarrow
-\]</span></p>
-<ul>
 <li>値呼び評価は「正格」名前呼び戦略は「非正格」もしくは「遅延評価」と呼ばれる。</li>
-<li>純粋なラムダ計算でもブール値や数の表現、またその評価は出来る
+<li>純粋なラムダ計算でもブール値や数の表現と評価は出来る
 <ul>
 <li>純粋なラムダ計算ではTrueとFalseを以下のように表現する。</li>
 <li><span class="math inline">\(true\; =\; \lambda t.\; \lambda f.\; t;\\false\; =\; \lambda t.\; \lambda f.\; f;\)</span></li>
 <li>面倒、なので必要に応じて拡張して使ったりする。</li>
-<li>関数定義と関数適用で数をどのように表すかというとチャーチ数というものがある。</li>
 </ul></li>
 <li>正規形に評価できない項が存在する。
 <ul>
@@ -200,7 +170,6 @@
 <li><span class="math inline">\(\lambda\)</span> の数より多い数値の場合、自由変数を指す。例えば <span class="math inline">\(\lambda .1\; 0\)</span> の <span class="math inline">\(1\)</span> は自由変数</li>
 </ul></li>
 <li>名無し項より自由変数を含むかどうか判別が簡単。</li>
-<li>実装が間違えていた場合壊滅的に失敗する、これはバグを発見しやすいというメリットになります。なので本書ではde Bruijinインデックスを採用しています。</li>
 </ul></li>
 <li>シフト
 <ul>
@@ -242,51 +211,39 @@ bar = \lambda . \lambda . 2
 </ul></li>
 <li>以上二つの定理を満たしたものを型安全<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>である、と言われる。</li>
 </ul>
-<h4 id="第9章-単純型付きラムダ計算">第9章 単純型付きラムダ計算</h4>
-<ul>
-<li>Lambda抽象を型として扱う<span class="math inline">\(\rightarrow\)</span>型
-<ul>
-<li>これだと<span class="math inline">\((\lambda x. 0) true\)</span>のような時に型がつけられない</li>
-<li>これでは書きたいプログラムに型が割り当てられないことが多々ある</li>
-</ul></li>
-</ul>
-<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">foo <span class="fu">=</span> <span class="kw">if</span> <span class="fu">&lt;</span>長く複雑な式<span class="fu">&gt;</span>
-	<span class="kw">then</span> true
-	<span class="kw">else</span> print <span class="st">&quot;ERROR&quot;</span></code></pre></div>
-<p>このHaskellのプログラムでは型エラーでコンパイルが通らない。</p>
-<blockquote>
-<p>ラムダ計算はチューリング完全なので正格な型解析は不可能である – P. 75 9.1章</p>
-</blockquote>
-<ul>
-<li><dl>
-<dt>ちょっとよく分からない</dt>
-<dd><span class="math inline">\(omega\)</span>等発散してしまう場合に無限を扱えないため？
-</dd>
-</dl></li>
-<li>型付きラムダ計算は<span class="math inline">\(\lambda _\rightarrow\)</span>と表記される_</li>
-<li>導入規則: その型の要素がどのように作られるか</li>
-<li>除去規則: その型の要素がどのように使われるか</li>
-<li>論理学と型理論のふしぎな関連はCurry-Howard対応<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>として知られている
-<ul>
-<li><a href="https://ja.wikibooks.org/wiki/Haskell/%E3%82%AB%E3%83%AA%E3%83%BC%3D%E3%83%8F%E3%83%AF%E3%83%BC%E3%83%89%E5%90%8C%E5%9E%8B">Haskell/カリー=ハワード同型</a>が面白い</li>
-</ul></li>
-<li>カリー・ハワード同型対応入門もわかりやすかった
-<ul>
-<li>第一回: <a href="http://ocw.kyoto-u.ac.jp/ja/faculty-of-lettersja/002-006/pdf/curryhoward.pdf" class="uri">http://ocw.kyoto-u.ac.jp/ja/faculty-of-lettersja/002-006/pdf/curryhoward.pdf</a></li>
-<li>第二回: <a href="http://ocw.kyoto-u.ac.jp/ja/faculty-of-lettersja/002-006/pdf/curryhoward2.pdf" class="uri">http://ocw.kyoto-u.ac.jp/ja/faculty-of-lettersja/002-006/pdf/curryhoward2.pdf</a></li>
-</ul></li>
-<li>型注釈は評価においてはなんの役割も果たさない</li>
-<li>たいていのプログラムは実行時に型無しの項にもどされる
-<ul>
-<li><a href="https://kagamilove0707.github.io/programming/2014/02/20/about-phantom-type/">型安全なリストを作るのです(｀・ω・´) ～ その1、Phantom Type（幽霊型）入門ですー＞ω＜</a>が面白い</li>
-</ul></li>
-</ul>
-<!-- #### 第10章	単純型のML実装 -->
-<h4 id="第11章-単純な拡張">第11章 単純な拡張</h4>
-<ul>
-<li></li>
-</ul>
 <!--
+  #### 第9章	単純型付きラムダ計算
+  
+  - Lambda抽象を型として扱う$\rightarrow$型
+  	+ これだと$(\lambda x. 0) true$のような時に型がつけられない
+  	+ これでは書きたいプログラムに型が割り当てられないことが多々ある
+  
+  ```haskell
+  foo = if <長く複雑な式>
+  	then true
+  	else print "ERROR"
+  ```
+  
+  このHaskellのプログラムでは型エラーでコンパイルが通らない。
+  
+  > ラムダ計算はチューリング完全なので正格な型解析は不可能である
+  > -- P. 75 9.1章
+  
+  - ちょっとよく分からない
+    ~ $omega$等発散してしまう場合に無限を扱えないため？
+  
+  - 型付きラムダ計算は$\lambda _\rightarrow$と表記される_
+  - 導入規則: その型の要素がどのように作られるか
+  - 除去規則: その型の要素がどのように使われるか
+  - 論理学と型理論のふしぎな関連はCurry-Howard対応^[Curry-Howard同型ともよばれる]として知られている
+  	+ [Haskell/カリー=ハワード同型](https://ja.wikibooks.org/wiki/Haskell/%E3%82%AB%E3%83%AA%E3%83%BC%3D%E3%83%8F%E3%83%AF%E3%83%BC%E3%83%89%E5%90%8C%E5%9E%8B)が面白い
+  - 型注釈は評価においてはなんの役割も果たさない
+  - たいていのプログラムは実行時に型無しの項にもどされる
+    + [型安全なリストを作るのです(｀・ω・´) ～ その1、Phantom Type（幽霊型）入門ですー＞ω＜](https://kagamilove0707.github.io/programming/2014/02/20/about-phantom-type/)が面白い
+-->
+<!--
+  #### 第10章	単純型のML実装
+  #### 第11章	単純な拡張
   #### 第12章	正規化
   #### 第13章	参照
   #### 第14章	例外
@@ -326,7 +283,6 @@ bar = \lambda . \lambda . 2
 <li id="fn1"><p>「de Brujin項」とも呼ばれるそうです。日本語ではド ブラウンと読むのが一番近いそうです。<a href="#fnref1">↩</a></p></li>
 <li id="fn2"><p>数式に起こすと <span class="math inline">\(\uparrow ^2 (\lambda . \lambda . 2)\)</span><a href="#fnref2">↩</a></p></li>
 <li id="fn3"><p>健全性とも言われる<a href="#fnref3">↩</a></p></li>
-<li id="fn4"><p>Curry-Howard同型ともよばれる<a href="#fnref4">↩</a></p></li>
 </ol>
 </div></section>
 ]]></description>
@@ -343,7 +299,7 @@ bar = \lambda . \lambda . 2
 
 <li> Tags: <a href="/tags/haskell.html">haskell</a>, <a href="/tags/book.html">book</a>, <a href="/tags/memo.html">memo</a>, <a href="/tags/programming.html">programming</a>, <a href="/tags/math.html">math</a></li>
 </ul>
-<section class="article_text"><p>TaPLを読むのために少し勉強したのでメモを残しておきます。 内容の真偽の保証はできません。必要に応じて追記していきます。</p>
+<section class="article_text"><p>TaPLを読むのために少し勉強したのでメモを残しておきます。 必要に応じて追記していきます。</p>
 <p><a href="http://zoetrope.hatenablog.jp/entry/2013/07/24/204613">数学初心者のための「型システム入門」入門</a>によると前提として以下の知識が必要になるようです。</p>
 <blockquote>
 <ul>
@@ -353,36 +309,39 @@ bar = \lambda . \lambda . 2
 </ul>
 </blockquote>
 <p>TaPLの読書記録は<a href="/posts/TaPL.html">このページ</a>に載っています。</p>
+<p>2017/05/07 数学をきちんとやって行くことを決めて半年以上立ちます。</p>
 <!--more-->
 <h2 id="論理学">論理学</h2>
 <ul>
 <li><a href="http://abelard.flet.keio.ac.jp/person/mitsu/pdf/nyumon_logic.pdf">「論理学入門」講義ノート</a>が論理学で検索してヒットしたものの中で一番容易に読み進めることができそうだったので読み流した(証明は追いかけるの面倒だったので飛ばした)。</li>
 <li>記号がダメな人はアレルギーをおこしそうな分野でした、印刷したテキストをうっかり直視した友人は帰らぬ人となりました。(まあプログラマは大丈夫だと思う)</li>
 <li>後日みつけた資料ですが、こちらのほうが易しく書かれています。 <a href="http://abelard.flet.keio.ac.jp/person/takemura/class/2013/3-print-nk.pdf" class="uri">http://abelard.flet.keio.ac.jp/person/takemura/class/2013/3-print-nk.pdf</a></li>
+<li>2017/05/07 数学に興味をもったため、野矢茂樹氏の書いた<a href="http://www.utp.or.jp/bd/978-4-13-012053-1.html">論理学</a>を読みました。</li>
 </ul>
 <h2 id="集合論">集合論</h2>
-<p>論理学とあわせて、何かを表現する際の述語を勉強している気分です。</p>
 <ul>
 <li>TaPLの冒頭に集合がなんだかんだと書かれていたので勉強が必要だと思い、<a href="http://www.math.twcu.ac.jp/~yamauchi/text/2012/alg2012/set_logic.pdf">東京女子大学の代数学IA(集合と論理)のテキスト</a>を読んでみました。
 <ul>
-<li>私の環境では途中で組版がすこし崩れています。</li>
-<li>これを読むのは論理学のテキストを読んだ後が良いです。</li>
+<li>私の環境では途中で組版がすこし崩れています。
+<ul>
+<li>ChromenのPDFビューアのせいだったようです。</li>
 </ul></li>
-<li>「集合・位相入門」を今読んでいます。 <a href="https://www.iwanami.co.jp/.BOOKS/00/4/0054240.html" class="uri">https://www.iwanami.co.jp/.BOOKS/00/4/0054240.html</a></li>
+</ul></li>
+<li>2017/05/07「集合・位相入門」の集合の項だけ読みました。 <a href="https://www.iwanami.co.jp/.BOOKS/00/4/0054240.html" class="uri">https://www.iwanami.co.jp/.BOOKS/00/4/0054240.html</a></li>
+<li>2017/05/07 <a href="http://www.asakura.co.jp/books/isbn/978-4-254-11478-2/">集合への30講</a>を読みました。</li>
 </ul>
 <h2 id="離散数学">離散数学</h2>
-<p>いつかやりたいなぁ…</p>
+<ul>
+<li>これもきちんとやります。</li>
+</ul>
 <h2 id="ラムダ計算">ラムダ計算</h2>
 <ul>
 <li><a href="http://language-and-engineering.hatenablog.jp/entry/20130313/LambdaCalculusBasicNoteLinks">「ラムダ計算」を独学で学習するための，講義ノートやPDFのリンク集 （復習用の問題付き）</a>に詳しくまとまっています。</li>
+<li>これもきちんとやります。</li>
 </ul>
 <h2 id="アルゴリズム">アルゴリズム</h2>
-<p>ダメです。</p>
-<h2 id="高階関数型プログラミング言語">高階関数型プログラミング言語</h2>
 <ul>
-<li>まあまあHaskellが書けるので問題はなさそうと慢心。TaPLのサンプルコードはOCaml(MLの方言)で書かれていました。</li>
-<li>Haskellで書かれたサンプルコードは <a href="https://github.com/zerokarmaleft/tapl-haskell" class="uri">https://github.com/zerokarmaleft/tapl-haskell</a> ここにありました。さまざまな言語に有志が翻訳しています。</li>
-<li>サンプルコードの実装にパーサを書かなければいけないみたいなので、ekmett氏の<a href="http://hackage.haskell.org/package/trifecta">trifecta</a>を使っています。</li>
+<li>ダメです。</li>
 </ul></section>
 ]]></description>
     <pubDate>Thu, 15 Sep 2016 00:00:00 UT</pubDate>

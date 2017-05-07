@@ -7,8 +7,111 @@
         <description><![CDATA[技術録や日記を残します]]></description>
         <atom:link href="https://eliza.link/rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Fri, 24 Mar 2017 00:00:00 UT</lastBuildDate>
+        <lastBuildDate>Sun, 07 May 2017 00:00:00 UT</lastBuildDate>
         <item>
+    <title>Kosen14s x Publicに参加してきた</title>
+    <link>https://eliza.link/posts/kx_lt.html</link>
+    <description><![CDATA[<a href="/posts/kx_lt.html"><h1>Kosen14s x Publicに参加してきた</h1>
+</a>
+<ul class="article_data"><li>  Posted on May  7, 2017</li>
+
+<li> Tags: <a href="/tags/kosen14s.html">kosen14s</a></li>
+</ul>
+<section class="article_text"><p>Kosen14s x Publicに参加してきました。わたしが参加しているKosen14sが主催でLTをやるということで、これは参加するしかないだろう、ということです。</p>
+<!--more-->
+<h2 id="それでkosen14sってなんなの">それでKosen14sってなんなの</h2>
+<p>その質問にこれまで散々悩んできたのですが、ずっと答えが出なかったのですが、ついに、ふるつきくんが結論を出してくれました。</p>
+<p><strong>わいわい集まって騒ぐための名目</strong></p>
+<p>人はお花見と言う名目でお酒をのんではハロウィンで仮装パーティーをするのでKosen14sもそういうことでしょう。</p>
+<p>もういちど彼の言葉を借りると</p>
+<p><strong>kosen14sはゆるゆりなちゅやちゅみのようなもの</strong></p>
+<p>だそうです、本当にありがとうございました。</p>
+<h2 id="それでいいのか">それでいいのか</h2>
+<p>よくないきがする</p>
+<h2 id="電車">電車</h2>
+<p>乗り換えが難しすぎる</p>
+<h2 id="発表について">発表について</h2>
+<blockquote class="twitter-tweet" data-lang="ja">
+<p lang="ja" dir="ltr">
+<a href="https://twitter.com/hashtag/kx_lt?src=hash">#kx_lt</a> オープニングでループ再生していた動画 <a href="https://t.co/uDQVPiQf3K">pic.twitter.com/uDQVPiQf3K</a>
+</p>
+— ちげ (<span class="citation">@Technictige</span>) <a href="https://twitter.com/Technictige/status/860394877636313089">2017年5月5日</a>
+</blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>開始時のこの会と会場についての説明で、スライドの代わりに動画が用意されていました。ちげくん凄い。</p>
+<blockquote class="twitter-tweet" data-lang="ja">
+<p lang="ja" dir="ltr">
+ちげくん「ランダムできめよう～～……いらいざ」<br>いらいざ「絶対ランダムじゃないじゃん💢」 <a href="https://twitter.com/hashtag/kx_lt?src=hash">#kx_lt</a>
+</p>
+— ふるつき (<span class="citation">@theoldmoon0602</span>) <a href="https://twitter.com/theoldmoon0602/status/859956091223851008">2017年5月4日</a>
+</blockquote>
+<blockquote class="twitter-tweet" data-lang="ja">
+<p lang="ja" dir="ltr">
+「筋肉のある者から」「シード値がプロテイン」 <a href="https://twitter.com/hashtag/kx_lt?src=hash">#kx_lt</a>
+</p>
+— やましー@27/100 (<span class="citation">@yamasy1549</span>) <a href="https://twitter.com/yamasy1549/status/859956158538305536">2017年5月4日</a>
+</blockquote>
+<p>トップバッターでした。わたしは整数を構築して+1, -1, その数が0であるかどうか、の操作だけで和、積、差、羃を定義して、そのあとプログラミング言語<a href="https://github.com/eliza0x/Mikan">Mikan</a>を作った、という話をしました。さっぱり何をいってるかわからないとおもいますが許してください。LT会でもうまくつたえられなかったので残念です。人にものを説明するって言うのは難しいよなぁ…。スライドは<a href="/files/Mikan.pdf">ここ</a>に公開してあります。</p>
+<p>わたしの次の発表はふるつきくんで、プログラミング言語<a href="https://github.com/theoldmoon0602/Lips">Lips</a>を作った、という発表でした。奇遇ですね。</p>
+<p>この発表後も自作プログラミング言語の改良は続けていて、ふるつきくんの言語はすごいことになっています（わたしのは設計に問題があった部分を改良しているうちに連休が終わってしまった）。もう少しよくなってきたらブログにでも書きましょう。</p>
+<p>Kosen14sのSlackでは、ふたりでやっぱりS式に回帰してしまうよなあ、という話をしています。</p>
+<p>お昼休憩時にyudai君ときゅみな君に電子スピンの話を教えてもらいました。みんなかしこい</p>
+<blockquote class="twitter-tweet" data-lang="ja">
+<p lang="ja" dir="ltr">
+<a href="https://twitter.com/hashtag/kx_lt?src=hash">#kx_lt</a><br>留年池 <a href="https://t.co/7rTpxjcI9m">pic.twitter.com/7rTpxjcI9m</a>
+</p>
+— ちよみ@大魔王 (<span class="citation">@chiyomi_0121</span>) <a href="https://twitter.com/chiyomi_0121/status/859979894456934400">2017年5月4日</a>
+</blockquote>
+<p>奈良高専観光もやってくれました。上の写真は落ちたものが留年すると言われている留年池です。 <del>落ちるひといるのか</del> 中を覗いてみると郡山市らしく金魚がおよいでいました。具現化した単位が泳いでいるんだそうです。</p>
+<blockquote class="twitter-tweet" data-lang="ja">
+<p lang="ja" dir="ltr">
+赤い <a href="https://twitter.com/hashtag/kx_lt?src=hash">#kx_lt</a>
+</p>
+— いらいざ (<span class="citation">@Eliza_0x</span>) <a href="https://twitter.com/Eliza_0x/status/859983529299464192">2017年5月4日</a>
+</blockquote>
+<blockquote class="twitter-tweet" data-lang="ja">
+<p lang="ja" dir="ltr">
+赤いぞ <a href="https://twitter.com/hashtag/kx_lt?src=hash">#kx_lt</a>
+</p>
+— やましー@27/100 (<span class="citation">@yamasy1549</span>) <a href="https://twitter.com/yamasy1549/status/859983616436125696">2017年5月4日</a>
+</blockquote>
+<p>ロシア語LTや中国語LTなんてものもありました。ふたりともその言語を交えて発表してくれて刺激的な発表でした。ドイツ語LTはアレですね、ドイツ語(を例とした自然)言語(処理)のお勉強についての発表でした。ドイツ語の発表がくるかと思ったらベクトルのはなしが始まるし滅茶苦茶だよ……, word2vecについての発表でしたが興味深かった。やましーLT上手すぎる。</p>
+<blockquote class="twitter-tweet" data-lang="ja">
+<p lang="ja" dir="ltr">
+<a href="https://twitter.com/hashtag/kx_lt?src=hash">#kx_lt</a><br>西山さんうわぁああああ
+</p>
+— mechanic(サブ垢) (<span class="citation">@AKANE__JOJO</span>) <a href="https://twitter.com/AKANE__JOJO/status/859986576410947585">2017年5月4日</a>
+</blockquote>
+<p>ちげくんが人脈をいかして企業の方を呼んでいたのにはおどろきました。Mono-coto innovationのかただったんですが、わたしの生きてきた世界では想像をできないような取り組みをされていて、なんというか違う世界を覗き見することができました。</p>
+<p>ちげ君の発表、動画プレゼンは衝撃的でした。わたしはうまく説明できないので彼のブログ<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>を見てください。</p>
+<p>あとはアレですね、かなりめちゃくちゃなLT会でしたがなによりもめちゃくちゃだったのはしんぷっとの「メルヘン論」でしょうか。</p>
+<blockquote class="twitter-tweet" data-lang="ja">
+<p lang="ja" dir="ltr">
+<a href="https://twitter.com/hashtag/kx_lt?src=hash">#kx_lt</a><br>Q.メルヘンってな〜んだ！<br><br>A.数学です。<br>以下地獄への入り口
+</p>
+— きつねん(妖怪) (<span class="citation">@kituneenbi</span>) <a href="https://twitter.com/kituneenbi/status/860013584016752640">2017年5月4日</a>
+</blockquote>
+<p>しんぷっと「メルヘンってな〜んだ？」<br />
+だれか「おとぎばなし？」<br />
+しんぷっと「そうだね、数学です」<br />
+しんぷっと「自分だけの最強の乱数をつくろう！」</p>
+<p>でした、何言ってるか分からないと思いますがわたしもわからないので許してください。</p>
+<h2 id="後日談">後日談</h2>
+<blockquote>
+<p>その次がいらいざ。筋肉選択。ランダムで決めてません。いらいざごめん。 Kosen14s LT ×Publicを開催した - <a href="http://chige.hatenablog.com/entry/2017/05/05/121938" class="uri">http://chige.hatenablog.com/entry/2017/05/05/121938</a></p>
+</blockquote>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>http://chige.hatenablog.com/entry/2017/05/05/121938<a href="#fnref1">↩</a></p></li>
+</ol>
+</div></section>
+]]></description>
+    <pubDate>Sun, 07 May 2017 00:00:00 UT</pubDate>
+    <guid>https://eliza.link/posts/kx_lt.html</guid>
+    <dc:creator>eliza0x</dc:creator>
+</item>
+<item>
     <title>Haskellでブログを作った</title>
     <link>https://eliza.link/posts/create_blog_with_hakyll.html</link>
     <description><![CDATA[<a href="/posts/create_blog_with_hakyll.html"><h1>Haskellでブログを作った</h1>
@@ -331,10 +434,6 @@ css <span class="fu">=</span> <span class="kw">do</span>
 <li> Tags: <a href="/tags/haskell.html">haskell</a>, <a href="/tags/book.html">book</a>, <a href="/tags/memo.html">memo</a>, <a href="/tags/programming.html">programming</a>, <a href="/tags/math.html">math</a></li>
 </ul>
 <section class="article_text"><p>TaPLでの読書メモが書いてあります随時追記していきます。 間違いを発見した場合はコメントか、me [at] eliza [dot] linkまでメールを下さると喜びます。</p>
-<ol start="17" style="list-style-type: upper-alpha">
-<li>どうして読むのか</li>
-<li>Haskellが好きで背後で使われている技術を知りたくなったから</li>
-</ol>
 <p><a href="http://tapl.proofcafe.org/home">日本語のサポートページ</a>が準備されています。 また、<a href="https://estore.ohmsha.co.jp/titles/978427406911P">出版元のページ</a>から第一章が無料で読めます。</p>
 <p>通読したのちにまた記事を書こうと思っています。</p>
 <!--more-->
@@ -350,21 +449,17 @@ css <span class="fu">=</span> <span class="kw">do</span>
 </p>
 — Eijiro Sumii (<span class="citation">@esumii</span>) <a href="https://twitter.com/esumii/status/315135694462939137">2013年3月22日</a>
 </blockquote>
+<p>以降読書メモです</p>
 <h4 id="第1章-はじめに">第1章 はじめに</h4>
-<p>型を導入する意義や、型についての面白い話が書かれています。</p>
+<p>型を導入する意義や、型システムの実用例が書かれています。</p>
 <h4 id="第2章-数学的準備">第2章 数学的準備</h4>
-<p>数学の公式や前提として必要な知識が列挙されています、ここで馴染の無い物があれば読むのを中断し、いちどその分野の知識を補うべきだとしていますが私は強行を決めました。</p>
+<p>_- 数学の公式や前提として必要な知識が列挙されています、ここで馴染の無い物があれば読むのを中断し、いちどその分野の知識を補うべきだとしていますが私は強行を決めました。 - 2017/05/07 勉強しました</p>
 <h2 id="第1部-型無しの計算体系">第1部 型無しの計算体系</h2>
 <h4 id="第3章-型無し算術式">第3章 型無し算術式</h4>
-<p>簡単な言語の構文を定義して意味論や項を操作したりしている。</p>
-<!-- - 操作的意味論: 抽象機械を定義してプログラミング言語の振舞いを規定、機械の振舞いを遷移関数を使用して定義する。 -->
-<!-- - 表示的意味論: 項を数値や関数として捉えてモデル化。 -->
-<!-- - 公理的意味論: 言語の定義そのものが法則となる、項の意味は項の照明そのもの。 -->
 <ul>
 <li>正規形
 <ul>
 <li>もう項が評価できない、という意味である。 <code>if t1 then t2 else t3</code> は評価できるが、 <code>true</code> はもう評価できない。</li>
-<li><del>正規形であるならば値である。</del></li>
 <li>項が正規形であるにかかわらず値ではない場合を『行き詰まり状態』と言う。</li>
 <li>すべての項に対して、ある正規形が存在する</li>
 </ul></li>
@@ -373,7 +468,11 @@ css <span class="fu">=</span> <span class="kw">do</span>
 <li>1ステップ評価を合成したやつだと理解しておいた。</li>
 </ul></li>
 </ul>
-<!-- #### 第4章	算術式のML実装 -->
+<h4 id="第4章-算術式のml実装">第4章 算術式のML実装</h4>
+<ul>
+<li>Arithで満たしている機能と色々が含まれている言語を作りました。</li>
+<li>Mikan - <a href="https://github.com/eliza0x/Mikan/tree/e62f16b277af3118dacdd8c7c3ea0655c2766713" class="uri">https://github.com/eliza0x/Mikan/tree/e62f16b277af3118dacdd8c7c3ea0655c2766713</a></li>
+</ul>
 <h4 id="第5章-型無しラムダ計算">第5章 型無しラムダ計算</h4>
 <ul>
 <li>なんとなく分かったら、<a href="http://tarao.hatenablog.com/entry/20100208/1265605429">ラムダ計算基礎文法最速マスター</a>にあっさりと書かれているので読むといいかも。</li>
@@ -385,11 +484,8 @@ css <span class="fu">=</span> <span class="kw">do</span>
 <li>Lambda計算はプログラミング言語であると共に証明可能な数学的対象。</li>
 <li>Lambda計算に似たようなものに<span class="math inline">\(\pi\)</span>計算やオブジェクト計算がある(本書では扱わないらしいが)
 <ul>
-<li><dl>
-<dt><a href="http://web.yl.is.s.u-tokyo.ac.jp/kobalab/kadai99/picalc.html">π-calculus 超入門</a></dt>
-<dd>もしかしてアクターモデルの原点？
-</dd>
-</dl></li>
+<li><a href="http://web.yl.is.s.u-tokyo.ac.jp/kobalab/kadai99/picalc.html">π-calculus 超入門</a></li>
+<li>もしかしてアクターモデルの原点？</li>
 </ul></li>
 <li>自由変数の無い項を「閉じている」もしくは「コンビネータ」という。
 <ul>
@@ -397,40 +493,17 @@ css <span class="fu">=</span> <span class="kw">do</span>
 <li><span class="math inline">\(\lambda x.\; y\)</span> この項はコンビネータではない。</li>
 </ul></li>
 <li><span class="math inline">\((\lambda x.\; x) y\)</span> は <span class="math inline">\(y\)</span> と評価される。</li>
-<li>項 <span class="math inline">\((\lambda x.\; x\; (\lambda x.\; x))\; (u\; r)\)</span> は <span class="math inline">\(u\; r\; (\lambda x.\; x)\)</span> と評価される。
-<ul>
-<li>この操作をベータ簡約といい、簡約可能な項を簡約基と言う。</li>
-</ul></li>
 <li>ラムダ計算の評価戦略は数種類あり、プログラミング言語によっても違う。
 <ul>
 <li>Haskellは名前呼び戦略の変種である必要呼び戦略</li>
 <li>大多数の言語では値呼び戦略</li>
 </ul></li>
-<li>以下は名前呼び簡約の例です。</li>
-</ul>
-<p><span class="math display">\[
-\quad         \underline{ id\;(id\;(\lambda z.\; id\; z)) }\\ 
-\rightarrow\; \underline{ id\;(\lambda z.\; id\; z) }\\
-\rightarrow\; \lambda z.\; id\; z\\
-\nrightarrow
-\]</span></p>
-<ul>
-<li>以下は値呼び簡約の例です。</li>
-</ul>
-<p><span class="math display">\[
-\quad\;       id\;(\underline{ id\;(\lambda z.\; id\; z)})\\
-\rightarrow\; \underline{id\;(\lambda z.\; id\; z) }\\
-\rightarrow\; \lambda z.\; id\; z\\
-\nrightarrow
-\]</span></p>
-<ul>
 <li>値呼び評価は「正格」名前呼び戦略は「非正格」もしくは「遅延評価」と呼ばれる。</li>
-<li>純粋なラムダ計算でもブール値や数の表現、またその評価は出来る
+<li>純粋なラムダ計算でもブール値や数の表現と評価は出来る
 <ul>
 <li>純粋なラムダ計算ではTrueとFalseを以下のように表現する。</li>
 <li><span class="math inline">\(true\; =\; \lambda t.\; \lambda f.\; t;\\false\; =\; \lambda t.\; \lambda f.\; f;\)</span></li>
 <li>面倒、なので必要に応じて拡張して使ったりする。</li>
-<li>関数定義と関数適用で数をどのように表すかというとチャーチ数というものがある。</li>
 </ul></li>
 <li>正規形に評価できない項が存在する。
 <ul>
@@ -463,7 +536,6 @@ css <span class="fu">=</span> <span class="kw">do</span>
 <li><span class="math inline">\(\lambda\)</span> の数より多い数値の場合、自由変数を指す。例えば <span class="math inline">\(\lambda .1\; 0\)</span> の <span class="math inline">\(1\)</span> は自由変数</li>
 </ul></li>
 <li>名無し項より自由変数を含むかどうか判別が簡単。</li>
-<li>実装が間違えていた場合壊滅的に失敗する、これはバグを発見しやすいというメリットになります。なので本書ではde Bruijinインデックスを採用しています。</li>
 </ul></li>
 <li>シフト
 <ul>
@@ -505,51 +577,39 @@ bar = \lambda . \lambda . 2
 </ul></li>
 <li>以上二つの定理を満たしたものを型安全<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>である、と言われる。</li>
 </ul>
-<h4 id="第9章-単純型付きラムダ計算">第9章 単純型付きラムダ計算</h4>
-<ul>
-<li>Lambda抽象を型として扱う<span class="math inline">\(\rightarrow\)</span>型
-<ul>
-<li>これだと<span class="math inline">\((\lambda x. 0) true\)</span>のような時に型がつけられない</li>
-<li>これでは書きたいプログラムに型が割り当てられないことが多々ある</li>
-</ul></li>
-</ul>
-<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">foo <span class="fu">=</span> <span class="kw">if</span> <span class="fu">&lt;</span>長く複雑な式<span class="fu">&gt;</span>
-	<span class="kw">then</span> true
-	<span class="kw">else</span> print <span class="st">&quot;ERROR&quot;</span></code></pre></div>
-<p>このHaskellのプログラムでは型エラーでコンパイルが通らない。</p>
-<blockquote>
-<p>ラムダ計算はチューリング完全なので正格な型解析は不可能である – P. 75 9.1章</p>
-</blockquote>
-<ul>
-<li><dl>
-<dt>ちょっとよく分からない</dt>
-<dd><span class="math inline">\(omega\)</span>等発散してしまう場合に無限を扱えないため？
-</dd>
-</dl></li>
-<li>型付きラムダ計算は<span class="math inline">\(\lambda _\rightarrow\)</span>と表記される_</li>
-<li>導入規則: その型の要素がどのように作られるか</li>
-<li>除去規則: その型の要素がどのように使われるか</li>
-<li>論理学と型理論のふしぎな関連はCurry-Howard対応<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>として知られている
-<ul>
-<li><a href="https://ja.wikibooks.org/wiki/Haskell/%E3%82%AB%E3%83%AA%E3%83%BC%3D%E3%83%8F%E3%83%AF%E3%83%BC%E3%83%89%E5%90%8C%E5%9E%8B">Haskell/カリー=ハワード同型</a>が面白い</li>
-</ul></li>
-<li>カリー・ハワード同型対応入門もわかりやすかった
-<ul>
-<li>第一回: <a href="http://ocw.kyoto-u.ac.jp/ja/faculty-of-lettersja/002-006/pdf/curryhoward.pdf" class="uri">http://ocw.kyoto-u.ac.jp/ja/faculty-of-lettersja/002-006/pdf/curryhoward.pdf</a></li>
-<li>第二回: <a href="http://ocw.kyoto-u.ac.jp/ja/faculty-of-lettersja/002-006/pdf/curryhoward2.pdf" class="uri">http://ocw.kyoto-u.ac.jp/ja/faculty-of-lettersja/002-006/pdf/curryhoward2.pdf</a></li>
-</ul></li>
-<li>型注釈は評価においてはなんの役割も果たさない</li>
-<li>たいていのプログラムは実行時に型無しの項にもどされる
-<ul>
-<li><a href="https://kagamilove0707.github.io/programming/2014/02/20/about-phantom-type/">型安全なリストを作るのです(｀・ω・´) ～ その1、Phantom Type（幽霊型）入門ですー＞ω＜</a>が面白い</li>
-</ul></li>
-</ul>
-<!-- #### 第10章	単純型のML実装 -->
-<h4 id="第11章-単純な拡張">第11章 単純な拡張</h4>
-<ul>
-<li></li>
-</ul>
 <!--
+  #### 第9章	単純型付きラムダ計算
+  
+  - Lambda抽象を型として扱う$\rightarrow$型
+  	+ これだと$(\lambda x. 0) true$のような時に型がつけられない
+  	+ これでは書きたいプログラムに型が割り当てられないことが多々ある
+  
+  ```haskell
+  foo = if <長く複雑な式>
+  	then true
+  	else print "ERROR"
+  ```
+  
+  このHaskellのプログラムでは型エラーでコンパイルが通らない。
+  
+  > ラムダ計算はチューリング完全なので正格な型解析は不可能である
+  > -- P. 75 9.1章
+  
+  - ちょっとよく分からない
+    ~ $omega$等発散してしまう場合に無限を扱えないため？
+  
+  - 型付きラムダ計算は$\lambda _\rightarrow$と表記される_
+  - 導入規則: その型の要素がどのように作られるか
+  - 除去規則: その型の要素がどのように使われるか
+  - 論理学と型理論のふしぎな関連はCurry-Howard対応^[Curry-Howard同型ともよばれる]として知られている
+  	+ [Haskell/カリー=ハワード同型](https://ja.wikibooks.org/wiki/Haskell/%E3%82%AB%E3%83%AA%E3%83%BC%3D%E3%83%8F%E3%83%AF%E3%83%BC%E3%83%89%E5%90%8C%E5%9E%8B)が面白い
+  - 型注釈は評価においてはなんの役割も果たさない
+  - たいていのプログラムは実行時に型無しの項にもどされる
+    + [型安全なリストを作るのです(｀・ω・´) ～ その1、Phantom Type（幽霊型）入門ですー＞ω＜](https://kagamilove0707.github.io/programming/2014/02/20/about-phantom-type/)が面白い
+-->
+<!--
+  #### 第10章	単純型のML実装
+  #### 第11章	単純な拡張
   #### 第12章	正規化
   #### 第13章	参照
   #### 第14章	例外
@@ -589,7 +649,6 @@ bar = \lambda . \lambda . 2
 <li id="fn1"><p>「de Brujin項」とも呼ばれるそうです。日本語ではド ブラウンと読むのが一番近いそうです。<a href="#fnref1">↩</a></p></li>
 <li id="fn2"><p>数式に起こすと <span class="math inline">\(\uparrow ^2 (\lambda . \lambda . 2)\)</span><a href="#fnref2">↩</a></p></li>
 <li id="fn3"><p>健全性とも言われる<a href="#fnref3">↩</a></p></li>
-<li id="fn4"><p>Curry-Howard同型ともよばれる<a href="#fnref4">↩</a></p></li>
 </ol>
 </div></section>
 ]]></description>
@@ -606,7 +665,7 @@ bar = \lambda . \lambda . 2
 
 <li> Tags: <a href="/tags/haskell.html">haskell</a>, <a href="/tags/book.html">book</a>, <a href="/tags/memo.html">memo</a>, <a href="/tags/programming.html">programming</a>, <a href="/tags/math.html">math</a></li>
 </ul>
-<section class="article_text"><p>TaPLを読むのために少し勉強したのでメモを残しておきます。 内容の真偽の保証はできません。必要に応じて追記していきます。</p>
+<section class="article_text"><p>TaPLを読むのために少し勉強したのでメモを残しておきます。 必要に応じて追記していきます。</p>
 <p><a href="http://zoetrope.hatenablog.jp/entry/2013/07/24/204613">数学初心者のための「型システム入門」入門</a>によると前提として以下の知識が必要になるようです。</p>
 <blockquote>
 <ul>
@@ -616,36 +675,39 @@ bar = \lambda . \lambda . 2
 </ul>
 </blockquote>
 <p>TaPLの読書記録は<a href="/posts/TaPL.html">このページ</a>に載っています。</p>
+<p>2017/05/07 数学をきちんとやって行くことを決めて半年以上立ちます。</p>
 <!--more-->
 <h2 id="論理学">論理学</h2>
 <ul>
 <li><a href="http://abelard.flet.keio.ac.jp/person/mitsu/pdf/nyumon_logic.pdf">「論理学入門」講義ノート</a>が論理学で検索してヒットしたものの中で一番容易に読み進めることができそうだったので読み流した(証明は追いかけるの面倒だったので飛ばした)。</li>
 <li>記号がダメな人はアレルギーをおこしそうな分野でした、印刷したテキストをうっかり直視した友人は帰らぬ人となりました。(まあプログラマは大丈夫だと思う)</li>
 <li>後日みつけた資料ですが、こちらのほうが易しく書かれています。 <a href="http://abelard.flet.keio.ac.jp/person/takemura/class/2013/3-print-nk.pdf" class="uri">http://abelard.flet.keio.ac.jp/person/takemura/class/2013/3-print-nk.pdf</a></li>
+<li>2017/05/07 数学に興味をもったため、野矢茂樹氏の書いた<a href="http://www.utp.or.jp/bd/978-4-13-012053-1.html">論理学</a>を読みました。</li>
 </ul>
 <h2 id="集合論">集合論</h2>
-<p>論理学とあわせて、何かを表現する際の述語を勉強している気分です。</p>
 <ul>
 <li>TaPLの冒頭に集合がなんだかんだと書かれていたので勉強が必要だと思い、<a href="http://www.math.twcu.ac.jp/~yamauchi/text/2012/alg2012/set_logic.pdf">東京女子大学の代数学IA(集合と論理)のテキスト</a>を読んでみました。
 <ul>
-<li>私の環境では途中で組版がすこし崩れています。</li>
-<li>これを読むのは論理学のテキストを読んだ後が良いです。</li>
+<li>私の環境では途中で組版がすこし崩れています。
+<ul>
+<li>ChromenのPDFビューアのせいだったようです。</li>
 </ul></li>
-<li>「集合・位相入門」を今読んでいます。 <a href="https://www.iwanami.co.jp/.BOOKS/00/4/0054240.html" class="uri">https://www.iwanami.co.jp/.BOOKS/00/4/0054240.html</a></li>
+</ul></li>
+<li>2017/05/07「集合・位相入門」の集合の項だけ読みました。 <a href="https://www.iwanami.co.jp/.BOOKS/00/4/0054240.html" class="uri">https://www.iwanami.co.jp/.BOOKS/00/4/0054240.html</a></li>
+<li>2017/05/07 <a href="http://www.asakura.co.jp/books/isbn/978-4-254-11478-2/">集合への30講</a>を読みました。</li>
 </ul>
 <h2 id="離散数学">離散数学</h2>
-<p>いつかやりたいなぁ…</p>
+<ul>
+<li>これもきちんとやります。</li>
+</ul>
 <h2 id="ラムダ計算">ラムダ計算</h2>
 <ul>
 <li><a href="http://language-and-engineering.hatenablog.jp/entry/20130313/LambdaCalculusBasicNoteLinks">「ラムダ計算」を独学で学習するための，講義ノートやPDFのリンク集 （復習用の問題付き）</a>に詳しくまとまっています。</li>
+<li>これもきちんとやります。</li>
 </ul>
 <h2 id="アルゴリズム">アルゴリズム</h2>
-<p>ダメです。</p>
-<h2 id="高階関数型プログラミング言語">高階関数型プログラミング言語</h2>
 <ul>
-<li>まあまあHaskellが書けるので問題はなさそうと慢心。TaPLのサンプルコードはOCaml(MLの方言)で書かれていました。</li>
-<li>Haskellで書かれたサンプルコードは <a href="https://github.com/zerokarmaleft/tapl-haskell" class="uri">https://github.com/zerokarmaleft/tapl-haskell</a> ここにありました。さまざまな言語に有志が翻訳しています。</li>
-<li>サンプルコードの実装にパーサを書かなければいけないみたいなので、ekmett氏の<a href="http://hackage.haskell.org/package/trifecta">trifecta</a>を使っています。</li>
+<li>ダメです。</li>
 </ul></section>
 ]]></description>
     <pubDate>Thu, 15 Sep 2016 00:00:00 UT</pubDate>
@@ -812,7 +874,7 @@ $ <span class="ex">platformio</span> init -b attiny85  </code></pre></div>
 <!--more-->
 <p>さて、<a href="http://kosen14s.github.io/bookclub/">kosen14’s読書会8日目</a>のモリゾー君はニーチェの恋人へ宛てた手紙について記事を書いていますが、今回私はアインシュタインがフロイトに宛てた手紙についての記事を書こうと思います。</p>
 <p>アインシュタインとフロイト？と思うかもしれませんが、アインシュタインは物理学者としてではなく、平和を愛する一人の人間としてフロイトに、心理学者として戦争は無くなるかどうか、どう思うのかを手紙で問いました。</p>
-<p>さあ、内容について書いていきましょう。</p>
+<p>さあ、内容を紹介しようと思います。</p>
 <h2 id="権利と暴力">権利と暴力</h2>
 <div class="figure">
 <img src="../images/kine_and_abel.jpg" />
@@ -835,7 +897,7 @@ $ <span class="ex">platformio</span> init -b attiny85  </code></pre></div>
 </blockquote>
 <p>エロスとデストルドーはたがいに混ざり合って作用しているようです、たとえば自己保存欲求はエロス的なものですが、対象に向けられる際は攻撃欲求も活用しなくてはならなくなります。</p>
 <h2 id="反戦体質">反戦体質</h2>
-<p>さて、人間の本性に攻撃性を認めてしまいました、しかし戦争は無くなるのです。フロイトはいずれ世界中の人が平和を望むようになる、いいえ、平和でない事に耐えられなくなると述べています。</p>
+<p>さて、人間の本性に攻撃性を認めてしまいました、しかし戦争は無くなるのです。フロイトはいずれ世界中の人が平和を望むようになり、平和でない事に耐えられなくなると述べています。</p>
 <p>フロイトは戦争に反対する理由を、希望に満ちた人間の生活を滅ぼしてしまうからだとか、人間の労働の成果である貴重な価値のあるものを破壊するからであると述べていますが、それ以前に人類のうちのいくらかの人間はすでに生理的に戦争を受け付けないようになっていると述べています。</p>
 <p>理由はですが、はじめに人間は文明が発達するにつれ、体質が変わってきていると述べています。これは日本の出生率と発展途上国の出生率などを見れば分かると思います。</p>
 <p>人間が進化するにつれて理性の力が強くなり、欲動をコントロールしはじめたのです。攻撃的な欲動は内部へ向うように変化してきました、そして人間を戦争にたえられなくしたのです。攻撃的な欲動が内部へ向うようになった事でうつなどの現代病もひきおこされています。</p>
@@ -851,9 +913,9 @@ $ <span class="ex">platformio</span> init -b attiny85  </code></pre></div>
     <dc:creator>eliza0x</dc:creator>
 </item>
 <item>
-    <title>「精神分析入門」を読んで</title>
+    <title>「精神分析入門」紹介</title>
     <link>https://eliza.link/posts/Introductory_Psychoanalysis.html</link>
-    <description><![CDATA[<a href="/posts/Introductory_Psychoanalysis.html"><h1>「精神分析入門」を読んで</h1>
+    <description><![CDATA[<a href="/posts/Introductory_Psychoanalysis.html"><h1>「精神分析入門」紹介</h1>
 </a>
 <ul class="article_data"><li>  Posted on June 12, 2016</li>
 
@@ -867,6 +929,7 @@ $ <span class="ex">platformio</span> init -b attiny85  </code></pre></div>
 <p>A. 以前から人間の心の動きに興味を持っていたからです、心理学のうちの精神分析学を選んだ事に意図はありません。</p>
 <p>この著書は、第1部「錯誤行為」、第2部「夢」、第3部「神経症総論」の三部構成になっています、今回はそのうちの一章と二章を紹介します。</p>
 <!--more-->
+<p>正直に白状すると絵空事であるようにわたしが考えている部分もあるのですが、この本の内容をまとめておきましょう。</p>
 <p>学んだ事についてアウトプットするのは非常に良い事だと私は思うので、是非続きも書きたいと思っています。</p>
 <h4 id="治療行為言葉の力">治療行為、言葉の力</h4>
 <p>精神分析学的な治療方法は、現代の臨床心理学と大きく異なっています。</p>
@@ -918,22 +981,15 @@ $ <span class="ex">platformio</span> init -b attiny85  </code></pre></div>
 <p>この練習はかなり辛く、管楽器で音を鳴らすには息を吹き込み続ける事が必要で、長時間音を鳴らし続けると、頭はグラグラしてくるし、息を安定して吹き続けるための腹筋も力が入らなくなってきます。</p>
 <p>この練習を休日は13セット行います。顧問も一緒に練習しているんですが、たまに11セット目の時に12セットだと言ったり、8セット目の時に9セット目だと言ったりします。</p>
 <p>顧問は真面目な方なので、辛い練習を頑張ろうとします。 すると、ここで葛藤が発生します。“練習を早く終了させたいという意図”、“練習を続けようという意図”、この二つの重なった意図は衝突し、回数を間違えるという錯誤行為が発生します。</p>
-<p>言い間違いのような、つまらない錯誤行為にも意味は存在するのです。</p>
+<p>言い間違いのような、つまらない錯誤行為にも意味は存在する、と本書では述べています。</p>
 <p>本著で紹介されている、フロイト自身で観察した例も上げておきましょう。</p>
 <blockquote>
 いつであったか、私は景色の良いドロミーテンで二人のウィーンの女性に会ったのです。彼女達は旅支度でした。私はしばらく道連れとなり、われわれ三人は旅の楽しさや苦しさなどを話し合いました。と、その婦人の一人が、日中をこうやって過ごしていると、いろいろ不愉快な事があると言いだしたのです。「ほんとうに、すこしも楽しくはありませんわ。一日中照りつけられて歩くのですから、ブラウスも肌着も汗びっしょりです」 ところで、こう言いながら一度途中でちょっと口ごもってから、「でも、Hose(ホーゼ)に帰って着替えをすれば…」(Hoseはパンティーという意味)
 </blockquote>
 <p>この例も非常にシンプルです、婦人は着替えるものを列挙する際、発言を控えておいたパンティーの事を、家(Hause,ハウゼ)と発言しようとした際、音が似ていたため取りちがえてしまったのです。</p>
-<p>ほかの例を上げる事も出来ます。</p>
-<p>私は部活で部員たちの前に立ち伝達事項を話さなければならない時がよくありますが、あまりそういった事が得意ではありません。間違えないように、間違えないように、と話していると、今話すべき単語と次の単語が交じり、おかしな言い間違いをする事がたびたびあります。また、稀に伝達事項を忘れてしまう事があります。</p>
-<p>これも、伝達事項を言わなければならないという意図と、集団の前で話したくないので早く言いおえたいという意図の衝突による錯誤行為だといえるのではないでしょうか。</p>
-<h4 id="発生条件">発生条件</h4>
-<p>錯誤行為は必要な注意力を絶対に他にそらしていない時にこそ、発生しやすいとフロイトは述べています。</p>
-<p>たとえば、哀れにも部員の前で伝達事項を言わなければならなくなった部長が、集中して話している時に限ってしくじる(この場合は単語が混じり合う、噛む、言い忘れる)のです。</p>
-<h4 id="治療方法">治療方法</h4>
+<h4 id="原因診断">原因診断</h4>
 <p>驚くかもしれませんが、本人に聞くのです。</p>
 <p>「部長、さっきのキョウソウカイというのは「今日」と「演奏会」が混じったものですか？」 「そうだよ、早く言いおえたくて急いでいたから言葉が混じってしまったんだ。」</p>
-<p>この本人による説明が正しいことの根拠を取り扱うにはまだ尚早なので、後で書こうと思います。</p>
 <h4 id="一章-結び">一章 結び</h4>
 <p>この章でとりあげた錯誤行為はどちらも不快感からの逃避で、これは言い間違いや度忘れだけでなく、怠慢などにもあてはまると本著では述べられています。</p>
 <p>現代ならタイプミスなども含まれるんじゃないかと私は思っています。</p>
@@ -951,14 +1007,14 @@ $ <span class="ex">platformio</span> init -b attiny85  </code></pre></div>
 </div>
 <p>歴史上、夢を軽視することは出来ません。「さいは投げられた(もう引き返す事は出来ない、という意味)」と言った事で有名なカエサルは、母アウレリアを犯す夢を見、占い師から「母とは全ての母に当たる『大地』である」と助言を受けたとも言われていますし、本著でアレクサンドロス大王は遠征に出る時はいつも有名な夢占い師をつれていた、と記されています。神話などでも夢が題材のものは少なくありません。</p>
 <p>フロイトは夢には意味がある、と述べています。なるほど、もちろん夢には原因があるでしょう、なければこんな不思議はありません。</p>
-<p>現代でも夢占いはいたる所でまことしやかに話されています。人を殺す夢を見た人は…、空を飛ぶ夢を見た人は…、しかしフロイトの夢には意味がある、は少し違います。</p>
+<p>現代でも夢占いはいたる所でまことしやかに話されています。人を殺す夢を見た人は…、空を飛ぶ夢を見た人は…、しかしフロイトの言う夢には意味がある、は少し意味が違います。</p>
 <h4 id="発生">発生</h4>
 <blockquote>
 <p>一切の夢に共通な第一の点は、夢を見る時にはわれわれが眠っているという事実です。夢を見るということは、明らかにわれわれが眠っている間の心的活動です。 眠っている時は、外界へ関心は向けられていません。眠りの心理学的な性格は現実世界への関心の中断であるようにみえます。</p>
 </blockquote>
 <p>寝るとき、大抵の人が部屋を暗くして、布団ないし、毛布やそのたぐいのものであたたかくすると思います。</p>
 <p>このとき、いやいやながら生まれてきた我々は誕生以前の状態、いわば母胎内の存在に戻る、もしくはそれに近い状態を作り出します。</p>
-<p>私はまっすぐと姿勢を良く布団に入りますが、眠りにつくと丸まり、胎内でとっていた時の同じ姿勢をとります。</p>
+<p>私はまっすぐと姿勢を良くして布団に入りますが、眠りにつくと丸まり、胎内でとっていた時の同じ姿勢をとっているようです。</p>
 <p>私達は夢の無い眠りこそ、最良の眠りとしますが、そうでは無いのです。それどころか夢は眠りを妨げるものではなく、眠りの番人だとフロイトは述べています。</p>
 <p>興味深い実験を引用してみましょう。</p>
 <blockquote>
@@ -975,7 +1031,7 @@ $ <span class="ex">platformio</span> init -b attiny85  </code></pre></div>
 <p>夢を分析するには、まず思い出さなければなりません。そして、夢は思い出せるものなのです。</p>
 <p>その根拠としてフロイトは一つの面白い実験の例をあげています。</p>
 <p>催眠状態から覚醒して五分たったら病室で雨傘を拡げよと命じられた被験者は、目が覚めてからこの命令を実行しましたが、自分の行動の動機を報告することはできなかった、というものです。</p>
-<p>つぎに、催眠状態中に起こったことを話せと言われた被験者が、初めの間は何も思い出せないと主張していましたが、強く促されると徐々に、そして全て思い出したというものです。</p>
+<p>つぎに、催眠状態中に起こったことを話せと言われた被験者が、初めの間は何も思い出せないと主張していましたが、強く促されると徐々に、そして全て思い出したそうです。</p>
 <p>フロイトの夢に対する推測もまったくこれと同じものです。</p>
 <p>なぜ夢を忘れるのかということですが、フロイトは日中人間には、良心による検閲が働いていていると述べています。</p>
 <p>そしてフロイトは、夢は検閲によって意識されない欲求が、夜に検閲が弱まり視覚化したものだとしています。</p>
@@ -1022,40 +1078,6 @@ $ <span class="ex">platformio</span> init -b attiny85  </code></pre></div>
 ]]></description>
     <pubDate>Sun, 12 Jun 2016 00:00:00 UT</pubDate>
     <guid>https://eliza.link/posts/Introductory_Psychoanalysis.html</guid>
-    <dc:creator>eliza0x</dc:creator>
-</item>
-<item>
-    <title>Kosen14sとは…？</title>
-    <link>https://eliza.link/posts/kosen14s.html</link>
-    <description><![CDATA[<a href="/posts/kosen14s.html"><h1>Kosen14sとは…？</h1>
-</a>
-<ul class="article_data"><li>  Posted on May  4, 2016</li>
-
-<li> Tags: <a href="/tags/kosen14s.html">kosen14s</a></li>
-</ul>
-<section class="article_text"><p><a href="./2016-05-02-kosenconflol.html">以前高専カンファレンスに行って来た</a>のですが、そこで<a href="https://twitter.com/kwnktks0515">かわなか氏/kwnktks0515</a>によりkosen14sに招待していただきました。</p>
-<p>Kosen14sとは何か、私には分かりません、共通点は2014年に高専に入学したという事ぐらいです。</p>
-<p>筋トレ集団のようにも見えますし、エンジニア集団にも見えます、<a href="https://twitter.com/Macshaker">マックシェイカー</a>も居れば、<a href="https://twitter.com/nyousono_sakebi">吹奏楽関係者</a>も居ます。</p>
-<p>年齢の近い、高専生やその近辺の集まりなので、皆と結構フレンドリーに話せます。</p>
-<!--more-->
-<h2 id="筋トレ">筋トレ？</h2>
-<p>筋トレです、kosenconf lolでの発表(おそらく<a href="https://twitter.com/e10dokup">神大クソメガネ先輩</a>)の「大切なことは筋肉」発言が原因です。</p>
-<div class="figure">
-<img src="../images/kosen14s-muscle.png" />
-
-</div>
-<p>みんな喜んで筋トレしています、私も一ヶ月続けたので腕が少し太くなりました。</p>
-<p>ちなみに、我らがkosen14sのGithubリポジトリには、<a href="https://github.com/kosen14s/muscle_training_bot">muscle_training_bot</a>なるものがあります、完全に変態です。</p>
-<h2 id="読書会を行います">読書会を行います</h2>
-<blockquote>
-いらいざ ‏<span class="citation">@Eliza_0x</span> 6月12日 #kosen14s では6/20より一週間に渡って読書会を開催します！ 各kosen14sメンバーが担当日にブログやスライドなどで読んだ本(ジャンルは問わない)についての発表を行ってくれるので楽しみに待っていて下さい！ -<a href="https://twitter.com/Eliza_0x/status/741970838707011584">twitter</a>
-</blockquote>
-<p>行いました、私も二本記事を書きました。: <a href="http://kosen14s.github.io/bookclub/">Kosen14s読書会</a></p>
-<h2 id="興味がある">興味がある</h2>
-<p><a href="https://twitter.com/kwnktks0515">かわなか氏/kwnktks0515</a>に連絡を取って下さい</p></section>
-]]></description>
-    <pubDate>Wed, 04 May 2016 00:00:00 UT</pubDate>
-    <guid>https://eliza.link/posts/kosen14s.html</guid>
     <dc:creator>eliza0x</dc:creator>
 </item>
 
