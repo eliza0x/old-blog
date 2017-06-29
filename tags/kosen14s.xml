@@ -7,8 +7,58 @@
         <description><![CDATA[技術録や日記を残します]]></description>
         <atom:link href="https://eliza.link/tags/kosen14s.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Sun, 07 May 2017 00:00:00 UT</lastBuildDate>
+        <lastBuildDate>Sun, 14 May 2017 00:00:00 UT</lastBuildDate>
         <item>
+    <title>プログラミングコンテストに初参加した</title>
+    <link>https://eliza.link/posts/atcoder_fimp.html</link>
+    <description><![CDATA[<a href="/posts/atcoder_fimp.html"><h1>プログラミングコンテストに初参加した</h1>
+</a>
+<ul class="article_data"><li>  Posted on May 14, 2017</li>
+
+<li> Tags: <a href="/tags/haskell.html">haskell</a>, <a href="/tags/kosen14s.html">kosen14s</a>, <a href="/tags/programming.html">programming</a></li>
+</ul>
+<section class="article_text"><p>昨日はじめてプログラミングコンテストに参加しました<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>。Atcoder Beginner Contest 061です。一問も解けませんでした。 <!--more--></p>
+<h2 id="どうして始めたか">どうして始めたか</h2>
+<p>もともと私はHaskellやSchemeが好きで、プログラミングコンテストは興味が無いというふうにしておいたほうが良い、という状況でした。なんとなく興味はずっと持っていたので、機会<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>もあり、競技プログラミングのチームに加入しました。</p>
+<h2 id="なにがあったか">なにがあったか</h2>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">main ::</span> <span class="dt">IO</span> () 
+main <span class="fu">=</span> <span class="kw">do</span>
+  [a, b, c] <span class="ot">&lt;-</span> words <span class="fu">&lt;$&gt;</span> getLine
+  putStrLn <span class="fu">$</span> <span class="kw">if</span> (c <span class="fu">&gt;=</span> a) <span class="fu">&amp;&amp;</span> (c <span class="fu">&lt;=</span> b) <span class="kw">then</span> <span class="st">&quot;Yes&quot;</span> <span class="kw">else</span> <span class="st">&quot;No&quot;</span></code></pre></div>
+<p>一見正しそうにみえますが、<code>a, b, c</code>の型に注目すると、String型であることに気がつくでしょう。じゃあ何故比較できているか、StringはOrdのインスタンスなんですね、型は或る種の間違いは防いでくれるがStringは比較できてしまった。</p>
+<p><strong>型注釈は書こう！</strong></p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">main ::</span> <span class="dt">IO</span> () 
+main <span class="fu">=</span> <span class="kw">do</span>
+  [a, b, c] <span class="ot">&lt;-</span> map toInt <span class="fu">.</span> words <span class="fu">&lt;$&gt;</span> getLine
+  putStrLn <span class="fu">$</span> <span class="kw">if</span> (c <span class="fu">&gt;=</span> a) <span class="fu">&amp;&amp;</span> (c <span class="fu">&lt;=</span> b) <span class="kw">then</span> <span class="st">&quot;Yes&quot;</span> <span class="kw">else</span> <span class="st">&quot;No&quot;</span>
+  <span class="kw">where</span>
+  toInt <span class="fu">=</span><span class="ot"> read ::</span> <span class="dt">String</span> <span class="ot">-&gt;</span> <span class="dt">Int</span></code></pre></div>
+<p>これが正しいコードです。</p>
+<p>ふだん使わない関数も沢山使えて面白かったですね、普段は<code>&amp;&amp;&amp;</code>や<code>replicate</code>なんて使わないのですが。</p>
+<p>純粋関数型のHaskellは入出力に苦労する、と思われているかもしれませんが今回問題に出た「一行目で渡された回数だけ入力を受け取る」なんてのも案外素直に書けてしまいます。もしかすると命令型言語よりも綺麗に書けているのではないでしょうか。</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">main ::</span> <span class="dt">IO</span> ()
+main <span class="fu">=</span> <span class="kw">do</span>
+  [n, m] <span class="ot">&lt;-</span> map toInt <span class="fu">.</span> words <span class="fu">&lt;$&gt;</span> getLine
+  xs <span class="ot">&lt;-</span> mapM (\_ <span class="ot">-&gt;</span> getLine) [<span class="dv">1</span><span class="fu">..</span>n]<span class="ot"> ::</span> <span class="dt">IO</span> [<span class="dt">String</span>]
+  mapM_ putStrLn xs
+  <span class="kw">where</span>
+  toInt <span class="fu">=</span><span class="ot"> read ::</span> <span class="dt">String</span> <span class="ot">-&gt;</span> <span class="dt">Int</span></code></pre></div>
+<h2 id="おもしろかった">おもしろかった</h2>
+<p>例題は通るのですが、ACできない。他の問題もきっと問題文をきちんと理解できていないような気がします。はじめは問題をC++で解こうとしていたのですが、まったくアルゴリズムが思いつかない。しかたなくHaskellに切り換えると思いつく、といったふうでしたから、プログラミング言語に思考は縛られているんだという実感をえることができました。もっとC++をかけるようにならなくちゃならない<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>。くやしいので来週のコンテストにも参加します。</p>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>これは半分ぐらい正しくなくて、一度だけ飛び入り参加で爆死したことがある<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>大学の学生プロジェクトが存在する<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>実行速度云々以前に、Haskellが使えないコンテストにもチームで参加するため<a href="#fnref3">↩</a></p></li>
+</ol>
+</div></section>
+]]></description>
+    <pubDate>Sun, 14 May 2017 00:00:00 UT</pubDate>
+    <guid>https://eliza.link/posts/atcoder_fimp.html</guid>
+    <dc:creator>eliza0x</dc:creator>
+</item>
+<item>
     <title>Kosen14s x Publicに参加してきた</title>
     <link>https://eliza.link/posts/kx_lt.html</link>
     <description><![CDATA[<a href="/posts/kx_lt.html"><h1>Kosen14s x Publicに参加してきた</h1>
@@ -20,11 +70,11 @@
 <section class="article_text"><p>Kosen14s x Publicに参加してきました。わたしが参加しているKosen14sが主催でLTをやるということで、これは参加するしかないだろう、ということです。</p>
 <!--more-->
 <h2 id="それでkosen14sってなんなの">それでKosen14sってなんなの</h2>
-<p>その質問にこれまで散々悩んできたのですが、ずっと答えが出なかったのですが、ついに、ふるつきくんが結論を出してくれました。</p>
+<p>その質問にこれまで散々悩んできたのですが、ずっと答えが出ませでした。が、ついに、ふるつきくんが結論を出してくれました。</p>
 <p><strong>わいわい集まって騒ぐための名目</strong></p>
 <p>人はお花見と言う名目でお酒をのんではハロウィンで仮装パーティーをするのでKosen14sもそういうことでしょう。</p>
 <p>もういちど彼の言葉を借りると</p>
-<p><strong>kosen14sはゆるゆりなちゅやちゅみのようなもの</strong></p>
+<p><strong>kosen14sはごらく部でKosen14s x Publicはゆるゆりなちゅやちゅみのようなもの</strong></p>
 <p>だそうです、本当にありがとうございました。</p>
 <h2 id="それでいいのか">それでいいのか</h2>
 <p>よくないきがする</p>

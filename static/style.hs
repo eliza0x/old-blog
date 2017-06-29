@@ -45,7 +45,7 @@ baseCss = do
   html ? fontSize (pct 62.5)
   body ? do
     backgroundColor backGroundColor
-    fontSize $ em 1.6
+    fontSize $ em 1.7
     lineHeight auto
     fontWeight $ weight 300
     fontFamily [ "Mplus 1P"
@@ -119,9 +119,12 @@ typoGraphyCss = do
     a |> (h1 <> h2 <> h3 <> h4 <> h5 <> h6) # hover ?
       color secondColor
   h1 <> h2 <> h3 <> h4 <> h5 <> h6 ? do
-      marginTop    $ rem 7
+      marginTop    $ rem 3
       marginBottom $ rem 1.8
       fontWeight   $ weight 300
+  query screen [minWidth $ px 600] $ 
+    h1 <> h2 <> h3 <> h4 <> h5 <> h6 ? 
+      marginTop    (rem 8)
   mapM_ headCss
     [ ( h1, rem 4.0, rem $ 4.0 + 1.2,  rem (-0.1) )
     , ( h2, rem 3.6, rem $ 3.6 + 1.25, rem (-0.1)  )
