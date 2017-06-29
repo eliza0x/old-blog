@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<title>Haskellでバブルソートを書く | eliza.link</title>
+<meta name="author" content="@Eliza_0x">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sanitize.css/2.0.0/sanitize.min.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+<link href="https://fonts.googleapis.com/earlyaccess/mplus1p.css" rel="stylesheet">
+<link rel="stylesheet" href="../static/style.css">
+
+
+<meta name="twitter:widgets:link-color" content="#666">
+</head>
+
+<body class="container container--column"><header><h1 class="blogtitle"><a class="blogtitle" href="../">ELIZA.link</a>
+</h1>
+<nav class="topnav"><ul class="container container--row container__center navigation"><li><a href="../archive.html">Archive</a>
+</li>
+<li><a href="../products.html">Products</a>
+</li>
+<li><a href="../contact.html">Contact</a>
+</li>
+<li><a href="../rss.xml">RSS</a>
+</li>
+</ul>
+</nav>
+</header>
+<main>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({displayAlign: "left",
+displayIndent: "2em"});</script>
+<article><a href="../posts/bubble_sort_haskell.html"><h1>Haskellでバブルソートを書く</h1>
+</a>
+<ul class="article_data"><li>  Posted on June 29, 2017</li>
+
+<li> Tags: <a href="../tags/haskell.html">haskell</a>, <a href="../tags/programming.html">programming</a></li>
+</ul>
+<section class="article_text"><p>部長からの挑戦状に応える形で、バブルソートを書いてみました。これはそのときの記録です。</p>
+<p>普通のバブルソートを書くだけではあまり面白くないですから、入出力を含めて一行ですべてすませるプログラムを書いてみることにします。</p>
+<!--more-->
+<h2 id="バブルソートとは">バブルソートとは？</h2>
+<p>Wikipediaの<a href="https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%96%E3%83%AB%E3%82%BD%E3%83%BC%E3%83%88">バブルソート</a>を読めばいいと思います。ざっくりと説明すると、リストの隣り合った要素同士を次々と比較していくとソート出来る。というアルゴリズムだそうです。</p>
+<h2 id="ふつうに書いてみる">ふつうに書いてみる</h2>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">import </span><span class="dt">System.Environment</span> (getArgs)
+
+<span class="ot">main ::</span> <span class="dt">IO</span> ()
+main <span class="fu">=</span> <span class="kw">do</span>
+  input <span class="ot">&lt;- getArgs ::</span> <span class="dt">IO</span> [<span class="dt">String</span>]
+  print <span class="fu">.</span> bubble <span class="fu">.</span> map toInt <span class="fu">$</span> input
+  <span class="kw">where</span>
+    toInt <span class="fu">=</span><span class="ot"> read ::</span> <span class="dt">String</span> <span class="ot">-&gt;</span> <span class="dt">Int</span>
+
+<span class="ot">bubble ::</span> <span class="dt">Ord</span> a <span class="ot">=&gt;</span> [a] <span class="ot">-&gt;</span> [a]
+bubble l <span class="fu">=</span> <span class="kw">let</span> s <span class="fu">=</span> bubble1 l
+           <span class="kw">in</span> <span class="kw">if</span> s <span class="fu">==</span> l <span class="kw">then</span> l 
+                        <span class="kw">else</span> bubble s
+
+<span class="ot">bubble1 ::</span> <span class="dt">Ord</span> a <span class="ot">=&gt;</span> [a] <span class="ot">-&gt;</span> [a]
+bubble1 (l<span class="fu">:</span>m<span class="fu">:</span>n) <span class="fu">=</span> min l m <span class="fu">:</span> bubble1 (max l m <span class="fu">:</span> n)
+bubble1 x <span class="fu">=</span> x</code></pre></div>
+<pre><code>$ ghc -O2 bubble_normal.hs
+$ ./bubble_normal 1 2 4 2 1 9 3 1 7 9 10 3 2 4 2
+[1,1,1,2,2,2,2,3,3,4,4,7,9,9,10]</code></pre>
+<p>うまくうごいていますね。</p>
+<h2 id="簡単な解説">簡単な解説</h2>
+<p>やっていることは単純です、上から順に解説していきます。</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">main ::</span> <span class="dt">IO</span> ()
+main <span class="fu">=</span> <span class="kw">do</span>
+  input <span class="ot">&lt;- getArgs ::</span> <span class="dt">IO</span> [<span class="dt">String</span>]
+  print <span class="fu">.</span> bubble <span class="fu">.</span> map toInt <span class="fu">$</span> input
+  <span class="kw">where</span>
+    toInt <span class="fu">=</span><span class="ot"> read ::</span> <span class="dt">String</span> <span class="ot">-&gt;</span> <span class="dt">Int</span></code></pre></div>
+<p><code>main</code>関数では、<code>getArgs</code>でコマンドライン引数を受け取ったあと、<code>map toInt</code>で文字型のリストを整数型のリストに変換したものを、後に定義する予定である<code>bubble</code>関数でソートしたのち、<code>print</code>関数で出力しています。</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">bubble ::</span> <span class="dt">Ord</span> a <span class="ot">=&gt;</span> [a] <span class="ot">-&gt;</span> [a]
+bubble l <span class="fu">=</span> <span class="kw">let</span> s <span class="fu">=</span> bubble1 l
+           <span class="kw">in</span> <span class="kw">if</span> s <span class="fu">==</span> l <span class="kw">then</span> l 
+                        <span class="kw">else</span> bubble s</code></pre></div>
+<p><code>bubble</code>関数では、受け取ったリストが変化しなくなるまで<code>bubble1</code>を繰り返す、という関数になっています。もしリストを<code>bubble1</code>に適用しても変化しないと言う事は何度<code>bubble1</code>に繰り返し適用したとしてももう変化しないと言うことで、<code>bubble1</code>が望ましい動作をするならば、そのリストは整列済みであるということです。</p>
+<pre><code>bubble1 :: Ord a =&gt; [a] -&gt; [a]
+bubble1 (l:m:n) = min l m : bubble1 (max l m : n)
+bubble1 x = x</code></pre>
+<p>このコードの肝である、<code>bubble1</code>関数です。といっても単純な定義で、<code>max</code>は与えられた二つの引数のうち大きな値を返す関数、<code>min</code>は小さな値を返す関数です。この操作で、リストを端からふたつづつ、ひとつズレで舐めていきます。</p>
+<p>これらの単純な関数を組み合わせることで、このコードではバブルソートを実現しています。</p>
+<h2 id="もっと短いコードで書くための下処理">もっと短いコードで書くための下処理</h2>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">import </span><span class="dt">System.Environment</span>
+
+<span class="ot">main ::</span> <span class="dt">IO</span> ()
+main <span class="fu">=</span> print <span class="fu">.</span> bubble <span class="fu">.</span> map (read<span class="ot"> ::</span> <span class="dt">String</span> <span class="ot">-&gt;</span> <span class="dt">Int</span>) <span class="fu">=&lt;&lt;</span> getArgs
+
+<span class="ot">bubble ::</span> <span class="dt">Ord</span> a <span class="ot">=&gt;</span> [a] <span class="ot">-&gt;</span> [a]
+bubble <span class="fu">=</span> \l <span class="ot">-&gt;</span> <span class="kw">let</span> s <span class="fu">=</span> bubble1 l
+                <span class="kw">in</span> <span class="kw">if</span> s <span class="fu">==</span> l 
+                     <span class="kw">then</span> l 
+                     <span class="kw">else</span> bubble s
+
+<span class="ot">bubble1 ::</span> <span class="dt">Ord</span> a <span class="ot">=&gt;</span> [a] <span class="ot">-&gt;</span> [a]
+bubble1 <span class="fu">=</span> \list <span class="ot">-&gt;</span> <span class="kw">if</span> length list <span class="fu">&gt;=</span> <span class="dv">2</span> 
+                     <span class="kw">then</span> (\(l<span class="fu">:</span>m<span class="fu">:</span>n) <span class="ot">-&gt;</span> min l m <span class="fu">:</span> bubble1 (max l m <span class="fu">:</span> n)) list
+                     <span class="kw">else</span> list</code></pre></div>
+<p>取り敢えず、<code>main</code>関数を一行で、後の作業のための前処理のために、関数をlambda式でかきなおします。このコードでは、先程存在した<code>toInt</code>関数を、そのまま<code>main</code>関数の中にうめこんでしまいました。これから<code>bubble</code>と<code>bubble1</code>にたいしてこの作業を行っていきます。</p>
+<p>埋め込む際に問題になるのは、再起表現です。これを解決するために不動点コンビネータを導入します。不動点コンビネータについての解説は、Wikibooksの<a href="https://ja.wikibooks.org/wiki/Haskell/%E4%B8%8D%E5%8B%95%E7%82%B9%E3%81%A8%E5%86%8D%E5%B8%B0">Haskell/不動点と再帰</a>かWikipediaの<a href="https://ja.wikipedia.org/wiki/%E4%B8%8D%E5%8B%95%E7%82%B9%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8D%E3%83%BC%E3%82%BF">不動点コンビネータ</a>を読めばいいとおもいます。</p>
+<p>実際に不動点コンビネータで書き直したものが以下のコードです。</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">import </span><span class="dt">System.Environment</span> (getArgs)
+<span class="kw">import </span><span class="dt">Control.Monad.Fix</span> (fix)
+
+<span class="ot">main ::</span> <span class="dt">IO</span> ()
+main <span class="fu">=</span> print <span class="fu">.</span> bubble <span class="fu">.</span> map (read<span class="ot"> ::</span> <span class="dt">String</span> <span class="ot">-&gt;</span> <span class="dt">Int</span>) <span class="fu">=&lt;&lt;</span> getArgs
+
+<span class="ot">bubble ::</span> <span class="dt">Ord</span> a <span class="ot">=&gt;</span> [a] <span class="ot">-&gt;</span> [a]
+bubble <span class="fu">=</span> fix <span class="fu">$</span> 
+  \rec l <span class="ot">-&gt;</span> <span class="kw">let</span> s <span class="fu">=</span> bubble1 l
+            <span class="kw">in</span> <span class="kw">if</span> s <span class="fu">==</span> l <span class="kw">then</span> l <span class="kw">else</span> rec s
+
+<span class="ot">bubble1 ::</span> <span class="dt">Ord</span> a <span class="ot">=&gt;</span> [a] <span class="ot">-&gt;</span> [a]
+bubble1 <span class="fu">=</span> fix <span class="fu">$</span> 
+  \rec list <span class="ot">-&gt;</span> <span class="kw">if</span> length list <span class="fu">&gt;=</span> <span class="dv">2</span> 
+                 <span class="kw">then</span> (\(l<span class="fu">:</span>m<span class="fu">:</span>n) <span class="ot">-&gt;</span> min l m <span class="fu">:</span> rec (max l m <span class="fu">:</span> n)) list
+                 <span class="kw">else</span> list</code></pre></div>
+<p>ほとんど書き換えることなく<code>fix</code>で再帰を表現することができました。これで<code>bubble</code>や<code>bubble1</code>内に自身の名前が登場することはありません、早速<code>main</code>内に埋め込んでみましょう。</p>
+<h2 id="一行でバブルソートを書く">一行でバブルソートを書く</h2>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">import </span><span class="dt">System.Environment</span> (getArgs)
+<span class="kw">import </span><span class="dt">Control.Monad.Fix</span> (fix)
+
+main <span class="fu">=</span> print <span class="fu">.</span> bubble <span class="fu">.</span> map (read<span class="ot"> ::</span> <span class="dt">String</span> <span class="ot">-&gt;</span> <span class="dt">Int</span>) <span class="fu">=&lt;&lt;</span> getArgs
+
+b <span class="fu">=</span> (fix <span class="fu">$</span> \rec l <span class="ot">-&gt;</span> <span class="kw">let</span> s <span class="fu">=</span> bubble1 l <span class="kw">in</span> <span class="kw">if</span> s <span class="fu">==</span> l 
+        <span class="kw">then</span> l <span class="kw">else</span> rec s)
+
+b1 <span class="fu">=</span> (fix <span class="fu">$</span> \rec' ls' <span class="ot">-&gt;</span> <span class="kw">if</span> length ls' <span class="fu">&gt;=</span> <span class="dv">2</span> 
+        <span class="kw">then</span> (\(l'<span class="fu">:</span>m'<span class="fu">:</span>n') <span class="ot">-&gt;</span> min l' m' <span class="fu">:</span> rec (max l' m' <span class="fu">:</span> n')) ls' 
+        <span class="kw">else</span> ls')</code></pre></div>
+<p>最後にこれらを埋め込みます。</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">import </span><span class="dt">System.Environment</span> (getArgs)
+<span class="kw">import </span><span class="dt">Control.Monad.Fix</span> (fix)
+
+main <span class="fu">=</span> print <span class="fu">.</span> (fix <span class="fu">$</span> \rec l <span class="ot">-&gt;</span> <span class="kw">let</span> s <span class="fu">=</span> (fix <span class="fu">$</span> \rec' ls' <span class="ot">-&gt;</span> <span class="kw">if</span> length ls' <span class="fu">&gt;=</span> <span class="dv">2</span> <span class="kw">then</span> (\(l'<span class="fu">:</span>m'<span class="fu">:</span>n') <span class="ot">-&gt;</span> min l' m' <span class="fu">:</span> rec (max l' m' <span class="fu">:</span> n')) ls' <span class="kw">else</span> ls') l <span class="kw">in</span> <span class="kw">if</span> s <span class="fu">==</span> l <span class="kw">then</span> l <span class="kw">else</span> rec s) <span class="fu">.</span> map (read<span class="ot"> ::</span> <span class="dt">String</span> <span class="ot">-&gt;</span> <span class="dt">Int</span>) <span class="fu">=&lt;&lt;</span> getArgs</code></pre></div>
+<p>できました、<code>import foobar</code>部を除くと確かに一行です。絶対に読みたくないコードですね。</p>
+<pre><code>./bubble_oneline 1 9 2 9 1 9 3 7 1 9 3 2
+[1,1,1,2,2,3,3,7,9,9,9,9]</code></pre>
+<p>確かに動いていますね。これで部長に大きな顔ができそうです。</p></section>
+</article>
+</main>
+<footer>This page published under the MIT Licence.</footer>
+</body>
+</html>
