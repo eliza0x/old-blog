@@ -67,7 +67,7 @@ bubble l = let s = bubble1 l
 
 `bubble`関数では、受け取ったリストが変化しなくなるまで`bubble1`を繰り返す、という関数になっています。もしリストを`bubble1`に適用しても変化しないと言う事は何度`bubble1`に繰り返し適用したとしてももう変化しないと言うことで、`bubble1`が望ましい動作をするならば、そのリストは整列済みであるということです。
 
-```
+```haskell
 bubble1 :: Ord a => [a] -> [a]
 bubble1 (l:m:n) = min l m : bubble1 (max l m : n)
 bubble1 x = x

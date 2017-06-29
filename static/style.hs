@@ -108,7 +108,7 @@ typoGraphyCss :: Css
 typoGraphyCss = do
   p ? do
     marginTop nil
-    marginBottom (rem 1.6)
+    marginBottom (rem 1.7)
     textRendering optimizeSpeed
   a ? do
     color firstColor
