@@ -58,9 +58,9 @@ bubble l <span class="fu">=</span> <span class="kw">let</span> s <span class="fu
            <span class="kw">in</span> <span class="kw">if</span> s <span class="fu">==</span> l <span class="kw">then</span> l 
                         <span class="kw">else</span> bubble s</code></pre></div>
 <p><code>bubble</code>関数では、受け取ったリストが変化しなくなるまで<code>bubble1</code>を繰り返す、という関数になっています。もしリストを<code>bubble1</code>に適用しても変化しないと言う事は何度<code>bubble1</code>に繰り返し適用したとしてももう変化しないと言うことで、<code>bubble1</code>が望ましい動作をするならば、そのリストは整列済みであるということです。</p>
-<pre><code>bubble1 :: Ord a =&gt; [a] -&gt; [a]
-bubble1 (l:m:n) = min l m : bubble1 (max l m : n)
-bubble1 x = x</code></pre>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">bubble1 ::</span> <span class="dt">Ord</span> a <span class="ot">=&gt;</span> [a] <span class="ot">-&gt;</span> [a]
+bubble1 (l<span class="fu">:</span>m<span class="fu">:</span>n) <span class="fu">=</span> min l m <span class="fu">:</span> bubble1 (max l m <span class="fu">:</span> n)
+bubble1 x <span class="fu">=</span> x</code></pre></div>
 <p>このコードの肝である、<code>bubble1</code>関数です。といっても単純な定義で、<code>max</code>は与えられた二つの引数のうち大きな値を返す関数、<code>min</code>は小さな値を返す関数です。この操作で、リストを端からふたつづつ、ひとつズレで舐めていきます。</p>
 <p>これらの単純な関数を組み合わせることで、このコードではバブルソートを実現しています。</p>
 <h2 id="もっと短いコードで書くための下処理">もっと短いコードで書くための下処理</h2>
