@@ -1,0 +1,101 @@
+[
+  {
+    "title": "プログラミングコンテストにはじめて参加した",
+    "auther": "eliza",
+    "date": "2017/5/14", 
+    "tags":["haskell","kosen14s","programming"],
+    "uri":"/#/posts/comp-first.html",
+    "file":"/static/posts/comp-first.md",
+    "description": "はじめてプログラミングコンテストに参加して大失敗した話です。"
+  },
+  {
+    "title": "Haskellでシェルソートを書いた",
+    "auther": "eliza",
+    "date": "2017/7/17", 
+    "tags":["haskell","programming"],
+    "uri":"/#/posts/shell-sort-haskll.html",
+    "file":"/static/posts/shell-sort-haskell.md",
+    "description": "Haskellでシェルソートを書きました。"
+  },
+  {
+    "title": "Haskellでバブルソートをする",
+    "auther": "eliza",
+    "date": "2017/6/29", 
+    "tags":["programming","haskell"],
+    "uri":"/#/posts/bubble-sort-haskell.html",
+    "file":"/static/posts/bubble-sort-haskell.md",
+    "description": "Haskellでバブルソートをします。"
+  },
+  {
+    "title": "Haskellでブログを作った",
+    "auther": "eliza",
+    "date": "2017/03/23", 
+    "tags":["programming","haskell","hakyll"],
+    "uri":"/#/posts/create-blog-hakyll.html",
+    "file":"/static/posts/create-blog-hakyll.md",
+    "description": "Haskellでブログを作った時の話です。"
+  },
+  {
+    "title": "音楽の文法",
+    "auther": "eliza",
+    "date": "2016/11/07", 
+    "tags":["memo"],
+    "uri":"/#/posts/grammar-of-music.html",
+    "file":"/static/posts/grammar-of-music.md",
+    "description": "高校三年間つづけた部活も、もうしばらくすれば引退です。"
+  },
+  {
+    "title": "Lilypondで楽譜を書いた",
+    "auther": "eliza",
+    "date": "2016/9/19", 
+    "tags":["music"],
+    "uri":"/#/posts/lilypond.html",
+    "file":"/static/posts/lilypond.md",
+    "description": "lilypondで楽譜を作ってみました。"
+  },
+  {
+    "title": "AtTiny85aでLチカをする",
+    "auther": "eliza",
+    "date": "2016/8/8", 
+    "tags":["programming","microprocessor","arduino"],
+    "uri":"/#/posts/attiny85a.html",
+    "file":"/static/posts/attiny85a.md",
+    "description": "Attiny85aにplatform ioとFT232Rを使ってプログラムを書き込んでLチカをします。"
+  },
+  {
+    "title": "精神分析入門を読んだ",
+    "auther": "eliza",
+    "date": "2016/06/12", 
+    "tags":["book","kosen14s"],
+    "uri":"/#/posts/introductory-psychoanalysis.html",
+    "file":"/static/posts/phycho.md",
+    "description": "精神分析入門を読みました。"
+  },
+  {
+    "title": "Kosen14s x Publicに参加してきた",
+    "auther": "eliza",
+    "date": "2016/5/7", 
+    "tags":["kosen14s"],
+    "uri":"/#/posts/kxlt.html",
+    "file":"/static/posts/kxlt.md",
+    "description": "LT大会に参加してきました。"
+  },
+  {
+    "title": "Kosen14s結成",
+    "auther": "eliza",
+    "date": "2016/5/4", 
+    "tags":["kosen14s"],
+    "uri":"/#/posts/kosen14s.html",
+    "file":"/static/posts/kosen14s.md",
+    "description": "Kosen14sを結成しました。"
+  },
+  {
+    "title": "高専カンファレンスlolに参加してきた",
+    "auther": "eliza",
+    "date": "2016/5/2", 
+    "tags":["kosen14s","camp","kosen14s"],
+    "uri":"/#/posts/kosenconflol.html",
+    "file":"/static/posts/kosenconflol.md",
+    "description": "高専カンファレンスlolに参加して、ついでに野宿してきました。"
+  }
+]

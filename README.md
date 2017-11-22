@@ -1,16 +1,21 @@
-MY BLOG
-====
+# blog
 
-Created with [Hakyll](https://jaspervdj.be/hakyll/).
+> A Vue.js project
 
-#### CLONE
-`git clone git@github.com:eliza0x/eliza0x.github.io.git`
+## Build Setup
 
-#### BUILD
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:8080
+npm run dev
+
+# build for production with minification
+npm run build
+
+# build for production and view the bundle analyzer report
+npm run build --report
 ```
-stack build
-stack exec site watch
-```
 
-#### UPLOAD
-`./upload.sh`
+For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
